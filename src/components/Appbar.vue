@@ -1,8 +1,10 @@
 <template>
   <v-app-bar app>
-    <div>
-      <!-- <img src="../assets/GitScratch-icon-black.png" v-if="!dark_theme" width="40" /> -->
+    <div style="padding-top: 6px; margin-right: 8px;">
+      <img v-if="!dark_theme" src="../assets/GitScratch-icon-black.svg" width="40" />
+      <img v-if="dark_theme" src="../assets/GitScratch-icon-white.svg" width="40" />
     </div>
+    <h2>GitScratch</h2>
 
     <v-spacer></v-spacer>
 
