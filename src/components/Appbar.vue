@@ -5,12 +5,13 @@
       <img v-if="dark_theme" src="../assets/GitScratch-icon-white.svg" width="40" />
     </div>
     <h2 style="margin-right: 8px;">GitScratch</h2>
-    <v-btn text color="blue" href="/">首页</v-btn>
+
+    <v-btn icon href="/" color="black"><v-icon>mdi-home</v-icon></v-btn>
 
     <v-spacer></v-spacer>
 
-    <v-btn color="blue" dark style="margin-right: 8px;">注册</v-btn>
-    <v-btn color="transparent" style="margin-right: 8px;">登录</v-btn>
+    <v-btn color="blue" dark style="margin-right: 8px;" elevation="0" href="/register">注册</v-btn>
+    <v-btn color="transparent" style="margin-right: 8px;" elevation="0" href="/login">登录</v-btn>
     <v-btn icon v-on:click="toggle_theme">
       <v-icon>mdi-brightness-6</v-icon>
     </v-btn>
