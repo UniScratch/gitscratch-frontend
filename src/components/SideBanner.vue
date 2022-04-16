@@ -1,12 +1,12 @@
 <template>
-    <v-card>
-        <v-card-title class="text-h5">欢迎回来</v-card-title>
+    <v-card style="position: relative;" class="text-center">
+        <v-card-title class="text-h5" style="display: block; position: static;">欢迎回来</v-card-title>
 
-        <v-card-subtitle>Dolor consequat aliqua magna labore sit in. Do enim laboris irure deserunt occaecat amet amet elit culpa labore ullamco. Nulla laboris non et velit in commodo duis dolor reprehenderit. Do duis culpa et minim velit ut aute dolore esse eu consectetur.</v-card-subtitle>
+        <v-card-subtitle>内容</v-card-subtitle>
 
-        <v-card-actions>
-            <v-btn block depressed color="primary">
-                <v-icon left>mdi-plus</v-icon>Create
+        <v-card-actions style="position: absolute; bottom: 0; left: 0; right: 0;">
+            <v-btn block depressed color="accent">
+                <v-icon left>mdi-plus</v-icon>创建
             </v-btn>
         </v-card-actions>
     </v-card>

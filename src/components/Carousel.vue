@@ -18,7 +18,7 @@
                         @click="toggle"
                         depressed
                         rounded
-                        style="width: 32px;height:16px;padding:0px"
+                        style="width: 32px; height: 16px; padding: 0px;"
                         class="ml-2"
                         color="accent"
                     ></v-btn>
@@ -27,17 +27,17 @@
                         active
                         @click="toggle"
                         depressed
-                        disabled
                         rounded
-                        style="min-width: 16px; width:16px; height:16px;padding:0px"
+                        style="min-width: 16px; width: 16px; height: 16px; padding: 0px;"
                         class="ml-2"
+                        color="grey_background"
                     ></v-btn>
                 </v-item>
             </v-item-group>
 
             <v-spacer />
-            <v-btn text @click="prev">Prev</v-btn>
-            <v-btn text @click="next">Next</v-btn>
+            <v-btn icon @click="prev"><v-icon>mdi-chevron-left</v-icon></v-btn>
+            <v-btn icon @click="next"><v-icon>mdi-chevron-right</v-icon></v-btn>
         </v-card-actions>
     </v-card>
 </template>
