@@ -8,7 +8,6 @@ module.exports = {
       .tap(args => {
         args[0].title = "GitScratch";
         return args;
-      }
-    )
+      })
   }
 }
