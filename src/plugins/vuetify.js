@@ -8,12 +8,12 @@ export default new Vuetify({
     theme: {
         themes: {
             light: {
-                primary: colors.blue.base,
+                primary: "#F3F1F8",
                 secondary: colors.blue.darken4,
                 accent: colors.blue.base,
             },
             dark: {
-                primary: colors.grey.darken4,
+                primary: "#2B2734",
                 secondary: colors.blue.darken4,
                 accent: colors.blue.base,
             },
