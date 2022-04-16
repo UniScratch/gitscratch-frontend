@@ -5,6 +5,12 @@ Material Design 2 风格的 Scratch 社区前端项目。
 ***
 
 ## 安装
+
+
+> Tips  
+> 请确保在开始之前已经安装了 [Node.js](https:////www.nodejs.org) 和 [Git](https://git-scm.com/) ，此外我们建议使用 Linux 而不是 Windows 进行配置
+
+
 ```
 yarn install
 ```
@@ -19,13 +25,6 @@ yarn serve
 yarn build
 ```
 
-### 代码格式化 Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ***
 
