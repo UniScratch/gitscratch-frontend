@@ -36,8 +36,18 @@
             </v-item-group>
 
             <v-spacer />
-            <v-btn icon @click="prev"><v-icon>mdi-chevron-left</v-icon></v-btn>
-            <v-btn icon @click="next"><v-icon>mdi-chevron-right</v-icon></v-btn>
+            <v-tooltip bottom>
+                <template v-slot:activator="{ on, attrs }">
+                    <v-btn icon @click="prev" v-bind="attrs" v-on="on"><v-icon>mdi-chevron-left</v-icon></v-btn>
+                </template>
+                <span>上一个</span>
+            </v-tooltip>
+            <v-tooltip bottom>
+                <template v-slot:activator="{ on, attrs }">
+                    <v-btn icon @click="next" v-bind="attrs" v-on="on"><v-icon>mdi-chevron-right</v-icon></v-btn>
+                </template>
+                <span>下一个</span>
+            </v-tooltip>
         </v-card-actions>
     </v-card>
 </template>

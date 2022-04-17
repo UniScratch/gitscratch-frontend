@@ -8,15 +8,15 @@ export default new Vuetify({
     theme: {
         themes: {
             light: {
-                primary: colors.blue.lighten5,
+                primary: colors.blue.base,
                 secondary: colors.blue.darken4,
-                accent: colors.blue.base,
+                accent: colors.blue.accent2,
                 grey_background: colors.grey.lighten2,
             },
             dark: {
-                primary: colors.grey.darken4,
+                primary: colors.blue.lighten1,
                 secondary: colors.blue.darken4,
-                accent: colors.blue.base,
+                accent: colors.blue.accent3,
                 grey_background: colors.grey.darken3,
             },
         },
