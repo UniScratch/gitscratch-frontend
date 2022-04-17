@@ -20,4 +20,4 @@ jobs:
       - name: list file size
         run: |
           ls -a
-          du -sh build
+          du -sh dist
