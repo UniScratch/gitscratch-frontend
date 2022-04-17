@@ -3,8 +3,8 @@
         <v-card-title class="text-h5" style="display: block; position: static;">欢迎回来</v-card-title>
 
         <v-card-subtitle>
-            <v-contdiner class="margin:auto;left:0;right:0;top:0;bottom:0;">
-                
+            <v-container style="margin:auto;left:0;right:0;top:0;bottom:0;">
+                Something...
             </v-container>
         </v-card-subtitle>
 
