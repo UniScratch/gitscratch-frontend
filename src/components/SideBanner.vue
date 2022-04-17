@@ -3,9 +3,9 @@
         <v-card-title class="text-h5" style="display: block; position: static;">欢迎回来</v-card-title>
 
         <v-card-subtitle>
-            <v-layout row wrap  align-center justify-center fill-height >
-                美好的一天，从咕咕咕开始
-            </v-layout>
+            <v-contdiner class="margin:auto;left:0;right:0;top:0;bottom:0;>
+                
+            </v-container>
         </v-card-subtitle>
 
         <v-card-actions style="position: absolute; bottom: 0; left: 0; right: 0;">
