@@ -9,5 +9,6 @@ module.exports = {
         args[0].title = "GitScratch";
         return args;
       })
-  }
+  },
+  publicPath: './'
 }

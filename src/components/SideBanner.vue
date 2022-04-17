@@ -7,7 +7,7 @@
         </v-card-text>
 
         <v-card-actions style="position: absolute; bottom: 0; left: 0; right: 0;">
-            <v-btn block depressed color="accent" href="/project/editor">
+            <v-btn block depressed color="accent" href="/scratch-gui">
                 <v-icon left>mdi-plus</v-icon>创建
             </v-btn>
         </v-card-actions>

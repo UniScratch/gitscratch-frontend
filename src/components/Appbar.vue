@@ -30,7 +30,7 @@
         <v-spacer></v-spacer>
         <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
-                <v-btn icon href="/project/editor" v-bind="attrs" v-on="on">
+                <v-btn icon href="/scratch-gui" v-bind="attrs" v-on="on">
                     <v-icon>mdi-plus</v-icon>
                 </v-btn>
             </template>
