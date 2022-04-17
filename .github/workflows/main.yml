@@ -17,3 +17,7 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
+      - name: list file size
+        run: |
+          ls -a
+          du -sh build
