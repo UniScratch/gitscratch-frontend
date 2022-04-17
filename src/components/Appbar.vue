@@ -16,14 +16,6 @@
             single-line
             style="max-width: 250px;"
         ></v-text-field>
-        <!-- <v-tooltip bottom>
-            <template v-slot:activator="{ on, attrs }">
-                <v-btn icon href="/explore" v-bind="attrs" v-on="on">
-                    <v-icon>mdi-compass-outline</v-icon>
-                </v-btn>
-            </template>
-            <span>发现</span>
-        </v-tooltip> -->
         <v-btn text href="/explore">发现</v-btn>
         <v-btn text href="/about">关于</v-btn>
 
@@ -54,8 +46,6 @@ export default {
 
     data: () => ({
         dark_theme: false,
-        // login_dialog: false,
-        // register_dialog: false,
     }),
 
     methods: {
