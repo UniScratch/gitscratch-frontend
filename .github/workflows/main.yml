@@ -17,6 +17,8 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
+          repository-name: UniScratch/UniScratch.github.io
+          
       - name: List File Size
         run: |
           ls -a
