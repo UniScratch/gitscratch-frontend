@@ -18,6 +18,7 @@ jobs:
           branch: gh-pages
           folder: dist
           repository-name: UniScratch/UniScratch.github.io
+          token: ${{ secrets.TOKEN }}
           
       - name: List File Size
         run: |
