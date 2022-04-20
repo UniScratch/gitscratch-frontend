@@ -1,5 +1,6 @@
 <template>
-    <v-card style="margin-right: 8px; width: calc(20% - 8px); display: inline-block;">
+    <v-card style="margin: 0 8px; width: calc(100% / 6 - 16px); display: inline-block;">
+        <v-img lazy-src="/GitScratch-icon-white.svg" v-bind:src="project_thumbnail" style="width: 100%;"></v-img>
         <v-card-title style="padding-bottom: 0;">{{ project_title }}</v-card-title>
         <v-card-actions>
             <v-btn text v-bind:href="'/user/' + project_author">
@@ -8,9 +9,7 @@
                 </v-avatar>
                 <span style="margin-left: 8px;">{{ project_author }}</span>
             </v-btn>
-
         </v-card-actions>
-        <v-img lazy-src="/GitScratch-icon-white.svg" v-bind:src="project_thumbnail" style="width: 100%;"></v-img>
     </v-card>
 </template>
 <script>

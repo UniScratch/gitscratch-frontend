@@ -16,7 +16,7 @@
                 </v-row>
                 <div style="margin-bottom: 24px;">
                     <p class="text-h5">精选作品</p>
-                    <ProjectCard /><ProjectCard /><ProjectCard /><ProjectCard /><ProjectCard />
+                    <ProjectCard /><ProjectCard /><ProjectCard /><ProjectCard /><ProjectCard /><ProjectCard />
                 </div>
             </v-container>
         </v-main>
