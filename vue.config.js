@@ -13,11 +13,21 @@ module.exports = {
       })
   },
   publicPath: './'
-}
+};
 
 configureWebpack: {
-  optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
-  }
+    optimization: {
+      minimizer: [
+        new TerserPlugin({
+          parallel: 4,
+          terserOptions: {
+            compress: {
+              warnings: true,
+              drop_debugger: true, // 删除debugger
+              drop_console: true  // 删除console
+            }
+          }
+        })
+      ],
+    }
 }
