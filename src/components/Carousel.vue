@@ -1,5 +1,5 @@
 <template>
-    <v-card >
+    <v-card>
         <v-window v-model="onboarding">
             <v-window-item v-for="n in length" :key="`card-${n}`">
                 <v-card color="grey" height="300">

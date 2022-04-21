@@ -1,5 +1,5 @@
 <template>
-    <v-card style="margin: 0 8px; width: calc(100% / 6 - 16px); display: inline-block;">
+    <v-card>
         <v-img lazy-src="/GitScratch-icon-white.svg" v-bind:src="project_thumbnail" style="width: 100%;"></v-img>
         <v-card-title style="padding-bottom: 0;">{{ project_title }}</v-card-title>
         <v-card-actions>
@@ -23,13 +23,6 @@ export default {
         project_thumbnail: "https://sdfsdf.dev/480x360.jpg,FFFFFF,000000",
 
     }),
-
-    methods: {
-        toggle_theme: function () {
-            this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-            this.dark_theme = !this.dark_theme;
-        },
-    },
 }
 
 </script>

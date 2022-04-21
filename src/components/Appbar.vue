@@ -4,20 +4,21 @@
             <img v-if="!dark_theme" src="/GitScratch-icon-black.svg" width="36" />
             <img v-if="dark_theme" src="/GitScratch-icon-white.svg" width="36" />
         </v-btn>
-        <v-app-bar-title class="pl-1">GitScratch</v-app-bar-title>
+        <v-app-bar-title class="pl-1 hidden-sm-and-down">GitScratch</v-app-bar-title>
         <v-text-field
             prepend-inner-icon="mdi-magnify"
             label="搜索"
             autocomplete="off"
-            class="mx-2 mx-md-4"
+            class="mx-2 mx-md-4 hidden-xs-only"
             dense
             hide-details
             outlined
             single-line
             style="max-width: 250px;"
         ></v-text-field>
-        <v-btn text href="/explore">发现</v-btn>
-        <v-btn text href="/about">关于</v-btn>
+        <v-btn text href="/explore" class="hidden-xs-only">发现</v-btn>
+        <v-btn text href="/about" class="hidden-xs-only">关于</v-btn>
+        <v-btn icon class="hidden-sm-and-up"><v-icon>mdi-menu</v-icon></v-btn>
 
         <v-spacer></v-spacer>
         <v-tooltip bottom>
