@@ -1,3 +1,5 @@
+const TerserPlugin = require("terser-webpack-plugin");
+
 module.exports = {
   transpileDependencies: [
     'vuetify'
@@ -10,5 +12,10 @@ module.exports = {
         return args;
       })
   },
-  publicPath: './'
+  publicPath: './',
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  }
 }
+
