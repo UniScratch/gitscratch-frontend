@@ -1,6 +1,8 @@
 # GitScratch
 
-Material Design 2 风格的 Scratch 社区前端项目。
+Material Design 2 风格的 Scratch 社区前端项目。  
+
+[![Build and Deploy](https://github.com/UniScratch/GitScratchFrontend/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/UniScratch/GitScratchFrontend/actions/workflows/main.yml)
 
 ***
 
