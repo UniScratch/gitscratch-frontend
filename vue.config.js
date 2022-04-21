@@ -20,10 +20,9 @@ configureWebpack: {
       minimizer: [
         new TerserPlugin({
           parallel: true,
-	  sourceMap: false,
           terserOptions: {
           }
         })
-      ],
+      ]
     }
 }
