@@ -12,10 +12,12 @@ module.exports = {
         return args;
       })
   },
-  publicPath: './',
+  publicPath: './'
+}
+
+configureWebpack: {
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin()],
   }
 }
-
