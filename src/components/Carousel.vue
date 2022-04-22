@@ -54,7 +54,7 @@
 <script>
 export default {
     data: () => ({
-        length: 10,
+        length: 5,
         onboarding: 0,
     }),
 

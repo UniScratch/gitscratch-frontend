@@ -1,5 +1,18 @@
 <template>
     <v-app-bar app>
+        <v-menu offset-y transition="scale-transition">
+            <template v-slot:activator="{ on, attrs }">
+                <v-btn icon class="hidden-sm-and-up" v-bind="attrs" v-on="on"><v-icon>mdi-menu</v-icon></v-btn>
+            </template>
+            <v-list min-width="200">
+                <v-list-item href="/explore">
+                    <v-list-item-title>发现</v-list-item-title>
+                </v-list-item>
+                <v-list-item href="/about">
+                    <v-list-item-title>关于</v-list-item-title>
+                </v-list-item>
+            </v-list>
+        </v-menu>
         <v-btn icon href="/" class="ml-2">
             <img v-if="!dark_theme" src="/GitScratch-icon-black.svg" width="36" />
             <img v-if="dark_theme" src="/GitScratch-icon-white.svg" width="36" />
@@ -18,7 +31,6 @@
         ></v-text-field>
         <v-btn text href="/explore" class="hidden-xs-only">发现</v-btn>
         <v-btn text href="/about" class="hidden-xs-only">关于</v-btn>
-        <v-btn icon class="hidden-sm-and-up"><v-icon>mdi-menu</v-icon></v-btn>
 
         <v-spacer></v-spacer>
         <v-tooltip bottom>

@@ -1,5 +1,5 @@
 <template>
-    <v-card>
+    <v-card v-bind:href="'/project/' + project_id">
         <v-img lazy-src="/GitScratch-icon-white.svg" v-bind:src="project_thumbnail" style="width: 100%;"></v-img>
         <v-card-title style="padding-bottom: 0;">{{ project_title }}</v-card-title>
         <v-card-actions>
@@ -21,7 +21,7 @@ export default {
         project_author: "作者",
         project_author_avatar: "/favicon.ico",
         project_thumbnail: "https://sdfsdf.dev/480x360.jpg,FFFFFF,000000",
-
+        project_id: 1,
     }),
 }
 
