@@ -7,11 +7,16 @@
                 </v-btn>
             </template>
             <v-list min-width="200">
-                <v-list-item href="/explore">
-                    <v-list-item-title>发现</v-list-item-title>
+                <v-list-item>
+                    <router-link to="/explore">
+                        <v-list-item-title>发现</v-list-item-title>
+                    </router-link>
+
                 </v-list-item>
-                <v-list-item href="/about">
-                    <v-list-item-title>关于</v-list-item-title>
+                <v-list-item>
+                    <router-link to="/about">
+                        <v-list-item-title>关于</v-list-item-title>
+                    </router-link>
                 </v-list-item>
             </v-list>
         </v-menu>

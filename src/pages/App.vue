@@ -22,10 +22,10 @@
 </template>
 
 <script>
-import Appbar from './components/Appbar.vue'
-import Carousel from './components/Carousel.vue'
-import SideBanner from './components/SideBanner.vue'
-import ProjectGroup from './components/ProjectGroup.vue'
+import Appbar from '/src/components/Appbar.vue'
+import Carousel from '/src/components/Carousel.vue'
+import SideBanner from '/src/components/SideBanner.vue'
+import ProjectGroup from '/src/components/ProjectGroup.vue'
 
 export default {
     name: 'App',

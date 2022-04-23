@@ -3,6 +3,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
+  runtimeCompiler: true,
   productionSourceMap: false,
   transpileDependencies: [
     'vuetify'
