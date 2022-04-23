@@ -4,8 +4,6 @@
             <Appbar />
             <v-container>
                 <div v-html="renderMd()" />
-                {{process.env.VUE_APP_BUILDTIME}}
-                {{process.env.VUE_APP_VERSION}}
             </v-container>
         </v-main>
     </v-app>

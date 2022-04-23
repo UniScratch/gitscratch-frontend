@@ -2,9 +2,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-process.env.VUE_APP_VERSION = require('./package.json').version
-process.env.VUE_APP_BUILDTIME = new Date()
-
 module.exports = {
   runtimeCompiler: true,
   productionSourceMap: false,
