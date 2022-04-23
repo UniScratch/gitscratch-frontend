@@ -25,18 +25,15 @@ export default {
     methods: {
         renderMd: function () {
             var md = `
-# About GitScratch  
+# 关于 GitScratch  
 GitScratch（极社）是一个 Git 风格的 Scratch 社区，正在开发中。  
-# Contributor list  
-项目提出: markchai, dispure  
-主要开发者: wrj2009, TimFang4162  
-金主:  
-其他贡献者: frank-782  
+
+项目提出：[@HydroGest](https://github.com/HydroGest) [@Dispure](https://github.com/Dispure)  
+金主：  
+贡献者：[@Tim-Fang](https://github.com/Tim-Fang) [@wrj2009](https://github.com/wrj2009) [@HydroGest](https://github.com/HydroGest)  
+其他贡献者：[@frank-782](https://github.com/frank-782)  
 还有，你。  
-  
 ~~一个都跑不了~~
-
-
             `
             return marked.parse(md);
         }
