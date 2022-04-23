@@ -9,13 +9,14 @@
                         <!-- <v-sheet rounded="lg" min-height="268"></v-sheet> -->
                     </v-col>
 
-                    <v-col cols="12" sm="3" >
+                    <v-col cols="12" sm="3">
                         <SideBanner />
                         <!-- <v-sheet min-height="70vh" rounded="lg"></v-sheet> -->
                     </v-col>
                 </v-row>
                 <ProjectGroup title="精选作品" />
                 <ProjectGroup title="热门作品" />
+                <router-view></router-view>
             </v-container>
         </v-main>
     </v-app>

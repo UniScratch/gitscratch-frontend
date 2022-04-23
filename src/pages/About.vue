@@ -11,14 +11,11 @@
 <script>
 import Appbar from '/src/components/Appbar.vue'
 const { marked } = require('marked');
-
 export default {
     name: 'App',
-
     components: {
         Appbar
     },
-
     data: () => ({
         //
     }),
