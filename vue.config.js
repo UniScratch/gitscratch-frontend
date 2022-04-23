@@ -3,6 +3,12 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
+  pages: {
+    index: {
+      entry: 'src/main.js',
+      meta: { revised: 'Compile time: ' + new Date() }
+    }
+  },
   runtimeCompiler: true,
   productionSourceMap: false,
   transpileDependencies: [
