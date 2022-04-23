@@ -2,7 +2,7 @@
     <v-card min-height="350">
         <v-window v-model="onboarding">
             <v-window-item v-for="n in length" :key="`card-${n}`">
-                <v-card color="grey" height="300">
+                <v-card color="grey" height="300" elevation="0">
                     <v-row class="fill-height" align="center" justify="center">
                         <h1 style="font-size: 5rem;" class="white--text">Slide {{ n }}</h1>
                     </v-row>

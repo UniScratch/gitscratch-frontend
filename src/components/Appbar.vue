@@ -42,13 +42,17 @@
         <v-spacer></v-spacer>
         <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
-                <v-btn icon href="/scratch-gui" v-bind="attrs" v-on="on">
-                    <v-icon>mdi-plus</v-icon>
-                </v-btn>
+                <router-link to="/scratch-gui" v-bind="attrs" v-on="on">
+                    <v-btn icon>
+                        <v-icon>mdi-plus</v-icon>
+                    </v-btn>
+                </router-link>
             </template>
             <span>创建</span>
         </v-tooltip>
-        <v-btn text href="/auth">登录 / 注册</v-btn>
+        <router-link to="/auth">
+            <v-btn text>登录 / 注册</v-btn>
+        </router-link>
         <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
                 <v-btn icon v-on:click="toggle_theme" v-bind="attrs" v-on="on">
