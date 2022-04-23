@@ -20,11 +20,17 @@
                 </v-list-item>
             </v-list>
         </v-menu>
-        <v-btn icon href="/" class="ml-2">
-            <img v-if="!dark_theme" src="/GitScratch-icon-black.svg" width="36" />
-            <img v-if="dark_theme" src="/GitScratch-icon-white.svg" width="36" />
-        </v-btn>
-        <v-app-bar-title class="pl-1 hidden-sm-and-down">GitScratch</v-app-bar-title>
+        <v-tooltip right>
+            <template v-slot:activator="{ on, attrs }">
+                <v-btn icon href="/" class="ml-2" v-bind="attrs" v-on="on">
+                    <img v-if="!dark_theme" src="/GitScratch-icon-black.svg" width="36" />
+                    <img v-if="dark_theme" src="/GitScratch-icon-white.svg" width="36" />
+                </v-btn>
+            </template>
+            <span>GitScratch</span>
+        </v-tooltip>
+
+        <!-- <v-app-bar-title class="pl-1 hidden-sm-and-down">GitScratch</v-app-bar-title> -->
         <v-text-field prepend-inner-icon="mdi-magnify" label="搜索" autocomplete="off" class="mx-2 mx-md-4 hidden-xs-only"
             dense hide-details outlined single-line style="max-width: 250px;"></v-text-field>
         <v-btn text class="hidden-xs-only">
