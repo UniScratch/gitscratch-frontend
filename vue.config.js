@@ -1,6 +1,9 @@
 const TerserPlugin = require("terser-webpack-plugin");
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
+  productionSourceMap: false,
   transpileDependencies: [
     'vuetify'
   ],
@@ -12,17 +15,31 @@ module.exports = {
         return args;
       })
   },
-  publicPath: './'
-};
-
-configureWebpack: {
+  publicPath: './',
+  configureWebpack: {
     optimization: {
+      minimize: true,
       minimizer: [
         new TerserPlugin({
           parallel: true,
-          terserOptions: {
+          terserOptions: { // https://github.com/terser/terser
+            compress: {
+              drop_console: true,
+              arguments: true,
+              passes: 2
+            },
+            format: {
+              comments: false,
+              max_line_len: 1024
+            }
           }
-        })
+        }),
+        new CssMinimizerPlugin({
+          parallel: true,
+        }),
       ]
-    }
-}
+    },
+    // plugins: [new MiniCssExtractPlugin()],
+
+  }
+};
