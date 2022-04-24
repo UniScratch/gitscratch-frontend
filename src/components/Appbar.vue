@@ -44,8 +44,16 @@
         <v-spacer></v-spacer>
         <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
-                <router-link to="/scratch-gui" v-bind="attrs" v-on="on">
-                    <v-btn icon>
+                <v-btn icon v-on:click="toggle_theme" v-bind="attrs" v-on="on">
+                    <v-icon>mdi-brightness-6</v-icon>
+                </v-btn>
+            </template>
+            <span>切换主题</span>
+        </v-tooltip>
+        <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+                <router-link to="/scratch-gui">
+                    <v-btn icon v-bind="attrs" v-on="on">
                         <v-icon>mdi-plus</v-icon>
                     </v-btn>
                 </router-link>
@@ -55,14 +63,6 @@
         <router-link to="/auth">
             <v-btn text>登录 / 注册</v-btn>
         </router-link>
-        <v-tooltip bottom>
-            <template v-slot:activator="{ on, attrs }">
-                <v-btn icon v-on:click="toggle_theme" v-bind="attrs" v-on="on">
-                    <v-icon>mdi-brightness-6</v-icon>
-                </v-btn>
-            </template>
-            <span>切换主题</span>
-        </v-tooltip>
     </v-app-bar>
 </template>
 

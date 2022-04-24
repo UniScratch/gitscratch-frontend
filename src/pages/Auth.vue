@@ -10,7 +10,7 @@
                         <v-text-field
                             label="用户名"
                             outlined
-                            v-model="login_user_name"
+                            v-model="user_name"
                             v-if="btn_toggle_value == 0"
                             type="text"
                             style="border-radius: 4px;"
@@ -18,7 +18,7 @@
                         <v-text-field
                             label="密码"
                             outlined
-                            v-model="login_user_password"
+                            v-model="user_password"
                             v-if="btn_toggle_value == 0"
                             type="password"
                             style="border-radius: 4px;"
@@ -26,7 +26,7 @@
                         <v-text-field
                             label="用户名"
                             outlined
-                            v-model="register_user_name"
+                            v-model="user_name"
                             v-if="btn_toggle_value == 1"
                             type="text"
                             style="border-radius: 4px;"
@@ -34,7 +34,7 @@
                         <v-text-field
                             label="密码"
                             outlined
-                            v-model="register_user_password"
+                            v-model="user_password"
                             v-if="btn_toggle_value == 1"
                             type="password"
                             style="border-radius: 4px;"
@@ -65,7 +65,7 @@
 
                         <v-spacer></v-spacer>
 
-                        <v-btn color="accent" v-text="btn_toggle_value == 0 ? '登录' : '注册'" tile></v-btn>
+                        <v-btn color="accent" v-text="btn_toggle_value == 0 ? '登录' : '注册'" style="border-radius: 4px;" depressed></v-btn>
                     </v-card-actions>
                 </v-card>
             </v-container>
@@ -85,8 +85,8 @@ export default {
 
     data: () => ({
         btn_toggle_value: 0,
-        login_user_name: '',
-        login_user_password: '',
+        user_name: '',
+        user_password: '',
         register_user_name: '',
         register_user_password: '',
         register_user_password_confirm: '',
