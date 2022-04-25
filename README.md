@@ -1,4 +1,4 @@
-# [GitScratch](https://uniscratch.github.io/)
+# [GitScratch](https://git.sc.cn/)
 
 Material Design 风格的 Scratch 社区前端项目，由 GitScratch 社区开发组用 ❤️ 制作。  
 
