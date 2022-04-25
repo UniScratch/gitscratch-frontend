@@ -1,11 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-// 引入组件
 import Home from '/src/pages/Home.vue'
 import About from '/src/pages/About.vue'
 
-// 要告诉 vue 使用 vueRouter
+const NotFound = { template: '<p>Page not found: {{ $route.path }}</p>' }
+
 Vue.use(VueRouter);
 
 const routes = [{
@@ -15,6 +15,10 @@ const routes = [{
     {
         path: "/about",
         component: About
+    },
+    {
+        path: "*",
+        component: NotFound
     },
 ]
 

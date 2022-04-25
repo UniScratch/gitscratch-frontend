@@ -7,26 +7,20 @@
                 </v-btn>
             </template>
             <v-list min-width="200">
-                <router-link to="/explore">
-                    <v-list-item v-ripple>
+                    <v-list-item v-ripple to="/explore">
                         <v-list-item-title>发现</v-list-item-title>
                     </v-list-item>
-                </router-link>
-                <router-link to="/about">
-                    <v-list-item v-ripple>
+                    <v-list-item v-ripple to="/about">
                         <v-list-item-title>关于</v-list-item-title>
-                    </v-list-item>                    
-                </router-link>
+                    </v-list-item>       
             </v-list>
         </v-menu>
         <v-tooltip right>
             <template v-slot:activator="{ on, attrs }">
-                <router-link to="/">
-                    <v-btn icon class="ml-2" v-bind="attrs" v-on="on">
+                    <v-btn icon class="ml-2" v-bind="attrs" v-on="on" to="/">
                         <img v-if="!$vuetify.theme.dark" src="/GitScratch-icon-black.svg" width="36" />
                         <img v-if="$vuetify.theme.dark" src="/GitScratch-icon-white.svg" width="36" />
                     </v-btn>
-                </router-link>
             </template>
             <span>GitScratch</span>
         </v-tooltip>
@@ -34,12 +28,8 @@
         <!-- <v-app-bar-title class="pl-1 hidden-sm-and-down">GitScratch</v-app-bar-title> -->
         <v-text-field prepend-inner-icon="mdi-magnify" label="搜索" autocomplete="off" class="mx-2 mx-md-4 hidden-xs-only"
             dense hide-details outlined single-line style="max-width: 250px;"></v-text-field>
-        <router-link to="/explore">
-            <v-btn text class="hidden-xs-only">发现</v-btn>
-        </router-link>
-        <router-link to="/about">
-            <v-btn text class="hidden-xs-only">关于</v-btn>
-        </router-link>
+            <v-btn text class="hidden-xs-only" to="/explore">发现</v-btn>
+            <v-btn text class="hidden-xs-only" to="/about">关于</v-btn>
 
         <v-spacer></v-spacer>
         <!-- <v-tooltip bottom>
@@ -52,17 +42,13 @@
         </v-tooltip> -->
         <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
-                <router-link to="/scratch-gui">
-                    <v-btn icon v-bind="attrs" v-on="on">
+                    <v-btn icon v-bind="attrs" v-on="on" to="/create">
                         <v-icon>mdi-plus</v-icon>
                     </v-btn>
-                </router-link>
             </template>
             <span>创建</span>
         </v-tooltip>
-        <router-link to="/auth">
-            <v-btn text>登录 / 注册</v-btn>
-        </router-link>
+            <v-btn text to="/auth">登录 / 注册</v-btn>
     </v-app-bar>
 </template>
 

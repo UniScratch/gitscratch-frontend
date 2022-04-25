@@ -10,11 +10,9 @@
         </v-card-text>
 
         <v-card-actions style="position: absolute; bottom: 0; left: 0; right: 0;">
-            <router-link to="/scratch-gui" style="width: 100%;">
-                <v-btn block depressed color="accent">
+                <v-btn block depressed color="accent" to="/create">
                     <v-icon left>mdi-plus</v-icon>创建
                 </v-btn>
-            </router-link>
         </v-card-actions>
     </v-card>
 </template>

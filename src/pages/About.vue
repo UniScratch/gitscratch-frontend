@@ -1,22 +1,11 @@
 <template>
-    <v-app>
-        <v-main>
-            <Appbar />
-            <v-container>
-                <div v-html="renderMd()" />
-            </v-container>
-        </v-main>
-    </v-app>
+    <div v-html="renderMd()" />
 </template>
 
 <script>
-import Appbar from '/src/components/Appbar.vue'
 const { marked } = require('marked');
 export default {
-    name: 'App',
-    components: {
-        Appbar
-    },
+    name: 'About',
     data: () => ({
         //
     }),
@@ -28,7 +17,7 @@ GitScratch（极社）是一个 Git 风格的 Scratch 社区，正在开发中�
 
 项目提出：[@HydroGest](https://github.com/HydroGest) @Dispure 
 
-金主：  
+金主：❤️  
 主要贡献者：[@Tim-Fang](https://github.com/Tim-Fang) [@wrj2009](https://github.com/wrj2009) [@HydroGest](https://github.com/HydroGest)  
 其他贡献者：[@frank-782](https://github.com/frank-782)  
 还有，你。  
