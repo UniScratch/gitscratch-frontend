@@ -23,8 +23,8 @@
             <template v-slot:activator="{ on, attrs }">
                 <router-link to="/">
                     <v-btn icon class="ml-2" v-bind="attrs" v-on="on">
-                        <img v-if="!dark_theme" src="/GitScratch-icon-black.svg" width="36" />
-                        <img v-if="dark_theme" src="/GitScratch-icon-white.svg" width="36" />
+                        <img v-if="!$vuetify.theme.dark" src="/GitScratch-icon-black.svg" width="36" />
+                        <img v-if="$vuetify.theme.dark" src="/GitScratch-icon-white.svg" width="36" />
                     </v-btn>
                 </router-link>
             </template>
@@ -42,14 +42,14 @@
         </router-link>
 
         <v-spacer></v-spacer>
-        <v-tooltip bottom>
+        <!-- <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
                 <v-btn icon v-on:click="toggle_theme" v-bind="attrs" v-on="on">
                     <v-icon>mdi-brightness-6</v-icon>
                 </v-btn>
             </template>
             <span>切换主题</span>
-        </v-tooltip>
+        </v-tooltip> -->
         <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
                 <router-link to="/scratch-gui">
@@ -71,13 +71,12 @@ export default {
     name: 'Appbar',
 
     data: () => ({
-        dark_theme: false,
+        //
     }),
 
     methods: {
         toggle_theme: function () {
             this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-            this.dark_theme = !this.dark_theme;
         },
     },
 }
