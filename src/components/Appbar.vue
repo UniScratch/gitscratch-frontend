@@ -7,23 +7,18 @@
                 </v-btn>
             </template>
             <v-list min-width="200">
-                    <v-list-item v-ripple to="/explore">
-                        <v-list-item-title>发现</v-list-item-title>
-                    </v-list-item>
-                    <v-list-item v-ripple to="/about">
-                        <v-list-item-title>关于</v-list-item-title>
-                    </v-list-item>       
+                <v-list-item v-ripple to="/explore">
+                    <v-list-item-title>发现</v-list-item-title>
+                </v-list-item>
+                <v-list-item v-ripple to="/about">
+                    <v-list-item-title>关于</v-list-item-title>
+                </v-list-item>
             </v-list>
         </v-menu>
-        <v-tooltip right>
-            <template v-slot:activator="{ on, attrs }">
-                    <v-btn icon class="ml-2" v-bind="attrs" v-on="on" to="/">
-                        <img v-if="!$vuetify.theme.dark" src="/GitScratch-icon-black.svg" width="36" />
-                        <img v-if="$vuetify.theme.dark" src="/GitScratch-icon-white.svg" width="36" />
-                    </v-btn>
-            </template>
-            <span>GitScratch</span>
-        </v-tooltip>
+        <v-btn icon class="ml-2" v-bind="attrs" v-on="on" to="/" color="transparent">
+            <img v-if="!$vuetify.theme.dark" src="/GitScratch-icon-black.svg" width="36" />
+            <img v-if="$vuetify.theme.dark" src="/GitScratch-icon-white.svg" width="36" />
+        </v-btn>
 
         <!-- <v-app-bar-title class="pl-1 hidden-sm-and-down">GitScratch</v-app-bar-title> -->
         <v-text-field prepend-inner-icon="mdi-magnify" label="搜索" autocomplete="off" class="mx-2 mx-md-4 hidden-xs-only"

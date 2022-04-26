@@ -1,9 +1,9 @@
 <template>
-        <v-card v-ripple to="'/project/' + project_id">
+        <v-card v-ripple v-bind:to="'/project/' + project_id">
             <v-img lazy-src="/GitScratch-project-thumbnail-grey.svg" v-bind:src="project_thumbnail" style="width: 100%;"></v-img>
             <v-card-title style="padding-bottom: 0;">{{ project_title }}</v-card-title>
             <v-card-actions>
-                <v-btn text to="'/user/' + project_author">
+                <v-btn text v-bind:to="'/user/' + project_author">
                     <v-avatar size="32">
                         <v-img lazy-src="/GitScratch-icon-black.svg" v-bind:src="project_author_avatar" />
                     </v-avatar>
