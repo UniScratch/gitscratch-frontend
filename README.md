@@ -24,6 +24,3 @@ yarn serve
 ```
 yarn build
 ```
-
-
-***
