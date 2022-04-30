@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 
 import Home from '/src/pages/Home.vue'
 import About from '/src/pages/About.vue'
+import Auth from '/src/pages/Auth.vue'
 
 const NotFound = { template: '<p>Page not found: {{ $route.path }}</p>' }
 
@@ -15,6 +16,10 @@ const routes = [{
     {
         path: "/about",
         component: About
+    },
+    {
+        path: "/auth",
+        component: Auth
     },
     {
         path: "*",

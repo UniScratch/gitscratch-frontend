@@ -2,11 +2,12 @@
     <v-card min-height="350">
         <v-window v-model="onboarding">
             <v-window-item v-for="n in length" :key="`card-${n}`">
-                <v-card color="grey" height="300" elevation="0">
+                <!-- <v-card color="blue lighten-4" height="300" elevation="0">
                     <v-row class="fill-height" align="center" justify="center">
-                        <h1 style="font-size: 5rem;" class="white--text">Slide {{ n }}</h1>
+                        <h1 style="font-size: 5rem;" class="blue--text">Slide {{ n }}</h1>
                     </v-row>
-                </v-card>
+                </v-card> -->
+                <v-img src="/GitScratch-thumbnail.svg" height="294"></v-img>
             </v-window-item>
         </v-window>
 
