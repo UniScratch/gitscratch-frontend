@@ -6,7 +6,7 @@
                     <img v-if="!$vuetify.theme.dark" src="/GitScratch-icon-black.svg" width="64" />
                     <img v-if="$vuetify.theme.dark" src="/GitScratch-icon-white.svg" width="64" />                    
                 </div>
-                <v-card-title v-text="btn_toggle_value == 0 ? '登录' : '注册'" style="display: block; text-align: center;" class="text-h5"></v-card-title>
+                <v-card-title v-text="(btn_toggle_value == 0 ? '登录' : '注册') + ' GitScratch 帐号'" style="display: block; text-align: center;" class="text-h5"></v-card-title>
 
                 <v-card-text>
                     <v-text-field
