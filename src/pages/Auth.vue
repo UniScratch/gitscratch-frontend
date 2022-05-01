@@ -2,7 +2,7 @@
     <v-app>
         <v-container class="d-flex justify-center">
             <v-card style="width: 500px; padding: 16px;" elevation="0">
-                <v-card-title v-text="btn_toggle_value == 0 ? '登录' : '注册'"></v-card-title>
+                <v-card-title style="margin:0 auto; text-align:center "v-text="btn_toggle_value == 0 ? '登录' : '注册'"></v-card-title>
 
                 <v-card-text>
                     <v-text-field
