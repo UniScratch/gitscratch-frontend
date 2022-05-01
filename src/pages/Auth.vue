@@ -1,15 +1,12 @@
 <template>
     <v-app>
         <v-container class="d-flex justify-center">
-            <center>
-                <v-btn icon class="ml-2" v-bind="attrs" v-on="on" to="/" color="transparent">
-                    <img v-if="!$vuetify.theme.dark" src="/GitScratch-icon-black.svg" width="36" />
-                    <img v-if="$vuetify.theme.dark" src="/GitScratch-icon-white.svg" width="36" />
-                    <p>登录，或注册</p>
-                </v-btn>
-            </center>
-            <v-card style="width: 500px; padding: 16px;" elevation="0">
-                <v-card-title v-text="btn_toggle_value == 0 ? '登录' : '注册'"></v-card-title>
+            <v-card style="width: 400px; padding: 16px;" elevation="0">
+                <div style="text-align: center;">
+                    <img v-if="!$vuetify.theme.dark" src="/GitScratch-icon-black.svg" width="64" />
+                    <img v-if="$vuetify.theme.dark" src="/GitScratch-icon-white.svg" width="64" />                    
+                </div>
+                <v-card-title v-text="btn_toggle_value == 0 ? '登录' : '注册'" style="display: block; text-align: center;" class="text-h5"></v-card-title>
 
                 <v-card-text>
                     <v-text-field

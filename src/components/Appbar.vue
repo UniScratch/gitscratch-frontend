@@ -15,7 +15,7 @@
                 </v-list-item>
             </v-list>
         </v-menu>
-        <v-btn icon class="ml-2" v-bind="attrs" v-on="on" to="/" color="transparent">
+        <v-btn icon class="ml-2" to="/" color="transparent">
             <img v-if="!$vuetify.theme.dark" src="/GitScratch-icon-black.svg" width="36" />
             <img v-if="$vuetify.theme.dark" src="/GitScratch-icon-white.svg" width="36" />
         </v-btn>
