@@ -1,0 +1,52 @@
+<template>
+    <v-container>
+        <v-row>
+            <v-col cols="3">
+                <div style="text-align: center;">
+                    <v-avatar style="width: 100%; height: auto; max-width: 300px;">
+                        <v-img v-bind:src="avatar" lazy-src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyNi4wLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i5Zu+5bGCXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMjI5LjQgMjI5LjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIyOS40IDIyOS40OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojOUZBMEEwO30NCgkuc3Qxe2ZpbGw6I0ZGRkZGRjt9DQo8L3N0eWxlPg0KPHBhdGggY2xhc3M9InN0MCIgZD0iTTAsMTE0LjdDMCw1MS40LDUxLjQsMCwxMTQuNywwczExNC43LDUxLjQsMTE0LjcsMTE0LjdzLTUxLjQsMTE0LjctMTE0LjcsMTE0LjdTMCwxNzguMSwwLDExNC43eiIvPg0KPHBhdGggY2xhc3M9InN0MSIgZD0iTTExOC41LDEwMC44SDgxLjZjLTcuNywwLTEzLjksNi4xLTEzLjksMTMuOWMwLDcuNyw2LjIsMTMuOSwxMy45LDEzLjloMzYuOXYxOC42SDgxLjYNCgljLTE4LDAtMzIuNS0xNC41LTMyLjUtMzIuNXMxNC41LTMyLjUsMzIuNS0zMi41aDM2LjlMMTE4LjUsMTAwLjh6Ii8+DQo8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTQzLjYsOTIuNGMwLDQuMi0yLjUsNy43LTYsOS4zdjExLjFjMi4zLTEuNCw1LjItMi4yLDguMS0yLjJoMTIuMmM0LjQsMCw4LjEtMy43LDguMS04LjF2LTAuOQ0KCWMtMy42LTEuNy02LTUuMi02LTkuM2MwLTUuNiw0LjUtMTAuMiwxMC4yLTEwLjJjNS42LDAsMTAuMiw0LjUsMTAuMiwxMC4yYzAsNC4yLTIuNSw3LjctNiw5LjN2MC45YzAsOC45LTcuMiwxNi4zLTE2LjMsMTYuM2gtMTIuMg0KCWMtNC40LDAtOC4xLDMuNy04LjEsOC4xdjAuOWMzLjYsMS41LDYsNS4yLDYsOS4zYzAsNS42LTQuNSwxMC4yLTEwLjIsMTAuMmMtNS42LDAtMTAuMi00LjUtMTAuMi0xMC4yYzAtNC4yLDIuNS03LjgsNi05LjN2LTI2LjENCgljLTMuNi0xLjctNi01LjItNi05LjNjMC01LjYsNC41LTEwLjIsMTAuMi0xMC4yQzEzOSw4Mi4yLDE0My42LDg2LjcsMTQzLjYsOTIuNEwxNDMuNiw5Mi40eiBNMTMzLjQsOTUuNGMxLjcsMCwzLjEtMS40LDMuMS0zLjENCgljMC0xLjctMS40LTMuMS0zLjEtMy4xYy0xLjcsMC0zLjEsMS40LTMuMSwzLjFDMTMwLjMsOTQsMTMxLjcsOTUuNCwxMzMuNCw5NS40eiBNMTcwLDg5LjRjLTEuNywwLTMuMSwxLjQtMy4xLDMuMQ0KCWMwLDEuNywxLjQsMy4xLDMuMSwzLjFjMS43LDAsMy4xLTEuNCwzLjEtMy4xQzE3Myw5MC42LDE3MS43LDg5LjQsMTcwLDg5LjR6IE0xMzMuNCwxNDAuMWMxLjcsMCwzLjEtMS40LDMuMS0zLjENCgljMC0xLjctMS40LTMuMS0zLjEtMy4xYy0xLjcsMC0zLjEsMS40LTMuMSwzLjFDMTMwLjQsMTM4LjgsMTMxLjcsMTQwLjEsMTMzLjQsMTQwLjF6Ii8+DQo8L3N2Zz4NCg==" />
+                    </v-avatar>                    
+                </div><br>
+                <p class="text-h4">{{ this.$route.params.username }}</p>
+                <p class="text-body">{{ bio }}</p>
+                <v-btn block color="accent">
+                    <v-icon>mdi-plus</v-icon>
+                    关注
+                </v-btn><br>
+                <v-icon>mdi-account-multiple-outline</v-icon>
+                <router-link v-bind:to="'/users/' + this.$route.params.username + '/followers'">{{ follower }} 粉丝</router-link>
+                <span> · </span>
+                <router-link v-bind:to="'/users/' + this.$route.params.username + '/followings'">{{ following }} 正在关注</router-link>
+                <br>
+                <v-icon>mdi-email</v-icon><a v-bind:href="'mailto:' + email">{{ email }}</a>
+                <br>
+                <v-icon>mdi-web</v-icon><a v-bind:href="website">{{ website }}</a>
+            </v-col>
+            <v-col cols="9">
+                <v-card>
+                    <v-card-title>啊，好舒服</v-card-title>
+                </v-card>
+            </v-col>
+        </v-row>
+    </v-container>
+</template>
+<script>
+// import ProjectCard from '/src/components/ProjectCard.vue'
+// import ProjectGroup from '/src/components/ProjectGroup.vue'
+
+export default {
+    name: 'UserProfile',
+    components: {
+        // ProjectCard,
+        // ProjectGroup,
+    },
+    data: () => ({
+        follower: 100,
+        following: 200,
+        email: "homo@1919810.com",
+        website: "https://1919810.com",
+        bio: "啊，好舒服",
+        avatar: "/GitScratch-icon-background-blue.svg",
+    }),
+};
+</script>
