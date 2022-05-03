@@ -37,13 +37,14 @@
         </v-tooltip> -->
         <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
-                    <v-btn icon v-bind="attrs" v-on="on" to="/create">
-                        <v-icon>mdi-plus</v-icon>
-                    </v-btn>
+                <v-btn icon v-bind="attrs" v-on="on" to="/create">
+                    <v-icon>mdi-plus</v-icon>
+                </v-btn>
             </template>
             <span>创建</span>
         </v-tooltip>
-            <v-btn text to="/auth/login"><!-- 登录 / 注册 -->登录</v-btn>
+        <v-btn text to="/auth/login">登录</v-btn>
+        <v-btn depressed color="accent" to="/auth/register">注册</v-btn>
     </v-app-bar>
 </template>
 

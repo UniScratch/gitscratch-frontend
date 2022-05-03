@@ -7,7 +7,7 @@
                         <h1 style="font-size: 5rem;" class="blue--text">Slide {{ n }}</h1>
                     </v-row>
                 </v-card> -->
-                <v-img src="/GitScratch-thumbnail.svg" height="294"></v-img>
+                <v-img src="/GitScratch-thumbnail.jpg" height="294"></v-img>
             </v-window-item>
         </v-window>
 
