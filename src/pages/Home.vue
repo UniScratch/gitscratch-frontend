@@ -11,8 +11,18 @@
                 <!-- <v-sheet min-height="70vh" rounded="lg"></v-sheet> -->
             </v-col>
         </v-row>
-        <ProjectGroup title="精选作品" />
-        <ProjectGroup title="热门作品" />
+        <div class="d-flex">
+            <p class="text-h5" style="margin: 0;">精选作品</p>
+            <v-spacer></v-spacer>
+            <router-link to="/explore?type=selected">更多</router-link>
+        </div>
+        <ProjectGroup />
+        <div class="d-flex">
+            <p class="text-h5" style="margin: 0;">热门作品</p>
+            <v-spacer></v-spacer>
+            <router-link to="/explore?sort=views&from=30">更多</router-link>
+        </div>
+        <ProjectGroup />
     </div>
 </template>
 

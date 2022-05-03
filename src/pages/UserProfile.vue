@@ -21,8 +21,22 @@
                 <v-icon>mdi-web</v-icon><a v-bind:href="website">{{ website }}</a>
             </v-col>
             <v-col cols="12" sm="9">
-                <v-card>
-                    <v-card-title>啊，好舒服</v-card-title>
+                <v-card style="padding: 16px;">
+                    <ProjectGroup title="置顶作品" />
+
+                    <div class="d-flex">
+                        <p class="text-h5" style="margin: 0;">最新作品</p>
+                        <v-spacer></v-spacer>
+                        <router-link v-bind:to="'/users/' + this.$route.params.username + '/projects'">更多</router-link>
+                    </div>
+                    <ProjectGroup></ProjectGroup>
+
+                    <div class="d-flex">
+                        <p class="text-h5" style="margin: 0;">最近收藏的作品</p>
+                        <v-spacer></v-spacer>
+                        <router-link v-bind:to="'/users/' + this.$route.params.username + '/stars'">更多</router-link>
+                    </div>
+                    <ProjectGroup></ProjectGroup>
                 </v-card>
             </v-col>
         </v-row>
@@ -30,13 +44,13 @@
 </template>
 <script>
 // import ProjectCard from '/src/components/ProjectCard.vue'
-// import ProjectGroup from '/src/components/ProjectGroup.vue'
+import ProjectGroup from '/src/components/ProjectGroup.vue'
 
 export default {
     name: 'UserProfile',
     components: {
         // ProjectCard,
-        // ProjectGroup,
+        ProjectGroup,
     },
     data: () => ({
         follower: 100,
