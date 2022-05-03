@@ -43,7 +43,7 @@
             </template>
             <span>创建</span>
         </v-tooltip>
-            <v-btn text to="/auth"><!-- 登录 / 注册 -->登录</v-btn>
+            <v-btn text to="/auth/login"><!-- 登录 / 注册 -->登录</v-btn>
     </v-app-bar>
 </template>
 

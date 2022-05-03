@@ -51,6 +51,7 @@
                 </v-btn-toggle>
                 <v-btn color="accent" v-text="btn_toggle_value == 0 ? '登录' : '注册'" style="border-radius: 4px;" depressed block></v-btn> -->
                 <v-btn color="accent" style="border-radius: 4px;" depressed block>登录</v-btn>
+                <v-btn text to="/auth/register">注册账号</v-btn>
             </div>
         </v-card>
     </v-container>

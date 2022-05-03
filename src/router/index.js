@@ -1,9 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import goTo from 'vuetify/lib/services/goto'
 
 import Home from '/src/pages/Home.vue'
 import About from '/src/pages/About.vue'
-import Auth from '/src/pages/Auth.vue'
+import Login from '/src/pages/Login.vue'
+import Register from '/src/pages/Register.vue'
 import UserProfile from '/src/pages/UserProfile.vue'
 
 const NotFound = { template: '<p>Page not found: {{ $route.path }}</p>' }
@@ -20,8 +22,12 @@ const routes = [
         component: About
     },
     {
-        path: "/auth",
-        component: Auth
+        path: "/auth/login",
+        component: Login
+    },
+    {
+        path: "/auth/register",
+        component: Register
     },
     {
         path: "/users/:username",
@@ -35,6 +41,22 @@ const routes = [
 
 var router = new VueRouter({
     routes,
-    // mode: "history",
+    //mode: "history",
+    scrollBehavior: (to, from, savedPosition) => {
+    let scrollTo = 0
+
+    if (to.hash) {
+      scrollTo = to.hash
+    } else if (savedPosition) {
+      scrollTo = savedPosition.y
+    }
+
+    return goTo(scrollTo)
+  },
 })
+
+//router.afterEach((to, from) => {
+//  alert("routed")
+//})
+
 export default router;
