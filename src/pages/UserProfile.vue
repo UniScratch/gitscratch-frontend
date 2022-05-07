@@ -22,21 +22,58 @@
             </v-col>
             <v-divider vertical class="hidden-xs-only"></v-divider>
             <v-col cols="12" xl="10" md="9" sm="8" style="padding-left: 20px;">
-                <ProjectGroup title="置顶作品" />
-
-                <div class="d-flex">
-                    <p class="text-h5" style="margin: 0;">最新作品</p>
-                    <v-spacer></v-spacer>
-                    <router-link v-bind:to="'/users/' + this.$route.params.username + '/projects'">更多</router-link>
-                </div>
-                <ProjectGroup></ProjectGroup>
-
-                <div class="d-flex">
-                    <p class="text-h5" style="margin: 0;">最近收藏的作品</p>
-                    <v-spacer></v-spacer>
-                    <router-link v-bind:to="'/users/' + this.$route.params.username + '/stars'">更多</router-link>
-                </div>
-                <ProjectGroup></ProjectGroup>
+                <v-btn-toggle
+                    v-model="toggle_tab"
+                    group
+                    color="accent"
+                >
+                    <v-btn>
+                        主页
+                    </v-btn>
+                    <v-btn>
+                        作品
+                    </v-btn>
+                    <v-btn>
+                        组织
+                    </v-btn>
+                    <v-btn>
+                        留言
+                    </v-btn>
+                </v-btn-toggle>
+                <v-window
+                    v-model="toggle_tab" style="display: block; padding: 8px;"
+                >
+                    <!-- 主页 -->
+                    <v-window-item>
+                        <v-card>
+                            <v-card-title>README</v-card-title>
+                            <div v-html="renderMd()" style="padding: 16px;"></div>
+                        </v-card>
+                        <ProjectGroup title="置顶作品" style="margin-top: 8px;" />
+                    </v-window-item>
+                    <!-- 作品 -->
+                    <v-window-item>
+                        <div class="d-flex">
+                            <p class="text-h5" style="margin: 0;">最近收藏的作品</p>
+                            <v-spacer></v-spacer>
+                            <router-link v-bind:to="'/users/' + this.$route.params.username + '/stars'">更多</router-link>
+                        </div>
+                        <ProjectGroup></ProjectGroup>
+                    </v-window-item>
+                    <!-- 组织 -->
+                    <v-window-item>
+                        <p>？？？？？</p>
+                    </v-window-item>
+                    <!-- 留言 -->
+                    <v-window-item>
+                        <p>哼哼啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+                        <p>给爷卸载 APT！给爷卸载 APT！</p>
+                        <p>哼啊啊啊啊啊啊，Yes, do as I say! Yes, do as I say!</p>
+                        <p>人家又怎么了嘛……</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, saepe nam deserunt corporis consequuntur praesentium quisquam accusamus? Eaque nesciunt, dolores, iure, expedita architecto fugiat et eos pariatur impedit quaerat accusantium.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias odit, ut vero corrupti nam cum quae ea in. Provident fuga deserunt consequatur excepturi nemo. Fugiat veniam saepe corporis recusandae itaque.</p>
+                    </v-window-item>
+                </v-window>
             </v-col>
         </v-row>
     </v-container>
@@ -44,6 +81,7 @@
 <script>
 // import ProjectCard from '/src/components/ProjectCard.vue'
 import ProjectGroup from '/src/components/ProjectGroup.vue'
+const marked = require("marked");
 
 export default {
     name: 'UserProfile',
@@ -57,6 +95,16 @@ export default {
         website: "https://git.sc.cn",
         bio: "啊，好舒服",
         avatar: "/GitScratch-icon-background-blue.svg",
+        toggle_tab: undefined,
+        README: `
+# 啊，好舒服
+
+昨天晚上跟 @作者 床♂战太爽了`,
     }),
+    methods: {
+        renderMd() {
+            return marked.parse(this.README); 
+        }
+    }
 };
 </script>
