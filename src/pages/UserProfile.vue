@@ -39,7 +39,7 @@
                     <!-- 概览 -->
                     <v-window-item>
                         <v-card>
-                            <v-card-title>README</v-card-title>
+                            <v-card-title>README.md</v-card-title>
                             <div v-html="renderMd()" style="padding: 16px;"></div>
                         </v-card>
                         <ProjectGroup title="置顶作品" style="margin-top: 8px;" />
