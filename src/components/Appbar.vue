@@ -45,6 +45,7 @@
         </v-tooltip>
         <v-btn text to="/auth/login">登录</v-btn>
         <v-btn depressed color="accent" to="/auth/register">注册</v-btn>
+        <!-- <v-btn icon v-on:click="toggle_theme"><v-icon>mdi-brightness-6</v-icon></v-btn> -->
     </v-app-bar>
 </template>
 

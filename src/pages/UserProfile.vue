@@ -9,7 +9,7 @@
                 </div><br>
                 <p class="text-h4">{{ this.$route.params.username }}</p>
                 <p class="text-body">{{ bio }}</p>
-                <v-btn block color="accent">
+                <v-btn block color="accent" elevation="0">
                     <v-icon>mdi-plus</v-icon>
                     关注
                 </v-btn><br>
@@ -25,25 +25,18 @@
                 <v-btn-toggle
                     v-model="toggle_tab"
                     group
+                    mandatory
                     color="accent"
                 >
-                    <v-btn>
-                        主页
-                    </v-btn>
-                    <v-btn>
-                        作品
-                    </v-btn>
-                    <v-btn>
-                        组织
-                    </v-btn>
-                    <v-btn>
-                        留言
-                    </v-btn>
+                    <v-btn><v-icon>mdi-book-open-outline</v-icon><span>概览</span></v-btn>
+                    <v-btn><v-icon>mdi-book-outline</v-icon><span>作品</span></v-btn>
+                    <v-btn><v-icon>mdi-account-group-outline</v-icon><span>组织</span></v-btn>
+                    <v-btn><v-icon>mdi-comment-text-multiple-outline</v-icon><span>留言</span></v-btn>
                 </v-btn-toggle>
                 <v-window
-                    v-model="toggle_tab" style="display: block; padding: 8px;"
+                    v-model="toggle_tab" style="display: block; padding: 8px 8px 16px 8px;"
                 >
-                    <!-- 主页 -->
+                    <!-- 概览 -->
                     <v-window-item>
                         <v-card>
                             <v-card-title>README</v-card-title>
@@ -66,12 +59,7 @@
                     </v-window-item>
                     <!-- 留言 -->
                     <v-window-item>
-                        <p>哼哼啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
-                        <p>给爷卸载 APT！给爷卸载 APT！</p>
-                        <p>哼啊啊啊啊啊啊，Yes, do as I say! Yes, do as I say!</p>
-                        <p>人家又怎么了嘛……</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, saepe nam deserunt corporis consequuntur praesentium quisquam accusamus? Eaque nesciunt, dolores, iure, expedita architecto fugiat et eos pariatur impedit quaerat accusantium.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias odit, ut vero corrupti nam cum quae ea in. Provident fuga deserunt consequatur excepturi nemo. Fugiat veniam saepe corporis recusandae itaque.</p>
+                        <Comment></Comment>
                     </v-window-item>
                 </v-window>
             </v-col>
@@ -81,6 +69,7 @@
 <script>
 // import ProjectCard from '/src/components/ProjectCard.vue'
 import ProjectGroup from '/src/components/ProjectGroup.vue'
+import Comment from '/src/components/Comment.vue'
 const marked = require("marked");
 
 export default {
@@ -88,6 +77,7 @@ export default {
     components: {
         // ProjectCard,
         ProjectGroup,
+        Comment,
     },
     data: () => ({
         follower: 100,
@@ -95,7 +85,7 @@ export default {
         website: "https://git.sc.cn",
         bio: "啊，好舒服",
         avatar: "/GitScratch-icon-background-blue.svg",
-        toggle_tab: undefined,
+        toggle_tab: 0,
         README: `
 # 啊，好舒服
 
@@ -103,7 +93,7 @@ export default {
     }),
     methods: {
         renderMd() {
-            return marked.parse(this.README); 
+            return marked.parse(this.README);
         }
     }
 };
