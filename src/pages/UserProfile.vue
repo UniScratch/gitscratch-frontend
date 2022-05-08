@@ -9,7 +9,7 @@
                 </div><br>
                 <p class="text-h4">{{ this.$route.params.username }}</p>
                 <p class="text-body">{{ bio }}</p>
-                <v-btn block color="accent" elevation="0">
+                <v-btn block color="accent" depressed>
                     <v-icon>mdi-plus</v-icon>
                     关注
                 </v-btn><br>
@@ -59,6 +59,7 @@
                     </v-window-item>
                     <!-- 留言 -->
                     <v-window-item>
+                        <CommentForm></CommentForm>
                         <Comment></Comment>
                     </v-window-item>
                 </v-window>
@@ -70,6 +71,7 @@
 // import ProjectCard from '/src/components/ProjectCard.vue'
 import ProjectGroup from '/src/components/ProjectGroup.vue'
 import Comment from '/src/components/Comment.vue'
+import CommentForm from '/src/components/CommentForm.vue'
 const marked = require("marked");
 
 export default {
@@ -78,6 +80,7 @@ export default {
         // ProjectCard,
         ProjectGroup,
         Comment,
+        CommentForm,
     },
     data: () => ({
         follower: 100,
