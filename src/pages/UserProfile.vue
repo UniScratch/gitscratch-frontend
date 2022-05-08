@@ -28,25 +28,25 @@
                     color="accent"
                 >
                     <v-btn>
-                        主页
+                        <v-icon>mdi-camera</v-icon>概览
                     </v-btn>
                     <v-btn>
-                        作品
+                        <v-icon>mdi-book</v-icon>作品
                     </v-btn>
                     <v-btn>
-                        组织
+                        <v-icon>mdi-group</v-icon>组织
                     </v-btn>
                     <v-btn>
-                        留言
+                        <v-icon>mdi-comment</v-icon>留言
                     </v-btn>
                 </v-btn-toggle>
                 <v-window
                     v-model="toggle_tab" style="display: block; padding: 8px;"
                 >
-                    <!-- 主页 -->
+                    <!-- 概览 -->
                     <v-window-item>
                         <v-card>
-                            <v-card-title>README</v-card-title>
+                            <v-card-title>README.md</v-card-title>
                             <div v-html="renderMd()" style="padding: 16px;"></div>
                         </v-card>
                         <ProjectGroup title="置顶作品" style="margin-top: 8px;" />
