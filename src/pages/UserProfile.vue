@@ -39,7 +39,7 @@
                     <!-- 概览 -->
                     <v-window-item>
                         <v-card>
-                            <v-card-title>README.md</v-card-title>
+                            <v-card-title><span>README</span><span class="grey-text">.md</span></v-card-title>
                             <div v-html="renderMd()" style="padding: 16px;"></div>
                         </v-card>
                         <ProjectGroup title="置顶作品" style="margin-top: 8px;" />
@@ -60,6 +60,8 @@
                     <!-- 留言 -->
                     <v-window-item>
                         <CommentForm></CommentForm>
+                        <v-divider style="margin: 8px 0;"></v-divider>
+                        <p class="text-h5">留言</p>
                         <Comment></Comment>
                     </v-window-item>
                 </v-window>

@@ -14,7 +14,7 @@
             depressed
             @click="comment"
         >
-            留言
+            发布
         </v-btn>
         <transition name="slide-y-reverse-transition">
             <v-btn @click="reset" color="accent" text v-if="comment_content || !valid">重置</v-btn>

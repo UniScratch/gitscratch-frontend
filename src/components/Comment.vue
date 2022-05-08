@@ -6,7 +6,7 @@
         <v-divider vertical style="margin: 0 8px;"></v-divider>
         <div class="flex-grow-1">
             <router-link v-bind:to="'/users/' + comment_author_name">{{ comment_author_name }}</router-link>
-            <span style="margin-left: 8px; color: #888;">发布于 {{ comment_time }}</span>
+            <span style="margin-left: 8px;" class="grey-text">发布于 {{ comment_time }}</span>
             <v-divider style="margin: 8px 0;"></v-divider>
             <div v-html="renderMd()"></div>
         </div>
@@ -26,7 +26,15 @@ export default {
         comment_content: `
 哼啊啊啊啊啊啊，给爷卸载 APT！卸载 APT！Yes, do as I say! Yes, do as I say!
 
-\`sudo rm -rf /*\``,
+\`sudo rm -rf /*\`  
+\`\`\`
+#include <stdio.h>
+using namespace std;
+
+function greet(name):
+    console.print("Hello, " + name + "!");
+    return 0;
+\`\`\``,
         comment_time: date_str,
     }),
     methods: {
