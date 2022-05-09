@@ -20,26 +20,15 @@ var date_str = date.getFullYear() + " 年 " + (date.getMonth() + 1) + " 月 " + 
 
 export default {
     name: "Comment",
+    props: ["content"],
     data: () => ({
         comment_author_avatar: "/GitScratch-icon-background-blue.svg",
         comment_author_name: "作者",
-        comment_content: `
-哼啊啊啊啊啊啊，给爷卸载 APT！卸载 APT！Yes, do as I say! Yes, do as I say!
-
-\`sudo rm -rf /*\`  
-\`\`\`
-#include <stdio.h>
-using namespace std;
-
-function greet(name):
-    console.print("Hello, " + name + "!");
-    return 0;
-\`\`\``,
         comment_time: date_str,
     }),
     methods: {
         renderMd() {
-            return marked.parse(this.comment_content);
+            return marked.parse(this.content);
         },
     },
 }

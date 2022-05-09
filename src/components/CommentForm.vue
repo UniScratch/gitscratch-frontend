@@ -1,8 +1,10 @@
 <template>
     <v-form style="margin-bottom: 16px;" ref="form" lazy-validation v-model="valid">
         <v-textarea
-            label="发表评论"
+            label="内容"
             counter="1"
+            auto-grow
+            rows="1"
             outlined
             style="border-radius: 4px;"
             v-model="comment_content"

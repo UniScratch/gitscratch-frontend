@@ -1,13 +1,13 @@
 <template>
     <v-container class="d-flex justify-center">
-        <v-card style="width: 400px; padding: 16px;" elevation="0">
+        <v-card style="width: 400px; padding: 16px;" elevation="0" color="transparent">
             <v-lazy style="text-align: center;" transition="fade-transition" min-height="71">
                 <img src="/GitScratch-icon-background-blue.svg" width="64" />
             </v-lazy>
             <v-card-title class="text-h6 font-weight-regular justify-space-between">
             <span>{{ currentTitle }}</span>
             <v-avatar
-                color="primary lighten-2"
+                color="accent"
                 class="subheading white--text"
                 size="24"
                 v-text="step"
@@ -94,7 +94,8 @@
                 <transition name="slide-y-reverse-transition">
                     <v-btn
                         v-if="!(step === 1 || step >= 4)"
-                        text
+                        outlined
+                        color="accent"
                         @click="step--"
                     >
                         上一步
@@ -105,7 +106,7 @@
 
                 <v-btn
                     :loading="loading"
-                    color="primary"
+                    color="accent"
                     depressed
                     @click="next()"
                     v-bind:to="step === 5 ? '/' : ''"

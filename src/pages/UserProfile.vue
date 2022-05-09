@@ -40,6 +40,7 @@
                     <v-window-item>
                         <v-card>
                             <v-card-title><span>README</span><span class="grey-text">.md</span></v-card-title>
+                            <v-divider></v-divider>
                             <div v-html="renderMd()" style="padding: 16px;"></div>
                         </v-card>
                         <ProjectGroup title="置顶作品" style="margin-top: 8px;" />
@@ -62,7 +63,19 @@
                         <CommentForm></CommentForm>
                         <v-divider style="margin: 8px 0;"></v-divider>
                         <p class="text-h5">留言</p>
-                        <Comment></Comment>
+                        <Comment
+                            content="哼啊啊啊啊啊啊，给爷卸载 APT！卸载 APT！Yes, do as I say! Yes, do as I say!
+
+`sudo rm -rf /*`  
+```
+#include &lt;stdio.h&gt;
+using namespace std;
+
+function greet(name):
+    console.print(&quot;Hello, &quot; + name + &quot;!&quot;);
+    return 0;
+```"
+                        ></Comment>
                     </v-window-item>
                 </v-window>
             </v-col>

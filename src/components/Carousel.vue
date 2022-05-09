@@ -15,7 +15,7 @@
             <v-item-group v-model="onboarding" class mandatory>
                 <v-item v-for="n in length" :key="`btn-${n}`" v-slot="{ active, toggle }">
                     <v-btn v-bind:color="active ? 'accent' : 'grey_background'" @click="toggle" depressed rounded
-                        v-bind:style="active ? 'width: 32px; height: 16px; padding: 0px; transition: all 0.15s ease;' : 'min-width: 16px; width: 16px; height: 16px; padding: 0px;transition: all 0.15s ease;'"
+                        v-bind:style="active ? 'width: 32px; height: 16px; padding: 0px; transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);' : 'min-width: 16px; width: 16px; height: 16px; padding: 0px; transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);'"
                         class="ml-2"></v-btn>
                 </v-item>
             </v-item-group>
@@ -27,7 +27,7 @@
                         <v-icon>mdi-chevron-left</v-icon>
                     </v-btn>
                 </template>
-                <span>上一个</span>
+                <span>上一页</span>
             </v-tooltip>
             <v-tooltip bottom>
                 <template v-slot:activator="{ on, attrs }">
@@ -35,7 +35,7 @@
                         <v-icon>mdi-chevron-right</v-icon>
                     </v-btn>
                 </template>
-                <span>下一个</span>
+                <span>下一页</span>
             </v-tooltip>
         </v-card-actions>
     </v-card>
