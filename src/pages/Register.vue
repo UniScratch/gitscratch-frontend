@@ -18,9 +18,13 @@
             <v-window v-model="step">
                 <v-window-item :value="1">
                     <v-card-text>
-                        <v-text-field
-                            label="电子邮箱"
-                        ></v-text-field>
+                        <v-form ref="email_form" lazy-validation v-model="email_valid">
+                            <v-text-field
+                                label="电子邮箱"
+                                v-model="user_email"
+                                :rules="emailRules"
+                            ></v-text-field>                            
+                        </v-form>
                         <span class="text-caption grey--text text--darken-1">
                             这个电子邮箱将用于登录 GitScratch。
                         </span>
@@ -29,9 +33,13 @@
 
                 <v-window-item :value="2">
                     <v-card-text>
-                        <v-text-field
-                            label="用户名"
-                        ></v-text-field>
+                        <v-form ref="name_form" lazy-validation v-model="name_valid">
+                            <v-text-field
+                                label="用户名"
+                                v-model="user_name"
+                                :rules="nameRules"
+                            ></v-text-field>                            
+                        </v-form>
                         <span class="text-caption grey--text text--darken-1">
                             在 GitScratch 中显示的用户名。
                         </span>
@@ -40,14 +48,20 @@
 
                 <v-window-item :value="3">
                     <v-card-text>
-                        <v-text-field
-                            label="密码"
-                            type="password"
-                        ></v-text-field>
-                        <v-text-field
-                            label="再次输入密码"
-                            type="password"
-                        ></v-text-field>
+                        <v-form ref="password_form" lazy-validation v-model="password_valid">
+                            <v-text-field
+                                label="密码"
+                                type="password"
+                                v-model="user_password"
+                                :rules="passwordRules"
+                            ></v-text-field>
+                            <v-text-field
+                                label="再次输入密码"
+                                type="password"
+                                v-model="user_password_confirm"
+                                :rules="confirmPasswordRules"
+                            ></v-text-field>
+                        </v-form>
                         <span class="text-caption grey--text text--darken-1">
                             为你的帐号设置一个密码。
                         </span>
@@ -124,6 +138,29 @@ export default {
     data: () => ({
         step: 1,
         loading: false,
+        user_email: '',
+        user_name: '',
+        user_password: '',
+        user_password_confirm: '',
+        email_valid: false,
+        name_valid: false,
+        password_valid: false,
+        emailRules: [
+            v => !!v || "电子邮箱不能为空",
+            v => v && /.+@.+\..+/.test(v) || "电子邮箱无效",
+        ],
+        passwordRules: [
+            v => !!v || "密码不能为空",
+            v => v && v.length >= 6 || "密码不少于 6 个字符",
+        ],
+        nameRules: [
+            v => !!v || "用户名不能为空",
+            v => v && v.length >= 6 || "用户名不少于 6 个字符",
+        ],
+        // confirmPasswordRules: [
+        //     v => !!v || "请再次输入密码",
+        //     v => v && v === this.user_password || "两次输入的密码不一致",
+        // ],
     }),
 
     computed: {
@@ -140,7 +177,22 @@ export default {
 
     methods: {
         next () {
-            this.step++;
+            if (this.step === 1) {
+                this.email_valid = this.$refs.email_form.validate();
+                if (this.email_valid) {
+                    this.step++;
+                }
+            } else if (this.step === 2) {
+                this.name_valid = this.$refs.name_form.validate();
+                if (this.name_valid) {
+                    this.step++;
+                }
+            } else if (this.step === 3) {
+                this.password_valid = this.$refs.password_form.validate();
+                if (this.password_valid) {
+                    this.step++;
+                }
+            }
             if (this.step === 4) {
                 this.register();
             }
