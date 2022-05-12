@@ -28,10 +28,11 @@
                     mandatory
                     color="accent"
                 >
-                    <v-btn><v-icon>mdi-book-open-outline</v-icon><span>概览</span></v-btn>
-                    <v-btn><v-icon>mdi-book-outline</v-icon><span>作品</span></v-btn>
-                    <v-btn><v-icon>mdi-account-group-outline</v-icon><span>组织</span></v-btn>
-                    <v-btn><v-icon>mdi-comment-text-multiple-outline</v-icon><span>留言</span></v-btn>
+                    <v-btn style="border-radius: 24px;"><v-icon>mdi-book-open-outline</v-icon><span>概览</span></v-btn>
+                    <v-btn style="border-radius: 24px;"><v-icon>mdi-book-outline</v-icon><span>作品</span></v-btn>
+                    <v-btn style="border-radius: 24px;"><v-icon>mdi-account-group-outline</v-icon><span>组织</span></v-btn>
+                    <v-btn style="border-radius: 24px;"><v-icon>mdi-comment-text-multiple-outline</v-icon><span>留言</span></v-btn>
+                    <v-btn style="border-radius: 24px;" to="/settings"><v-icon>mdi-cog</v-icon><span>设置</span></v-btn>
                 </v-btn-toggle>
                 <v-window
                     v-model="toggle_tab" style="display: block; padding: 8px 8px 16px 8px;"

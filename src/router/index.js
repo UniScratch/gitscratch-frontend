@@ -7,6 +7,7 @@ import About from '/src/pages/About.vue'
 import Login from '/src/pages/Login.vue'
 import Register from '/src/pages/Register.vue'
 import UserProfile from '/src/pages/UserProfile.vue'
+import Settings from '/src/pages/Settings.vue'
 
 const NotFound = { template: '<p>Page not found: {{ $route.path }}</p>' }
 
@@ -32,6 +33,10 @@ const routes = [
     {
         path: "/users/:username",
         component: UserProfile
+    },
+    {
+        path: "/settings",
+        component: Settings
     },
     {
         path: "*",
