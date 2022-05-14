@@ -1,14 +1,12 @@
-name: ci
+name: NuxtJS - Lint
 
 on:
   push:
     branches:
-      - main
-      - master
+      - nuxtjs
   pull_request:
     branches:
-      - main
-      - master
+      - nuxtjs
 
 jobs:
   ci:
