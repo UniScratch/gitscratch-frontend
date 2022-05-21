@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app elevation="0" color="#FFFD" style="backdrop-filter: saturate(180%) blur(10px);">
+  <v-app-bar app elevation="0">
     <v-menu offset-y transition="scale-transition" :close-on-content-click="false">
       <template #activator="{ on, attrs }">
         <v-btn icon class="hidden-sm-and-up" v-bind="attrs" v-on="on">

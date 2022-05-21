@@ -8,7 +8,6 @@
       <v-card-actions>
         <v-chip
           link
-          ripple
           :to="'/users/' + project_author"
           color="transparent"
         >

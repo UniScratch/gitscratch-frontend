@@ -1,57 +1,34 @@
-# Nuxt PWA Vuetify Starter
+# GitScratch
+Material Design 风格的 Scratch 社区前端项目，由 GitScratch 社区开发组用 ❤️ 制作。  
 
-[![CircleCI Build Status](https://badgen.net/circleci/github/jefrydco/nuxt-pwa-vuetify-starter/master)](https://circleci.com/gh/jefrydco/nuxt-pwa-vuetify-starter)
-[![Azure Build Status](https://dev.azure.com/jefrydco/jefrydco/_apis/build/status/jefrydco.nuxt-pwa-vuetify-starter)](https://dev.azure.com/jefrydco/jefrydco/_build?definitionId=1)
-[![Coverage Status](https://badgen.net/codecov/c/github/jefrydco/nuxt-pwa-vuetify-starter/master)](https://codecov.io/gh/jefrydco/nuxt-pwa-vuetify-starter)
+- [GitScratch](#gitscratch)
+  - [安装](#安装)
+  - [贡献者](#贡献者)
 
-> Nuxt.js + PWA + Vuetify.js starter project
+***
 
-## Features
+## 安装
+> 提示  
+> 请确保在开始之前已经安装了 [Node.js](https://www.nodejs.org) 和 [Git](https://git-scm.com/)，此外我们建议使用 Linux 而不是 Windows 进行配置。
 
-This starter project includes official Nuxt.js modules for best PWA project:
+``` bash
+# 安装依赖
+$ yarn # 或者 npm install
 
-- [Http](https://github.com/nuxt/http)
-- [Google-analytics](https://github.com/nuxt-community/analytics-module)
-- [PWA](https://github.com/nuxt-community/pwa-module)
-- [Sentry](https://github.com/nuxt-community/sentry-module)
-
-It is also enriched with the best Vue's UI framework:
-
-- [Vuetify](https://vuetifyjs.com)
-- [VeeValidate](https://logaretm.github.io/vee-validate)
-
-## Setup
-
-```bash
-# install dependencies
-$ yarn # Or npm install
-
-# serve with hot reload at localhost:3000
+# 启动服务器，支持热重载
 $ yarn dev
 
-# build for production and launch server
+# 为生产环境编译并启动服务器
 $ yarn build
 $ yarn start
-
-# generate static project
-$ yarn generate
-
-# Run unit test
-$ yarn test
-
-# Run e2e test
-$ yarn dev
-$ yarn test:e2e
 ```
 
-## Getting Started
+## 贡献者
+项目提出：[@HydroGest](https://github.com/HydroGest) [@Dispure](https://github.com/Dispure)  
+金主：:trollface:  
+主要贡献者：[@Tim-Fang](https://github.com/Tim-Fang) [@wrj2009](https://github.com/wrj2009) [@HydroGest](https://github.com/HydroGest) [@Dispure](https://github.com/Dispure)  
+云服务支持：[@Someone-Yang](https://github.com/Someone-Yang)  
+其他贡献者：[@frank-782](https://github.com/frank-782)  
+还有，你。  
 
-Don't forget to change your sentry dsn and google analytics id in `.env.example` file.
-
-For detailed explanation on how things work, check out the [Nuxt.js](https://github.com/nuxt/nuxt.js) and [Vuetify.js](https://vuetifyjs.com/) documentation.
-
-## License
-
-[MIT License](./license.md)
-
-Copyright (c) Jefry Dewangga (@jefrydco)
+~~一个都跑不了~~  

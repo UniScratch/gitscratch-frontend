@@ -8,7 +8,7 @@
       rows="2"
       outlined
       style="border-radius: 4px;"
-      rules="[commentContentRules.comment]"
+      :rules="[commentContentRules.comment]"
     />
     <v-btn
       :disabled="!valid"
@@ -19,7 +19,7 @@
       发布
     </v-btn>
     <transition name="slide-y-reverse-transition">
-      <v-btn v-if="comment_content || !valid" text @click="reset">
+      <v-btn v-if="comment_content || !valid" text color="accent" @click="reset">
         重置
       </v-btn>
     </transition>
@@ -32,7 +32,6 @@ export default {
     valid: true,
     commentContentRules: {
       comment: v => !!v || '留言内容不能为空'
-
     },
     comment_content: ''
   }),

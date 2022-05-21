@@ -4,11 +4,11 @@
       <v-col cols="12" xl="2" md="3" sm="4" style="padding-right: 20px;">
         <div style="text-align: center;">
           <v-avatar style="width: 100%; height: auto; max-width: 200px;">
-            <v-img :src="avatar"  />
+            <v-img :src="avatar" />
           </v-avatar>
         </div><br>
         <p class="text-h4">
-          {{ $route.params.username }}
+          {{ username }}
         </p>
         <p class="text-body">
           {{ bio }}
@@ -61,7 +61,6 @@
             <v-card>
               <v-card-title><span>README</span><span class="grey-text">.md</span></v-card-title>
               <v-divider />
-              // eslint-disable-next-line vue/no-v-html
               <div style="padding: 16px;" v-html="renderMd()" />
             </v-card>
             <ProjectGroup title="置顶作品" style="margin-top: 8px;" />
@@ -115,6 +114,7 @@ export default {
     CommentForm
   },
   data: () => ({
+    username: '作者',
     follower: 100,
     following: 200,
     website: 'https://git.sc.cn',
@@ -124,8 +124,17 @@ export default {
     README: `
 # 啊，好舒服
 
-昨天晚上跟 @作者 床♂战太爽了`
+昨天晚上跟 [@作者](/users/作者) 床♂战太爽了
+
+\`\`\` js
+console.log('hello world');
+\`\`\``
   }),
+  head () {
+    return {
+      title: this.username
+    }
+  },
   methods: {
     renderMd () {
       return marked.parse(this.README)

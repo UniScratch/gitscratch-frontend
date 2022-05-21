@@ -6,28 +6,28 @@ export default {
   modern: !isDev,
   // https://nuxtjs.org/api/configuration-head
   head: {
-    titleTemplate(title) {
+    titleTemplate (title) {
       if (title) {
         return `${title} - GitScratch`
       }
       return 'GitScratch'
     },
     meta: [{
-        charset: 'utf-8'
-      },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
-      },
-      {
-        hid: 'description',
-        name: 'description',
-        content: ''
-      },
-      {
-        name: 'format-detection',
-        content: 'telephone=no'
-      }
+      charset: 'utf-8'
+    },
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1'
+    },
+    {
+      hid: 'description',
+      name: 'description',
+      content: ''
+    },
+    {
+      name: 'format-detection',
+      content: 'telephone=no'
+    }
     ],
     link: [{
       rel: 'icon',
@@ -69,7 +69,9 @@ export default {
   eslint: {},
 
   // https://nuxtjs.org/api/configuration-plugins
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/vuetify.js' }
+  ],
 
   // https://nuxtjs.org/api/configuration-css
   css: [],
@@ -84,6 +86,6 @@ export default {
   },
   loading: {
     color: 'blue',
-    height: '5px'
+    height: '3px'
   }
 }

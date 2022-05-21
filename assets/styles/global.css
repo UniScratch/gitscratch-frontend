@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto%20Mono);
+
+a {
+    text-decoration: none;
+}
+.theme--light a:not(.v-btn, .v-card, .v-chip) {
+    color: #42A5F5;
+}
+.theme--light a:hover:not(.v-btn, .v-card, .v-chip), .theme--light a:focus:not(.v-btn, .v-card, .v-chip) {
+    color: #42A5F5CC;
+}
+.theme--dark a:not(.v-btn, .v-card, .v-chip) {
+    color: #448AFF;
+}
+.theme--dark a:hover:not(.v-btn, .v-card, .v-chip), .theme--dark a:focus:not(.v-btn, .v-card, .v-chip) {
+    color: #448AFFCC;
+}
+
+pre, code {
+    font-family: 'Roboto Mono', Consolas, monospace, "Courier New", Courier;
+    border-radius: 3px;
+}
+.theme--light.v-application pre {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.2em 0.4em;
+}
+.theme--light.v-application pre code, .theme--dark.v-application pre code {
+    background-color: transparent;
+    padding: 0;
+}
+.theme--dark.v-application pre {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.2em 0.4em;
+}
+.theme--light .grey-text {
+    color: #888;
+}
+.theme--dark .grey-text {
+    color: #FFFB;
+}
+
+.theme--light.v-app-bar {
+    background-color: #FFFD !important;
+    backdrop-filter: saturate(180%) blur(14px);
+}
+.theme--dark.v-app-bar {
+    background-color: #272727DD !important;
+    backdrop-filter: saturate(180%) blur(14px);
+}

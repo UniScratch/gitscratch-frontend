@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuetify from 'vuetify/lib/framework'
 import colors from 'vuetify/lib/util/colors'
 import minifyTheme from 'minify-css-string'
+import '../assets/styles/global.css'
 const LRU = require('lru-cache')
 
 Vue.use(Vuetify)
@@ -18,14 +19,14 @@ export default new Vuetify({
         primary: colors.blue.base,
         secondary: colors.blue.darken4,
         accent: colors.blue.accent2,
-        grey_background: colors.grey.lighten2,
+        grey_background: colors.grey.lighten2
       },
       dark: {
         primary: colors.blue.lighten1,
         secondary: colors.blue.darken4,
         accent: colors.blue.accent3,
-        grey_background: colors.grey.darken3,
-      },
+        grey_background: colors.grey.darken3
+      }
     },
     options: {
       minifyTheme,
