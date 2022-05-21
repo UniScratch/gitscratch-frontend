@@ -4,16 +4,14 @@ module.exports = {
     browser: true,
     node: true
   },
-  parserOptions: {
-    parser: '@babel/eslint-parser',
-    requireConfigFile: false
-  },
-  extends: [
-    '@nuxtjs',
-    'plugin:nuxt/recommended'
-  ],
-  plugins: [
-  ],
-  // add your custom rules here
-  rules: {}
+  extends: ['@nuxtjs', 'plugin:vue/recommended'],
+  plugins: ['vue', 'vuetify'],
+  rules: {
+    'no-console': 'off',
+    'no-param-reassign': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'vuetify/no-deprecated-classes': 'error',
+    'vue/multi-word-component-names': 0
+
+  }
 }

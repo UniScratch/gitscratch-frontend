@@ -1,86 +1,96 @@
-import colors from 'vuetify/es5/util/colors'
+// import goTo from 'vuetify/lib/services/goto'
+const isDev = process.env.NODE_ENV !== 'production'
 
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  // https://nuxtjs.org/api/configuration-modern
+  modern: !isDev,
+  // https://nuxtjs.org/api/configuration-head
   head: {
-    titleTemplate: '%s - gitscratch',
-    title: 'gitscratch',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+    titleTemplate (title) {
+      if (title) {
+        return `${title} - GitScratch`
+      }
+      return 'GitScratch'
+    },
+    meta: [{
+      charset: 'utf-8'
+    },
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1'
+    },
+    {
+      hid: 'description',
+      name: 'description',
+      content: ''
+    },
+    {
+      name: 'format-detection',
+      content: 'telephone=no'
+    }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{
+      rel: 'icon',
+      type: 'image/svg+xml',
+      href: '/GitScratch-icon-background-blue.svg'
+    }]
   },
 
-  server: {
-    host: '0.0.0.0', // default: localhost
-    port: 8080 // default: 3000
-  },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
-    // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify'
-  ],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
+  // https://nuxtjs.org/api/configuration-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
+    // https://http.nuxtjs.org/
+    '@nuxt/http',
+
+    // https://pwa.nuxtjs.org/
     '@nuxtjs/pwa'
   ],
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/'
-  },
+  buildModules: [
+    // Simple usage
+    '@nuxtjs/vuetify',
 
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      lang: 'en'
-    }
-  },
+    // https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/eslint-module'
+  ],
 
-  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: true,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
-      }
-    }
+    customVariables: ['~/assets/styles/variables.scss'],
+    treeShake: true
+
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  // https://github.com/nuxt-community/eslint-module
+  eslint: {},
+
+  // https://nuxtjs.org/api/configuration-plugins
+  plugins: [],
+
+  // https://nuxtjs.org/api/configuration-css
+  css: [],
+
+  // https://nuxtjs.org/api/configuration-build
   build: {
+    extractCSS: !isDev
+  },
+  server: {
+    port: 8080,
+    host: '0.0.0.0'
+  },
+  loading: {
+    color: 'blue',
+    height: '5px'
   }
+  // router: {
+  //   scrollBehavior: (to, from, savedPosition) => {
+  //     let scrollTo = 0
+
+  //     if (to.hash) {
+  //       scrollTo = to.hash
+  //     } else if (savedPosition) {
+  //       scrollTo = savedPosition.y
+  //     }
+
+  //     return goTo(scrollTo)
+  //   }
+  // }
 }

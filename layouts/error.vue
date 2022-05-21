@@ -1,21 +1,35 @@
 <template>
-  <v-app dark>
+  <div>
     <h1 v-if="error.statusCode === 404">
       {{ pageNotFound }}
     </h1>
     <h1 v-else>
       {{ otherError }}
     </h1>
-    <NuxtLink to="/">
-      Home page
-    </NuxtLink>
-  </v-app>
+    <v-btn
+      text
+      to="/"
+    >
+      <v-icon left>
+        mdi-arrow-left
+      </v-icon>
+      返回上一页
+    </v-btn>
+    <v-btn
+      text
+      to="/"
+    >
+      <v-icon left>
+        mdi-home-outline
+      </v-icon>
+      返回首页
+    </v-btn>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'EmptyLayout',
-  layout: 'empty',
+  layout: 'error',
   props: {
     error: {
       type: Object,
@@ -24,7 +38,7 @@ export default {
   },
   data () {
     return {
-      pageNotFound: '404 Not Found',
+      pageNotFound: '找不到页面',
       otherError: 'An error occurred'
     }
   },
@@ -37,9 +51,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-h1 {
-  font-size: 20px;
-}
-</style>
