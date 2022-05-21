@@ -6,28 +6,28 @@ export default {
   modern: !isDev,
   // https://nuxtjs.org/api/configuration-head
   head: {
-    titleTemplate (title) {
+    titleTemplate(title) {
       if (title) {
         return `${title} - GitScratch`
       }
       return 'GitScratch'
     },
     meta: [{
-      charset: 'utf-8'
-    },
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1'
-    },
-    {
-      hid: 'description',
-      name: 'description',
-      content: ''
-    },
-    {
-      name: 'format-detection',
-      content: 'telephone=no'
-    }
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: ''
+      },
+      {
+        name: 'format-detection',
+        content: 'telephone=no'
+      }
     ],
     link: [{
       rel: 'icon',
@@ -55,7 +55,13 @@ export default {
 
   vuetify: {
     customVariables: ['~/assets/styles/variables.scss'],
-    treeShake: true
+    treeShake: true,
+    defaultAssets: {
+      font: {
+        family: null // 'PingFang SC,HarmonyOS_Regular,Helvetica Neue,Microsoft YaHei,sans-serif!important'
+      },
+      icons: 'mdi'
+    }
 
   },
 
@@ -80,17 +86,4 @@ export default {
     color: 'blue',
     height: '5px'
   }
-  // router: {
-  //   scrollBehavior: (to, from, savedPosition) => {
-  //     let scrollTo = 0
-
-  //     if (to.hash) {
-  //       scrollTo = to.hash
-  //     } else if (savedPosition) {
-  //       scrollTo = savedPosition.y
-  //     }
-
-  //     return goTo(scrollTo)
-  //   }
-  // }
 }
