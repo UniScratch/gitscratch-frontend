@@ -52,7 +52,6 @@ export default {
     SideBanner,
     ProjectGroup
   },
-
   data: () => ({
     //
   })

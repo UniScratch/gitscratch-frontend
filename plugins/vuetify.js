@@ -15,17 +15,17 @@ export default new Vuetify({
   theme: {
     themes: {
       light: {
-        primary: '#2851e3',
+        primary: colors.blue.base,
         secondary: colors.blue.darken4,
         accent: colors.blue.accent2,
-        grey_background: colors.grey.lighten2
+        grey_background: colors.grey.lighten2,
       },
       dark: {
         primary: colors.blue.lighten1,
         secondary: colors.blue.darken4,
         accent: colors.blue.accent3,
-        grey_background: colors.grey.darken3
-      }
+        grey_background: colors.grey.darken3,
+      },
     },
     options: {
       minifyTheme,

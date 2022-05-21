@@ -55,11 +55,13 @@ export default {
   data: () => ({
     bio: '啊，好舒服',
     avatar: '/GitScratch-icon-background-blue.svg',
-    README: `
-# 啊，好舒服
-
-昨天晚上跟 @作者 床♂战太爽了`
+    project_title: 'Default Project'
   }),
+  head () {
+    return {
+      title: this.project_title
+    }
+  },
   methods: {
     renderMd () {
       return marked.parse(this.README)
