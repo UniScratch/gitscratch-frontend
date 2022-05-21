@@ -2,15 +2,9 @@
   "name": "gitscratch",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://github.com/jefrydco/nuxt-pwa-vuetify-starter#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jefrydco/nuxt-pwa-vuetify-starter"
-  },
-  "license": "MIT",
   "scripts": {
-    "build": "nuxt build",
     "dev": "nuxt",
+    "build": "nuxt build",
     "generate": "nuxt generate",
     "start": "nuxt start"
   },
@@ -29,12 +23,6 @@
     "eslint-loader": "^4.0.2",
     "eslint-plugin-nuxt": "^3.1.0",
     "eslint-plugin-vue": "^8.2.0",
-    "eslint-plugin-vuetify": "^1.1.0",
-    "husky": "^7.0.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "eslint-plugin-vuetify": "^1.1.0"
   }
 }
