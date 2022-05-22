@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuetify from 'vuetify/lib/framework'
 import colors from 'vuetify/lib/util/colors'
 import minifyTheme from 'minify-css-string'
-import '../assets/styles/global.css'
 const LRU = require('lru-cache')
 
 Vue.use(Vuetify)

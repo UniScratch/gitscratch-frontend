@@ -1,7 +1,7 @@
 <template>
-  <v-container style="max-width: 100vw;">
+  <v-container style="max-width: 80vw;">
     <v-row>
-      <v-col cols="12" xl="8" md="8" sm="12">
+      <v-col cols="12" xl="7" md="8">
         <v-card>
           <v-card-text>
             <p class="text-h4 text--primary">
@@ -12,24 +12,36 @@
             <ProjectData />
           </v-card-text>
         </v-card>
-        <br>
-        <v-divider />
-        <br>
-        <CommentForm />
-        <v-divider style="margin: 8px 0;" />
-        <p class="text-h5">
-          留言
-        </p>
-        <Comment
-          content="Supports Markdown  "
-        />
+
+        <div class="hidden-sm-and-down">
+          <v-divider style="margin: 16px 0;" />
+          <CommentForm />
+          <v-divider style="margin: 8px 0;" />
+          <p class="text-h5">
+            留言
+          </p>
+          <Comment
+            content="Supports Markdown  "
+          />
+        </div>
       </v-col>
-      <v-col cols="12" xl="4" md="4" sm="12">
+      <v-col cols="12" xl="5" md="4">
         <ProjectUserInfo />
         <br>
         <ProjectDesc />
       </v-col>
     </v-row>
+    <div class="hidden-md-and-up">
+      <v-divider style="margin: 16px 0;" />
+      <CommentForm />
+      <v-divider style="margin: 8px 0;" />
+      <p class="text-h5">
+        留言
+      </p>
+      <Comment
+        content="Supports Markdown  "
+      />
+    </div>
   </v-container>
 </template>
 <script>

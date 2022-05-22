@@ -1,18 +1,19 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto%20Mono);
+@import url(https://www.unpkg.com/@mdi/font@6.7.96/css/materialdesignicons.min.css);
 
 a {
     text-decoration: none;
 }
-.theme--light a:not(.v-btn, .v-card, .v-chip) {
+.theme--light a:not(.v-btn, .v-card, .v-chip, .v-list-item) {
     color: #42A5F5;
 }
-.theme--light a:hover:not(.v-btn, .v-card, .v-chip), .theme--light a:focus:not(.v-btn, .v-card, .v-chip) {
+.theme--light a:hover:not(.v-btn, .v-card, .v-chip, .v-list-item), .theme--light a:focus:not(.v-btn, .v-card, .v-chip, .v-list-item) {
     color: #42A5F5CC;
 }
-.theme--dark a:not(.v-btn, .v-card, .v-chip) {
+.theme--dark a:not(.v-btn, .v-card, .v-chip, .v-list-item) {
     color: #448AFF;
 }
-.theme--dark a:hover:not(.v-btn, .v-card, .v-chip), .theme--dark a:focus:not(.v-btn, .v-card, .v-chip) {
+.theme--dark a:hover:not(.v-btn, .v-card, .v-chip, .v-list-item), .theme--dark a:focus:not(.v-btn, .v-card, .v-chip, .v-list-item) {
     color: #448AFFCC;
 }
 

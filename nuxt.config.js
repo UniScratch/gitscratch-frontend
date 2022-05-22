@@ -1,4 +1,5 @@
 // import goTo from 'vuetify/lib/services/goto'
+import colors from 'vuetify/lib/util/colors'
 const isDev = process.env.NODE_ENV !== 'production'
 
 export default {
@@ -61,20 +62,33 @@ export default {
         family: null // 'PingFang SC,HarmonyOS_Regular,Helvetica Neue,Microsoft YaHei,sans-serif!important'
       },
       icons: 'mdi'
+    },
+    theme: {
+      themes: {
+        light: {
+          primary: colors.blue.base,
+          secondary: colors.blue.darken4,
+          accent: colors.blue.accent2,
+          grey_background: colors.grey.lighten2
+        },
+        dark: {
+          primary: colors.blue.lighten1,
+          secondary: colors.blue.darken4,
+          accent: colors.blue.accent3,
+          grey_background: colors.grey.darken3
+        }
+      }
     }
-
   },
 
   // https://github.com/nuxt-community/eslint-module
   eslint: {},
 
   // https://nuxtjs.org/api/configuration-plugins
-  plugins: [
-    { src: '~/plugins/vuetify.js' }
-  ],
+  plugins: [],
 
   // https://nuxtjs.org/api/configuration-css
-  css: [],
+  css: ['./assets/styles/global.css'],
 
   // https://nuxtjs.org/api/configuration-build
   build: {
@@ -85,7 +99,6 @@ export default {
     host: '0.0.0.0'
   },
   loading: {
-    color: 'blue',
-    height: '3px'
+    color: '#1E88E5'
   }
 }

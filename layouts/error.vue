@@ -8,7 +8,7 @@
     </h1>
     <v-btn
       text
-      to="/"
+      @click="back"
     >
       <v-icon left>
         mdi-arrow-left
@@ -47,6 +47,11 @@ export default {
       this.error.statusCode === 404 ? this.pageNotFound : this.otherError
     return {
       title
+    }
+  },
+  methods: {
+    back () {
+      this.$router.go(-1)
     }
   }
 }

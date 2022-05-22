@@ -11,7 +11,7 @@ export default {
   }),
   head () {
     return {
-      title: '首页'
+      title: '关于'
     }
   },
   methods: {
