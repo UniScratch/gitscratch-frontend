@@ -9,18 +9,20 @@
     "start": "nuxt start"
   },
   "dependencies": {
-    "@nuxt/http": "^0.6.4",
+    "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/pwa": "^3.3.5",
     "highlight.js": "^11.5.1",
     "lru-cache": "^6.0.0",
     "marked": "^4.0.16",
     "minify-css-string": "^1.0.0",
     "nuxt": "^2.15.8",
+    "parse-sb3-blocks": "^0.4.1",
     "scratch-audio": "^0.1.0-prerelease.20200528195344",
     "scratch-render": "^0.1.0-prerelease.20211028200436",
     "scratch-storage": "^2.0.2",
     "scratch-svg-renderer": "^0.2.0-prerelease.20210727023023",
     "scratch-vm": "^0.2.0-prerelease.20220526145309",
+    "scratchblocks": "^3.6.0",
     "twgl.js": "^4.22.1"
   },
   "devDependencies": {

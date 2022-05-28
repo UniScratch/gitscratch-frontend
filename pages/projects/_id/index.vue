@@ -1,5 +1,5 @@
 <template>
-  <v-container style="max-width: 80vw;">
+  <v-container>
     <v-row>
       <v-col cols="12" xl="7" md="8">
         <v-card>
@@ -7,6 +7,14 @@
             <p class="text-h4 text--primary">
               Default Project
             </p>
+            <v-icon>mdi-eye-outline</v-icon>
+            345
+            <v-icon>mdi-calendar-outline</v-icon>
+            2022/5/28 14:39:58
+            <v-icon>mdi-update</v-icon>
+            <nuxt-link to="/projects/1/commit/170ed1c/">
+            170ed1c
+            </nuxt-link>
             <ProjectPlayer />
             <br>
             <ProjectData />

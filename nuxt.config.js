@@ -39,8 +39,8 @@ export default {
 
   // https://nuxtjs.org/api/configuration-modules
   modules: [
-    // https://http.nuxtjs.org/
-    '@nuxt/http',
+    // https://axios.nuxtjs.org/
+    '@nuxtjs/axios',
 
     // https://pwa.nuxtjs.org/
     '@nuxtjs/pwa'
@@ -80,6 +80,7 @@ export default {
       }
     }
   },
+  axios: {},
 
   // https://github.com/nuxt-community/eslint-module
   eslint: {},

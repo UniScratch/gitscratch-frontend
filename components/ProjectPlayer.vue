@@ -1,23 +1,43 @@
 <template>
   <client-only>
-    <v-responsive :aspect-ratio="4/3">
-      <canvas id="canvas_sb3" />
-    </v-responsive>
+    <div>
+      <div>
+        <v-btn icon :class="{ disabled: !loadFileTrue }" @click="greenFlag">
+          <v-icon color="green">
+            mdi-play
+          </v-icon>
+        </v-btn>
+        <v-btn icon :class="{ disabled: !loadFileTrue }" @click="stopAll">
+          <v-icon color="red">
+            mdi-stop
+          </v-icon>
+        </v-btn>
+        <v-btn icon>
+          <v-icon>
+            mdi-fullscreen
+          </v-icon>
+        </v-btn>
+      </div>
+      <v-responsive :aspect-ratio="4/3">
+        <canvas id="canvas_sb3" width="480" height="360" style="width:100%;height:100%" />
+      </v-responsive>
+    </div>
   </client-only>
 </template>
 <script>
 export default {
+  data () {
+    return {
+      loadFileTrue: false,
+      vm: null
+    }
+  },
   mounted () {
     const ScratchRender = require('scratch-render/dist/web/scratch-render')
     const VirtualMachine = require('scratch-vm/dist/web/scratch-vm')
     const ScratchStorage = require('scratch-storage/dist/web/scratch-storage')
     const ScratchSVGRenderer = require('scratch-svg-renderer/dist/web/scratch-svg-renderer')
     const AudioEngine = require('scratch-audio/src/AudioEngine.js')
-    const that = this
-    // const url = this.$http.adornUrl(
-    // '/test.sb3'
-    // )
-
     fetch('/test.sb3', {
       method: 'GET'
     }).then(res =>
@@ -25,32 +45,34 @@ export default {
         const canvas = document.getElementById('canvas_sb3')
         const audioEngine = new AudioEngine()
         const render = new ScratchRender(canvas)
-        const vm = new VirtualMachine()
+        this.vm = new VirtualMachine()
         const storage = new ScratchStorage()
-        vm.attachAudioEngine(audioEngine)
-        vm.attachStorage(storage)
-        vm.attachRenderer(render)
-        vm.attachV2SVGAdapter(new ScratchSVGRenderer.SVGRenderer())
-        vm.attachV2BitmapAdapter(new ScratchSVGRenderer.BitmapAdapter())
-        this.vm = vm
+        this.vm.attachAudioEngine(audioEngine)
+        this.vm.attachStorage(storage)
+        this.vm.attachRenderer(render)
+        this.vm.attachV2SVGAdapter(new ScratchSVGRenderer.SVGRenderer())
+        this.vm.attachV2BitmapAdapter(new ScratchSVGRenderer.BitmapAdapter())
         // this.bindHandleKey()
         const reader = new FileReader()
         // byte为blob对象
         reader.readAsArrayBuffer(blob)
         reader.onload = () => {
-          vm.start()
-          console.log('start')
-          vm.loadProject(reader.result)
+          this.vm.start()
+          this.vm.loadProject(reader.result)
             .then(() => {
-              that.loadFileTrue = true
-              const div = document.createElement('div')
-              div.id = 'loaded'
-              document.body.appendChild(div)
-              vm.greenFlag()
+              this.loadFileTrue = true
             })
         }
       })
     )
+  },
+  methods: {
+    greenFlag () {
+      this.vm.greenFlag()
+    },
+    stopAll () {
+      this.vm.stopAll()
+    }
   }
 }
 </script>

@@ -3,6 +3,11 @@
 
 a {
     text-decoration: none;
+    color: var(--text) !important;
+}
+a:hover {
+    text-decoration: underline;
+    color: #42A5F5 !important;
 }
 .theme--light a:not(.v-btn, .v-card, .v-chip, .v-list-item) {
     color: #42A5F5;
