@@ -102,7 +102,7 @@ export default {
   },
   server: {
     port: 8080,
-    host: '[2409:8a28:628f:33d0:15f8:1baa:c506:6aea]'
+    host: '0.0.0.0'
   },
   loading: {
     color: '#1E88E5'
