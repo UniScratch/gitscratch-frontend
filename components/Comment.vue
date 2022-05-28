@@ -10,26 +10,25 @@
       </router-link>
       <span style="margin-left: 8px;" class="grey-text">{{ comment_time }}</span>
       <v-divider style="margin: 8px 0;" />
-      <div v-html="renderMd()" />
+      <MarkdownRender />
     </div>
   </v-card>
 </template>
 <script>
-const marked = require('marked')
+import MarkdownRender from './MarkdownRender.vue'
 const date = new Date()
 const dateStr = date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate() + ' ' + date.toLocaleTimeString()
 export default {
   name: 'Comment',
-  props: ['content'],
+  components: {
+    MarkdownRender
+  },
   data: () => ({
     comment_author_avatar: '/GitScratch-icon-background-blue.svg',
     comment_author_name: '作者',
     comment_time: dateStr
   }),
   methods: {
-    renderMd () {
-      return marked.parse(this.content)
-    }
   }
 }
 </script>

@@ -59,7 +59,7 @@ export default {
     treeShake: true,
     defaultAssets: {
       font: {
-        family: null // 'PingFang SC,HarmonyOS_Regular,Helvetica Neue,Microsoft YaHei,sans-serif!important'
+        // 'PingFang SC,HarmonyOS_Regular,Helvetica Neue,Microsoft YaHei,sans-serif!important'
       },
       icons: 'mdi'
     },
@@ -92,11 +92,17 @@ export default {
 
   // https://nuxtjs.org/api/configuration-build
   build: {
-    extractCSS: !isDev
+    extractCSS: !isDev,
+    extend (config, {
+      isDev,
+      isClient
+    }) {
+      config.output.globalObject = 'this'
+    }
   },
   server: {
     port: 8080,
-    host: '0.0.0.0'
+    host: '[2409:8a28:628f:33d0:15f8:1baa:c506:6aea]'
   },
   loading: {
     color: '#1E88E5'
