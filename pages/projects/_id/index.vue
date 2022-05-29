@@ -12,8 +12,8 @@
             <v-icon>mdi-calendar-outline</v-icon>
             2022/5/28 14:39:58
             <v-icon>mdi-update</v-icon>
-            <nuxt-link to="/projects/1/commit/170ed1c/">
-            170ed1c
+            <nuxt-link to="/projects/1/commit/170ed1c/" class="text-color">
+              170ed1c
             </nuxt-link>
             <ProjectPlayer />
             <br>
