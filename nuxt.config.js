@@ -107,5 +107,6 @@ export default {
   },
   loading: {
     color: '#1E88E5'
-  }
+  },
+  target: 'static'
 }
