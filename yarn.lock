@@ -9112,10 +9112,10 @@ scratch-translate-extension-languages@0.0.20191118205314:
   resolved "https://registry.yarnpkg.com/scratch-translate-extension-languages/-/scratch-translate-extension-languages-0.0.20191118205314.tgz#9f781cc0c89785faba8ae86775a4915225676284"
   integrity sha512-r0lvpgQjPMjbhI2wROrgoXzBhCvWJdkbAqJMfl2CdNqrwBpUXqLvNNtI3VtNLPJAcp9VfxEylkU9lVZ0gvU46Q==
 
-scratch-vm@^0.2.0-prerelease.20220526145309:
-  version "0.2.0-prerelease.20220526145309"
-  resolved "https://registry.yarnpkg.com/scratch-vm/-/scratch-vm-0.2.0-prerelease.20220526145309.tgz#0cc2c5282a5888e39f6b6353af8accc48858d52f"
-  integrity sha512-8mbuh8TBkDaXQ7JK9bpmISGtGNfmyhJqA/ftlg/WPaTEBfQ2z58QVpqLbaJPIbQI9lc2uDF02zpsmyvWtKQK9w==
+scratch-vm@^0.2.0-prerelease.20220602121716:
+  version "0.2.0-prerelease.20220602121716"
+  resolved "https://registry.yarnpkg.com/scratch-vm/-/scratch-vm-0.2.0-prerelease.20220602121716.tgz#9bf4cff41c173e1fe5e79d576457a0031ff412f8"
+  integrity sha512-N7hY2OeMJMybH1GdYwxaj+zu8BUBsiDUCmA0o3UsrVVsKCxcPgHQxJYksWalH1zV3GsWlkXwX6qBarviRmVfbg==
   dependencies:
     "@vernier/godirect" "1.5.0"
     arraybuffer-loader "^1.0.6"
