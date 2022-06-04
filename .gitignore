@@ -96,3 +96,5 @@ dist
 
 # Service worker
 sw.*
+
+static/meta.json

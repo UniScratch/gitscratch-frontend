@@ -3,20 +3,23 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "generate": "nuxt generate",
-    "start": "nuxt start"
+    "dev": "yarn run genmeta && nuxt",
+    "build": "yarn run genmeta && nuxt build",
+    "start": "nuxt start",
+    "genmeta": "node gen-meta.js"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/pwa": "^3.3.5",
+    "child_process": "^1.0.2",
+    "fs": "^0.0.1-security",
     "highlight.js": "^11.5.1",
     "lru-cache": "^7.10.1",
     "marked": "^4.0.16",
     "minify-css-string": "^1.0.0",
     "nuxt": "^2.15.8",
     "parse-sb3-blocks": "^0.4.1",
+    "path": "^0.12.7",
     "scratch-audio": "^0.1.0-prerelease.20200528195344",
     "scratch-render": "^0.1.0-prerelease.20211028200436",
     "scratch-storage": "^2.0.2",

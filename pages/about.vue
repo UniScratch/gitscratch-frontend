@@ -3,11 +3,12 @@
 </template>
 
 <script>
+const meta = require('static/meta.json')
 const { marked } = require('marked')
+console.log(meta)
 export default {
   name: 'About',
   data: () => ({
-    //
   }),
   head () {
     return {
@@ -19,6 +20,8 @@ export default {
       const md = `
 # 关于 GitScratch  
 GitScratch（极社）是一个 Git 风格的 Scratch 社区，正在开发中。  
+版本: ${meta.appVersionFull}  
+构建时间: ${meta.compileTime}  
 [GitHub 仓库](https://github.com/UniScratch/GitScratchFrontend)  
 [GitScratch 预览站](https://git.sc.cn/)  
 [反馈](https://github.com/UniScratch/GitScratchFrontend/issues)  
@@ -34,6 +37,7 @@ GitScratch（极社）是一个 Git 风格的 Scratch 社区，正在开发中�
 还有，你。  
 ~~一个都跑不了~~  
       `
+      console.log(marked.parse(md))
       return marked.parse(md)
     }
   }
