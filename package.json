@@ -21,7 +21,7 @@
     "scratch-render": "^0.1.0-prerelease.20211028200436",
     "scratch-storage": "^2.0.2",
     "scratch-svg-renderer": "^0.2.0-prerelease.20210727023023",
-    "scratch-vm": "^0.2.0-prerelease.20220526145309",
+    "scratch-vm": "^0.2.0-prerelease.20220602121716",
     "scratchblocks": "^3.6.0",
     "twgl.js": "^4.22.1"
   },
