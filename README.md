@@ -25,7 +25,7 @@ $ yarn start
 
 ## 贡献者
 项目提出：[@HydroGest](https://github.com/HydroGest) [@Dispure](https://github.com/Dispure)  
-金主：:trollface:  
+金主：  
 主要贡献者：[@Tim-Fang](https://github.com/Tim-Fang) [@wrj2009](https://github.com/wrj2009) [@HydroGest](https://github.com/HydroGest) [@Dispure](https://github.com/Dispure)  
 云服务支持：[@Someone-Yang](https://github.com/Someone-Yang)  
 其他贡献者：[@frank-782](https://github.com/frank-782)  
