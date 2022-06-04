@@ -7,21 +7,8 @@ Material Design 风格的 Scratch 社区前端项目，由 GitScratch 社区开�
 
 ***
 
-## 安装
-> 提示  
-> 请确保在开始之前已经安装了 [Node.js](https://www.nodejs.org) 和 [Git](https://git-scm.com/)，此外我们建议使用 Linux 而不是 Windows 进行配置。
-
-``` bash
-# 安装依赖
-$ yarn
-
-# 启动服务器，支持热重载
-$ yarn dev
-
-# 为生产环境编译并启动服务器
-$ yarn build
-$ yarn start
-```
+## 开发
+有关开发等信息, 请访问 [Wiki](https://github.com/UniScratch/GitScratchFrontend/wiki) 页面
 
 ## 贡献者
 项目提出：[@HydroGest](https://github.com/HydroGest) [@Dispure](https://github.com/Dispure)  
