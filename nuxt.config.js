@@ -59,7 +59,7 @@ export default {
     treeShake: true,
     defaultAssets: {
       font: {
-        // 'PingFang SC,HarmonyOS_Regular,Helvetica Neue,Microsoft YaHei,sans-serif!important'
+        family: 'PingFang SC,HarmonyOS_Regular,Helvetica Neue,Microsoft YaHei,sans-serif!important'
       },
       icons: 'mdi'
     },
@@ -93,6 +93,22 @@ export default {
 
   // https://nuxtjs.org/api/configuration-build
   build: {
+    ssr: true,
+    parallel: isDev,
+    terser: {
+        parallel: true,
+          terserOptions: { // https://github.com/terser/terser
+            compress: {
+              drop_console: true,
+              arguments: true,
+              passes: 2
+            },
+            format: {
+              comments: false,
+              max_line_len: 1024
+            }
+          }
+    },
     extractCSS: !isDev,
     extend (config, {
       isDev,
