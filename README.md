@@ -13,7 +13,7 @@ Material Design 风格的 Scratch 社区前端项目，由 GitScratch 社区开�
 
 ``` bash
 # 安装依赖
-$ yarn # 或者 npm install
+$ yarn
 
 # 启动服务器，支持热重载
 $ yarn dev
