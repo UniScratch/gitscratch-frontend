@@ -20,7 +20,9 @@ export default {
 # 关于 GitScratch  
 GitScratch（极社）是一个 Git 风格的 Scratch 社区，正在开发中。  
 [GitHub 仓库](https://github.com/UniScratch/GitScratchFrontend)  
-[GitScratch 预览站](https://git.sc.cn/)
+[GitScratch 预览站](https://git.sc.cn/)  
+[反馈](https://github.com/UniScratch/GitScratchFrontend/issues)  
+
 ## 贡献者
 项目提出：[@HydroGest](https://github.com/HydroGest) [@Dispure](https://github.com/Dispure)  
 金主：  
