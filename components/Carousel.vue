@@ -2,7 +2,7 @@
   <v-card min-height="350">
     <v-window v-model="onboarding">
       <v-window-item v-for="n in length" :key="`card-${n}`">
-        <v-img src="/GitScratch-thumbnail.jpg" height="294" />
+        <v-img src="/GitScratch-thumbnail.png" height="294" />
       </v-window-item>
     </v-window>
 
