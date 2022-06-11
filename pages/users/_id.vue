@@ -99,20 +99,10 @@
   </v-container>
 </template>
 <script>
-// import ProjectCard from '/src/components/ProjectCard.vue'
-import ProjectGroup from '~/components/ProjectGroup.vue'
-import Comment from '~/components/Comment.vue'
-import CommentForm from '~/components/CommentForm.vue'
 const marked = require('marked')
 
 export default {
   name: 'UserProfile',
-  components: {
-    // ProjectCard,
-    ProjectGroup,
-    Comment,
-    CommentForm
-  },
   data: () => ({
     username: '作者',
     follower: 100,

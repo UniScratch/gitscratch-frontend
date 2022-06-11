@@ -41,17 +41,8 @@
 </template>
 
 <script>
-import Carousel from '~/components/Carousel.vue'
-import SideBanner from '~/components/SideBanner.vue'
-import ProjectGroup from '~/components/ProjectGroup.vue'
-
 export default {
   name: 'App',
-  components: {
-    Carousel,
-    SideBanner,
-    ProjectGroup
-  },
   data: () => ({
     //
   })

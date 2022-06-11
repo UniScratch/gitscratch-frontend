@@ -70,7 +70,6 @@ export default {
   name: 'Appbar',
 
   data: () => ({
-    //
   }),
 
   methods: {

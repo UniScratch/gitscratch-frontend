@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto%20Mono);
-@import url(https://www.unpkg.com/@mdi/font@6.7.96/css/materialdesignicons.min.css);
+/* @import url(https://fonts.googleapis.com/css?family=Roboto%20Mono); */
+/* @import url(https://www.unpkg.com/@mdi/font@6.7.96/css/materialdesignicons.min.css); */
 
 :root {
     --accent-color-light: #42A5F5;
@@ -10,45 +10,60 @@
     color: var(--accent-color-light);
     text-decoration: none;
 }
-.theme--light a:hover:not(.v-btn, .v-card, .v-chip, .v-list-item), .theme--light a:focus:not(.v-btn, .v-card, .v-chip, .v-list-item) {
+
+.theme--light a:hover:not(.v-btn, .v-card, .v-chip, .v-list-item),
+.theme--light a:focus:not(.v-btn, .v-card, .v-chip, .v-list-item) {
     text-decoration: underline;
 }
+
 .theme--dark a:not(.v-btn, .v-card, .v-chip, .v-list-item) {
     color: var(--accent-color-dark);
     text-decoration: none;
 }
-.theme--dark a:hover:not(.v-btn, .v-card, .v-chip, .v-list-item), .theme--dark a:focus:not(.v-btn, .v-card, .v-chip, .v-list-item) {
+
+.theme--dark a:hover:not(.v-btn, .v-card, .v-chip, .v-list-item),
+.theme--dark a:focus:not(.v-btn, .v-card, .v-chip, .v-list-item) {
     text-decoration: underline;
 }
+
 .text-color {
     color: var(--text) !important;
 }
+
 .theme--light a.text-color:hover {
     color: var(--accent-color-light) !important;
 }
+
 .theme--dark a.text-color:hover {
     color: var(--accent-color-dark) !important;
 }
 
-pre, code {
-    font-family: 'Roboto Mono', Consolas, monospace, "Courier New", Courier;
+pre,
+code {
+    font-family: 'Fira Code', 'Roboto Mono', Consolas, monospace, "Courier New", Courier;
     border-radius: 3px;
 }
+
 .theme--light.v-application pre {
     background-color: rgba(0, 0, 0, 0.05);
     padding: 0.2em 0.4em;
 }
-.theme--light.v-application pre code, .theme--dark.v-application pre code {
+
+.theme--light.v-application pre code,
+.theme--dark.v-application pre code {
     background-color: transparent;
     padding: 0;
 }
+
 .theme--dark.v-application pre {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 0.2em 0.4em;
 }
+
 .theme--light .grey-text {
     color: #888;
 }
+
 .theme--dark .grey-text {
     color: #FFFB;
 }
@@ -57,7 +72,16 @@ pre, code {
     background-color: #FFFD !important;
     backdrop-filter: saturate(180%) blur(14px);
 }
+
 .theme--dark.v-app-bar {
     background-color: #272727DD !important;
     backdrop-filter: saturate(180%) blur(14px);
+}
+
+.v-image {
+    border-radius: 15px;
+}
+
+canvas {
+    border-radius: 15px;
 }

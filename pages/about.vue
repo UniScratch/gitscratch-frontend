@@ -1,5 +1,7 @@
 <template>
-  <div v-html="renderMd()" />
+  <div>
+    <div v-html="renderMd()" />
+  </div>
 </template>
 
 <script>

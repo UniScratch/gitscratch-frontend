@@ -3,6 +3,7 @@ import colors from 'vuetify/lib/util/colors'
 const isDev = process.env.NODE_ENV !== 'production'
 
 export default {
+  components: true,
   // https://nuxtjs.org/api/configuration-modern
   modern: !isDev,
   // https://nuxtjs.org/api/configuration-head
@@ -59,7 +60,7 @@ export default {
     treeShake: true,
     defaultAssets: {
       font: {
-        family: 'PingFang SC,HarmonyOS_Regular,Helvetica Neue,Microsoft YaHei,sans-serif!important'
+        // family: 'PingFang SC,HarmonyOS_Regular,Helvetica Neue,Microsoft YaHei,sans-serif!important'
       },
       icons: 'mdi'
     },
@@ -96,18 +97,18 @@ export default {
     ssr: true,
     parallel: isDev,
     terser: {
-        parallel: true,
-          terserOptions: { // https://github.com/terser/terser
-            compress: {
-              drop_console: true,
-              arguments: true,
-              passes: 2
-            },
-            format: {
-              comments: false,
-              max_line_len: 1024
-            }
-          }
+      parallel: true,
+      terserOptions: { // https://github.com/terser/terser
+        compress: {
+          drop_console: true,
+          arguments: true,
+          passes: 2
+        },
+        format: {
+          comments: false,
+          max_line_len: 1024
+        }
+      }
     },
     extractCSS: !isDev,
     extend (config, {
@@ -124,5 +125,13 @@ export default {
   loading: {
     color: '#1E88E5'
   },
+  pageTransition: {
+    name: 'slide-bottom',
+    mode: 'out-in',
+    beforeEnter(el) {
+      console.log('Before enter...');
+    }
+  }
+
   // target: 'static'
 }

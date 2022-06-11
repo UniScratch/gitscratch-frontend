@@ -15,7 +15,47 @@
             <nuxt-link to="/projects/1/commit/170ed1c/" class="text-color">
               170ed1c
             </nuxt-link>
-            <ProjectPlayer />
+            <br>
+
+            <v-responsive v-if="!loadPlayer" :aspect-ratio="4/3" content-class="rounded">
+              <v-img
+                lazy-src="/64025bdca5db4938f65597e3682fddcf.svg"
+                src="/64025bdca5db4938f65597e3682fddcf.svg"
+                style="width:100%;height:100%"
+              >
+                <template #placeholder>
+                  <v-row
+                    class="fill-height ma-0"
+                    align="center"
+                    justify="center"
+                  >
+                    <v-progress-circular
+                      indeterminate
+                      color="grey lighten-5"
+                    />
+                  </v-row>
+                </template>
+                <v-row
+                  class="fill-height ma-0"
+                  align="center"
+                  justify="center"
+                >
+                  <v-btn v-if="!loadPlayer" x-large @click="loadPlayer = true">
+                    <v-icon>
+                      mdi-reload
+                    </v-icon>
+                    加载播放器
+                  </v-btn>
+                  <v-btn v-if="loadPlayer" x-large>
+                    <v-progress-circular
+                      indeterminate
+                      color="grey lighten-5"
+                    />
+                  </v-btn>
+                </v-row>
+              </v-img>
+            </v-responsive>
+            <LazyProjectPlayer v-if="loadPlayer" />
             <br>
             <ProjectData />
           </v-card-text>
@@ -53,26 +93,12 @@
   </v-container>
 </template>
 <script>
-// import ProjectCard from '/src/components/ProjectCard.vue'
-import Comment from '~/components/Comment.vue'
-import CommentForm from '~/components/CommentForm.vue'
-import ProjectPlayer from '~/components/ProjectPlayer.vue'
-import ProjectUserInfo from '~/components/ProjectUserInfo.vue'
-import ProjectDesc from '~/components/ProjectDesc.vue'
-import ProjectData from '~/components/ProjectData.vue'
 const marked = require('marked')
 
 export default {
   name: 'UserProfile',
-  components: {
-    Comment,
-    CommentForm,
-    ProjectPlayer,
-    ProjectUserInfo,
-    ProjectDesc,
-    ProjectData
-  },
   data: () => ({
+    loadPlayer: false,
     bio: '啊，好舒服',
     avatar: '/GitScratch-icon-background-blue.svg',
     project_title: 'Default Project'
