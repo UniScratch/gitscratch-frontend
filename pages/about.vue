@@ -7,7 +7,6 @@
 <script>
 const meta = require('static/meta.json')
 const { marked } = require('marked')
-console.log(meta)
 export default {
   name: 'About',
   data: () => ({
@@ -39,7 +38,7 @@ GitScratch（极社）是一个 Git 风格的 Scratch 社区，正在开发中�
 还有，你。  
 ~~一个都跑不了~~  
       `
-      console.log(marked.parse(md))
+      // console.log(marked.parse(md))
       return marked.parse(md)
     }
   }

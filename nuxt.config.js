@@ -40,13 +40,15 @@ export default {
 
   // https://nuxtjs.org/api/configuration-modules
   modules: [
-    // https://axios.nuxtjs.org/
-    '@nuxtjs/axios',
+    // https://http.nuxtjs.org/getting-started/setup
+    '@nuxt/http',
 
     // https://pwa.nuxtjs.org/
     '@nuxtjs/pwa'
   ],
 
+  plugins: [
+  ],
   buildModules: [
     // Simple usage
     '@nuxtjs/vuetify',
@@ -81,13 +83,12 @@ export default {
       }
     }
   },
-  axios: {},
+  http: {
+    // proxyHeaders: false
+  },
 
   // https://github.com/nuxt-community/eslint-module
   eslint: {},
-
-  // https://nuxtjs.org/api/configuration-plugins
-  plugins: [],
 
   // https://nuxtjs.org/api/configuration-css
   css: ['./assets/styles/global.css'],
@@ -127,10 +128,7 @@ export default {
   },
   pageTransition: {
     name: 'slide-bottom',
-    mode: 'out-in',
-    beforeEnter(el) {
-      console.log('Before enter...');
-    }
+    mode: 'out-in'
   }
 
   // target: 'static'

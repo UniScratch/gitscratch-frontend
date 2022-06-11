@@ -1,5 +1,5 @@
 /* @import url(https://fonts.googleapis.com/css?family=Roboto%20Mono); */
-/* @import url(https://www.unpkg.com/@mdi/font@6.7.96/css/materialdesignicons.min.css); */
+@import url(https://www.unpkg.com/@mdi/font@6.7.96/css/materialdesignicons.min.css);
 
 :root {
     --accent-color-light: #42A5F5;
@@ -69,13 +69,23 @@ code {
 }
 
 .theme--light.v-app-bar {
-    background-color: #FFFD !important;
-    backdrop-filter: saturate(180%) blur(14px);
+    background-color: #fffd !important;
+    backdrop-filter: brightness(120%) blur(14px);
 }
 
 .theme--dark.v-app-bar {
     background-color: #272727DD !important;
-    backdrop-filter: saturate(180%) blur(14px);
+    backdrop-filter: brightness(80%) blur(14px);
+}
+
+.theme--light.v-sheet {
+    background-color: #ffffffee !important;
+    backdrop-filter: brightness(120%) blur(14px);
+}
+
+.theme--dark.v-sheet {
+    background-color: #272727c8 !important;
+    backdrop-filter: brightness(80%) blur(14px);
 }
 
 .v-image {
