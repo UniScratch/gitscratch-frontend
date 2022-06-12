@@ -10024,10 +10024,10 @@ twgl.js@4.4.0:
   resolved "https://registry.yarnpkg.com/twgl.js/-/twgl.js-4.4.0.tgz#cc605fbbd3d8d951174df827a7896ab03b4679fb"
   integrity sha512-W+uFP2DyK2dNhE38PcpituNi8CBm+YO5gY6o/IWEILT7NNDTT1wo3YcMmydwiCfUbnT7tz+EcjV7KlZLgE1PlQ==
 
-twgl.js@^4.22.1:
-  version "4.22.1"
-  resolved "https://registry.yarnpkg.com/twgl.js/-/twgl.js-4.22.1.tgz#5da45cc14a1b3f3762b61cd82f19769154a0755d"
-  integrity sha512-Aw+oTRXB2hGiLXMkZBsqy0BIxGwHPouT7eJECqPPafV9R7ZktQgpVMZjqCrc4KbFPW29st6a7/bdm/2wt+HiDg==
+twgl.js@^4.23.0:
+  version "4.23.0"
+  resolved "https://registry.yarnpkg.com/twgl.js/-/twgl.js-4.23.0.tgz#932212e322700ca9847f9fc104e5c11bcbebc61f"
+  integrity sha512-RB08pRXwho5XcXo23c/HIGUdNnyiYGSehrZxrGdeBAnUi2Iv8r9ln4N8rNLHZAlJDrOq1LGuG36n4F69eESRPQ==
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
