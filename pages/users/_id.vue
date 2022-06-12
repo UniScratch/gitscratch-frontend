@@ -26,7 +26,8 @@
           {{ following }} 正在关注
         </router-link>
         <br>
-        <v-icon>mdi-web</v-icon><a :href="website">{{ website }}</a>
+        <v-icon>mdi-web</v-icon>
+        <a :href="website">{{ website }}</a>
       </v-col>
       <v-divider vertical class="hidden-xs-only" />
       <v-col cols="12" xl="10" md="9" sm="8" style="padding-left: 20px;">
@@ -54,7 +55,7 @@
         </v-btn-toggle>
         <v-window
           v-model="toggle_tab"
-          style="display: block; padding: 8px 8px 16px 8px;"
+          style="display: block; padding: 16px;"
         >
           <!-- 概览 -->
           <v-window-item>
@@ -117,7 +118,7 @@ export default {
 昨天晚上跟 [@作者](/users/作者) 床♂战太爽了
 
 \`\`\` js
-console.log('hello world');
+console.log('Hello, world!');
 \`\`\``
   }),
   head () {

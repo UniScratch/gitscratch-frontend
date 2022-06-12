@@ -1,4 +1,3 @@
-/* eslint-disable vue/require-default-prop */
 <template>
   <client-only placeholder="Loading...">
     <div v-html="renderMd()" />
@@ -36,7 +35,7 @@ export default {
   },
   methods: {
     renderMd () {
-      return marked.parse("Hello,world\n```js\nconsole.log('Hello,world')\n```\n")
+      return marked.parse("Hello, world\n```js\nconsole.log('Hello, world!');\n```\n")
     }
   }
 }
