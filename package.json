@@ -15,7 +15,7 @@
     "fs": "^0.0.1-security",
     "highlight.js": "^11.5.1",
     "lru-cache": "^7.10.1",
-    "marked": "^4.0.16",
+    "marked": "^4.0.17",
     "minify-css-string": "^1.0.0",
     "nuxt": "^2.15.8",
     "parse-sb3-blocks": "^0.4.1",
