@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     renderMd () {
-      return marked.parse("Hello,world\n```js\nconsole.log('Hello,world')\n```\n")
+      return marked.parse("Hello, world\n```js\nconsole.log('Hello, world!')\n```\n")
     }
   }
 }

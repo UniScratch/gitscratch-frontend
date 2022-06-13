@@ -2,12 +2,12 @@
   <client-only>
     <div>
       <div>
-        <v-btn icon :class="{ disabled: !loadFileTrue }" @click="greenFlag">
-          <v-icon color="green">
+        <v-btn icon :disabled="!loadFileTrue" @click="greenFlag">
+          <v-icon :color="projectRunning ? '#4CAF5088' : '#4CAF50'">
             mdi-play
           </v-icon>
         </v-btn>
-        <v-btn icon :class="{ disabled: !loadFileTrue }" @click="stopAll">
+        <v-btn icon :disabled="!loadFileTrue" @click="stopAll">
           <v-icon color="red">
             mdi-stop
           </v-icon>
@@ -29,7 +29,8 @@ export default {
   data () {
     return {
       loadFileTrue: false,
-      vm: null
+      vm: null,
+      projectRunning: false
     }
   },
   mounted () {
@@ -69,9 +70,11 @@ export default {
   methods: {
     greenFlag () {
       this.vm.greenFlag()
+      this.projectRunning = true
     },
     stopAll () {
       this.vm.stopAll()
+      this.projectRunning = false
     }
   }
 }
