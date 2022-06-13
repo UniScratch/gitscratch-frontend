@@ -26,7 +26,7 @@
     "scratch-svg-renderer": "^0.2.0-prerelease.20210727023023",
     "scratch-vm": "^0.2.0-prerelease.20220602121716",
     "scratchblocks": "^3.6.0",
-    "twgl.js": "^4.22.1"
+    "twgl.js": "^4.23.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^8.0.0",
