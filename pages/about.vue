@@ -21,12 +21,13 @@ export default {
       const md = `
 # 关于 GitScratch  
 GitScratch（极社）是一个 Git 风格的 Scratch 社区，正在开发中。  
-版本: ${meta.appVersionFull}  
-构建时间: ${meta.compileTime}  
-[GitHub 仓库](https://github.com/UniScratch/GitScratchFrontend)  
-[GitScratch 预览站](https://git.sc.cn/)  
-[反馈](https://github.com/UniScratch/GitScratchFrontend/issues)  
-[讨论](https://github.com/UniScratch/GitScratchFrontend/discussions)  
+
+版本：${meta.appVersionFull}  
+构建时间：${meta.compileTime}  
+
+[GitHub 仓库](https://github.com/UniScratch/GitScratchFrontend) |
+[反馈](https://github.com/UniScratch/GitScratchFrontend/issues) |
+[讨论](https://github.com/UniScratch/GitScratchFrontend/discussions) |
 [群聊](https://jq.qq.com/?_wv=1027&k=YZzXfixv)
 
 ## 贡献者
