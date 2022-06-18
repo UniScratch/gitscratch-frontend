@@ -9,8 +9,14 @@ updates:
   open-pull-requests-limit: 10
   reviewers:
     - TimFang4162
+    - Dispure
+    - HydroGest
+    - wrj2009
   assignees:
     - TimFang4162
+    - Dispure
+    - HydroGest
+    - wrj2009
   commit-message:
     prefix: fix
     prefix-development: chore
