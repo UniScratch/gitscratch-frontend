@@ -1,8 +1,6 @@
-// import goTo from 'vuetify/lib/services/goto'
-import colors from 'vuetify/lib/util/colors'
 const isDev = process.env.NODE_ENV !== 'production'
-
-export default {
+const isElectron = !!process.env.BUILD_MODE
+module.exports = {
   components: true,
   // https://nuxtjs.org/api/configuration-modern
   modern: !isDev,
@@ -47,8 +45,7 @@ export default {
     '@nuxtjs/pwa'
   ],
 
-  plugins: [
-  ],
+  plugins: [],
   buildModules: [
     // Simple usage
     '@nuxtjs/vuetify',
@@ -65,22 +62,6 @@ export default {
         // family: 'PingFang SC,HarmonyOS_Regular,Helvetica Neue,Microsoft YaHei,sans-serif!important'
       },
       icons: 'mdi'
-    },
-    theme: {
-      themes: {
-        light: {
-          primary: colors.blue.base,
-          secondary: colors.blue.darken4,
-          accent: colors.blue.accent2,
-          grey_background: colors.grey.lighten2
-        },
-        dark: {
-          primary: colors.blue.lighten1,
-          secondary: colors.blue.darken4,
-          accent: colors.blue.accent3,
-          grey_background: colors.grey.darken3
-        }
-      }
     }
   },
   http: {
@@ -95,6 +76,7 @@ export default {
 
   // https://nuxtjs.org/api/configuration-build
   build: {
+    // ssr: !isElectron,
     ssr: true,
     parallel: isDev,
     terser: {
@@ -117,6 +99,9 @@ export default {
       isClient
     }) {
       config.output.globalObject = 'this'
+      if (isElectron) {
+        config.target = 'electron-renderer'
+      }
     }
   },
   server: {

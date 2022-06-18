@@ -5,8 +5,17 @@
   "scripts": {
     "dev": "yarn run genmeta && nuxt",
     "build": "yarn run genmeta && nuxt build",
+    "build:electron": "set BUILD_MODE=electron && yarn run genmeta && nuxt build",
+    "pack": "electron-builder",
     "start": "nuxt start",
     "genmeta": "node gen-meta.js"
+  },
+  "main": "main.js",
+  "build": {
+    "appId": "com.uniscratch.gitscratch",
+    "directories": {
+      "buildResources": "static"
+    }
   },
   "dependencies": {
     "@nuxt/http": "^0.6.4",
@@ -32,10 +41,13 @@
     "@nuxtjs/eslint-config": "^8.0.0",
     "@nuxtjs/eslint-module": "^3.1.0",
     "@nuxtjs/vuetify": "^1.12.3",
+    "electron": "^19.0.4",
+    "electron-builder": "^23.0.3",
     "eslint": "^7.32.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-nuxt": "^3.2.0",
     "eslint-plugin-vue": "^9.1.1",
-    "eslint-plugin-vuetify": "^1.1.0"
+    "eslint-plugin-vuetify": "^1.1.0",
+    "express": "^4.18.1"
   }
 }
