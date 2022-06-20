@@ -41,7 +41,7 @@ module.exports = {
       vmid: 'hljs-style',
       rel: 'stylesheet',
       type: 'text/css',
-      href: '/highlightjs/github.css'
+      href: '/highlight.js/styles/github.css'
     }]
   },
 

@@ -22,7 +22,7 @@ export default {
         vmid: 'hljs-style',
         rel: 'stylesheet',
         type: 'text/css',
-        href: this.$vuetify.theme.dark ? '/highlightjs/github-dark.css' : '/highlightjs/github.css'
+        href: this.$vuetify.theme.dark ? '/highlight.js/styles/github-dark.css' : '/highlight.js/styles/github.css'
       }]
     }
   },

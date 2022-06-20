@@ -1,5 +1,5 @@
 /* @import url(https://fonts.googleapis.com/css?family=Roboto%20Mono); */
-@import url(https://www.unpkg.com/@mdi/font@6.7.96/css/materialdesignicons.min.css);
+@import "static/mdi/font/css/materialdesignicons.min.css";
 
 :root {
     --accent-color-light: #42A5F5;
