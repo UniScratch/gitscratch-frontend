@@ -25,38 +25,43 @@
       <v-card-text>
         <p class="text-h6 text--primary">
           Showing differences with 13 additions and 25 deletions.
+        </p><div style="color: green; background: #C7EFD2">
+          +13
+        </div><div style="color: red; background: #F6D0D2">
+          -25
+        </div>
         </p>
-        <pre class="blocks">{{ scblocks }}</pre>
+        <div v-html="scblocksSvg" />
+        <!-- <div>{{ scblocksSvg }}</div> -->
       </v-card-text>
     </v-card>
   </div>
 </template>
 <script>
 import { toScratchblocks } from 'parse-sb3-blocks'
-// import scratchblocks from 'scratchblocks'
+import scratchblocks from 'scratchblocks'
 
 export default {
   data () {
     return {
       data: {},
-      scblocks: '',
+      scblocksSvg: '',
       diff: {}
     }
   },
   mounted () {
-    const scratchblocks = require('scratchblocks')
     this.data = require('@/static/project1.json')
     const stage = this.data.targets[1]
     const whenGreenflag = '{}QYyd[f#Mi3yK3vQ(EH'
-    this.scblocks = toScratchblocks(whenGreenflag, stage.blocks, 'en', { tab: '  ', variableStyle: 'as-needed' })
-    console.log(this.scblocks)
-    const doc = scratchblocks.renderSVGString(this.scblocks)
-    console.log(doc)
-    // scratchblocks.renderMatching('pre.blocks', {
-    //   style: 'scratch3', // Optional, defaults to 'scratch2'.
-    //   languages: ['en'], // Optional, defaults to ['en'].
-    //   scale: 1 // Optional, defaults to 1
-    // })
+    const scblocksText = toScratchblocks(whenGreenflag, stage.blocks, 'en', { tab: '  ', variableStyle: 'as-needed' })
+    const scblocksParse = scratchblocks.parse(scblocksText)
+    const scblocksOptions = {
+      style: 'scratch3', // Optional, defaults to 'scratch2'.
+      languages: ['en'], // Optional, defaults to ['en'].
+      scale: 1 // Optional, defaults to 1
+    }
+    const scblocksRender = scratchblocks.render(scblocksParse, scblocksOptions)
+    this.scblocksSvg = new XMLSerializer().serializeToString(scblocksRender) // convert SVGElement into svg string
   },
   methods: {
   }
