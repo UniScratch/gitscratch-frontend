@@ -5,7 +5,6 @@
   </client-only>
 </template>
 <script>
-import 'highlight.js/styles/github.css'
 const marked = require('marked')
 export default {
   name: 'Markdown',
@@ -15,7 +14,18 @@ export default {
     }
   },
   data: () => ({
+    theme: null
   }),
+  head () {
+    return {
+      link: [{
+        vmid: 'hljs-style',
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: this.$vuetify.theme.dark ? '/highlightjs/github-dark.css' : '/highlightjs/github.css'
+      }]
+    }
+  },
   mounted () {
     marked.setOptions({
       renderer: new marked.Renderer(),

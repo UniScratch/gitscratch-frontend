@@ -12,6 +12,9 @@ module.exports = {
       }
       return 'GitScratch'
     },
+    htmlAttrs: {
+      lang: 'zh-CN'
+    },
     meta: [{
       charset: 'utf-8'
     },
@@ -33,6 +36,12 @@ module.exports = {
       rel: 'icon',
       type: 'image/svg+xml',
       href: '/GitScratch-icon-background-blue.svg'
+    },
+    {
+      vmid: 'hljs-style',
+      rel: 'stylesheet',
+      type: 'text/css',
+      href: '/highlightjs/github.css'
     }]
   },
 
@@ -59,9 +68,9 @@ module.exports = {
     treeShake: true,
     defaultAssets: {
       font: {
-        // family: 'PingFang SC,HarmonyOS_Regular,Helvetica Neue,Microsoft YaHei,sans-serif!important'
+        family: false
       },
-      icons: 'mdi'
+      icons: false
     }
   },
   http: {
@@ -69,7 +78,10 @@ module.exports = {
   },
 
   // https://github.com/nuxt-community/eslint-module
-  eslint: {},
+  eslint: {
+    fix: true,
+    threads: true
+  },
 
   // https://nuxtjs.org/api/configuration-css
   css: ['./assets/styles/global.css'],

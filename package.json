@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "yarn run genmeta && nuxt",
     "build": "yarn run genmeta && nuxt build",
-    "build:electron": "set BUILD_MODE=electron && yarn run genmeta && nuxt build",
-    "pack": "electron-builder",
     "start": "nuxt start",
-    "genmeta": "node gen-meta.js"
+    "electron:build": "set BUILD_MODE=electron && yarn run genmeta && nuxt build",
+    "electron:pack": "electron-builder",
+    "genmeta": "node gen-meta.js",
+    "lint": "eslint . --ext .js,.vue --fix"
   },
   "main": "main.js",
   "build": {
@@ -20,6 +21,7 @@
   "dependencies": {
     "@nuxt/http": "^0.6.4",
     "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/vuetify": "https://github.com/UniScratch/vuetify-module.git#master",
     "child_process": "^1.0.2",
     "fs": "^0.0.1-security",
     "highlight.js": "^11.5.1",
@@ -40,7 +42,6 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^8.0.0",
     "@nuxtjs/eslint-module": "^3.1.0",
-    "@nuxtjs/vuetify": "^1.12.3",
     "electron": "^19.0.4",
     "electron-builder": "^23.0.3",
     "eslint": "^7.32.0",

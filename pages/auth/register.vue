@@ -11,8 +11,9 @@
           color="primary"
           class="subheading white--text"
           size="24"
-          v-text="step"
-        />
+        >
+          {{ step }}
+        </v-avatar>
       </v-card-title>
 
       <v-window v-model="step" touchless>
