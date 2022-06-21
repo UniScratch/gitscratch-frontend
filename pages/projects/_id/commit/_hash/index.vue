@@ -1,41 +1,44 @@
 <template>
-  <div>
-    <v-card>
-      <v-card-text>
-        <p class="text-h4 text--primary">
-          Default Project
-        </p>
-        <p class="text-h6 text--primary">
-          <v-icon>mdi-source-commit</v-icon>
-          这里是提交信息 Laboris velit et non amet labore cupidatat.
-        </p>
-        <v-icon>mdi-calendar-outline</v-icon>
-        2022/5/28 14:39:58
-        <v-icon>mdi-update</v-icon>
-        170ed1c
-        <br>
-        <v-icon>mdi-check</v-icon>
-        Signed-off-by: 作者 (email@foo.bar)
-      </v-card-text>
-    </v-card>
-    <br>
-    <v-divider />
-    <br>
-    <v-card>
-      <v-card-text>
-        <p class="text-h6 text--primary">
-          Showing differences with 13 additions and 25 deletions.
-        </p><div style="color: green; background: #C7EFD2">
-          +13
-        </div><div style="color: red; background: #F6D0D2">
-          -25
-        </div>
-        </p>
-        <div v-html="scblocksSvg" />
+  <client-only>
+    <div>
+      <v-card>
+        <v-card-text>
+          <p class="text-h4 text--primary">
+            Default Project
+          </p>
+          <p class="text-h6 text--primary">
+            <v-icon>mdi-source-commit</v-icon>
+            这里是提交信息 Laboris velit et non amet labore cupidatat.
+          </p>
+          <v-icon>mdi-calendar-outline</v-icon>
+          2022/5/28 14:39:58
+          <v-icon>mdi-update</v-icon>
+          170ed1c
+          <br>
+          <v-icon>mdi-check</v-icon>
+          Signed-off-by: 作者 (email@foo.bar)
+        </v-card-text>
+      </v-card>
+      <br>
+      <v-divider />
+      <br>
+      <v-card>
+        <v-card-text>
+          <p class="text-h6 text--primary">
+            Showing differences with 13 additions and 25 deletions.
+          </p>
+          <div style="color: green; background: #C7EFD2">
+            +13
+          </div>
+          <div style="color: red; background: #F6D0D2">
+            -25
+          </div>
+          <div v-html="scblocksSvg" />
         <!-- <div>{{ scblocksSvg }}</div> -->
-      </v-card-text>
-    </v-card>
-  </div>
+        </v-card-text>
+      </v-card>
+    </div>
+  </client-only>
 </template>
 <script>
 import { toScratchblocks } from 'parse-sb3-blocks'
