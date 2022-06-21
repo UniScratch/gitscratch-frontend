@@ -30,7 +30,7 @@
           v-model="dialog"
           max-width="290"
         >
-          <v-card>
+          <v-card class="cardblur">
             <v-card-title class="text-h5">
               签到成功
             </v-card-title>

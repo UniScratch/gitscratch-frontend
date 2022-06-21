@@ -78,12 +78,12 @@ code {
     backdrop-filter: brightness(80%) blur(14px);
 }
 
-.theme--light.v-sheet {
+.theme--light.cardblur {
     background-color: #ffffffee !important;
     backdrop-filter: brightness(120%) blur(14px);
 }
 
-.theme--dark.v-sheet {
+.theme--dark.cardblur {
     background-color: #272727c8 !important;
     backdrop-filter: brightness(80%) blur(14px);
 }
