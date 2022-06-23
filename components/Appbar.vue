@@ -63,7 +63,7 @@
       </template>
       <span>创建</span>
     </v-tooltip>
-    <template v-if="token == ''">
+    <template v-if="!token">
       <v-btn text to="/auth/login">
         登录
       </v-btn>
@@ -79,7 +79,7 @@
       >
         <template #activator="{ on, attrs }">
           <v-avatar
-            size="48px"
+            size="40px"
             v-bind="attrs"
             ripple
             v-on="on"
@@ -170,7 +170,7 @@
             dense
             color="transparent"
           >
-            <v-list-item link>
+            <v-list-item link @click="logout()">
               <v-list-item-icon>
                 <v-icon>mdi-logout-variant</v-icon>
               </v-list-item-icon>
@@ -181,8 +181,6 @@
           </v-list>
         </v-card>
       </v-menu>
-
-      <!-- <v-btn icon v-on:click="toggle_theme"><v-icon>mdi-brightness-6</v-icon></v-btn> -->
     </template>
   </v-app-bar>
 </template>
@@ -204,6 +202,10 @@ export default {
   methods: {
     toggle_theme () {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+    },
+    logout () {
+      this.$store.commit('auth/logout')
+      this.$router.push('/')
     }
   }
 }

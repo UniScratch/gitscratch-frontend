@@ -19,5 +19,18 @@ export const mutations = {
   },
   updateInfo (state, userInfo) {
     state.userInfo = userInfo
+  },
+  logout (state) {
+    state.token = ''
+    state.userInfo = {
+      avatar: '',
+      bio: '',
+      email: '',
+      follower: 0,
+      following: 0,
+      name: '',
+      readme: '',
+      website: ''
+    }
   }
 }

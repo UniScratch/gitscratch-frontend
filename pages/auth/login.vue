@@ -72,6 +72,7 @@ export default {
         })
         this.$store.commit('auth/updateToken', res.session)
         this.loading = false
+        this.$router.push('/')
       })
     },
     validate () {
