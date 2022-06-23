@@ -54,7 +54,8 @@ module.exports = {
     '@nuxtjs/pwa'
   ],
 
-  plugins: [],
+  plugins: [
+  ],
   buildModules: [
     // Simple usage
     '@nuxtjs/vuetify',
@@ -73,8 +74,9 @@ module.exports = {
       icons: false
     }
   },
+  // https://http.nuxtjs.org/
   http: {
-    // proxyHeaders: false
+    baseURL: 'https://mock.apifox.cn/m1/927078-0-default'
   },
 
   // https://github.com/nuxt-community/eslint-module

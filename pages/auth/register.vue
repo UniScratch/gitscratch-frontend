@@ -230,10 +230,15 @@ export default {
     },
     register () {
       this.loading = true
-      setTimeout(() => {
+      this.$http.$post('/auth/register').then((res) => {
+        console.log(res)
         this.loading = false
         this.step = this.steps
-      }, 3000)
+      })
+      // setTimeout(() => {
+      //   this.loading = false
+      //   this.step = this.steps
+      // }, 3000)
     }
   }
 }
