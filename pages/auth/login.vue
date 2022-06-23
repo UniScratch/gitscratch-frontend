@@ -23,7 +23,14 @@
             style="border-radius: 4px;"
             :rules="passwordRules"
           />
-          <v-btn color="primary" depressed block :disabled="!valid" @click="login">
+          <v-btn
+            color="primary"
+            depressed
+            block
+            :disabled="!valid"
+            :loading="loading"
+            @click="login"
+          >
             登录
           </v-btn>
         </v-form>
@@ -37,6 +44,7 @@ export default {
   name: 'Auth',
   data: () => ({
     valid: true,
+    loading: false,
     user_email: '',
     user_password: '',
     emailRules: [
@@ -55,6 +63,16 @@ export default {
   methods: {
     login () {
       this.validate()
+      this.loading = true
+      this.$http.$post('/auth/login').then((res) => { // 获取session
+        // console.log(res)
+        this.$http.$get('/auth/session').then((res) => { // 获取用户信息
+          // console.log(res)
+          this.$store.commit('auth/updateInfo', res.data)
+        })
+        this.$store.commit('auth/updateToken', res.session)
+        this.loading = false
+      })
     },
     validate () {
       this.$refs.form.validate()

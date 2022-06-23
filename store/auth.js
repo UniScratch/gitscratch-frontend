@@ -1,19 +1,23 @@
 export const state = () => ({
-  list: []
+  token: '',
+  userInfo: {
+    avatar: '',
+    bio: '',
+    email: '',
+    follower: 0,
+    following: 0,
+    name: '',
+    readme: '',
+    website: ''
+  }
+
 })
 
 export const mutations = {
-  add (state, text) {
-    state.list.push({
-      text,
-      done: false,
-      id: Date.now()
-    })
+  updateToken (state, token) {
+    state.token = token
   },
-  remove (state, todo) {
-    state.list = state.list.filter(item => item.id !== todo.id)
-  },
-  toggle (state, todo) {
-    todo.done = !todo.done
+  updateInfo (state, userInfo) {
+    state.userInfo = userInfo
   }
 }
