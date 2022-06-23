@@ -126,7 +126,7 @@ module.exports = {
     color: '#1E88E5'
   },
   pageTransition: {
-    name: 'slide-bottom',
+    name: 'slide-top',
     mode: 'out-in'
   }
 

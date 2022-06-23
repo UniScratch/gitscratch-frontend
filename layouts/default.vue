@@ -15,19 +15,19 @@ export default {
   components: {
     Appbar
   },
-  transition: 'slide-bottom'
+  transition: 'slide-top'
 }
 </script>
 
 <style>
-.slide-bottom-enter-active,
-.slide-bottom-leave-active {
+.slide-top-enter-active,
+.slide-top-leave-active {
   transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
-.slide-bottom-enter,
-.slide-bottom-leave-to {
+.slide-top-enter,
+.slide-top-leave-to {
   opacity: 0;
-  transform: translate3d(0, 15px, 0);
+  transform: translate3d(0, -15px, 0);
 }
 
 </style>
