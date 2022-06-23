@@ -68,24 +68,16 @@ code {
     color: #FFFB;
 }
 
+.theme--light.cardblur,
 .theme--light.v-app-bar {
-    background-color: #fffd !important;
-    backdrop-filter: brightness(120%) blur(14px);
-}
-
-.theme--dark.v-app-bar {
-    background-color: #272727DD !important;
-    backdrop-filter: brightness(80%) blur(14px);
-}
-
-.theme--light.cardblur {
     background-color: #ffffffee !important;
-    backdrop-filter: brightness(120%) blur(14px);
+    backdrop-filter: brightness(120%) blur(14px) !important;
 }
 
-.theme--dark.cardblur {
+.theme--dark.cardblur,
+.theme--dark.v-app-bar {
     background-color: #272727c8 !important;
-    backdrop-filter: brightness(80%) blur(14px);
+    backdrop-filter: brightness(80%) blur(14px) !important;
 }
 
 .v-image {
