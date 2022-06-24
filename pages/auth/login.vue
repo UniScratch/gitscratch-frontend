@@ -1,5 +1,5 @@
 <template>
-  <v-container class="d-flex justify-center">
+  <div class="d-flex justify-center">
     <v-card style="width: 400px; padding: 16px;" elevation="0" color="transparent">
       <v-lazy style="text-align: center;" transition="fade-transition" min-height="71">
         <img src="/GitScratch-icon-background-blue.svg" width="64">
@@ -36,7 +36,7 @@
         </v-form>
       </v-card-text>
     </v-card>
-  </v-container>
+  </div>
 </template>
 
 <script>

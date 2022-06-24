@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <div>
     <p class="text-h4">
       设置
     </p>
@@ -25,7 +25,7 @@
         value="sync_with_system"
       />
     </v-radio-group>
-  </v-container>
+  </div>
 </template>
 
 <script>
