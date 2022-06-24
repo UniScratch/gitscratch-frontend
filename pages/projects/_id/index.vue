@@ -94,7 +94,6 @@
 const marked = require('marked')
 
 export default {
-  name: 'UserProfile',
   data: () => ({
     loadPlayer: false,
     bio: '啊，好舒服',

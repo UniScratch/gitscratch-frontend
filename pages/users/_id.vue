@@ -102,7 +102,6 @@
 <script>
 const marked = require('marked')
 export default {
-  name: 'UserProfile',
   data: () => ({
     username: '作者',
     follower: 100,

@@ -42,9 +42,13 @@
 
 <script>
 export default {
-  name: 'App',
   data: () => ({
     //
-  })
+  }),
+  head () {
+    return {
+      titleTemplate: 'GitScratch'
+    }
+  }
 }
 </script>

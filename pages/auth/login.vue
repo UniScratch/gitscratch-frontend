@@ -41,7 +41,6 @@
 
 <script>
 export default {
-  name: 'Auth',
   data: () => ({
     valid: true,
     loading: false,

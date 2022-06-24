@@ -7,7 +7,6 @@
 <script>
 const marked = require('marked')
 export default {
-  name: 'Markdown',
   props: {
     content: {
       type: String

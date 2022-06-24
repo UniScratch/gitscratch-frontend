@@ -11,7 +11,6 @@
 <script>
 import Appbar from '~/components/Appbar.vue'
 export default {
-  name: 'App',
   components: {
     Appbar
   },

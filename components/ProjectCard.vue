@@ -52,7 +52,6 @@
 </template>
 <script>
 export default {
-  name: 'ProjectCard',
 
   data: () => ({
     project_title: '标题',

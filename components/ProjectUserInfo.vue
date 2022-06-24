@@ -25,7 +25,6 @@
 
 <script>
 export default {
-  name: 'ProjectCard',
 
   data: () => ({
     project_author: '作者',

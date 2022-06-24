@@ -27,7 +27,6 @@
 </template>
 <script>
 export default {
-  name: 'CommentForm',
   data: () => ({
     valid: true,
     commentContentRules: {

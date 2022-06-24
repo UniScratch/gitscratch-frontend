@@ -14,7 +14,6 @@
 import ProjectCard from './ProjectCard.vue'
 
 export default {
-  name: 'ProjectGroup',
   components: {
     ProjectCard
   },

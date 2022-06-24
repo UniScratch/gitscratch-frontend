@@ -30,10 +30,14 @@
 
 <script>
 export default {
-  name: 'Settings',
   data: () => ({
     settings_theme: 'light'
   }),
+  head () {
+    return {
+      title: '设置'
+    }
+  },
   methods: {
     toggle_theme () {
       if (this.settings_theme === 'light') {

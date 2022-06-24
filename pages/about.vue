@@ -8,7 +8,6 @@
 const meta = require('static/meta.json')
 const { marked } = require('marked')
 export default {
-  name: 'About',
   data: () => ({
   }),
   head () {

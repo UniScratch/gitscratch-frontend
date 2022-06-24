@@ -19,7 +19,6 @@ import MarkdownRender from './MarkdownRender.vue'
 const date = new Date()
 const dateStr = date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate() + ' ' + date.toLocaleTimeString()
 export default {
-  name: 'Comment',
   components: {
     MarkdownRender
   },

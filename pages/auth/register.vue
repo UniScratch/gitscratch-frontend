@@ -154,7 +154,6 @@
 
 <script>
 export default {
-  name: 'Auth',
   data: () => ({
     step: 1,
     steps: 6,

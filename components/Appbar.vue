@@ -190,8 +190,6 @@
 </template>
 <script>
 export default {
-  name: 'Appbar',
-
   data: () => ({
   }),
 
