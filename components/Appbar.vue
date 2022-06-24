@@ -47,22 +47,7 @@
     </v-btn>
 
     <v-spacer />
-    <!-- <v-tooltip bottom>
-            <template v-slot:activator="{ on, attrs }">
-                <v-btn icon v-on:click="toggle_theme" v-bind="attrs" v-on="on">
-                    <v-icon>mdi-brightness-6</v-icon>
-                </v-btn>
-            </template>
-            <span>切换主题</span>
-        </v-tooltip> -->
-    <v-tooltip bottom>
-      <template #activator="{ on, attrs }">
-        <v-btn icon v-bind="attrs" to="/create" v-on="on">
-          <v-icon>mdi-plus</v-icon>
-        </v-btn>
-      </template>
-      <span>创建</span>
-    </v-tooltip>
+
     <template v-if="!token">
       <v-btn text to="/auth/login">
         登录
@@ -72,23 +57,41 @@
       </v-btn>
     </template>
     <template v-else>
+      <v-tooltip bottom>
+        <template #activator="{ on, attrs }">
+          <v-btn icon v-bind="attrs" to="/notifications" v-on="on">
+            <v-icon>mdi-bell-outline</v-icon>
+          </v-btn>
+        </template>
+        <span>通知</span>
+      </v-tooltip>
+      <v-tooltip bottom>
+        <template #activator="{ on, attrs }">
+          <v-btn icon v-bind="attrs" to="/create" v-on="on">
+            <v-icon>mdi-plus</v-icon>
+          </v-btn>
+        </template>
+        <span>创建</span>
+      </v-tooltip>
       <v-menu
         bottom
         offset-y
         transition="slide-y-transition"
       >
         <template #activator="{ on, attrs }">
-          <v-avatar
-            size="40px"
-            v-bind="attrs"
-            ripple
-            v-on="on"
-          >
-            <v-img
-              alt="Avatar"
-              :src="userInfo.avatar"
-            />
-          </v-avatar>
+          <v-btn icon>
+            <v-avatar
+              size="40px"
+              v-bind="attrs"
+              ripple
+              v-on="on"
+            >
+              <v-img
+                alt="Avatar"
+                :src="userInfo.avatar"
+              />
+            </v-avatar>
+          </v-btn>
         </template>
         <v-card class="cardblur">
           <v-list color="transparent">
@@ -182,6 +185,7 @@
         </v-card>
       </v-menu>
     </template>
+    <div class="mr-2" />
   </v-app-bar>
 </template>
 <script>
