@@ -2,10 +2,10 @@
   <client-only>
     <div>
       <v-card>
+        <v-card-title class="text-h5">
+          Default Project
+        </v-card-title>
         <v-card-text>
-          <p class="text-h4 text--primary">
-            Default Project
-          </p>
           <p class="text-h6 text--primary">
             <v-icon>mdi-source-commit</v-icon>
             这里是提交信息 Laboris velit et non amet labore cupidatat.
@@ -23,10 +23,10 @@
       <v-divider />
       <br>
       <v-card>
+        <v-card-title class="text-h5">
+          Showing differences with 13 additions and 25 deletions.
+        </v-card-title>
         <v-card-text>
-          <p class="text-h6 text--primary">
-            Showing differences with 13 additions and 25 deletions.
-          </p>
           <div style="color: green; background: #C7EFD2">
             +13
           </div>

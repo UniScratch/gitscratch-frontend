@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1 v-if="error.statusCode === 404">
+    <div v-if="error.statusCode === 404" class="text-h5">
       {{ pageNotFound }}
-    </h1>
-    <h1 v-else>
+    </div>
+    <div v-else class="text-h5">
       {{ otherError }}
-    </h1>
+    </div>
     <v-btn
       text
       @click="back"

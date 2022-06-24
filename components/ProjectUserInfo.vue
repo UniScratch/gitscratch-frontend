@@ -1,13 +1,13 @@
 <template>
-  <v-card>
-    <v-list-item three-line :to="'/users/' + project_author">
+  <v-card :to="'/users/' + project_author">
+    <v-list-item three-line>
       <v-list-item-avatar
         size="80"
       >
         <v-avatar :src="project_author_avatar" size="80" />
       </v-list-item-avatar>
       <v-list-item-content>
-        <v-list-item-title class="text-h4 text--primary">
+        <v-list-item-title class="text-h5">
           {{ project_author }}
         </v-list-item-title>
         <v-list-item-subtitle>Lorem sit deserunt adipisicing anim cupidatat mollit exercitation non mollit voluptate. Ad esse non veniam Lorem sint et. </v-list-item-subtitle>

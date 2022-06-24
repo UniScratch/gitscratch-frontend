@@ -60,7 +60,9 @@
           <!-- 概览 -->
           <v-window-item>
             <v-card>
-              <v-card-title><span>README</span><span class="grey-text">.md</span></v-card-title>
+              <v-card-title class="text-h5">
+                <span>README</span><span class="grey-text">.md</span>
+              </v-card-title>
               <v-divider />
               <MarkdownRender style="padding: 16px;" />
             </v-card>

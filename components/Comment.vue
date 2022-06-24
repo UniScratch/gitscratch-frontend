@@ -4,7 +4,7 @@
       <v-img :src="comment_author_avatar" />
     </v-avatar>
     <v-divider vertical style="margin: 0 8px;" />
-    <div class="flex-grow-1">
+    <div class="flex-grow-1 overflow-auto" style="border-radius: 0px;">
       <router-link :to="'/users/' + comment_author_name">
         {{ comment_author_name }}
       </router-link>
