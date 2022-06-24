@@ -2,12 +2,11 @@
 @import "static/mdi/font/css/materialdesignicons.min.css";
 
 :root {
-    --accent-color-light: #42A5F5;
-    --accent-color-dark: #448AFF;
+    --primary-color: #2851e3;
 }
 
 .theme--light a:not(.v-btn, .v-card, .v-chip, .v-list-item) {
-    color: var(--accent-color-light);
+    color: var(--primary-color);
     text-decoration: none;
 }
 
@@ -17,7 +16,7 @@
 }
 
 .theme--dark a:not(.v-btn, .v-card, .v-chip, .v-list-item) {
-    color: var(--accent-color-dark);
+    color: var(--primary-color);
     text-decoration: none;
 }
 
@@ -31,16 +30,16 @@
 }
 
 .theme--light a.text-color:hover {
-    color: var(--accent-color-light) !important;
+    color: var(--primary-color) !important;
 }
 
 .theme--dark a.text-color:hover {
-    color: var(--accent-color-dark) !important;
+    color: var(--primary-color) !important;
 }
 
 pre,
 code {
-    font-family: 'Fira Code', 'Roboto Mono', Consolas, monospace, "Courier New", Courier;
+    font-family: 'Fira Code', 'Roboto Mono', Consolas, monospace, 'Courier New', Courier, ui-monospace, SFMono-Regular, SF Mono, Menlo, 'Liberation Mono';
     border-radius: 3px;
 }
 
@@ -68,16 +67,24 @@ code {
     color: #FFFB;
 }
 
-.theme--light.cardblur,
 .theme--light.v-app-bar {
     background-color: #ffffffee !important;
     backdrop-filter: brightness(120%) blur(14px) !important;
 }
 
-.theme--dark.cardblur,
 .theme--dark.v-app-bar {
     background-color: #272727c8 !important;
     backdrop-filter: brightness(80%) blur(14px) !important;
+}
+
+.theme--light.cardblur {
+    background-color: #ffffff88 !important;
+    backdrop-filter: blur(14px) !important;
+}
+
+.theme--dark.cardblur {
+    background-color: #27272762 !important;
+    backdrop-filter: blur(14px) !important;
 }
 
 .v-image {

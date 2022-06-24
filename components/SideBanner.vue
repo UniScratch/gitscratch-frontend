@@ -28,7 +28,8 @@
         </v-btn>
         <v-dialog
           v-model="dialog"
-          max-width="290"
+          max-width="500"
+          overlay-opacity="0.2"
         >
           <v-card class="cardblur">
             <v-card-title class="text-h5">

@@ -8,17 +8,19 @@
             style="height: 100%; border-radius: 0px;"
             class="cardblur"
           >
-            <v-icon>mdi-eye-outline</v-icon>
-            345
-            <br>
-            <v-icon>mdi-star-outline</v-icon>
-            456
-            <br>
-            <v-icon>mdi-source-branch</v-icon>
-            567
-            <br>
-            <v-icon>mdi-calendar-outline</v-icon>
-            2022/5/28 14:39
+            <v-container>
+              <v-icon>mdi-eye-outline</v-icon>
+              345
+              <br>
+              <v-icon>mdi-star-outline</v-icon>
+              456
+              <br>
+              <v-icon>mdi-source-branch</v-icon>
+              567
+              <br>
+              <v-icon>mdi-calendar-outline</v-icon>
+              2022/5/28 14:39
+            </v-container>
           </v-card>
           <!-- <div
             v-if="hover"

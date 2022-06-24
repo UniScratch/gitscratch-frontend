@@ -1,3 +1,4 @@
+import colors from 'vuetify/lib/util/colors'
 const isDev = process.env.NODE_ENV !== 'production'
 const isElectron = !!process.env.BUILD_MODE
 module.exports = {
@@ -72,6 +73,22 @@ module.exports = {
         family: false
       },
       icons: false
+    },
+    theme: {
+      themes: {
+        light: {
+          primary: '#2851e3',
+          secondary: colors.blue.darken4,
+          accent: colors.blue.accent2,
+          grey_background: colors.grey.lighten2
+        },
+        dark: {
+          primary: '#2851e3',
+          secondary: colors.blue.darken4,
+          accent: colors.blue.accent3,
+          grey_background: colors.grey.darken3
+        }
+      }
     }
   },
   // https://http.nuxtjs.org/
