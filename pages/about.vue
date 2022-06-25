@@ -1,50 +1,69 @@
 <template>
   <div>
-    <div v-html="renderMd()" />
+    <h1>
+      关于 GitScratch
+    </h1>
+    <p>GitScratch（极社）是一个 Git 风格的 Scratch 社区，正在开发中。  </p>
+    <h2>
+      版本信息
+    </h2>
+    <p>
+      <a target="_blank" :href="'https://github.com/UniScratch/gitscratch-frontend/commit/'+meta.commitHash">在 GitHub 上查看</a>
+      <br>
+      版本: {{ meta.appVersion }}
+      <br>
+      提交: {{ meta.commitHash }}
+      <br>
+      构建时间: {{ meta.compileTime }}
+    </p>
+    <h2>
+      联系我们
+    </h2>
+    <v-btn target="_blank" href="https://github.com/UniScratch/GitScratchFrontend" text>
+      <v-icon>
+        mdi-github
+      </v-icon>
+      GitHub
+    </v-btn>
+    <v-btn target="_blank" href="https://jq.qq.com/?_wv=1027&amp;k=YZzXfixv" text>
+      <v-icon>
+        mdi-qqchat
+      </v-icon>
+      QQ群聊
+    </v-btn>
+    <h2>
+      贡献者
+    </h2>
+    <p>
+      <template v-for="(item, key) in 贡献者">
+        {{ key }}:
+        <a v-for="(childItem, childKey) in item" :key="childKey" target="_blank" :href="'https://github.com/'+childItem">
+          @{{ childItem }}
+        </a>
+        <br :key="key">
+      </template>
+    </p>
+    <p>
+      还有，你。<br><del style="color: transparent">一个都跑不了</del>
+    </p>
   </div>
 </template>
 
 <script>
-const meta = require('static/meta.json')
-const { marked } = require('marked')
 export default {
   data: () => ({
+    贡献者: {
+      项目提出: ['Dispure', 'HydroGest'],
+      金主: [],
+      主要贡献者: ['Dispure', 'HydroGest', 'TimFang4162', 'wrj2009'],
+      云服务支持: ['Someone-Yang'],
+      其他贡献者: ['frank-782']
+    },
+    meta: require('static/meta.json')
   }),
   head () {
     return {
       title: '关于'
-    }
-  },
-  methods: {
-    renderMd () {
-      const md = `
-# 关于 GitScratch  
-GitScratch（极社）是一个 Git 风格的 Scratch 社区，正在开发中。  
-
-| | |
-| --: | :-- |
-| 版本 | ${meta.appVersionFull} |
-| 构建时间 | ${meta.compileTime} |
-
-[GitHub 仓库](https://github.com/UniScratch/GitScratchFrontend) |
-[反馈](https://github.com/UniScratch/GitScratchFrontend/issues) |
-[讨论](https://github.com/UniScratch/GitScratchFrontend/discussions) |
-[群聊](https://jq.qq.com/?_wv=1027&k=YZzXfixv)
-
-## 贡献者
-| | |
-| --: | :-- |
-| 项目提出 | [@Dispure](https://github.com/Dispure) [@HydroGest](https://github.com/HydroGest) |
-| 金主 | |
-| 主要贡献者 | [@Dispure](https://github.com/Dispure) [@HydroGest](https://github.com/HydroGest) [@TimFang4162](https://github.com/TimFang4162) [@wrj2009](https://github.com/wrj2009) |
-| 云服务支持 | [@Someone-Yang](https://github.com/Someone-Yang) |
-| 其他贡献者 | [@frank-782](https://github.com/frank-782) |
-
-还有，你。  
-~~一个都跑不了~~  
-      `
-      // console.log(marked.parse(md))
-      return marked.parse(md)
     }
   }
 }
