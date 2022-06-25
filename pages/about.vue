@@ -19,12 +19,30 @@
     <h2>
       联系我们
     </h2>
-    <v-btn target="_blank" href="https://github.com/UniScratch/GitScratchFrontend" text>
+    <v-btn target="_blank" href="https://github.com/UniScratch/gitscratch-frontend" text>
       <v-icon>
         mdi-github
       </v-icon>
       GitHub
     </v-btn>
+    <!-- <v-btn target="_blank" href="https://github.com/UniScratch/gitscratch-frontend/issues" text>
+      <v-icon>
+        mdi-record-circle-outline
+      </v-icon>
+      问题
+    </v-btn>
+    <v-btn target="_blank" href="https://github.com/UniScratch/gitscratch-frontend/discussions" text>
+      <v-icon>
+        mdi-forum-outline
+      </v-icon>
+      讨论
+    </v-btn>
+    <v-btn target="_blank" href="https://jq.qq.com/?_wv=1027&amp;k=YZzXfixv" text>
+      <v-icon>
+        mdi-pound-box
+      </v-icon>
+      QQ频道
+    </v-btn> -->
     <v-btn target="_blank" href="https://jq.qq.com/?_wv=1027&amp;k=YZzXfixv" text>
       <v-icon>
         mdi-qqchat
