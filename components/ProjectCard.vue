@@ -8,7 +8,7 @@
             style="height: 100%; border-radius: 0px;"
             class="cardblur"
           >
-            <v-container>
+            <v-container style="font-size: 1vw;">
               <v-icon>mdi-eye-outline</v-icon>
               345
               <br>
