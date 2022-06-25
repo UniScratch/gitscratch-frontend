@@ -27,10 +27,10 @@
           Showing differences with 13 additions and 25 deletions.
         </v-card-title>
         <v-card-text>
-          <div style="color: green; background: #C7EFD2">
+          <div class="diff-addition">
             +13
           </div>
-          <div style="color: red; background: #F6D0D2">
+          <div class="diff-deletion">
             -25
           </div>
           <div v-html="scblocksSvg" />

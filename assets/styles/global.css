@@ -91,6 +91,28 @@ code {
     border-radius: 15px;
 }
 
+.hide-del {
+    color: transparent;
+    transition: color 0.3s ease;
+    transition-delay: 0s;
+    text-decoration: none;
+}
+
+.hide-del:hover {
+    color: var(--text);
+    transition-delay: 0.5s;
+}
+
+.diff-addition {
+    color: green;
+    background-color: #2EA04326;
+}
+
+.diff-deletion {
+    color: red;
+    background-color: #F8514926;
+}
+
 canvas {
     border-radius: 15px;
 }
