@@ -2,7 +2,7 @@
 @import "static/mdi/font/css/materialdesignicons.min.css";
 
 :root {
-    --primary-color: #2851e3;
+    --primary-color: #2196F3;
 }
 
 .theme--light a:not(.v-btn, .v-card, .v-chip, .v-list-item) {
@@ -68,23 +68,33 @@ code {
 }
 
 .theme--light.v-app-bar {
-    background-color: #ffffffee !important;
+    background-color: #FFFFFFEE !important;
     backdrop-filter: brightness(120%) blur(14px) !important;
 }
 
 .theme--dark.v-app-bar {
-    background-color: #272727c8 !important;
+    background-color: #272727C8 !important;
     backdrop-filter: brightness(80%) blur(14px) !important;
 }
 
 .theme--light.cardblur {
-    background-color: #ffffff88 !important;
+    background-color: #FFFFFFBB !important;
     backdrop-filter: blur(14px) !important;
 }
 
 .theme--dark.cardblur {
-    background-color: #27272762 !important;
+    background-color: #27272795 !important;
     backdrop-filter: blur(14px) !important;
+}
+
+.theme--light.project-thumbnail-info {
+    background-color: #FFFFFF88 !important;
+    backdrop-filter: blur(14px) !important;
+}
+
+.theme--dark.project-thumbnail-info {
+    background-color: #27272762 !important;
+    backdrop-filter: blur(14px) !important
 }
 
 .v-image {
@@ -104,7 +114,7 @@ code {
 }
 
 .diff-addition {
-    color: green;
+    color: #0a0;
     background-color: #2EA04326;
 }
 

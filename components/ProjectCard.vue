@@ -6,7 +6,7 @@
           <v-card
             v-if="hover"
             style="height: 100%; border-radius: 0px;"
-            class="cardblur"
+            class="project-thumbnail-info"
           >
             <v-container style="font-size: 1vw;">
               <v-icon>mdi-eye-outline</v-icon>

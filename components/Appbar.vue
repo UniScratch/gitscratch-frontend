@@ -107,19 +107,13 @@
               </v-avatar>
             </v-list-item>
 
-            <v-list-item link>
+            <v-list-item>
               <v-list-item-content>
                 <v-list-item-title class="text-h6">
                   {{ userInfo.name }}
                 </v-list-item-title>
                 <v-list-item-subtitle>{{ userInfo.email }}</v-list-item-subtitle>
               </v-list-item-content>
-
-              <v-list-item-action>
-                <v-icon>
-                  mdi-chevron-right
-                </v-icon>
-              </v-list-item-action>
             </v-list-item>
           </v-list>
           <v-divider />
@@ -127,7 +121,7 @@
             dense
             color="transparent"
           >
-            <v-list-item link>
+            <v-list-item link :to="'/users/' + userInfo.name">
               <v-list-item-icon>
                 <v-icon>mdi-account-outline</v-icon>
               </v-list-item-icon>
@@ -135,7 +129,7 @@
                 <v-list-item-title>主页</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item link>
+            <v-list-item link :to="'/users/' + userInfo.name + '/projects'">
               <v-list-item-icon>
                 <v-icon>mdi-book-outline</v-icon>
               </v-list-item-icon>
@@ -143,7 +137,7 @@
                 <v-list-item-title>作品</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item link>
+            <v-list-item link :to="'/users/' + userInfo.name + '/organizations'">
               <v-list-item-icon>
                 <v-icon>mdi-account-group-outline</v-icon>
               </v-list-item-icon>
@@ -151,7 +145,7 @@
                 <v-list-item-title>组织</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item link>
+            <v-list-item link :to="'/users/' + userInfo.name + '/stars'">
               <v-list-item-icon>
                 <v-icon>mdi-star-outline</v-icon>
               </v-list-item-icon>

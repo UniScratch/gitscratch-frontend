@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h1>
-      关于 GitScratch
-    </h1>
+    <h1>关于 GitScratch</h1>
     <p>GitScratch（极社）是一个 Git 风格的 Scratch 社区，正在开发中。</p>
     <v-btn target="_blank" href="https://github.com/UniScratch/gitscratch-frontend" text>
       <v-icon>
@@ -29,14 +27,10 @@
       QQ频道
     </v-btn> -->
     <v-btn target="_blank" href="https://jq.qq.com/?_wv=1027&amp;k=YZzXfixv" text>
-      <v-icon>
-        mdi-qqchat
-      </v-icon>
+      <v-icon>mdi-qqchat</v-icon>
       QQ 群聊
     </v-btn>
-    <h2>
-      版本信息
-    </h2>
+    <h2>版本信息</h2>
     <p>
       <a target="_blank" :href="'https://github.com/UniScratch/gitscratch-frontend/commit/'+meta.commitHash">在 GitHub 上查看</a>
       <br>
@@ -46,9 +40,7 @@
       <br>
       构建时间：{{ meta.compileTime }}
     </p>
-    <h2>
-      贡献者
-    </h2>
+    <h2>贡献者</h2>
     <p>
       <template v-for="(item, key) in 贡献者">
         {{ key }}：

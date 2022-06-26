@@ -48,9 +48,6 @@
         <v-btn style="border-radius: 24px;">
           <v-icon>mdi-comment-text-multiple-outline</v-icon><span>留言</span>
         </v-btn>
-        <v-btn style="border-radius: 24px;" to="/settings">
-          <v-icon>mdi-cog-outline</v-icon><span>设置</span>
-        </v-btn>
       </v-btn-toggle>
       <v-window
         v-model="toggle_tab"
