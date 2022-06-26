@@ -6,13 +6,16 @@
         <Nuxt />
       </v-container>
     </v-main>
+    <SiteFooter />
   </v-app>
 </template>
 <script>
 import Appbar from '~/components/Appbar.vue'
+import SiteFooter from '~/components/SiteFooter.vue'
 export default {
   components: {
-    Appbar
+    Appbar,
+    SiteFooter
   },
   transition: 'slide-top'
 }
