@@ -61,7 +61,13 @@
       >
         <!-- 发现 -->
         <v-window-item>
-          这是发现
+          <p v-if="token" class="text-h6">
+            以下是我们根据你的兴趣找到的内容…
+          </p>
+          <p v-else>
+            以下是最近 GitScratch 较热门的内容…
+          </p>
+          <ProjectCard />
         </v-window-item>
         <!-- 话题 -->
         <v-window-item>
@@ -88,7 +94,11 @@
   </v-row>
 </template>
 <script>
+import ProjectCard from '../components/ProjectCard.vue'
 export default {
+  components: {
+    ProjectCard
+  },
   data: () => ({
     starredTopics: 0,
     starredProjects: 0,

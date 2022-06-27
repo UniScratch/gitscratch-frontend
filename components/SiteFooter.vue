@@ -1,5 +1,5 @@
 <template>
-  <v-card height="auto">
+  <v-card height="auto" elevation="0">
     <v-footer
       v-bind="localAttrs"
       :padless="true"
@@ -8,7 +8,7 @@
         flat
         tile
         width="100%"
-        class="white lighten-1 text-center"
+        class="text-center grey-footer"
       >
         <v-card-text>
           <v-btn

@@ -2,8 +2,8 @@
 @import "static/mdi/font/css/materialdesignicons.min.css";
 
 :root {
-    --primary-color: #2851e3;
-    }
+    --primary-color: #2196F3;
+}
 
 .theme--light a:not(.v-btn, .v-card, .v-chip, .v-list-item) {
     color: var(--primary-color);
@@ -106,6 +106,7 @@ code {
     transition: color 0.3s ease;
     transition-delay: 0s;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .hide-del:hover {
@@ -121,6 +122,14 @@ code {
 .diff-deletion {
     color: red;
     background-color: #F8514926;
+}
+
+.theme--light.grey-footer {
+    background-color: #EEEEEE;
+}
+
+.theme--dark.grey-footer {
+    background-color: #161616;
 }
 
 canvas {
