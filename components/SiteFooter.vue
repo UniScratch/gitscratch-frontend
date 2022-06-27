@@ -24,8 +24,9 @@
             text
             small
             class="my-2"
+            :to="link[1]"
           >
-            {{ link }}
+            {{ link[0] }}
           </v-btn>
         </v-col>
 
@@ -34,7 +35,7 @@
           class="text-right"
         >
           <div style="margin-top: 10px;">
-            XICP备XXXXXXXX号-X
+            ×ICP备××××××××号-×
           </div>
         </v-col>
       </v-row>
@@ -45,12 +46,11 @@
 export default {
   data: () => ({
     links: [
-      '服务条款',
-      '隐私政策',
-      '服务状态',
-      'API',
-      '定价',
-      '联系我们'
+      ['服务条款', '啊，好舒服'],
+      ['隐私政策', '啊，好舒服'],
+      ['服务状态', '啊，好舒服'],
+      ['API', '啊，好舒服'],
+      ['联系我们', '啊，好舒服']
     ]
   }),
   computed: {
