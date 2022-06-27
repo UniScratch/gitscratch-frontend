@@ -12,22 +12,21 @@
       >
         <v-card-text>
           <v-btn
-            v-for="icon in icons"
-            :key="icon"
-            class="mx-4"
-            icon
+            v-for="text in texts"
+            :key="text"
+            class="ml-2"
+            rounded
+            text
           >
-            <v-icon size="24px">
-              {{ icon }}
-            </v-icon>
+            {{ text }}
           </v-btn>
         </v-card-text>
 
-        <v-divider />
+        <!--<v-divider />
 
         <v-card-text class="black--text">
           © {{ new Date().getFullYear() }} Hydrog. All rights reserved.
-        </v-card-text>
+        </v-card-text>-->
       </v-card>
     </v-footer>
   </v-card>
@@ -35,11 +34,11 @@
 <script>
 export default {
   data: () => ({
-    icons: [
-      'mdi-text-account',
-      'mdi-clipboard-text-outline',
-      'mdi-cube',
-      'mdi-information-outline'
+    texts: [
+      '用户协议',
+      '隐私条款',
+      '社区守则',
+      '关于'
     ],
     items: [
       'default',
