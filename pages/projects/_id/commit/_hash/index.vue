@@ -45,6 +45,11 @@ import { toScratchblocks } from 'parse-sb3-blocks'
 import scratchblocks from 'scratchblocks'
 
 export default {
+  head () {
+    return {
+      title: 'Diff'
+    }
+  },
   data () {
     return {
       data: {},
