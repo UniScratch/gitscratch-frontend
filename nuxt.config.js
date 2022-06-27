@@ -1,6 +1,5 @@
 import colors from 'vuetify/lib/util/colors'
 const isDev = process.env.NODE_ENV !== 'production'
-const isElectron = !!process.env.BUILD_MODE
 module.exports = {
   components: true,
   // https://nuxtjs.org/api/configuration-modern
@@ -130,9 +129,6 @@ module.exports = {
       isClient
     }) {
       config.output.globalObject = 'this'
-      if (isElectron) {
-        config.target = 'electron-renderer'
-      }
     }
   },
   server: {
