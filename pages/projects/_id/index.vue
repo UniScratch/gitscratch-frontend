@@ -46,12 +46,6 @@
                   </v-icon>
                   &nbsp;加载播放器
                 </v-btn>
-                <v-btn v-if="loadPlayer" x-large>
-                  <v-progress-circular
-                    indeterminate
-                    color="grey lighten-5"
-                  />
-                </v-btn>
               </v-row>
             </v-img>
           </v-responsive>
