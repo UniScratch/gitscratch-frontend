@@ -10,13 +10,7 @@
   </v-app>
 </template>
 <script>
-import Appbar from '~/components/Appbar.vue'
-import SiteFooter from '~/components/SiteFooter.vue'
 export default {
-  components: {
-    Appbar,
-    SiteFooter
-  },
   transition: 'slide-top'
 }
 </script>

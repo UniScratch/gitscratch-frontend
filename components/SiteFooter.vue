@@ -1,65 +1,59 @@
 <template>
-  <v-card height="auto" elevation="0">
+  <v-container>
+    <v-divider />
     <v-footer
-      v-bind="localAttrs"
-      :padless="true"
+      padless
+      color="transparent"
     >
-      <v-card
-        flat
-        tile
-        width="100%"
-        class="text-center grey-footer"
-      >
-        <v-card-text>
+      <v-row no-gutters>
+        <v-col
+          :cols="3"
+        >
+          <div style="margin-top: 10px;">
+            © {{ new Date().getFullYear() }} UniScratch. Under the Apache License 2.0.
+          </div>
+        </v-col>
+
+        <v-col
+          :cols="6"
+          class="text-center"
+        >
           <v-btn
-            v-for="text in texts"
-            :key="text"
-            class="ml-2"
-            rounded
+            v-for="link in links"
+            :key="link"
             text
+            small
+            class="my-2"
           >
-            {{ text }}
+            {{ link }}
           </v-btn>
-        </v-card-text>
+        </v-col>
 
-        <!--<v-divider />
-
-        <v-card-text class="black--text">
-          © {{ new Date().getFullYear() }} Hydrog. All rights reserved.
-        </v-card-text>-->
-      </v-card>
+        <v-col
+          :cols="3"
+          class="text-right"
+        >
+          <div style="margin-top: 10px;">
+            XICP备XXXXXXXX号-X
+          </div>
+        </v-col>
+      </v-row>
     </v-footer>
-  </v-card>
+  </v-container>
 </template>
 <script>
 export default {
   data: () => ({
-    texts: [
-      '用户协议',
-      '隐私条款',
-      '社区守则',
-      '关于'
-    ],
-    items: [
-      'default',
-      'absolute',
-      'fixed'
-    ],
-    padless: false,
-    variant: 'default'
+    links: [
+      '服务条款',
+      '隐私政策',
+      '服务状态',
+      'API',
+      '定价',
+      '联系我们'
+    ]
   }),
   computed: {
-    localAttrs () {
-      const attrs = {}
-
-      if (this.variant === 'default') {
-        attrs.absolute = false
-        attrs.fixed = false
-      } else {
-        attrs[this.variant] = true
-      }
-      return attrs
-    }
   }
 }
 </script>
