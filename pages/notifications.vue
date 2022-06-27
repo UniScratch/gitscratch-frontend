@@ -160,7 +160,7 @@ export default {
 }
 </script>
 <style>
-.v-list--nav .v-list-item{
+.v-list--nav .v-list-item, .v-list--nav .v-list-item:before{
   border-radius: 20px !important;
 }
 </style>
