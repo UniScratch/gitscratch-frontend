@@ -7,8 +7,6 @@
     "build": "yarn run genmeta && nuxt build",
     "start": "nuxt start",
     "generate": "yarn run genmeta && nuxt generate",
-    "electron:build": "set BUILD_MODE=electron && yarn run genmeta && nuxt build",
-    "electron:pack": "electron-builder",
     "genmeta": "node gen-meta.js",
     "lint": "eslint . --ext .js,.vue --fix"
   },
@@ -23,22 +21,16 @@
     "@nuxt/http": "^0.6.4",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/vuetify": "https://github.com/UniScratch/vuetify-module.git#master",
-    "child_process": "^1.0.2",
-    "fs": "^0.0.1-security",
     "highlight.js": "^11.5.1",
-    "lru-cache": "^7.10.2",
     "marked": "^4.0.17",
-    "minify-css-string": "^1.0.0",
     "nuxt": "^2.15.8",
     "parse-sb3-blocks": "^0.4.1",
-    "path": "^0.12.7",
     "scratch-audio": "^0.1.0-prerelease.20200528195344",
     "scratch-render": "^0.1.0-prerelease.20211028200436",
     "scratch-storage": "^2.0.2",
     "scratch-svg-renderer": "^0.2.0-prerelease.20210727023023",
     "scratch-vm": "^0.2.0-prerelease.20220602121716",
-    "scratchblocks": "^3.6.0",
-    "twgl.js": "^4.23.1"
+    "scratchblocks": "^3.6.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^8.0.0",
