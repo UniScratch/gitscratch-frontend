@@ -14,12 +14,13 @@
       :disabled="!valid"
       color="primary"
       depressed
+      rounded
       @click="comment"
     >
       发布
     </v-btn>
     <transition name="slide-y-reverse-transition">
-      <v-btn v-if="comment_content || !valid" text color="accent" @click="reset">
+      <v-btn v-if="comment_content || !valid" text color="accent" rounded @click="reset">
         重置
       </v-btn>
     </transition>

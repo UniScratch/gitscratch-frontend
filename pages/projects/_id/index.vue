@@ -6,21 +6,22 @@
           Default Project
         </v-card-title>
         <v-card-text>
-          <v-icon>mdi-eye-outline</v-icon>
-          345
-          <v-icon>mdi-calendar-outline</v-icon>
-          2022/5/28 14:39:58
-          <v-icon>mdi-update</v-icon>
-          <nuxt-link to="/projects/1/commit/170ed1c/" class="text-color">
-            170ed1c
-          </nuxt-link>
-          <br>
+          <div style="display:flex;margin-bottom:10px;">
+            <v-icon>mdi-eye-outline</v-icon>
+            &nbsp;345&nbsp;&nbsp;
+            <v-icon>mdi-calendar-outline</v-icon>
+            &nbsp;2022/5/28 14:39:58&nbsp;&nbsp;
+            <v-icon>mdi-update</v-icon>
+            <nuxt-link to="/projects/1/commit/170ed1c/" class="text-color">
+              &nbsp;170ed1c&nbsp;&nbsp;
+            </nuxt-link>
+          </div>
 
           <v-responsive v-if="!loadPlayer" :aspect-ratio="4/3" content-class="rounded">
             <v-img
               lazy-src="/64025bdca5db4938f65597e3682fddcf.svg"
               src="/64025bdca5db4938f65597e3682fddcf.svg"
-              style="width:100%;height:100%"
+              style="width:100%;height:100%;border-radius:15px;"
             >
               <template #placeholder>
                 <v-row

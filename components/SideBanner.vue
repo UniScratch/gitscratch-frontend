@@ -1,5 +1,5 @@
 <template>
-  <v-card class="text-center" min-height="350">
+  <v-card class="text-center v-card-border" min-height="350">
     <v-card-title style="display: block;" class="text-h5">
       欢迎
     </v-card-title>
@@ -20,6 +20,7 @@
           depressed
           :disabled="dialogLoading"
           :loading="dialogLoading"
+          rounded
           @click.stop="sign"
         >
           <v-icon left>
@@ -53,7 +54,7 @@
           </v-card>
         </v-dialog>
 
-        <v-btn block color="primary" to="/create" class="mt-2">
+        <v-btn block color="primary" to="/create" class="mt-2" rounded>
           <v-icon left>
             mdi-plus
           </v-icon>创建

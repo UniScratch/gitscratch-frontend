@@ -35,24 +35,25 @@
       class="mx-2 mx-md-4 hidden-xs-only"
       dense
       hide-details
+      rounded
       outlined
       single-line
       style="max-width: 250px;"
     />
-    <v-btn text class="hidden-xs-only" to="/explore">
+    <v-btn text class="hidden-xs-only" to="/explore" rounded>
       发现
     </v-btn>
-    <v-btn text class="hidden-xs-only" to="/about">
+    <v-btn text class="hidden-xs-only" to="/about" rounded>
       关于
     </v-btn>
 
     <v-spacer />
 
     <template v-if="!token">
-      <v-btn text to="/auth/login">
+      <v-btn text to="/auth/login" rounded>
         登录
       </v-btn>
-      <v-btn outlined to="/auth/register">
+      <v-btn outlined to="/auth/register" rounded>
         注册
       </v-btn>
     </template>

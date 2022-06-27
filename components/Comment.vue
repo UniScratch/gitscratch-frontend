@@ -1,5 +1,5 @@
 <template>
-  <v-card style="padding: 16px;" class="d-flex">
+  <v-card style="padding: 16px;border-radius: 10px !important;" class="d-flex">
     <v-avatar>
       <v-img :src="comment_author_avatar" />
     </v-avatar>

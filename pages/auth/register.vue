@@ -128,6 +128,7 @@
           <v-btn
             v-if="!(step === 1 || step >= 4)"
             outlined
+            rounded
             color="primary"
             @click="step--"
           >
@@ -142,6 +143,7 @@
           :disabled="!(email_valid && name_valid && password_valid && captcha_valid)"
           color="primary"
           depressed
+          rounded
           :to="step === steps ? '/' : ''"
           @click="next()"
         >

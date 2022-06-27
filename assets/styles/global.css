@@ -97,9 +97,9 @@ code {
     backdrop-filter: blur(14px) !important
 }
 
-.v-image {
+/*.v-image {
     border-radius: 15px;
-}
+}*/
 
 .hide-del {
     color: transparent;

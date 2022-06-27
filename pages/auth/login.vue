@@ -27,6 +27,7 @@
             color="primary"
             depressed
             block
+            rounded
             :disabled="!valid"
             :loading="loading"
             @click="login"

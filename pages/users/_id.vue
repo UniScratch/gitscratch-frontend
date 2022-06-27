@@ -12,7 +12,7 @@
       <p class="text-body">
         {{ bio }}
       </p>
-      <v-btn block color="primary" depressed>
+      <v-btn block color="primary" depressed rounded>
         <v-icon>mdi-plus</v-icon>
         关注
       </v-btn><br>

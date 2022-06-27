@@ -3,7 +3,7 @@
     <v-row>
       <v-tooltip bottom>
         <template #activator="{ on, attrs }">
-          <v-btn text v-bind="attrs" v-on="on">
+          <v-btn text v-bind="attrs" rounded v-on="on">
             <v-icon>
               mdi-star-outline
             </v-icon>
@@ -14,7 +14,7 @@
       </v-tooltip>
       <v-tooltip bottom>
         <template #activator="{ on, attrs }">
-          <v-btn text v-bind="attrs" v-on="on">
+          <v-btn text v-bind="attrs" rounded v-on="on">
             <v-icon>
               mdi-source-branch
             </v-icon>
@@ -25,7 +25,7 @@
       </v-tooltip>
       <v-tooltip bottom>
         <template #activator="{ on, attrs }">
-          <v-btn icon v-bind="attrs" v-on="on">
+          <v-btn icon v-bind="attrs" rounded v-on="on">
             <v-icon color="red">
               mdi-heart-outline
             </v-icon>
