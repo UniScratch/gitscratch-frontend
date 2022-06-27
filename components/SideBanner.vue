@@ -46,6 +46,7 @@
 
               <v-btn
                 text
+                rounded
                 @click="dialog = false"
               >
                 关闭
