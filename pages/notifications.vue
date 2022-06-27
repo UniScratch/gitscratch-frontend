@@ -159,3 +159,8 @@ export default {
   }
 }
 </script>
+<style>
+.v-list--nav .v-list-item{
+  border-radius: 20px !important;
+}
+</style>
