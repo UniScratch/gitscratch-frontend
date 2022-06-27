@@ -6,6 +6,7 @@
     "dev": "yarn run genmeta && nuxt",
     "build": "yarn run genmeta && nuxt build",
     "start": "nuxt start",
+    "generate": "yarn run genmeta && nuxt generate",
     "electron:build": "set BUILD_MODE=electron && yarn run genmeta && nuxt build",
     "electron:pack": "electron-builder",
     "genmeta": "node gen-meta.js",
