@@ -11,10 +11,10 @@
             &nbsp;345&nbsp;&nbsp;
             <v-icon>mdi-calendar-outline</v-icon>
             &nbsp;2022/5/28 14:39:58&nbsp;&nbsp;
-            <v-icon>mdi-update</v-icon>
+            <v-icon>mdi-update</v-icon>&nbsp;
             <nuxt-link to="/projects/1/commit/170ed1c/" class="text-color">
-              &nbsp;170ed1c&nbsp;&nbsp;
-            </nuxt-link>
+              170ed1c
+            </nuxt-link>&nbsp;&nbsp;
           </div>
 
           <v-responsive v-if="!loadPlayer" :aspect-ratio="4/3" content-class="rounded">
@@ -40,11 +40,11 @@
                 align="center"
                 justify="center"
               >
-                <v-btn v-if="!loadPlayer" x-large @click="loadPlayer = true">
+                <v-btn v-if="!loadPlayer" class="rounded-pill" x-large @click="loadPlayer = true">
                   <v-icon>
                     mdi-reload
                   </v-icon>
-                  加载播放器
+                  &nbsp;加载播放器
                 </v-btn>
                 <v-btn v-if="loadPlayer" x-large>
                   <v-progress-circular
