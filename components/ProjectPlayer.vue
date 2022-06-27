@@ -19,6 +19,21 @@
         </v-btn>
       </div>
       <v-responsive :aspect-ratio="4/3">
+        <<<<<<< HEAD
+        =======
+        <div style="position: absolute; width: 100%; text-align:center;">
+          <v-progress-circular
+            v-if="!loadFileTrue"
+            indeterminate
+            style="margin: auto"
+            color="blue lighten-3"
+          />
+          <br><br>
+          <p v-show="!loadFileTrue">
+            正在载入项目
+          </p>
+        </div>
+        >>>>>>> 273bbbc4c46984017e8a1ec3ccb730bcd5b06e45
         <canvas id="canvas_sb3" width="480" height="360" style="width:100%;height:100%" />
       </v-responsive>
     </div>
