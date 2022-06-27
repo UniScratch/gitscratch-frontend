@@ -2,12 +2,24 @@
   <v-row>
     <v-col cols="12" xl="2" md="3" sm="4" style="padding-right: 20px;">
       <div style="text-align: center;">
-        <v-avatar style="width: 100%; height: auto; max-width: 200px;">
+        <v-avatar style="width: 100%; height: auto; max-width: 200px; margin-bottom: 20px;">
           <v-img :src="avatar" />
         </v-avatar>
+        <div style="display: flex;">
+          <span style="display: block; width: 20px; height: 20px; background-color: rgba(34, 149, 242); color: white; border-radius: 20px; font-size: 12px;">{{ level }}</span>&nbsp;
+          <v-progress-linear :value="exp" class="rounded-pill" height="20" />
+        </div>
       </div><br>
       <p class="text-h4">
         {{ username }}
+        <v-tooltip v-show="official" bottom>
+          <template #activator="{ on, attrs }">
+            <v-icon style="color: rgba(50,158,244);" v-bind="attrs" v-on="on">
+              mdi-check-decagram-outline
+            </v-icon>
+          </template>
+          <span>{{ authText }}</span>
+        </v-tooltip>
       </p>
       <p class="text-body">
         {{ bio }}
@@ -107,6 +119,10 @@ export default {
     bio: '啊，好舒服',
     avatar: '/GitScratch-icon-background-blue.svg',
     toggle_tab: 0,
+    level: 1,
+    exp: 15,
+    official: true,
+    authText: '社区官方认证',
     README: `
 # 啊，好舒服
 昨天晚上跟 [@作者](/users/作者) 床♂战太爽了
