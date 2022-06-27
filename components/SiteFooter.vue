@@ -7,7 +7,7 @@
     >
       <v-row no-gutters>
         <v-col
-          :cols="3"
+          :cols="5"
         >
           <div style="margin-top: 10px;">
             © {{ new Date().getFullYear() }} UniScratch. Under the Apache License 2.0.
@@ -31,7 +31,7 @@
         </v-col>
 
         <v-col
-          :cols="3"
+          :cols="5"
           class="text-right"
         >
           <div style="margin-top: 10px;">
