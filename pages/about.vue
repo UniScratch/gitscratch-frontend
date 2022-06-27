@@ -2,7 +2,7 @@
   <div>
     <h1>关于 GitScratch</h1>
     <p>GitScratch（极社）是一个 Git 风格的 Scratch 社区，正在开发中。</p>
-    <v-btn target="_blank" href="https://github.com/UniScratch/gitscratch-frontend" text>
+    <v-btn target="_blank" href="https://github.com/UniScratch/gitscratch-frontend" text rounded>
       <v-icon>
         mdi-github
       </v-icon>
@@ -26,7 +26,7 @@
       </v-icon>
       QQ频道
     </v-btn> -->
-    <v-btn target="_blank" href="https://jq.qq.com/?_wv=1027&amp;k=YZzXfixv" text>
+    <v-btn target="_blank" href="https://jq.qq.com/?_wv=1027&amp;k=YZzXfixv" text rounded>
       <v-icon>mdi-qqchat</v-icon>
       QQ 群聊
     </v-btn>
