@@ -20,7 +20,7 @@
         >
           <v-btn
             v-for="link in links"
-            :key="link"
+            :key="link[0]"
             text
             small
             class="my-2"
