@@ -35,10 +35,9 @@
       class="mx-2 mx-md-4 hidden-xs-only"
       dense
       hide-details
-      rounded
       outlined
       single-line
-      style="max-width: 250px;"
+      style="max-width: 250px; border-radius: 20px !important;"
     />
     <v-btn text class="hidden-xs-only" to="/explore" rounded>
       发现
