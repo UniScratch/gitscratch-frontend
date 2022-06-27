@@ -18,7 +18,6 @@
           </v-icon>
         </v-btn>
       </div>
-
       <v-responsive :aspect-ratio="4/3">
         <div style="position: absolute; width: 100%; text-align:center;">
           <v-progress-circular
@@ -29,7 +28,7 @@
           />
           <br><br>
           <p v-show="!loadFileTrue">
-            {{ waiting }}
+            正在载入项目
           </p>
         </div>
         <canvas id="canvas_sb3" width="480" height="360" style="width:100%;height:100%" />
@@ -43,8 +42,7 @@ export default {
     return {
       loadFileTrue: false,
       vm: null,
-      projectRunning: false,
-      waiting: '正在载入项目'
+      projectRunning: false
     }
   },
   mounted () {
