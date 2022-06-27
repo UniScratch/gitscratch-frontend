@@ -62,7 +62,7 @@
             <v-divider />
             <MarkdownRender style="padding: 16px;" />
           </v-card>
-          <ProjectGroup title="置顶作品" style="margin-top: 8px;" />
+          <ProjectGroupSmall title="置顶作品" style="margin-top: 8px;" />
         </v-window-item>
         <!-- 作品 -->
         <v-window-item>
@@ -75,11 +75,11 @@
               更多
             </router-link>
           </div>
-          <ProjectGroup />
+          <ProjectGroupSmall />
         </v-window-item>
         <!-- 组织 -->
         <v-window-item>
-          <p>？？？？？</p>
+          <p>?????</p>
         </v-window-item>
         <!-- 留言 -->
         <v-window-item>
