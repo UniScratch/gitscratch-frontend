@@ -7,17 +7,17 @@
     />
     <v-textarea
       v-model="comment_content"
-      :label="allowComment ? '评论区已关闭' : '评论'"
+      :label="allowComment ? '评论' : '评论区已关闭'"
       counter="1024"
       auto-grow
       rows="2"
       outlined
       style="border-radius: 4px;"
       :rules="[commentContentRules.comment]"
-      :disabled="allowComment"
+      :disabled="!allowComment"
     />
     <v-btn
-      :disabled="!valid||allowComment"
+      :disabled="!valid||!allowComment"
       color="primary"
       depressed
       rounded
@@ -43,7 +43,7 @@ export default {
       comment: v => !!v || '留言内容不能为空'
     },
     comment_content: '',
-    allowComment: true,
+    allowComment: false,
     isAuthor: true
   }),
   methods: {
