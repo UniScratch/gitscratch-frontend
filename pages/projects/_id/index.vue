@@ -57,7 +57,7 @@
 
       <div class="hidden-sm-and-down">
         <v-divider style="margin: 16px 0;" />
-        <CommentForm :allow_comment="allow_comment" :disable_comment_reason="disable_comment_reason" />
+        <CommentForm :allow_comment="allow_comment" :placeholder="placeholder" />
         <v-divider style="margin: 8px 0;" />
         <p class="text-h5">
           留言
@@ -73,7 +73,7 @@
       <ProjectDesc />
       <div class="hidden-md-and-up">
         <v-divider style="margin: 16px 0;" />
-        <CommentForm :allow_comment="allow_comment" :disable_comment_reason="disable_comment_reason" />
+        <CommentForm :allow_comment="allow_comment" :placeholder="placeholder" />
         <v-divider style="margin: 8px 0;" />
         <p class="text-h5">
           留言
@@ -97,7 +97,7 @@ export default {
     project_commit: '170ed1c',
     project_update: '2022/5/28 14:39:58',
     allow_comment: false,
-    disable_comment_reason: '作者已关闭该作品评论区'
+    placeholder: '作者已关闭该作品评论区'
   }),
   head () {
     return {
