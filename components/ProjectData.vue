@@ -35,7 +35,14 @@
       </v-tooltip>
       <v-tooltip v-if="isOpenSource" bottom>
         <template #activator="{ on, attrs }">
-          <v-btn icon v-bind="attrs" rounded style="margin-left: 10px;" v-on="on">
+          <v-btn
+            icon
+            v-bind="attrs"
+            rounded
+            style="margin-left: 10px;"
+            :to="'/projects/' + projectId + '/editor'"
+            v-on="on"
+          >
             <v-icon>
               mdi-file-code-outline
             </v-icon>
