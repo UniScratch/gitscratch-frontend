@@ -60,7 +60,6 @@
 <script>
 export default {
   components: {
-
   },
   data: () => ({
     projectId: 1,
