@@ -9,7 +9,7 @@
         <v-col
           :cols="3"
         >
-          <div style="margin-top: 10px;">
+          <div style="margin-top: 12px; font-size: 10px;">
             © {{ new Date().getFullYear() }} UniScratch. Under the Apache License 2.0.
           </div>
         </v-col>
@@ -28,15 +28,6 @@
           >
             {{ link[0] }}
           </v-btn>
-        </v-col>
-
-        <v-col
-          :cols="3"
-          class="text-right"
-        >
-          <div style="margin-top: 10px;">
-            
-          </div>
         </v-col>
       </v-row>
     </v-footer>
