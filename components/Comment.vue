@@ -17,6 +17,14 @@
           </template>
           <span>{{ comment_list[5] }}</span>
         </v-tooltip>
+        <v-tooltip v-if="comment_list[7]" bottom>
+          <template #activator="{ on, attrs }">
+            <v-icon style="margin-top: -2px;" color="rgba(255, 87, 34)" v-bind="attrs" size="20" v-on="on">
+              mdi-comment-remove-outline
+            </v-icon>
+          </template>
+          <span>剩余 {{ comment_list[8] }} 天解禁</span>
+        </v-tooltip>
         <span style="margin-left: 8px;" class="grey-text">{{ comment_list[3] }}</span>
         <v-divider style="margin: 8px 0;" />
         <MarkdownRender />
@@ -34,8 +42,8 @@ export default {
   },
   data: () => ({
     comment_ins: [
-      ['1', '/GitScratch-icon-background-blue.svg', '作者', dateStr, true, '社区官方认证', 'rgba(33,150,243)'],
-      ['2', '/GitScratch-icon-background-blue.svg', 'Test', dateStr, false, '', '']
+      ['1', '/GitScratch-icon-background-blue.svg', '作者', dateStr, true, '社区官方认证', 'rgba(33,150,243)', true, '-1'],
+      ['2', '/GitScratch-icon-background-blue.svg', 'Test', dateStr, false, '', '', true, '-1']
     ]
   }),
   methods: {

@@ -20,6 +20,22 @@
           </template>
           <span>{{ verifyCategories }}</span>
         </v-tooltip>
+        <v-tooltip v-if="is_muted" bottom>
+          <template #activator="{ on, attrs }">
+            <v-icon color="rgba(255, 87, 34)" v-bind="attrs" v-on="on">
+              mdi-comment-remove-outline
+            </v-icon>
+          </template>
+          <span>已被禁言, {{ mute_remain_date }} 天后解禁</span>
+        </v-tooltip>
+        <v-tooltip v-if="is_banned" bottom>
+          <template #activator="{ on, attrs }">
+            <v-icon color="rgba(238, 54, 37)" v-bind="attrs" v-on="on">
+              mdi-gavel
+            </v-icon>
+          </template>
+          <span>账户被封禁, {{ ban_remain_date }} 天后解禁</span>
+        </v-tooltip>
       </p>
       <p class="text-body">
         {{ bio }}
@@ -124,6 +140,10 @@ export default {
     is_verified: true,
     verifyCategories: '社区官方认证',
     verifyColor: 'rgba(33,150,243)',
+    is_muted: true,
+    is_banned: true,
+    mute_remain_date: '-1',
+    ban_remain_date: '-1',
     README: `
 # 啊，好舒服
 昨天晚上跟 [@作者](/users/作者) 床♂战太爽了
