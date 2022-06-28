@@ -10,9 +10,9 @@
             123
           </v-btn>
         </template>
-        <span>星标（Star）</span>
+        <span>星标</span>
       </v-tooltip>
-      <v-tooltip bottom>
+      <v-tooltip v-if="isOpenSource" bottom>
         <template #activator="{ on, attrs }">
           <v-btn text v-bind="attrs" rounded v-on="on">
             <v-icon>
@@ -21,7 +21,7 @@
             234
           </v-btn>
         </template>
-        <span>复刻（Fork）</span>
+        <span>改编</span>
       </v-tooltip>
       <v-tooltip bottom>
         <template #activator="{ on, attrs }">
@@ -31,7 +31,24 @@
             </v-icon>
           </v-btn>
         </template>
-        <span>赞助（Sponsor）</span>
+        <span>赞助</span>
+      </v-tooltip>
+      <v-tooltip v-if="isOpenSource" bottom>
+        <template #activator="{ on, attrs }">
+          <v-btn
+            icon
+            v-bind="attrs"
+            rounded
+            style="margin-left: 10px;"
+            :to="'/projects/' + projectId + '/editor'"
+            v-on="on"
+          >
+            <v-icon>
+              mdi-file-code-outline
+            </v-icon>
+          </v-btn>
+        </template>
+        <span>源码</span>
       </v-tooltip>
       <v-spacer />
       <v-tooltip bottom>
@@ -47,3 +64,17 @@
     </v-row>
   </div>
 </template>
+<script>
+export default {
+  components: {
+  },
+  data: () => ({
+    projectId: 1,
+    star: 123,
+    fork: 234,
+    isOpenSource: true
+  }),
+  methods: {
+  }
+}
+</script>

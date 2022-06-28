@@ -115,6 +115,25 @@
                 <v-list-item-subtitle>{{ userInfo.email }}</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
+            <v-alert
+              v-if="isMute"
+              dense
+              class="rounded-0"
+              style="margin: 0 !important;font-size: 8px; background-color: rgba(251,140,0) !important;"
+              type="error"
+            >
+              你的账户已被禁言, 将在 {{ muteRemainDate }} 天后解禁
+            </v-alert>
+            <v-alert
+              v-if="isBanned"
+              dense
+              class="rounded-0"
+              style="margin: 0 !important; color: white; font-size: 8px; background-color: rgba(255,82,82) !important;"
+              icon="mdi-alert-octagon-outline"
+              type="error"
+            >
+              你的账户已被封禁, 将在 {{ banRemainDate }} 天后解封, 有疑义? 查看 <a style="color: white !important; caret-color: white !important;" href="/rule">社区守则</a>
+            </v-alert>
           </v-list>
           <v-divider />
           <v-list
@@ -185,6 +204,10 @@
 <script>
 export default {
   data: () => ({
+    isMute: true,
+    muteRemainDate: '-1',
+    isBanned: true,
+    banRemainDate: '-1'
   }),
 
   computed: {

@@ -3,17 +3,17 @@
     <v-col cols="12" xl="7" md="8">
       <v-card>
         <v-card-title class="text-h5">
-          Default Project
+          {{ project_title }}
         </v-card-title>
         <v-card-text>
           <div style="display:flex;margin-bottom:10px;">
             <v-icon>mdi-eye-outline</v-icon>
-            &nbsp;345&nbsp;&nbsp;
+            &nbsp;{{ project_views }}&nbsp;&nbsp;
             <v-icon>mdi-calendar-outline</v-icon>
-            &nbsp;2022/5/28 14:39:58&nbsp;&nbsp;
+            &nbsp;{{ project_update }}&nbsp;&nbsp;
             <v-icon>mdi-update</v-icon>&nbsp;
             <nuxt-link to="/projects/1/commit/170ed1c/" class="text-color">
-              170ed1c
+              {{ project_commit }}
             </nuxt-link>&nbsp;&nbsp;
           </div>
 
@@ -21,7 +21,7 @@
             <v-img
               lazy-src="/64025bdca5db4938f65597e3682fddcf.svg"
               src="/64025bdca5db4938f65597e3682fddcf.svg"
-              style="width:100%;height:100%;border-radius:15px;"
+              style="width: 100%; height: 100%; border-radius: 15px;"
             >
               <template #placeholder>
                 <v-row
@@ -62,9 +62,7 @@
         <p class="text-h5">
           留言
         </p>
-        <Comment
-          content="Supports Markdown  "
-        />
+        <Comment />
       </div>
     </v-col>
     <v-col cols="12" xl="5" md="4">
@@ -78,22 +76,23 @@
         <p class="text-h5">
           留言
         </p>
-        <Comment
-          content="Supports Markdown  "
-        />
+        <Comment />
       </div>
     </v-col>
   </v-row>
 </template>
 <script>
 const marked = require('marked')
-
 export default {
   data: () => ({
     loadPlayer: false,
     bio: '啊，好舒服',
     avatar: '/GitScratch-icon-background-blue.svg',
-    project_title: 'Default Project'
+    project_title: 'Default Project',
+    project_views: 114514,
+    project_commit: '170ed1c',
+    project_update: '2022/5/28 14:39:58',
+    allowComment: false
   }),
   head () {
     return {

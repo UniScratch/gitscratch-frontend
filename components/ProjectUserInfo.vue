@@ -19,6 +19,14 @@
             </template>
             <span>{{ project_author_verify_categories }}</span>
           </v-tooltip>
+          <v-tooltip v-if="project_author_is_muted" bottom>
+            <template #activator="{ on, attrs }">
+              <v-icon style="margin-top: -5px;" color="rgba(255, 87, 34)" v-bind="attrs" v-on="on">
+                mdi-comment-remove-outline
+              </v-icon>
+            </template>
+            <span>作者被禁言, 剩余 {{ project_author_mute_remain }} 天解禁</span>
+          </v-tooltip>
         </v-list-item-title>
         <span class="level-span">Lv. {{ project_author_level }}</span>
         <v-list-item-subtitle>Lorem sit deserunt adipisicing anim cupidatat mollit exercitation non mollit voluptate. Ad esse non veniam Lorem sint et. </v-list-item-subtitle>
@@ -43,7 +51,9 @@ export default {
     project_author_level: 1,
     project_author_is_verified: true,
     project_author_verify_categories: '社区官方认证',
-    project_author_verify_color: 'rgba(33, 150, 243)'
+    project_author_verify_color: 'rgba(33, 150, 243)',
+    project_author_is_muted: true,
+    project_author_mute_remain: '-1'
   })
 }
 </script>
