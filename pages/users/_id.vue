@@ -12,13 +12,13 @@
       </div><br>
       <p class="text-h4">
         {{ username }}
-        <v-tooltip v-show="official" bottom>
+        <v-tooltip v-if="is_verified" bottom>
           <template #activator="{ on, attrs }">
-            <v-icon style="color: rgba(50,158,244);" v-bind="attrs" v-on="on">
+            <v-icon :color="verifyColor" v-bind="attrs" v-on="on">
               mdi-check-decagram-outline
             </v-icon>
           </template>
-          <span>{{ authText }}</span>
+          <span>{{ verifyCategories }}</span>
         </v-tooltip>
       </p>
       <p class="text-body">
@@ -121,8 +121,9 @@ export default {
     toggle_tab: 0,
     level: 1,
     exp: 15,
-    official: true,
-    authText: '社区官方认证',
+    is_verified: true,
+    verifyCategories: '社区官方认证',
+    verifyColor: 'rgba(33,150,243)',
     README: `
 # 啊，好舒服
 昨天晚上跟 [@作者](/users/作者) 床♂战太爽了
