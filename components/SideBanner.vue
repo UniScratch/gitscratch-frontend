@@ -32,7 +32,7 @@
           max-width="500"
           overlay-opacity="0.2"
         >
-          <v-card class="cardblur" style="border-radius:8px;">
+          <v-card class="cardblur">
             <v-card-title class="text-h5">
               签到成功
             </v-card-title>
@@ -46,7 +46,7 @@
 
               <v-btn
                 text
-                style="border-radius:4px !important;"
+                rounded
                 @click="dialog = false"
               >
                 关闭
@@ -85,8 +85,3 @@ export default {
 }
 
 </script>
-<style>
-.v-dialog{
-  border-radius: 8px;
-}
-</style>
