@@ -6,7 +6,7 @@
           <v-img :src="avatar" />
         </v-avatar>
         <div style="display: flex;">
-          <span style="display: block; width: 20px; height: 20px; background-color: rgba(34, 149, 242); color: white; border-radius: 20px; font-size: 12px;">{{ level }}</span>&nbsp;
+          <span style="display: block; min-width: 20px; height: 20px; background-color: rgba(34, 149, 242); color: white; border-radius: 50%; font-size: 12px;">{{ level }}</span>&nbsp;
           <v-progress-linear :value="exp" class="rounded-pill" height="20" />
         </div>
       </div><br>
