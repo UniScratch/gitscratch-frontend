@@ -207,9 +207,9 @@
 export default {
   data: () => ({
     isMute: true,
-    muteRemainDate: '114514',
+    muteRemainDate: '-1',
     isBanned: true,
-    banRemainDate: '1919810'
+    banRemainDate: '-1'
   }),
 
   computed: {
