@@ -20,7 +20,7 @@
             <span>{{ project_author_verify_categories }}</span>
           </v-tooltip>
         </v-list-item-title>
-        <span class="level-span">Lv. {{ level }}</span>
+        <span class="level-span">Lv. {{ project_author_level }}</span>
         <v-list-item-subtitle>Lorem sit deserunt adipisicing anim cupidatat mollit exercitation non mollit voluptate. Ad esse non veniam Lorem sint et. </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
@@ -40,7 +40,7 @@ export default {
   data: () => ({
     project_author: '作者',
     project_author_avatar: '/GitScratch-icon-background-blue.svg',
-    level: 1,
+    project_author_level: 1,
     project_author_is_verified: true,
     project_author_verify_categories: '社区官方认证',
     project_author_verify_color: 'rgba(33, 150, 243)'
