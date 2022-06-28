@@ -2,16 +2,17 @@
   <v-form ref="form" v-model="valid" style="margin-bottom: 16px;" lazy-validation>
     <v-textarea
       v-model="comment_content"
-      label="内容"
+      :label="disable_comment_reason"
       counter="1024"
       auto-grow
       rows="2"
       outlined
       style="border-radius: 4px;"
       :rules="[commentContentRules.comment]"
+      :disabled="!allow_comment"
     />
     <v-btn
-      :disabled="!valid"
+      :disabled="!valid||!allow_comment"
       color="primary"
       depressed
       rounded
@@ -28,6 +29,7 @@
 </template>
 <script>
 export default {
+  props: ['allow_comment', 'disable_comment_reason'],
   data: () => ({
     valid: true,
     commentContentRules: {

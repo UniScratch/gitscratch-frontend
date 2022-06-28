@@ -12,7 +12,7 @@
         </template>
         <span>星标 (Star)</span>
       </v-tooltip>
-      <v-tooltip bottom>
+      <v-tooltip v-if="isOpenSource" bottom>
         <template #activator="{ on, attrs }">
           <v-btn text v-bind="attrs" rounded v-on="on">
             <v-icon>

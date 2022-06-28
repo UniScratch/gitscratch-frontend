@@ -3,17 +3,17 @@
     <v-col cols="12" xl="7" md="8">
       <v-card>
         <v-card-title class="text-h5">
-          Default Project
+          {{ project_title }}
         </v-card-title>
         <v-card-text>
           <div style="display:flex;margin-bottom:10px;">
             <v-icon>mdi-eye-outline</v-icon>
-            &nbsp;345&nbsp;&nbsp;
+            &nbsp;{{ project_views }}&nbsp;&nbsp;
             <v-icon>mdi-calendar-outline</v-icon>
-            &nbsp;2022/5/28 14:39:58&nbsp;&nbsp;
+            &nbsp;{{ project_update }}&nbsp;&nbsp;
             <v-icon>mdi-update</v-icon>&nbsp;
             <nuxt-link to="/projects/1/commit/170ed1c/" class="text-color">
-              170ed1c
+              {{ project_commit }}
             </nuxt-link>&nbsp;&nbsp;
           </div>
 
@@ -57,7 +57,7 @@
 
       <div class="hidden-sm-and-down">
         <v-divider style="margin: 16px 0;" />
-        <CommentForm />
+        <CommentForm :allow_comment="allow_comment" :disable_comment_reason="disable_comment_reason" />
         <v-divider style="margin: 8px 0;" />
         <p class="text-h5">
           留言
@@ -73,7 +73,7 @@
       <ProjectDesc />
       <div class="hidden-md-and-up">
         <v-divider style="margin: 16px 0;" />
-        <CommentForm />
+        <CommentForm :allow_comment="allow_comment" :disable_comment_reason="disable_comment_reason" />
         <v-divider style="margin: 8px 0;" />
         <p class="text-h5">
           留言
@@ -92,7 +92,12 @@ export default {
     loadPlayer: false,
     bio: '啊，好舒服',
     avatar: '/GitScratch-icon-background-blue.svg',
-    project_title: 'Default Project'
+    project_title: 'Default Project',
+    project_views: 114514,
+    project_commit: '170ed1c',
+    project_update: '2022/5/28 14:39:58',
+    allow_comment: false,
+    disable_comment_reason: '作者已关闭该作品评论区'
   }),
   head () {
     return {
