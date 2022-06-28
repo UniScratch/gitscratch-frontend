@@ -4,7 +4,9 @@
       <v-list-item-avatar
         size="80"
       >
-        <v-avatar :src="project_author_avatar" size="80" />
+        <v-avatar style="width: 100%; height: auto; max-width: 200px;">
+          <v-img :src="project_author_avatar" size="80" />
+        </v-avatar>
       </v-list-item-avatar>
       <v-list-item-content>
         <v-list-item-title class="text-h5">
