@@ -87,7 +87,6 @@
 </template>
 <script>
 const marked = require('marked')
-
 export default {
   data: () => ({
     loadPlayer: false,
