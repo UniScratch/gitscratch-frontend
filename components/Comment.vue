@@ -8,6 +8,14 @@
       <router-link :to="'/users/' + comment_author_name">
         {{ comment_author_name }}
       </router-link>
+      <v-tooltip v-if="comment_author_is_verified" bottom>
+        <template #activator="{ on, attrs }">
+          <v-icon style="margin-top: -2px;" :color="comment_author_verify_color" v-bind="attrs" size="20" v-on="on">
+            mdi-check-decagram-outline
+          </v-icon>
+        </template>
+        <span>{{ comment_author_verify_categories }}</span>
+      </v-tooltip>
       <span style="margin-left: 8px;" class="grey-text">{{ comment_time }}</span>
       <v-divider style="margin: 8px 0;" />
       <MarkdownRender />
@@ -25,7 +33,10 @@ export default {
   data: () => ({
     comment_author_avatar: '/GitScratch-icon-background-blue.svg',
     comment_author_name: '作者',
-    comment_time: dateStr
+    comment_time: dateStr,
+    comment_author_is_verified: true,
+    comment_author_verify_categories: '社区官方认证',
+    comment_author_verify_color: 'rgba(33,150,243)'
   }),
   methods: {
   }

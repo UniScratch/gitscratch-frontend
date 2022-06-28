@@ -11,13 +11,13 @@
       <v-list-item-content>
         <v-list-item-title class="text-h5">
           {{ project_author }}
-          <v-tooltip v-show="official" bottom>
+          <v-tooltip v-if="project_author_is_verified" bottom>
             <template #activator="{ on, attrs }">
-              <v-icon style="color: rgba(50,158,244); margin-top: -5px;" v-bind="attrs" v-on="on">
+              <v-icon style="margin-top: -5px;" :color="project_author_verify_color" v-bind="attrs" v-on="on">
                 mdi-check-decagram-outline
               </v-icon>
             </template>
-            <span>{{ authText }}</span>
+            <span>{{ project_author_verify_categories }}</span>
           </v-tooltip>
         </v-list-item-title>
         <span class="level-span">Lv. {{ level }}</span>
@@ -41,8 +41,9 @@ export default {
     project_author: '作者',
     project_author_avatar: '/GitScratch-icon-background-blue.svg',
     level: 1,
-    official: true,
-    authText: '社区官方认证'
+    project_author_is_verified: true,
+    project_author_verify_categories: '社区官方认证',
+    project_author_verify_color: 'rgba(33, 150, 243)'
   })
 }
 </script>
