@@ -1,9 +1,10 @@
 <template>
-  <span>
+  <div>
     <v-switch
       v-if="isAuthor"
+      v-model="allowComment"
       label="允许评论"
-      @click="changeCommentAllow()"
+      @click="changeCommentAllow"
     />
     <v-form ref="form" v-model="valid" style="margin-bottom: 16px;" lazy-validation>
       <v-textarea
@@ -33,7 +34,7 @@
         </v-btn>
       </transition>
     </v-form>
-  </span>
+  </div>
 </template>
 <script>
 export default {
@@ -59,7 +60,6 @@ export default {
       this.$refs.form.reset()
     },
     changeCommentAllow () {
-      this.allowComment = !this.allowComment
       // Send allow comment data to API
     }
   }
