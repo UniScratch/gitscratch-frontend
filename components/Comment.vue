@@ -1,6 +1,6 @@
 <template>
   <v-list>
-    <v-card v-for="comment_list in comment_ins" :key="comment_list" style="padding: 16px;border-radius: 10px !important;margin-bottom: 15px;" class="d-flex">
+    <v-card v-for="comment_list in comment_ins" :key="comment_list[0]" style="padding: 16px;border-radius: 10px !important;margin-bottom: 15px;" class="d-flex">
       <v-avatar>
         <v-img :src="comment_list[1]" />
       </v-avatar>
