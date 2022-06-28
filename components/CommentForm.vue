@@ -1,18 +1,21 @@
 <template>
   <v-form ref="form" v-model="valid" style="margin-bottom: 16px;" lazy-validation>
+    <v-switch
+      label="允许评论"
+    />
     <v-textarea
       v-model="comment_content"
-      :label="allow_comment ? '评论' : '评论区已关闭'"
+      :label="allowComment ? '评论' : '评论区已关闭'"
       counter="1024"
       auto-grow
       rows="2"
       outlined
       style="border-radius: 4px;"
       :rules="[commentContentRules.comment]"
-      :disabled="!allow_comment"
+      :disabled="!allowComment"
     />
     <v-btn
-      :disabled="!valid||!allow_comment"
+      :disabled="!valid||!allowComment"
       color="primary"
       depressed
       rounded
@@ -29,7 +32,16 @@
 </template>
 <script>
 export default {
-  props: ['allow_comment'],
+  props: {
+    allowComment: {
+      type: Boolean,
+      default: true
+    },
+    isAuthor: {
+      type: Boolean,
+      default: false
+    }
+  },
   data: () => ({
     valid: true,
     commentContentRules: {

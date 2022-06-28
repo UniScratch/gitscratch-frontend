@@ -21,7 +21,7 @@
             <v-img
               lazy-src="/64025bdca5db4938f65597e3682fddcf.svg"
               src="/64025bdca5db4938f65597e3682fddcf.svg"
-              style="width:100%;height:100%;border-radius:15px;"
+              style="width: 100%; height: 100%; border-radius: 15px;"
             >
               <template #placeholder>
                 <v-row
@@ -57,14 +57,12 @@
 
       <div class="hidden-sm-and-down">
         <v-divider style="margin: 16px 0;" />
-        <CommentForm :allow_comment="allow_comment" />
+        <CommentForm :allow-comment="allowComment" />
         <v-divider style="margin: 8px 0;" />
         <p class="text-h5">
           留言
         </p>
-        <Comment
-          content="Supports Markdown  "
-        />
+        <Comment />
       </div>
     </v-col>
     <v-col cols="12" xl="5" md="4">
@@ -73,14 +71,12 @@
       <ProjectDesc />
       <div class="hidden-md-and-up">
         <v-divider style="margin: 16px 0;" />
-        <CommentForm :allow_comment="allow_comment" />
+        <CommentForm :allow-comment="allowComment" />
         <v-divider style="margin: 8px 0;" />
         <p class="text-h5">
           留言
         </p>
-        <Comment
-          content="Supports Markdown  "
-        />
+        <Comment />
       </div>
     </v-col>
   </v-row>
@@ -96,7 +92,7 @@ export default {
     project_views: 114514,
     project_commit: '170ed1c',
     project_update: '2022/5/28 14:39:58',
-    allow_comment: false
+    allowComment: false
   }),
   head () {
     return {
