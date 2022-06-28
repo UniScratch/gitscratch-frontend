@@ -36,8 +36,7 @@ export default {
     comment_ins: [
       ['1', '/GitScratch-icon-background-blue.svg', '作者', dateStr, true, '社区官方认证', 'rgba(33,150,243)'],
       ['2', '/GitScratch-icon-background-blue.svg', 'Test', dateStr, false, '', '']
-    ],
-    comment_list: []
+    ]
   }),
   methods: {
   }
