@@ -118,7 +118,6 @@
             <v-alert
               v-if="isMute"
               dense
-              border="left"
               class="rounded-0"
               style="margin: 0 !important;font-size: 8px; background-color: rgba(251,140,0) !important;"
               type="error"
@@ -128,7 +127,6 @@
             <v-alert
               v-if="isBanned"
               dense
-              border="left"
               class="rounded-0"
               style="margin: 0 !important; color: white; font-size: 8px; background-color: rgba(255,82,82) !important;"
               icon="mdi-alert-octagon-outline"
