@@ -35,7 +35,7 @@
           class="text-right"
         >
           <div style="margin-top: 10px;">
-            ×ICP备××××××××号-×
+            
           </div>
         </v-col>
       </v-row>
@@ -46,11 +46,11 @@
 export default {
   data: () => ({
     links: [
-      ['服务条款', '啊，好舒服'],
-      ['隐私政策', '啊，好舒服'],
-      ['服务状态', '啊，好舒服'],
-      ['API', '啊，好舒服'],
-      ['联系我们', '啊，好舒服']
+      ['服务条款', 'agreement'],
+      ['隐私政策', 'privacy'],
+      ['服务状态', 'status'],
+      ['API', 'api'],
+      ['联系我们', 'contactus']
     ]
   }),
   computed: {
