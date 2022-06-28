@@ -1,7 +1,9 @@
 <template>
   <v-form ref="form" v-model="valid" style="margin-bottom: 16px;" lazy-validation>
     <v-switch
+      v-if="isAuthor"
       label="允许评论"
+      @click="changeCommentAllow()"
     />
     <v-textarea
       v-model="comment_content"
@@ -19,9 +21,10 @@
       color="primary"
       depressed
       rounded
+      style="transition: background-color 0.5s;"
       @click="comment"
     >
-      发布
+      发布{{ allow_comment }}
     </v-btn>
     <transition name="slide-y-reverse-transition">
       <v-btn v-if="comment_content || !valid" text color="accent" rounded @click="reset">
@@ -33,21 +36,15 @@
 <script>
 export default {
   props: {
-    allowComment: {
-      type: Boolean,
-      default: true
-    },
-    isAuthor: {
-      type: Boolean,
-      default: false
-    }
   },
   data: () => ({
     valid: true,
     commentContentRules: {
       comment: v => !!v || '留言内容不能为空'
     },
-    comment_content: ''
+    comment_content: '',
+    allowComment: false,
+    isAuthor: true
   }),
   methods: {
     comment () {
@@ -58,6 +55,10 @@ export default {
     },
     reset () {
       this.$refs.form.reset()
+    },
+    changeCommentAllow () {
+      this.allowComment = !this.allowComment
+      // Send allow comment data to API
     }
   }
 }

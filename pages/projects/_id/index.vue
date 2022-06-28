@@ -57,7 +57,7 @@
 
       <div class="hidden-sm-and-down">
         <v-divider style="margin: 16px 0;" />
-        <CommentForm :allow-comment="allowComment" />
+        <CommentForm />
         <v-divider style="margin: 8px 0;" />
         <p class="text-h5">
           留言
@@ -71,7 +71,7 @@
       <ProjectDesc />
       <div class="hidden-md-and-up">
         <v-divider style="margin: 16px 0;" />
-        <CommentForm :allow-comment="allowComment" />
+        <CommentForm />
         <v-divider style="margin: 8px 0;" />
         <p class="text-h5">
           留言
