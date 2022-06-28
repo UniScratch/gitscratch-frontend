@@ -2,7 +2,7 @@
   <v-form ref="form" v-model="valid" style="margin-bottom: 16px;" lazy-validation>
     <v-textarea
       v-model="comment_content"
-      :label="placeholder"
+      :label="allow_comment ? '评论' : '评论区已关闭'"
       counter="1024"
       auto-grow
       rows="2"
@@ -29,7 +29,7 @@
 </template>
 <script>
 export default {
-  props: ['allow_comment', 'placeholder'],
+  props: ['allow_comment'],
   data: () => ({
     valid: true,
     commentContentRules: {
