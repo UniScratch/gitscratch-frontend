@@ -123,7 +123,7 @@
               style="margin: 0 !important;font-size: 8px; background-color: rgba(251,140,0) !important;"
               type="error"
             >
-              你的账户已被禁言, 将在{{ muteRemainDate }}天后解禁
+              你的账户已被禁言, 将在 {{ muteRemainDate }} 天后解禁
             </v-alert>
             <v-alert
               v-if="isBanned"
@@ -134,7 +134,7 @@
               icon="mdi-alert-octagon-outline"
               type="error"
             >
-              你的账户已被封禁, 将在{{ banRemainDate }}天后解封, 有疑义? 查看 <a style="color: white !important; caret-color: white !important;" href="/rule">社区守则</a>
+              你的账户已被封禁, 将在 {{ banRemainDate }} 天后解封, 有疑义? 查看 <a style="color: white !important; caret-color: white !important;" href="/rule">社区守则</a>
             </v-alert>
           </v-list>
           <v-divider />
