@@ -133,7 +133,7 @@
               icon="mdi-alert-octagon-outline"
               type="error"
             >
-              你的账户已被封禁, 将在 {{ banRemainDate }} 天后解封, <a class="text-color" href="/rule">了解更多</a>
+              你的账户已被封禁, 将在 {{ banRemainDate }} 天后解封, <a style="caret-color: white !important;" class="text-color" href="/rule">了解更多</a>
             </v-alert>
           </v-list>
           <v-divider />
