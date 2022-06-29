@@ -87,16 +87,6 @@ code {
     backdrop-filter: blur(14px) !important;
 }
 
-.theme--light.project-thumbnail-info {
-    background-color: #FFFFFF88 !important;
-    backdrop-filter: blur(14px) !important;
-}
-
-.theme--dark.project-thumbnail-info {
-    background-color: #27272762 !important;
-    backdrop-filter: blur(14px) !important
-}
-
 /*.v-image {
     border-radius: 15px;
 }*/
