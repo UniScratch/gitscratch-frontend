@@ -30,11 +30,11 @@
 }
 
 .theme--light a.text-color:hover {
-    color: var(--primary-color) !important;
+    color: var(--text) !important;
 }
 
 .theme--dark a.text-color:hover {
-    color: var(--primary-color) !important;
+    color: var(--text) !important;
 }
 
 pre,
@@ -67,34 +67,26 @@ code {
     color: #FFFB;
 }
 
-.theme--light.v-app-bar {
+.theme--light.v-app-bar ,
+.theme--light.v-chip {
     background-color: #FFFFFFEE !important;
     backdrop-filter: brightness(120%) blur(14px) !important;
 }
 
-.theme--dark.v-app-bar {
+.theme--dark.v-app-bar,
+.theme--dark.v-chip  {
     background-color: #272727C8 !important;
     backdrop-filter: brightness(80%) blur(14px) !important;
 }
 
-.theme--light.cardblur {
+.theme--light.cardblur{
     background-color: #FFFFFFBB !important;
     backdrop-filter: blur(14px) !important;
 }
 
-.theme--dark.cardblur {
+.theme--dark.cardblur{
     background-color: #27272795 !important;
     backdrop-filter: blur(14px) !important;
-}
-
-.theme--light.project-thumbnail-info {
-    background-color: #FFFFFF88 !important;
-    backdrop-filter: blur(14px) !important;
-}
-
-.theme--dark.project-thumbnail-info {
-    background-color: #27272762 !important;
-    backdrop-filter: blur(14px) !important
 }
 
 /*.v-image {
@@ -134,4 +126,9 @@ code {
 
 canvas {
     border-radius: 15px;
+}
+.rounded-btn {
+    height: 30px !important;
+    min-width: 30px !important;
+    padding: 0 !important;
 }

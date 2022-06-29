@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>关于 GitScratch</h1>
-    <p>GitScratch（极社）是一个 Git 风格的 Scratch 社区，正在开发中。</p>
+    <p>GitScratch 是一个 Git 风格的 Scratch 社区，正在开发中。</p>
     <v-btn target="_blank" href="https://github.com/UniScratch/gitscratch-frontend" text rounded>
       <v-icon>
         mdi-github

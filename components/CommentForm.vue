@@ -6,20 +6,32 @@
       label="允许评论"
       @click="changeCommentAllow"
     />
+    <v-switch
+      v-if="development"
+      v-model="localLogin"
+      label="[开发]账户登录"
+      @click="checkCommentPermission"
+    />
+    <v-switch
+      v-if="development"
+      v-model="localMuted"
+      label="[开发]被禁言"
+      @click="checkCommentPermission"
+    />
     <v-form ref="form" v-model="valid" style="margin-bottom: 16px;" lazy-validation>
       <v-textarea
         v-model="comment_content"
-        :label="allowComment ? '评论' : '评论区已关闭'"
+        :label="placeHolder"
         counter="1024"
         auto-grow
         rows="2"
         outlined
         style="border-radius: 4px;"
         :rules="[commentContentRules.comment]"
-        :disabled="!allowComment"
+        :disabled="textAreaDisabled"
       />
       <v-btn
-        :disabled="!valid||!allowComment"
+        :disabled="!valid||!allowComment||!localLogin||localMuted"
         color="primary"
         depressed
         rounded
@@ -39,6 +51,21 @@
 <script>
 export default {
   props: {
+    isLogin:
+      {
+        type: Boolean,
+        default: true
+      },
+    development:
+      {
+        type: Boolean,
+        default: true
+      },
+    isMuted:
+      {
+        type: Boolean,
+        default: false
+      }
   },
   data: () => ({
     valid: true,
@@ -46,9 +73,18 @@ export default {
       comment: v => !!v || '留言内容不能为空'
     },
     comment_content: '',
-    allowComment: false,
-    isAuthor: true
+    allowComment: true,
+    isAuthor: true,
+    localLogin: false,
+    localMuted: false,
+    textAreaDisabled: false,
+    placeHolder: '评论'
   }),
+  mounted () {
+    this.localLogin = this.isLogin
+    this.localMuted = this.isMuted
+    this.checkCommentPermission()
+  },
   methods: {
     comment () {
       this.validate()
@@ -60,7 +96,23 @@ export default {
       this.$refs.form.reset()
     },
     changeCommentAllow () {
+      this.checkCommentPermission()
       // Send allow comment data to API
+    },
+    checkCommentPermission () {
+      if (this.allowComment && this.localLogin && !this.localMuted) {
+        this.textAreaDisabled = false
+        this.placeHolder = '评论'
+      } else if ((this.allowComment && !this.localLogin && !this.localMuted) || (!this.allowComment && !this.localLogin && !this.localMuted)) {
+        this.textAreaDisabled = true
+        this.placeHolder = '请登录后评论'
+      } else if ((!this.allowComment && this.localLogin && this.localMuted) || (this.allowComment && this.localLogin && this.localMuted)) {
+        this.textAreaDisabled = true
+        this.placeHolder = '已被禁言'
+      } else if (!this.allowComment && this.localLogin && !this.localMuted) {
+        this.textAreaDisabled = true
+        this.placeHolder = '评论区已关闭'
+      }
     }
   }
 }

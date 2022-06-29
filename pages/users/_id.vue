@@ -1,6 +1,14 @@
 <template>
   <v-row>
-    <v-col cols="12" xl="2" md="3" sm="4" style="padding-right: 20px;">
+    <v-col
+      cols="12"
+      xl="2"
+      md="3"
+      sm="4"
+      style="padding-right: 20px;"
+      @mouseenter="usrNameIsHover = !usrNameIsHover"
+      @mouseleave="usrNameIsHover = !usrNameIsHover"
+    >
       <div style="text-align: center;">
         <v-avatar style="width: 100%; height: auto; max-width: 200px; margin-bottom: 20px;">
           <v-img :src="avatar" />
@@ -26,7 +34,7 @@
               mdi-comment-remove-outline
             </v-icon>
           </template>
-          <span>已被禁言, {{ mute_remain_date }} 天后解禁</span>
+          <span>账户被禁言, {{ mute_remain_date }} 天后解禁</span>
         </v-tooltip>
         <v-tooltip v-if="is_banned" bottom>
           <template #activator="{ on, attrs }">
@@ -36,6 +44,18 @@
           </template>
           <span>账户被封禁, {{ ban_remain_date }} 天后解禁</span>
         </v-tooltip>
+        <v-fade-transition>
+          <v-btn v-if="usrNameIsHover && isLogin" class="rounded-circle rounded-btn">
+            <v-tooltip bottom>
+              <template #activator="{ on, attrs }">
+                <v-icon size="18" v-bind="attrs" v-on="on">
+                  mdi-alert-outline
+                </v-icon>
+              </template>
+              <span>举报</span>
+            </v-tooltip>
+          </v-btn>
+        </v-fade-transition>
       </p>
       <p class="text-body">
         {{ bio }}
@@ -149,7 +169,9 @@ export default {
 昨天晚上跟 [@作者](/users/作者) 床♂战太爽了
 \`\`\` js
 console.log('Hello, world!')
-\`\`\``
+\`\`\``,
+    usrNameIsHover: false,
+    isLogin: true
   }),
   head () {
     return {
