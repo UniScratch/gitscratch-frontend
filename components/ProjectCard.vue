@@ -107,3 +107,8 @@ export default {
   }
 }
 </script>
+<style>
+  .v-icon{
+    font-size: 19px !important;
+  }
+</style>
