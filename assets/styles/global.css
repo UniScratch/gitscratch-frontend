@@ -67,22 +67,24 @@ code {
     color: #FFFB;
 }
 
-.theme--light.v-app-bar {
+.theme--light.v-app-bar ,
+.theme--light.v-chip {
     background-color: #FFFFFFEE !important;
     backdrop-filter: brightness(120%) blur(14px) !important;
 }
 
-.theme--dark.v-app-bar {
+.theme--dark.v-app-bar,
+.theme--dark.v-chip  {
     background-color: #272727C8 !important;
     backdrop-filter: brightness(80%) blur(14px) !important;
 }
 
-.theme--light.cardblur {
+.theme--light.cardblur{
     background-color: #FFFFFFBB !important;
     backdrop-filter: blur(14px) !important;
 }
 
-.theme--dark.cardblur {
+.theme--dark.cardblur{
     background-color: #27272795 !important;
     backdrop-filter: blur(14px) !important;
 }
