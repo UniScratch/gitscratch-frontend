@@ -123,7 +123,7 @@
             </v-container>
             <v-container v-if="isBanned" class="appbar-alert" style="background-color: rgba(255, 82, 82);">
               <v-icon color="white" size="20">
-                mdi-lock-alert-outline
+                mdi-alert-octagon-outline
               </v-icon>&nbsp;&nbsp;
               你的帐户已被封禁, 将在 {{ banRemainDate }} 天后解除。<a style="caret-color: white !important;" class="text-color" href="/help/rules">了解更多</a>
             </v-container>
