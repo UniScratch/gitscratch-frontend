@@ -30,11 +30,11 @@
 }
 
 .theme--light a.text-color:hover {
-    color: var(--primary-color) !important;
+    color: var(--text) !important;
 }
 
 .theme--dark a.text-color:hover {
-    color: var(--primary-color) !important;
+    color: var(--text) !important;
 }
 
 pre,
