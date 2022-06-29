@@ -11,7 +11,7 @@
               outlined
               small
             >
-              <v-icon left>
+              <v-icon class="v-icon-proj-card" left>
                 mdi-history
               </v-icon>
               2022/5/28 14:39
@@ -20,7 +20,7 @@
               outlined
               small
             >
-              <v-icon left>
+              <v-icon class="v-icon-proj-card" left>
                 mdi-eye-outline
               </v-icon>
               345
@@ -29,7 +29,7 @@
               outlined
               small
             >
-              <v-icon left>
+              <v-icon class="v-icon-proj-card" left>
                 mdi-star-outline
               </v-icon>
               456
@@ -38,7 +38,7 @@
               outlined
               small
             >
-              <v-icon left>
+              <v-icon class="v-icon-proj-card" left>
                 mdi-source-branch
               </v-icon>
               567
@@ -108,7 +108,7 @@ export default {
 }
 </script>
 <style>
-  .v-icon{
+  .v-icon-proj-card {
     font-size: 19px !important;
   }
 </style>
