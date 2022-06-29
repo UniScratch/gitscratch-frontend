@@ -38,12 +38,12 @@ export default {
   data: () => ({
     links: [
       ['服务条款', '/help/terms-of-service'],
-      ['隐私政策', 'privacy'],
-      ['服务状态', 'status'],
-      ['API', 'api'],
+      ['隐私政策', '/help/privacy'],
+      ['DMCA', '/help/dmca'],
+      ['社区守则', '/help/rules'],
       ['联系我们', 'contactus'],
-      ['社区守则', 'rule'],
-      ['DMCA', 'dmca']
+      ['服务状态', 'status'],
+      ['API', 'api']
     ]
   }),
   computed: {
