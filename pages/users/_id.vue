@@ -1,6 +1,14 @@
 <template>
   <v-row>
-    <v-col cols="12" xl="2" md="3" sm="4" style="padding-right: 20px;">
+    <v-col
+      cols="12"
+      xl="2"
+      md="3"
+      sm="4"
+      style="padding-right: 20px;"
+      @mouseenter="usrNameIsHover = !usrNameIsHover"
+      @mouseleave="usrNameIsHover = !usrNameIsHover"
+    >
       <div style="text-align: center;">
         <v-avatar style="width: 100%; height: auto; max-width: 200px; margin-bottom: 20px;">
           <v-img :src="avatar" />
@@ -10,7 +18,7 @@
           <v-progress-linear :value="exp" class="rounded-pill" height="20" />
         </div>
       </div><br>
-      <p class="text-h4" @mouseenter="usrNameIsHover = !usrNameIsHover" @mouseleave="usrNameIsHover = !usrNameIsHover">
+      <p class="text-h4">
         {{ username }}
         <v-tooltip v-if="is_verified" bottom>
           <template #activator="{ on, attrs }">
