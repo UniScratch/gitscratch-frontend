@@ -1,0 +1,20 @@
+name: Build .nuxt files
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          yarn
+      - name: Build
+        run: |
+          yarn build
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: .nuxt
+          path: ./.nuxt
+          retention-days: 0
