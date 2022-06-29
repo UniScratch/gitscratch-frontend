@@ -15,7 +15,7 @@
       0.2 {{ editor }} : 指由 {{ us }}基于 <a href="https://scratch.mit.edu/" target="_blank">Scratch</a> 二次开发的 {{ editor }} 编辑器。
     </p>
     <p>
-      0.3 {{ siteName }} : 指由 {{ us }}开发的使用 {{ editor }} 编辑器的社区网站 <a href="https://git.sc.cn/" target="_blank">{{ siteUrl }}</a>。
+      0.3 {{ siteName }} : 指由 {{ us }}开发的使用 {{ editor }} 编辑器的社区网站 <a href="https://git.sc.cn/" target="_blank">{{ siteUrl }}。</a>。
     </p>
     <h2>
       1. 用户协议
