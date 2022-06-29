@@ -10,7 +10,7 @@
           <v-progress-linear :value="exp" class="rounded-pill" height="20" />
         </div>
       </div><br>
-      <p class="text-h4">
+      <p class="text-h4" @mouseenter="usrNameIsHover = !usrNameIsHover" @mouseleave="usrNameIsHover = !usrNameIsHover">
         {{ username }}
         <v-tooltip v-if="is_verified" bottom>
           <template #activator="{ on, attrs }">
@@ -36,16 +36,18 @@
           </template>
           <span>账户被封禁, {{ ban_remain_date }} 天后解禁</span>
         </v-tooltip>
-        <v-btn class="rounded-circle rounded-btn">
-          <v-tooltip bottom>
-            <template #activator="{ on, attrs }">
-              <v-icon color="" v-bind="attrs" v-on="on">
-                mdi-alert-outline
-              </v-icon>
-            </template>
-            <span>举报</span>
-          </v-tooltip>
-        </v-btn>
+        <v-fade-transition>
+          <v-btn v-if="usrNameIsHover" class="rounded-circle rounded-btn">
+            <v-tooltip bottom>
+              <template #activator="{ on, attrs }">
+                <v-icon size="18" v-bind="attrs" v-on="on">
+                  mdi-alert-outline
+                </v-icon>
+              </template>
+              <span>举报</span>
+            </v-tooltip>
+          </v-btn>
+        </v-fade-transition>
       </p>
       <p class="text-body">
         {{ bio }}
@@ -159,7 +161,8 @@ export default {
 昨天晚上跟 [@作者](/users/作者) 床♂战太爽了
 \`\`\` js
 console.log('Hello, world!')
-\`\`\``
+\`\`\``,
+    usrNameIsHover: false
   }),
   head () {
     return {
