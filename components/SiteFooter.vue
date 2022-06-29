@@ -37,7 +37,7 @@
 export default {
   data: () => ({
     links: [
-      ['服务条款', 'agreement'],
+      ['服务条款', '/help/terms-of-service'],
       ['隐私政策', 'privacy'],
       ['服务状态', 'status'],
       ['API', 'api'],
