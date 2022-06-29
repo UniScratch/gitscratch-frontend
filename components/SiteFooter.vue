@@ -42,7 +42,8 @@ export default {
       ['服务状态', 'status'],
       ['API', 'api'],
       ['联系我们', 'contactus'],
-      ['社区守则', 'rule']
+      ['社区守则', 'rule'],
+      ['DMCA', 'dmca']
     ]
   }),
   computed: {
