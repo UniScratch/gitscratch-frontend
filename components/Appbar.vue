@@ -115,29 +115,32 @@
                 <v-list-item-subtitle>{{ userInfo.email }}</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
-            <v-alert
-              v-if="isMute"
-              dense
-              class="darken-1 rounded-0"
-              style="margin: 0 !important; font-size: 8px;"
-              type="error"
-              icon="mdi-volume-off"
-              color="orange"
-            >
-              你的帐户已被禁言，将在 {{ muteRemainDate }} 天后解除。
-            </v-alert>
-            <v-alert
-              v-if="isBanned"
-              dense
-              class="rounded-0"
-              style="margin: 0 !important; color: white; font-size: 8px;"
-              icon="mdi-cancel"
-              type="error"
-            >
-              你的帐户已被封禁，将在 {{ banRemainDate }} 天后解除。<a style="caret-color: white !important;" class="text-color" href="/help/rules">单击此处以了解更多。</a>
-            </v-alert>
+            <v-container v-if="isMute" class="appbar-alert" style="background-color: rgba(251,140,0);">
+              <v-icon color="white" size="20">
+                mdi-alert-minus-outline
+              </v-icon>&nbsp;&nbsp;
+              你的帐户已被禁言, 将在 {{ muteRemainDate }} 天后解除。
+            </v-container>
+            <v-container v-if="isBanned && !isPermanentlyBanned" class="appbar-alert" style="background-color: rgba(255, 109, 109);">
+              <v-icon color="white" size="20">
+                mdi-alert-octagon-outline
+              </v-icon>&nbsp;&nbsp;
+              你的帐户已被封禁, 将在 {{ banRemainDate }} 天后解除。<a style="caret-color: white !important;" class="text-color" href="/help/rules">了解更多</a>
+            </v-container>
+            <v-container v-if="isBanned && isPermanentlyBanned" class="appbar-alert" style="background-color: rgba(255, 109, 109);">
+              <v-icon color="white" size="20">
+                mdi-delete-alert-outline
+              </v-icon>&nbsp;&nbsp;
+              你的帐户已被永久封禁, 如有疑义, 请联系社区管理员。
+            </v-container>
+            <v-container v-if="isBanned && isPermanentlyBanned" class="appbar-alert" style="background-color: rgba(255, 82, 82);">
+              <v-icon color="white" size="20">
+                mdi-car-tire-alert
+              </v-icon>&nbsp;&nbsp;
+              你的账户将在 {{ deletingRemainHours }} 小时后被删除, 如有疑义, 请尽快联系管理员。
+            </v-container>
           </v-list>
-          <v-divider />
+          <v-divider style="margin-top: -8px" />
           <v-list
             dense
             color="transparent"
@@ -209,7 +212,10 @@ export default {
     isMute: true,
     muteRemainDate: -1,
     isBanned: true,
-    banRemainDate: -1
+    banRemainDate: -1,
+    isPermanentlyBanned: true,
+    isDeleting: true,
+    deletingRemainHours: -72
   }),
 
   computed: {
@@ -232,3 +238,13 @@ export default {
 }
 
 </script>
+<style>
+  .v-icon-alert{
+    font-size: 19px !important;
+  }
+  .appbar-alert{
+    width: 100%;
+    color: white;
+    font-size: 12px !important
+  }
+</style>
