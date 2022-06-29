@@ -118,22 +118,23 @@
             <v-alert
               v-if="isMute"
               dense
-              class="rounded-0"
-              style="margin: 0 !important;font-size: 8px; background-color: rgba(251,140,0) !important;"
+              class="darken-1 rounded-0"
+              style="margin: 0 !important; font-size: 8px;"
               type="error"
-              icon="mdi-alert-outline"
+              icon="mdi-volume-off"
+              color="orange"
             >
-              你的账户已被禁言, 将在 {{ muteRemainDate }} 天后解禁
+              你的帐户已被禁言，将在 {{ muteRemainDate }} 天后解除。
             </v-alert>
             <v-alert
               v-if="isBanned"
               dense
               class="rounded-0"
-              style="margin: 0 !important; color: white; font-size: 8px; background-color: rgba(255,82,82) !important;"
-              icon="mdi-alert-octagon-outline"
+              style="margin: 0 !important; color: white; font-size: 8px;"
+              icon="mdi-cancel"
               type="error"
             >
-              你的账户已被封禁, 将在 {{ banRemainDate }} 天后解封, <a style="caret-color: white !important;" class="text-color" href="/rule">了解更多</a>
+              你的帐户已被封禁，将在 {{ banRemainDate }} 天后解除。<a style="caret-color: white !important;" class="text-color" href="/help/rules">单击此处以了解更多。</a>
             </v-alert>
           </v-list>
           <v-divider />
@@ -206,9 +207,9 @@
 export default {
   data: () => ({
     isMute: true,
-    muteRemainDate: '-1',
+    muteRemainDate: -1,
     isBanned: true,
-    banRemainDate: '-1'
+    banRemainDate: -1
   }),
 
   computed: {
