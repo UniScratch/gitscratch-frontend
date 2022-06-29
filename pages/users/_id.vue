@@ -37,7 +37,7 @@
           <span>账户被封禁, {{ ban_remain_date }} 天后解禁</span>
         </v-tooltip>
         <v-fade-transition>
-          <v-btn v-if="usrNameIsHover" class="rounded-circle rounded-btn">
+          <v-btn v-if="usrNameIsHover && isLogin" class="rounded-circle rounded-btn">
             <v-tooltip bottom>
               <template #activator="{ on, attrs }">
                 <v-icon size="18" v-bind="attrs" v-on="on">
@@ -162,7 +162,8 @@ export default {
 \`\`\` js
 console.log('Hello, world!')
 \`\`\``,
-    usrNameIsHover: false
+    usrNameIsHover: false,
+    isLogin: true
   }),
   head () {
     return {
