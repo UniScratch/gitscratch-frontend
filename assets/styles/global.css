@@ -127,3 +127,8 @@ code {
 canvas {
     border-radius: 15px;
 }
+.rounded-btn {
+    height: 30px !important;
+    min-width: 30px !important;
+    padding: 0 !important;
+}
