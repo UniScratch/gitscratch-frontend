@@ -57,7 +57,7 @@
 
       <div class="hidden-sm-and-down">
         <v-divider style="margin: 16px 0;" />
-        <CommentForm />
+        <CommentForm :is-login="isLogin" />
         <v-divider style="margin: 8px 0;" />
         <p class="text-h5">
           留言
@@ -71,7 +71,7 @@
       <ProjectDesc />
       <div class="hidden-md-and-up">
         <v-divider style="margin: 16px 0;" />
-        <CommentForm />
+        <CommentForm :is-login="isLogin" />
         <v-divider style="margin: 8px 0;" />
         <p class="text-h5">
           留言
@@ -84,6 +84,8 @@
 <script>
 const marked = require('marked')
 export default {
+  props: {
+  },
   data: () => ({
     loadPlayer: false,
     bio: '啊，好舒服',
@@ -92,7 +94,7 @@ export default {
     project_views: 114514,
     project_commit: '170ed1c',
     project_update: '2022/5/28 14:39:58',
-    allowComment: false
+    isLogin: true
   }),
   head () {
     return {

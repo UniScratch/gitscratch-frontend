@@ -6,20 +6,61 @@
       label="允许评论"
       @click="changeCommentAllow"
     />
+    <v-switch
+      v-if="development"
+      v-model="localLogin"
+      label="[开发]账户登录"
+    />
     <v-form ref="form" v-model="valid" style="margin-bottom: 16px;" lazy-validation>
       <v-textarea
+        v-if="!allowComment && localLogin"
         v-model="comment_content"
-        :label="allowComment ? '评论' : '评论区已关闭'"
+        label="评论区已关闭"
         counter="1024"
         auto-grow
         rows="2"
         outlined
         style="border-radius: 4px;"
         :rules="[commentContentRules.comment]"
-        :disabled="!allowComment"
+        disabled
+      />
+      <v-textarea
+        v-else-if="allowComment && localLogin"
+        v-model="comment_content"
+        label="评论"
+        counter="1024"
+        auto-grow
+        rows="2"
+        outlined
+        style="border-radius: 4px;"
+        :rules="[commentContentRules.comment]"
+      />
+      <v-textarea
+        v-else-if="allowComment && !localLogin"
+        v-model="comment_content"
+        label="请登录后评论"
+        counter="1024"
+        auto-grow
+        rows="2"
+        outlined
+        style="border-radius: 4px;"
+        :rules="[commentContentRules.comment]"
+        disabled
+      />
+      <v-textarea
+        v-else-if="!allowComment && !localLogin"
+        v-model="comment_content"
+        label="请登录后评论"
+        counter="1024"
+        auto-grow
+        rows="2"
+        outlined
+        style="border-radius: 4px;"
+        :rules="[commentContentRules.comment]"
+        disabled
       />
       <v-btn
-        :disabled="!valid||!allowComment"
+        :disabled="!valid||!allowComment||!localLogin"
         color="primary"
         depressed
         rounded
@@ -39,6 +80,16 @@
 <script>
 export default {
   props: {
+    isLogin:
+      {
+        type: Boolean,
+        default: true
+      },
+    development:
+      {
+        type: Boolean,
+        default: true
+      }
   },
   data: () => ({
     valid: true,
@@ -46,9 +97,13 @@ export default {
       comment: v => !!v || '留言内容不能为空'
     },
     comment_content: '',
-    allowComment: false,
-    isAuthor: true
+    allowComment: true,
+    isAuthor: true,
+    localLogin: false
   }),
+  mounted () {
+    this.localLogin = this.isLogin
+  },
   methods: {
     comment () {
       this.validate()
