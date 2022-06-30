@@ -32,7 +32,7 @@
             </v-list-item-content>
           </v-list-item>
           <v-divider />
-          <v-subheader>Filters</v-subheader>
+          <v-subheader>筛选</v-subheader>
           <v-list-item link>
             <v-list-item-icon>
               <v-icon>mdi-comment-outline</v-icon>
@@ -160,7 +160,7 @@ export default {
 }
 </script>
 <style>
-.v-list--nav .v-list-item, .v-list--nav .v-list-item:before{
+.v-list--nav .v-list-item, .v-list--nav .v-list-item:before {
   border-radius: 20px !important;
 }
 </style>

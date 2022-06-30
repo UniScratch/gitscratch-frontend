@@ -1,6 +1,6 @@
 <template>
   <v-list>
-    <v-card v-for="comment_list in comment_ins" :key="comment_list[0]" style="padding: 16px;border-radius: 10px !important;margin-bottom: 15px;" class="d-flex">
+    <v-card v-for="comment_list in commentIns" :key="comment_list[0]" style="padding: 16px;border-radius: 10px !important;margin-bottom: 15px;" class="d-flex">
       <v-avatar>
         <v-img :src="comment_list[1]" />
       </v-avatar>
@@ -41,7 +41,7 @@ export default {
     MarkdownRender
   },
   data: () => ({
-    comment_ins: [
+    commentIns: [
       ['1', '/GitScratch-icon-background-blue.svg', '作者', dateStr, true, '社区官方认证', 'rgba(33,150,243)', true, '-1'],
       ['2', '/GitScratch-icon-background-blue.svg', 'Test', dateStr, false, '', '', true, '-1']
     ]

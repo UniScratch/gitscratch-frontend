@@ -6,8 +6,8 @@
       md="3"
       sm="4"
       style="padding-right: 20px;"
-      @mouseenter="usrNameIsHover = !usrNameIsHover"
-      @mouseleave="usrNameIsHover = !usrNameIsHover"
+      @mouseenter="userNameIsHover = !userNameIsHover"
+      @mouseleave="userNameIsHover = !userNameIsHover"
     >
       <div style="text-align: center;">
         <v-avatar style="width: 100%; height: auto; max-width: 200px; margin-bottom: 20px;">
@@ -20,7 +20,7 @@
       </div><br>
       <p class="text-h4">
         {{ username }}
-        <v-tooltip v-if="is_verified" bottom>
+        <v-tooltip v-if="isVerified" bottom>
           <template #activator="{ on, attrs }">
             <v-icon :color="verifyColor" v-bind="attrs" v-on="on">
               mdi-check-decagram-outline
@@ -28,24 +28,24 @@
           </template>
           <span>{{ verifyCategories }}</span>
         </v-tooltip>
-        <v-tooltip v-if="is_muted" bottom>
+        <v-tooltip v-if="isMuted" bottom>
           <template #activator="{ on, attrs }">
             <v-icon color="rgba(255, 87, 34)" v-bind="attrs" v-on="on">
               mdi-comment-remove-outline
             </v-icon>
           </template>
-          <span>账户被禁言, {{ mute_remain_date }} 天后解禁</span>
+          <span>账户被禁言, {{ muteRemainDate }} 天后解禁</span>
         </v-tooltip>
-        <v-tooltip v-if="is_banned" bottom>
+        <v-tooltip v-if="isBanned" bottom>
           <template #activator="{ on, attrs }">
             <v-icon color="rgba(238, 54, 37)" v-bind="attrs" v-on="on">
               mdi-gavel
             </v-icon>
           </template>
-          <span>账户被封禁, {{ ban_remain_date }} 天后解禁</span>
+          <span>账户被封禁, {{ banRemainDate }} 天后解禁</span>
         </v-tooltip>
         <v-fade-transition>
-          <v-btn v-if="usrNameIsHover && isLogin" class="rounded-circle rounded-btn">
+          <v-btn v-if="userNameIsHover && isLogin" class="rounded-circle rounded-btn">
             <v-tooltip bottom>
               <template #activator="{ on, attrs }">
                 <v-icon size="18" v-bind="attrs" v-on="on">
@@ -79,7 +79,7 @@
     <v-divider vertical class="hidden-xs-only" />
     <v-col cols="12" xl="10" md="9" sm="8" style="padding-left: 20px;">
       <v-btn-toggle
-        v-model="toggle_tab"
+        v-model="toggleTab"
         group
         mandatory
         color="primary"
@@ -98,7 +98,7 @@
         </v-btn>
       </v-btn-toggle>
       <v-window
-        v-model="toggle_tab"
+        v-model="toggleTab"
         style="display: block; padding: 16px;"
       >
         <!-- 概览 -->
@@ -154,23 +154,23 @@ export default {
     website: 'https://git.sc.cn',
     bio: '啊，好舒服',
     avatar: '/GitScratch-icon-background-blue.svg',
-    toggle_tab: 0,
+    toggleTab: 0,
     level: 1,
     exp: 15,
-    is_verified: true,
+    isVerified: true,
     verifyCategories: '社区官方认证',
     verifyColor: 'rgba(33,150,243)',
-    is_muted: true,
-    is_banned: true,
-    mute_remain_date: '-1',
-    ban_remain_date: '-1',
+    isMuted: true,
+    isBanned: true,
+    muteRemainDate: '-1',
+    banRemainDate: '-1',
     README: `
 # 啊，好舒服
 昨天晚上跟 [@作者](/users/作者) 床♂战太爽了
 \`\`\` js
 console.log('Hello, world!')
 \`\`\``,
-    usrNameIsHover: false,
+    userNameIsHover: false,
     isLogin: true
   }),
   head () {

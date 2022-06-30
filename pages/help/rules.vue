@@ -37,6 +37,7 @@ export default {
   data: () => ({
     name: 'GitScratch 和 UniScratch',
     us: 'GitScratch 团队',
+    editorDeveloper: 'UniScratch 团队',
     editor: 'UniScratch',
     siteName: 'GitScratch',
     siteUrl: 'git.sc.cn'

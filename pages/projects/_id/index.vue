@@ -3,17 +3,17 @@
     <v-col cols="12" xl="7" md="8">
       <v-card>
         <v-card-title class="text-h5">
-          {{ project_title }}
+          {{ projectTitle }}
         </v-card-title>
         <v-card-text>
           <div style="display:flex;margin-bottom:10px;">
             <v-icon>mdi-eye-outline</v-icon>
-            &nbsp;{{ project_views }}&nbsp;&nbsp;
+            &nbsp;{{ projectViews }}&nbsp;&nbsp;
             <v-icon>mdi-calendar-outline</v-icon>
-            &nbsp;{{ project_update }}&nbsp;&nbsp;
+            &nbsp;{{ projectUpdate }}&nbsp;&nbsp;
             <v-icon>mdi-update</v-icon>&nbsp;
             <nuxt-link to="/projects/1/commit/170ed1c/" class="text-color">
-              {{ project_commit }}
+              {{ projectCommit }}
             </nuxt-link>&nbsp;&nbsp;
           </div>
 
@@ -90,16 +90,16 @@ export default {
     loadPlayer: false,
     bio: '啊，好舒服',
     avatar: '/GitScratch-icon-background-blue.svg',
-    project_title: 'Default Project',
-    project_views: 114514,
-    project_commit: '170ed1c',
-    project_update: '2022/5/28 14:39:58',
+    projectTitle: 'Default Project',
+    projectViews: 114514,
+    projectCommit: '170ed1c',
+    projectUpdate: '2022/5/28 14:39:58',
     isLogin: true,
     isMuted: true
   }),
   head () {
     return {
-      title: this.project_title
+      title: this.projectTitle
     }
   },
   methods: {
