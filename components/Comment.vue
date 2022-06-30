@@ -43,7 +43,7 @@ export default {
   data: () => ({
     commentIns: [
       ['1', '/GitScratch-icon-background-blue.svg', '作者', dateStr, true, '社区官方认证', 'rgba(33,150,243)', true, '-1'],
-      ['2', '/GitScratch-icon-background-blue.svg', 'Test', dateStr, false, '', '', true, '-1']
+      ['2', '/GitScratch-icon-background-blue.svg', 'Test', dateStr, false, '', '', false, '0']
     ]
   }),
   methods: {
