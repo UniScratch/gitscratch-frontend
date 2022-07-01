@@ -186,6 +186,22 @@
               </v-list-item-content>
             </v-list-item>
           </v-list>
+          <template v-if="isAdmin">
+            <v-divider />
+            <v-list
+              dense
+              color="transparent"
+            >
+              <v-list-item link to="/admin">
+                <v-list-item-icon>
+                  <v-icon>mdi-view-dashboard-outline</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>管理面板</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
+          </template>
           <v-divider />
           <v-list
             dense
@@ -215,7 +231,8 @@ export default {
     banRemainDate: -1,
     isPermanentlyBanned: true,
     isDeleting: true,
-    deletingRemainHours: -72
+    deletingRemainHours: -72,
+    isAdmin: true
   }),
 
   computed: {
