@@ -69,6 +69,7 @@
     <v-divider vertical class="hidden-xs-only" />
     <v-col cols="12" xl="10" md="9" sm="8" style="padding-left: 20px;">
       <LazyAdminGeneral v-if="model==0" />
+      <LazyAdminConfig v-if="model==1" />
     </v-col>
   </v-row>
 </template>
