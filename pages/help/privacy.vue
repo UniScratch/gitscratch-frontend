@@ -9,35 +9,44 @@
     </p>
     <blockquote>
       <p class="blockquote">
-        如果您想在不向我们提交任何个人信息的情况下使用 {{ editor }} 制作作品，可以下载 {{ editor }} 离线编辑器。{{ us }} 和 {{ editorDeveloper }} 无法访问在 {{ editor }} 离线编辑器中创建的作品，使用离线编辑器不会向 {{ us }} 或 {{ editorDeveloper }} 透露任何个人识别信息，除非您将这些作品发布到 {{ siteName }} 社区。
+        如果您想在不向我们提交任何个人信息的情况下使用 {{ editor }} 制作作品，可以下载 {{ editor }} 离线编辑器。{{ allDevelopers }} 无法访问在 {{ editor }} 离线编辑器中创建的作品，使用离线编辑器不会向 {{ allDevelopers }} 透露任何个人识别信息，除非您将这些作品发布到 {{ siteName }} 社区。
       </p>
     </blockquote>
     <h2>
       What personal information does the Scratch Team collect about me?
+      {{ allDevelopers }}会收集关于我的哪些个人信息？
     </h2>
     <p>
       For the purpose of this Privacy Policy, “Personal Information” means any information relating to an identified or identifiable individual. We obtain Personal Information relating to you from various sources described below.
+      就本隐私政策而言，“个人信息”是指与已识别或可识别的个人相关的任何信息。我们从以下描述的各种来源获取与您相关的个人信息。
     </p>
     <p>
       Where applicable, we indicate whether and why you must provide us with your Personal Information, as well as the consequences of failing to do so. If you do not provide Personal Information when requested, you may not be able to benefit from our Site if that information is necessary to provide you with the service or if we are legally required to collect the information.
+      在适用的情况下，我们会说明您是否以及为什么必须向我们提供您的个人信息，以及未能提供的后果。如果您未在要求时提供个人信息，且该信息是为您提供服务所必需的或者是法律要求我们收集的，则您可能无法从我们的网站受益。
     </p>
     <h3>
       Account Information
+      帐户信息
     </h3>
     <p>
       In order to share projects, create studios, or post comments, you need to make an account. During account creation, we ask you for a username, your country, birth month and year, gender, and your email address (or your parent or guardian's email address if you are under 16 years old). We ask that you select a username that does not disclose your real name or other information that could identify you. Other users can see your username and country, but not your age, gender, or email address.
+      如果要分享作品、创建组织或发布留言，你需要创建一个帐户。在帐户创建过程中，我们会要求您输入用户名和您的电子邮件地址。我们要求您选择一个不会透露您的真实姓名或其他可能识别您身份的信息的用户名。其他用户可以看到您的用户名，但不能看到您的电子邮件地址。
     </p>
     <h3>
       User-generated Content
+      用户生成内容
     </h3>
     <p>
       We collect any information that you provide to us when you create Scratch projects (including unshared projects), write comments, or post on our forums.
+      我们收集您在创建作品（包括未分享的作品）、撰写留言或在我们的论坛上发布时提供给我们的任何信息。
     </p>
     <h3>
       Communications
+      交流
     </h3>
     <p>
       If you contact us directly, we may receive additional information about you. For example, when you contact our Customer Support Team, we may receive your name, email address, phone number, the contents of a message or attachments that you may send to us, and other information you choose to provide.
+      如果您直接与我们联系，我们可能会收到有关您的更多信息。例如，当您联系我们的
     </p>
     <h3>
       Personal Information We Collect Automatically From Your Use of the Site
@@ -197,6 +206,7 @@ export default {
     name: 'GitScratch 和 UniScratch',
     us: 'GitScratch 团队',
     editorDeveloper: 'UniScratch 团队',
+    allDevelopers: 'GitScratch 团队和 UniScratch 团队',
     editor: 'UniScratch',
     siteName: 'GitScratch',
     siteUrl: 'git.sc.cn'
