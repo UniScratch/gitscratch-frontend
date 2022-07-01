@@ -44,7 +44,7 @@
     <p>
       <template v-for="(item, key) in 贡献者">
         {{ key }}：
-        <a v-for="(childItem, childKey) in item" :key="childKey" target="_blank" :href="'https://github.com/'+childItem">
+        <a v-for="(childItem, childKey) in item" :key="key+childKey" target="_blank" :href="'https://github.com/'+childItem">
           @{{ childItem }}
         </a>
         <br :key="key">
@@ -53,11 +53,15 @@
     <p>
       还有，你。<br><del class="hide-del">一个都跑不了</del>
     </p>
+    <my-react-component />
   </div>
 </template>
 
 <script>
+import MyReactComponent from '../components/rea.jsx'
 export default {
+  components: { 'my-react-component': MyReactComponent },
+
   data: () => ({
     贡献者: {
       项目提出: ['Dispure', 'HydroGest'],
