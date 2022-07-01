@@ -1,5 +1,6 @@
 <template>
-  <client-only>
+  <h1>Coming s∞n</h1>
+  <!-- <client-only>
     <div>
       <v-card>
         <v-card-title class="text-h5">
@@ -34,42 +35,42 @@
             -25
           </div>
           <div v-html="scblocksSvg" />
-        <!-- <div>{{ scblocksSvg }}</div> -->
+        <div>{{ scblocksSvg }}</div>
         </v-card-text>
       </v-card>
     </div>
-  </client-only>
+  </client-only> -->
 </template>
 <script>
-import { toScratchblocks } from 'parse-sb3-blocks'
-import scratchblocks from 'scratchblocks'
+// import { toScratchblocks } from 'parse-sb3-blocks'
+// import scratchblocks from 'scratchblocks'
 
 export default {
+  data () {
+    return {
+      // data: {},
+      // scblocksSvg: '',
+      // diff: {}
+    }
+  },
   head () {
     return {
       title: 'Diff'
     }
   },
-  data () {
-    return {
-      data: {},
-      scblocksSvg: '',
-      diff: {}
-    }
-  },
   mounted () {
-    this.data = require('@/static/project1.json')
-    const stage = this.data.targets[1]
-    const whenGreenflag = '{}QYyd[f#Mi3yK3vQ(EH'
-    const scblocksText = toScratchblocks(whenGreenflag, stage.blocks, 'en', { tab: '  ', variableStyle: 'as-needed' })
-    const scblocksParse = scratchblocks.parse(scblocksText)
-    const scblocksOptions = {
-      style: 'scratch3', // Optional, defaults to 'scratch2'.
-      languages: ['en'], // Optional, defaults to ['en'].
-      scale: 1 // Optional, defaults to 1
-    }
-    const scblocksRender = scratchblocks.render(scblocksParse, scblocksOptions)
-    this.scblocksSvg = new XMLSerializer().serializeToString(scblocksRender) // convert SVGElement into svg string
+  //   this.data = require('@/static/project1.json')
+  //   const stage = this.data.targets[1]
+  //   const whenGreenflag = '{}QYyd[f#Mi3yK3vQ(EH'
+  //   const scblocksText = toScratchblocks(whenGreenflag, stage.blocks, 'en', { tab: '  ', variableStyle: 'as-needed' })
+  //   const scblocksParse = scratchblocks.parse(scblocksText)
+  //   const scblocksOptions = {
+  //     style: 'scratch3', // Optional, defaults to 'scratch2'.
+  //     languages: ['en'], // Optional, defaults to ['en'].
+  //     scale: 1 // Optional, defaults to 1
+  //   }
+  //   const scblocksRender = scratchblocks.render(scblocksParse, scblocksOptions)
+  //   this.scblocksSvg = new XMLSerializer().serializeToString(scblocksRender) // convert SVGElement into svg string
   },
   methods: {
   }
