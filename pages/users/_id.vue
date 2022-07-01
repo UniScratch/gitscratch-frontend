@@ -45,7 +45,7 @@
           <span>账户被封禁, {{ banRemainDate }} 天后解禁</span>
         </v-tooltip>
         <v-fade-transition>
-          <v-btn v-if="userNameIsHover && isLogin" class="rounded-circle rounded-btn">
+          <v-btn v-if="userNameIsHover && isLogin" class="rounded-circle rounded-btn" plain>
             <v-tooltip bottom>
               <template #activator="{ on, attrs }">
                 <v-icon size="18" v-bind="attrs" v-on="on">
