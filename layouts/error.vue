@@ -48,9 +48,9 @@ export default {
   data () {
     return {
       pageNotFound: '找不到页面',
-      internalServerError: '内部服务器错误',
+      internalServerError: '服务器错误',
       forbidden: '没有权限访问目标页面',
-      otherError: 'An error occurred'
+      otherError: '未知错误'
     }
   },
   head () {
