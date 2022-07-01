@@ -6770,11 +6770,6 @@ parse-path@^4.0.0:
     qs "^6.9.4"
     query-string "^6.13.8"
 
-parse-sb3-blocks@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/parse-sb3-blocks/-/parse-sb3-blocks-0.4.1.tgz#bfe595bbcdc5bef96d22e7ebc87065fae980e950"
-  integrity sha512-JLLnjfiyHnuUOTJRdIgHHRrpXJAPm2u4QFeBMMlhfRi3zDiaQs2oy6qwMd5xHM6HnjmWNGs1XwoUdYFSGPyPiQ==
-
 parse-url@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/parse-url/-/parse-url-6.0.0.tgz#f5dd262a7de9ec00914939220410b66cff09107d"
@@ -8289,11 +8284,6 @@ scratch-vm@^0.2.0-prerelease.20220602121716:
     scratch-translate-extension-languages "0.0.20191118205314"
     text-encoding "0.7.0"
     worker-loader "^1.1.1"
-
-scratchblocks@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/scratchblocks/-/scratchblocks-3.6.0.tgz#b0ce26a1a8d007d403fb3883ae90b88a46bddea3"
-  integrity sha512-JvXmggsjAI5biCaHkRzvCZlLynm9ZBL0s8zScOCDDkb1MCx7IAwOi9FiBosf2R9y9ZyurCFKaEZEh0wk0z9JTA==
 
 scule@^0.2.1:
   version "0.2.1"
