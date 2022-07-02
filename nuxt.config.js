@@ -50,8 +50,9 @@ module.exports = {
     // https://http.nuxtjs.org/getting-started/setup
     '@nuxt/http',
 
-    // https://pwa.nuxtjs.org/
-    '@nuxtjs/pwa'
+    // https://github.com/frenchrabbit/nuxt-precompress
+    'nuxt-precompress'
+
   ],
 
   plugins: [
@@ -62,6 +63,7 @@ module.exports = {
 
     // https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module'
+
   ],
 
   vuetify: {
@@ -109,20 +111,20 @@ module.exports = {
     // ssr: !isElectron,
     ssr: true,
     parallel: isDev,
-    terser: {
-      parallel: true,
-      terserOptions: { // https://github.com/terser/terser
-        compress: {
-          drop_console: true,
-          arguments: true,
-          passes: 2
-        },
-        format: {
-          comments: false,
-          max_line_len: 1024
-        }
-      }
-    },
+    // terser: {
+    //   parallel: true,
+    //   terserOptions: { // https://github.com/terser/terser
+    //     compress: {
+    //       drop_console: true,
+    //       arguments: true,
+    //       passes: 1
+    //     },
+    //     format: {
+    //       comments: false,
+    //       max_line_len: 1024
+    //     }
+    //   }
+    // },
     extractCSS: !isDev,
     extend (config, {
       isDev,
@@ -141,7 +143,9 @@ module.exports = {
   pageTransition: {
     name: 'slide-top',
     mode: 'out-in'
+  },
+  router: {
+    prefetchLinks: false
   }
 
-  // target: 'static'
 }

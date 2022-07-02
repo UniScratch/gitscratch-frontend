@@ -12,11 +12,12 @@
   },
   "dependencies": {
     "@nuxt/http": "^0.6.4",
-    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/vuetify": "https://github.com/UniScratch/vuetify-module.git#master",
+    "@nuxtjs/webpack-profile": "^0.1.0",
     "highlight.js": "^11.5.1",
     "marked": "^4.0.17",
     "nuxt": "^2.15.8",
+    "nuxt-precompress": "^0.5.9",
     "scratch-audio": "^0.1.0-prerelease.20200528195344",
     "scratch-render": "^0.1.0-prerelease.20211028200436",
     "scratch-storage": "^2.0.2",
