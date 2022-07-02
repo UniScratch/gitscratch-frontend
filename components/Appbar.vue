@@ -119,25 +119,25 @@
               <v-icon color="white" size="20">
                 mdi-alert-minus-outline
               </v-icon>&nbsp;&nbsp;
-              你的帐户已被禁言, 将在 {{ muteRemainDate }} 天后解除。
+              你的帐户已被禁言，将在 {{ muteRemainDate }} 天后解除。
             </v-container>
             <v-container v-if="isBanned && !isPermanentlyBanned" class="appbar-alert" style="background-color: rgba(255, 109, 109);">
               <v-icon color="white" size="20">
                 mdi-alert-octagon-outline
               </v-icon>&nbsp;&nbsp;
-              你的帐户已被封禁, 将在 {{ banRemainDate }} 天后解除。<a style="caret-color: white !important;" class="text-color" href="/help/rules">了解更多</a>
+              你的帐户已被封禁，将在 {{ banRemainDate }} 天后解除。<a style="caret-color: white !important;" class="text-color" href="/help/rules">了解更多</a>
             </v-container>
             <v-container v-if="isBanned && isPermanentlyBanned" class="appbar-alert" style="background-color: rgba(255, 109, 109);">
               <v-icon color="white" size="20">
                 mdi-delete-alert-outline
               </v-icon>&nbsp;&nbsp;
-              你的帐户已被永久封禁, 如有疑义, 请联系社区管理员。
+              你的帐户已被永久封禁，如有疑义，请联系社区管理员。
             </v-container>
             <v-container v-if="isBanned && isPermanentlyBanned" class="appbar-alert" style="background-color: rgba(255, 82, 82);">
               <v-icon color="white" size="20">
                 mdi-car-tire-alert
               </v-icon>&nbsp;&nbsp;
-              你的账户将在 {{ deletingRemainHours }} 小时后被删除, 如有疑义, 请尽快联系管理员。
+              你的账户将在 {{ deletingRemainHours }} 小时后被删除，如有疑义，请尽快联系管理员。
             </v-container>
           </v-list>
           <v-divider style="margin-top: -8px" />
@@ -186,6 +186,22 @@
               </v-list-item-content>
             </v-list-item>
           </v-list>
+          <template v-if="isAdmin">
+            <v-divider />
+            <v-list
+              dense
+              color="transparent"
+            >
+              <v-list-item link to="/admin">
+                <v-list-item-icon>
+                  <v-icon>mdi-view-dashboard-outline</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>管理面板</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
+          </template>
           <v-divider />
           <v-list
             dense
@@ -215,7 +231,8 @@ export default {
     banRemainDate: -1,
     isPermanentlyBanned: true,
     isDeleting: true,
-    deletingRemainHours: -72
+    deletingRemainHours: -72,
+    isAdmin: true
   }),
 
   computed: {

@@ -23,7 +23,7 @@
         </template>
         <span>改编</span>
       </v-tooltip>
-      <v-tooltip bottom>
+      <!-- <v-tooltip bottom>
         <template #activator="{ on, attrs }">
           <v-btn icon v-bind="attrs" rounded v-on="on">
             <v-icon color="red">
@@ -32,7 +32,7 @@
           </v-btn>
         </template>
         <span>赞助</span>
-      </v-tooltip>
+      </v-tooltip> -->
       <v-tooltip v-if="isOpenSource" bottom>
         <template #activator="{ on, attrs }">
           <v-btn

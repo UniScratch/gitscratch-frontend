@@ -10,7 +10,7 @@
           :cols="3"
         >
           <div style="margin-top: 12px; font-size: 10px;">
-            © {{ new Date().getFullYear() }} UniScratch. Under the Apache License 2.0.
+            © {{ new Date().getFullYear() }} GitScratch Team. Under the Apache License 2.0.
           </div>
         </v-col>
 

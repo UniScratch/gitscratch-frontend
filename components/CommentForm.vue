@@ -20,7 +20,7 @@
     />
     <v-form ref="form" v-model="valid" style="margin-bottom: 16px;" lazy-validation>
       <v-textarea
-        v-model="comment_content"
+        v-model="commentContent"
         :label="placeHolder"
         counter="1024"
         auto-grow
@@ -41,7 +41,7 @@
         发布
       </v-btn>
       <transition name="slide-y-reverse-transition">
-        <v-btn v-if="comment_content || !valid" text color="accent" rounded @click="reset">
+        <v-btn v-if="commentContent || !valid" text color="accent" rounded @click="reset">
           重置
         </v-btn>
       </transition>
@@ -72,7 +72,7 @@ export default {
     commentContentRules: {
       comment: v => !!v || '留言内容不能为空'
     },
-    comment_content: '',
+    commentContent: '',
     allowComment: true,
     isAuthor: true,
     localLogin: false,

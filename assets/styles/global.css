@@ -3,6 +3,7 @@
 
 :root {
     --primary-color: #2196F3;
+    --blur: none;
 }
 
 .theme--light a:not(.v-btn, .v-card, .v-chip, .v-list-item) {
@@ -67,26 +68,41 @@ code {
     color: #FFFB;
 }
 
-.theme--light.v-app-bar ,
+.theme--light.v-app-bar {
+    background-color: #ffffff !important;
+    backdrop-filter: var(--blur) !important;
+}
+
 .theme--light.v-chip {
-    background-color: #FFFFFFEE !important;
-    backdrop-filter: brightness(120%) blur(14px) !important;
+    background-color: #ffffff !important;
+    backdrop-filter: var(--blur) !important;
 }
 
-.theme--dark.v-app-bar,
-.theme--dark.v-chip  {
-    background-color: #272727C8 !important;
-    backdrop-filter: brightness(80%) blur(14px) !important;
+.theme--dark.v-app-bar {
+    background-color: #121212 !important;
+    backdrop-filter: var(--blur) !important;
+}
+.theme--dark.v-chip {
+    background-color: #1E1E1E !important;
+    backdrop-filter: var(--blur) !important;
 }
 
-.theme--light.cardblur{
-    background-color: #FFFFFFBB !important;
-    backdrop-filter: blur(14px) !important;
+.theme--light.cardblur {
+    background-color: #FFFFFF !important;
+    backdrop-filter: var(--blur) !important;
 }
 
-.theme--dark.cardblur{
-    background-color: #27272795 !important;
-    backdrop-filter: blur(14px) !important;
+.theme--dark.cardblur {
+    background-color: #272727 !important;
+    backdrop-filter: var(--blur) !important;
+}
+
+.img-hoverable .v-image__image {
+    transition: filter 0.3s ease;
+}
+
+.img-hoverable:hover .v-image__image {
+    filter: opacity(0.4) !important;
 }
 
 /*.v-image {
@@ -131,4 +147,7 @@ canvas {
     height: 30px !important;
     min-width: 30px !important;
     padding: 0 !important;
+}
+.v-chip-opacity {
+    opacity: .85;
 }

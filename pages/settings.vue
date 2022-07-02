@@ -8,7 +8,7 @@
       颜色主题
     </p>
     <v-radio-group
-      v-model="settings_theme"
+      v-model="settingsTheme"
       row
       @change="toggle_theme"
     >
@@ -31,7 +31,7 @@
 <script>
 export default {
   data: () => ({
-    settings_theme: 'light'
+    settingsTheme: 'light'
   }),
   head () {
     return {
@@ -40,9 +40,9 @@ export default {
   },
   methods: {
     toggle_theme () {
-      if (this.settings_theme === 'light') {
+      if (this.settingsTheme === 'light') {
         this.$vuetify.theme.dark = false
-      } else if (this.settings_theme === 'dark') {
+      } else if (this.settingsTheme === 'dark') {
         this.$vuetify.theme.dark = true
       } else {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {

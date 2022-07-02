@@ -27,7 +27,7 @@
     </p>
     <p>
       <b>帮助维护网站的友好氛围。</b><br>
-      保持你的作品和言论友好并适合所有年龄段非常重要。如果你认为 {{ siteName }} 上的某些信息带有侮辱性、过于暴力的、或者对社区有破坏性，点击“举报”让我们知道。请使用“举报”按钮，而不是参与互骂、散布关于他人的谣言、或以其他方式回应不适合的内容。{{ us }}将查看您的举报，并采取适当的行动。
+      保持你的作品和言论友好并适合所有年龄段非常重要。如果你认为 {{ siteName }} 上的某些信息带有侮辱性、过于暴力的、或者对社区有破坏性，点击“举报”让我们知道。请使用“举报”按钮，而不是参与互骂、散布关于他人的谣言、或以其他方式回应不适合的内容。{{ us }}将查看你的举报，并采取适当的行动。
     </p>
   </div>
 </template>
@@ -37,6 +37,7 @@ export default {
   data: () => ({
     name: 'GitScratch 和 UniScratch',
     us: 'GitScratch 团队',
+    editorDeveloper: 'UniScratch 团队',
     editor: 'UniScratch',
     siteName: 'GitScratch',
     siteUrl: 'git.sc.cn'
