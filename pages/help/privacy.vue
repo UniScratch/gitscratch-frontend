@@ -2,7 +2,7 @@
   <div>
     <h1>{{ name }} 隐私政策</h1>
     <p>
-      <i>{{ name }} 隐私政策最后更新时间：2022 年 6 月 30 日</i>
+      <i>{{ name }} 隐私政策最后更新时间：2022 年 7 月 1 日</i>
     </p>
     <p>
       {{ us }} 了解隐私对于我们的社区，尤其是孩子和家长的重要性。我们编写此隐私政策是为了解释我们通过网站（{{ siteUrl }}）（“网站”）收集哪些信息，我们如何使用、处理和共享这些信息，以及我们正在采取哪些措施来确保其安全。它还告诉您，您关于您的信息的权力和选择，以及如果您有任何问题或担忧，您可以如何与我们联系。
@@ -98,14 +98,19 @@
     </h3>
     <p>
       We may de-identify and aggregate information collected through the Site for statistical analysis and other lawful purpose, including in research studies intended to improve our understanding of how people learn with Scratch. The results of this research are shared with educators and researchers through conferences, journals, and other publications. You can find out more on our Research page.
+      我们可能会对通过网站收集的信息进行反识别和汇总，以用于统计分析和其他合法目的，包括旨在提高我们对人们如何通过 {{ name }} 学习的理解的研究。这项研究的结果通过会议、期刊和其他出版物与教育工作者和研究人员共享。您可以在我们的研究页面上找到更多信息。
     </p>
     <h3>
       Legal
+      法律
     </h3>
     <p>
       We may use your Personal Information to enforce our Terms of Use, to defend our legal rights, and to comply with our legal obligations and internal policies. We moderate all content posted to Scratch, including unshared projects, comments, and forum posts.
+      我们可能会使用您的个人信息来执行我们的<router-link to="/help/terms-of-service">
+        使用条款
+      </router-link>，捍卫我们的合法权利，并遵守我们的法律义务和内部政策。我们控制所有发布到 {{ siteName }} 的内容，包括未分享的项目、评论和论坛帖子。
     </p>
-    <p>
+    <!-- <p>
       If you are located in the European Economic Area, we only process your Personal Information based on a valid legal ground, including when:
     </p>
     <p>
@@ -115,9 +120,10 @@
         <li>We have a legal obligation to use your Personal Information; or</li>
         <li>We or a third party have a legitimate interest in using your Personal Information. In particular, we have a legitimate interest in using your Personal Information to personalize our services and provide you with tailored content, conduct business analytics, and otherwise improve the safety, security, and performance of our Site. We only rely on our or a third party’s legitimate interests to process your Personal Information when these interests are not overridden by your rights and interests.</li>
       </ul>
-    </p>
+    </p> -->
     <h2>
       How Does Scratch Share my Personal Information?
+      {{ name }} 如何共享我的个人信息？
     </h2>
     <p>
       We disclose information that we collect through the Site to third parties in the following circumstances:
