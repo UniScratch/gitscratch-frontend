@@ -16,7 +16,7 @@
         精选作品
       </p>
       <v-spacer />
-      <v-btn to="/explore?type=selected" text>
+      <v-btn to="/explore?type=selected" text rounded>
         更多
         <v-icon right>
           mdi-chevron-right
@@ -29,7 +29,7 @@
         热门作品
       </p>
       <v-spacer />
-      <v-btn to="/explore?sort=views&from=30" text>
+      <v-btn to="/explore?sort=views&from=30" text rounded>
         更多
         <v-icon right>
           mdi-chevron-right
