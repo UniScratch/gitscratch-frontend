@@ -68,25 +68,32 @@ code {
     color: #FFFB;
 }
 
-.theme--light.v-app-bar ,
-.theme--light.v-chip {
-    background-color: #FFFFFFEE !important;
+.theme--light.v-app-bar {
+    background-color: #ffffff !important;
     backdrop-filter: var(--blur) !important;
 }
 
-.theme--dark.v-app-bar,
-.theme--dark.v-chip  {
-    background-color: #272727C8 !important;
+.theme--light.v-chip {
+    background-color: #ffffff !important;
+    backdrop-filter: var(--blur) !important;
+}
+
+.theme--dark.v-app-bar {
+    background-color: #121212 !important;
+    backdrop-filter: var(--blur) !important;
+}
+.theme--dark.v-chip {
+    background-color: #1E1E1E !important;
     backdrop-filter: var(--blur) !important;
 }
 
 .theme--light.cardblur{
-    background-color: #FFFFFFBB !important;
+    background-color: #ffffff !important;
     backdrop-filter: var(--blur) !important;
 }
 
 .theme--dark.cardblur{
-    background-color: #27272795 !important;
+    background-color: #272727 !important;
     backdrop-filter: var(--blur) !important;
 }
 
