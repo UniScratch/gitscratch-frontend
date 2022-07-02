@@ -1,7 +1,7 @@
 <template>
   <v-card v-ripple :to="'/projects/' + projectId">
     <v-hover v-slot="{ hover }">
-      <v-img lazy-src="/GitScratch-project-thumbnail-grey.svg" :src="projectThumbnail" style="width: 100%;">
+      <v-img lazy-src="/GitScratch-project-thumbnail-grey.svg" :src="projectThumbnail" style="width: 100%;" class="img-hoverable">
         <v-slide-y-reverse-transition>
           <v-container
             v-if="hover"
@@ -10,6 +10,7 @@
             <v-chip
               outlined
               small
+              class="chip-with-background"
             >
               <v-icon class="v-icon-proj-card" left>
                 mdi-history
@@ -19,6 +20,7 @@
             <v-chip
               outlined
               small
+              class="chip-with-background"
             >
               <v-icon class="v-icon-proj-card" left>
                 mdi-eye-outline
@@ -28,6 +30,7 @@
             <v-chip
               outlined
               small
+              class="chip-with-background"
             >
               <v-icon class="v-icon-proj-card" left>
                 mdi-star-outline
@@ -37,6 +40,7 @@
             <v-chip
               outlined
               small
+              class="chip-with-background"
             >
               <v-icon class="v-icon-proj-card" left>
                 mdi-source-branch

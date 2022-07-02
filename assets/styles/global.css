@@ -87,14 +87,22 @@ code {
     backdrop-filter: var(--blur) !important;
 }
 
-.theme--light.cardblur{
-    background-color: #ffffff !important;
+.theme--light.cardblur {
+    background-color: #FFFFFF !important;
     backdrop-filter: var(--blur) !important;
 }
 
-.theme--dark.cardblur{
+.theme--dark.cardblur {
     background-color: #272727 !important;
     backdrop-filter: var(--blur) !important;
+}
+
+.img-hoverable .v-image__image {
+    transition: filter 0.3s ease;
+}
+
+.img-hoverable:hover .v-image__image {
+    filter: opacity(0.4) !important;
 }
 
 /*.v-image {

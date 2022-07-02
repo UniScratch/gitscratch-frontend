@@ -173,7 +173,6 @@
 const marked = require('marked')
 export default {
   data: () => ({
-
     model: 0,
     data: {
       notifications: [
@@ -347,7 +346,7 @@ export default {
       if (item.type === 'project.star') {
         return item.userName + ' 星标了你的作品 ' + item.targetName
       } else if (item.type === 'project.fork') {
-        return item.userName + ' 复刻了你的作品 ' + item.targetName
+        return item.userName + ' 改编了你的作品 ' + item.targetName
       } else if (item.type === 'project.release') {
         return item.userName + ' 发布了作品 ' + item.targetName + ' 的新版本'
       } else if (item.type === 'project.ban') {
@@ -359,7 +358,7 @@ export default {
       } else if (item.type === 'user.follow') {
         return item.userName + ' 关注了你 '
       } else if (item.type === 'user.levelUpgrade') {
-        return '你的社区等级已升级到 LV.' + item.level
+        return '你的社区等级已升级到 Lv.' + item.level
       } else if (item.type === 'user.verify') {
         return '你的社区认证' + (item.verifyStat === 1 ? '已通过' : '被拒绝')
       } else if (item.type === 'user.mute') {
@@ -380,7 +379,7 @@ export default {
       if (item.type === 'project.star') {
         return '共收到 ' + item.targetStar + ' 个星标'
       } else if (item.type === 'project.fork') {
-        return '共被复刻 ' + item.targetFork + ' 次'
+        return '共被改编 ' + item.targetFork + ' 次'
       } else if (item.type === 'project.release') {
         return '当前版本: ' + item.releaseVer
       } else if (item.type === 'project.ban') {
