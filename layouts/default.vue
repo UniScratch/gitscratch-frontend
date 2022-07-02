@@ -7,6 +7,7 @@
       </v-container>
     </v-main>
     <SiteFooter />
+    <AlphaWatermark />
   </v-app>
 </template>
 <script>
