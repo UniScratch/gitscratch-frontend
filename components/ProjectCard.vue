@@ -12,7 +12,7 @@
               small
               class="chip-with-background"
             >
-              <v-icon class="v-icon-proj-card" left>
+              <v-icon class="v-icon-project-card" left>
                 mdi-history
               </v-icon>
               2022/5/28 14:39
@@ -22,7 +22,7 @@
               small
               class="chip-with-background"
             >
-              <v-icon class="v-icon-proj-card" left>
+              <v-icon class="v-icon-project-card" left>
                 mdi-eye-outline
               </v-icon>
               345
@@ -32,7 +32,7 @@
               small
               class="chip-with-background"
             >
-              <v-icon class="v-icon-proj-card" left>
+              <v-icon class="v-icon-project-card" left>
                 mdi-star-outline
               </v-icon>
               456
@@ -42,7 +42,7 @@
               small
               class="chip-with-background"
             >
-              <v-icon class="v-icon-proj-card" left>
+              <v-icon class="v-icon-project-card" left>
                 mdi-source-branch
               </v-icon>
               567
@@ -112,7 +112,7 @@ export default {
 }
 </script>
 <style>
-  .v-icon-proj-card {
+  .v-icon-project-card {
     font-size: 19px !important;
   }
 </style>

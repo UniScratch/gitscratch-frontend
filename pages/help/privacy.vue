@@ -98,12 +98,17 @@
     </h3>
     <p>
       We may de-identify and aggregate information collected through the Site for statistical analysis and other lawful purpose, including in research studies intended to improve our understanding of how people learn with Scratch. The results of this research are shared with educators and researchers through conferences, journals, and other publications. You can find out more on our Research page.
+      我们可能会对通过网站收集的信息进行反识别和汇总，以用于统计分析和其他合法目的，包括旨在提高我们对人们如何通过 {{ name }} 学习的理解的研究。这项研究的结果通过会议、期刊和其他出版物与教育工作者和研究人员共享。您可以在我们的研究页面上找到更多信息。
     </p>
     <h3>
       Legal
+      法律
     </h3>
     <p>
       We may use your Personal Information to enforce our Terms of Use, to defend our legal rights, and to comply with our legal obligations and internal policies. We moderate all content posted to Scratch, including unshared projects, comments, and forum posts.
+      我们可能会使用您的个人信息来执行我们的<router-link to="/help/terms-of-service">
+        使用条款
+      </router-link>，捍卫我们的合法权利，并遵守我们的法律义务和内部政策。我们控制所有发布到 {{ siteName }} 的内容，包括未分享的项目、评论和论坛帖子。
     </p>
     <p>
       If you are located in the European Economic Area, we only process your Personal Information based on a valid legal ground, including when:
