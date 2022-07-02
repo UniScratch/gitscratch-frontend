@@ -46,43 +46,55 @@
     </h3>
     <p>
       If you contact us directly, we may receive additional information about you. For example, when you contact our Customer Support Team, we may receive your name, email address, phone number, the contents of a message or attachments that you may send to us, and other information you choose to provide.
-      如果您直接与我们联系，我们可能会收到有关您的更多信息。例如，当您联系我们的
+      如果您直接与我们联系，我们可能会收到有关您的更多信息。例如，当您联系我们的客户支持团队时，我们可能会收到您的姓名、电子邮件地址、电话号码、您可能会发送给我们的邮件或附件的内容，以及您选择提供的其他信息。
     </p>
     <h3>
       Personal Information We Collect Automatically From Your Use of the Site
+      我们自动从您使用本网站收集的个人信息
     </h3>
     <p>
       When you use Scratch, we and our third-party service providers collect information about you and your device through automated means, such as cookies and web server logs. By using Scratch, you consent to the placement of cookies and similar technologies in your browser in accordance with this Privacy Policy. The information collected in this manner includes your IP address, network location, what browser you are using, device IDs and characteristics, operating system version, language preferences, referring URLs, and information about the usage of our site.
+      当您使用 {{ name }} 时，我们和我们的第三方服务提供商通过自动方式（如 Cookie 和 Web 服务器日志）收集有关您和您的设备的信息。使用 {{ name }} 表示您同意根据本隐私政策在浏览器中放置 Cookie 和类似技术。以这种方式收集的信息包括您的 IP 地址、网络位置、您使用的浏览器、设备 ID 和特征、操作系统版本、语言首选项、参考 URL 以及有关我们网站使用情况的信息。
     </p>
     <p>
       We use this information, for example, to ensure that the site functions properly, to determine how many users have visited certain pages, or to prevent fraud. We use IP address information to derive your approximate location. We also work with analytics providers, such as Google Analytics, which use cookies and similar technologies to collect and analyze information about use of the site and report on activities and trends. These services may also collect information about the use of other websites, apps, and online resources. You can learn more about Google’s practices by going to https://www.google.com/policies/privacy/partners/.
+      例如，我们使用这些信息来确保网站正常运行，确定有多少用户访问了某些页面，或者防止欺诈。我们使用 IP 地址得出您的大致位置。
     </p>
     <p>
       If you do not want information collected through the use of cookies, most browsers allow you to automatically decline cookies or be given the choice of declining or accepting the transfer to your computer of a particular cookie (or cookies) from a particular site. You may also wish to refer to http://www.allaboutcookies.org/manage-cookies/index.html. If, however, you do not accept cookies, you may experience some inconvenience in your use of Scratch.
+      如果您不希望通过 Cookie 收集信息，大多数浏览器允许您自动拒绝 Cookie 或被提供选择拒绝或接受某个特定的 Cookie（或多个 Cookie）从某个网站传输到您的计算机上的选择。您也可能希望参考 http://www.allaboutcookies.org/manage-cookies/index.html。但是，如果您不接受 Cookie，您可能会在使用 {{ name }} 时遇到一些不便。
     </p>
     <h2>
       How does the Scratch Team use my personal information?
+      {{ allDevelopers }} 如何使用我的个人信息？
     </h2>
     <h3>
       Internal and Service-Related Usage
+      内部和服务相关使用
     </h3>
     <p>
       We use Personal Information for internal and Site-related purposes, including to operate, provide, and maintain the Site.
+      我们将个人信息用于内部和网站相关目的，包括运营、提供和维护网站。
     </p>
     <h3>
       Analytics and Improving the Site
+      分析和改进网站
     </h3>
     <p>
       We and our service providers use Personal Information that we collect on the Site, such as your location and your activities on the Site, to monitor and analyze usage of the Site and to improve and enhance the Site.
+      我们和我们的服务提供商使用我们在网站上收集的个人信息，例如您在网站上的位置和活动，来监控和分析网站的使用情况，并改进和增强网站。
     </p>
     <h3>
       Communications
+      交流
     </h3>
     <p>
       We may send emails to an email address you provide to us for customer-service or technical-support purposes, to send you information about topics or content that we think may interest you, or updates about the latest developments or features on the Site. We may also send a newsletter to the email address you provide to us if you subscribe to receive the newsletter. Parents and guardians who register their under-16 year olds for Scratch may also receive additional updates from the Scratch Foundation, a non-profit that supports Scratch educational initiatives.
+      我们可能会向您提供的用于客户服务或技术支持的电子邮件地址发送电子邮件，以向您发送有关我们认为您可能感兴趣的主题或内容的信息，或有关网站最新发展或功能的更新。如果您订阅了新闻稿，我们也可以将新闻稿发送到您提供给我们的电子邮件地址。
     </p>
     <h3>
       Aggregate Data
+      综合数据
     </h3>
     <p>
       We may de-identify and aggregate information collected through the Site for statistical analysis and other lawful purpose, including in research studies intended to improve our understanding of how people learn with Scratch. The results of this research are shared with educators and researchers through conferences, journals, and other publications. You can find out more on our Research page.
