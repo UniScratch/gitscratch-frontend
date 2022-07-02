@@ -10,7 +10,6 @@
             <v-chip
               class="v-chip-opacity"
               small
-              class="chip-with-background"
             >
               <v-icon class="v-icon-proj-card" left>
                 mdi-history
@@ -20,7 +19,6 @@
             <v-chip
               class="v-chip-opacity"
               small
-              class="chip-with-background"
             >
               <v-icon class="v-icon-proj-card" left>
                 mdi-eye-outline
@@ -30,7 +28,6 @@
             <v-chip
               class="v-chip-opacity"
               small
-              class="chip-with-background"
             >
               <v-icon class="v-icon-proj-card" left>
                 mdi-star-outline
@@ -40,7 +37,6 @@
             <v-chip
               class="v-chip-opacity"
               small
-              class="chip-with-background"
             >
               <v-icon class="v-icon-proj-card" left>
                 mdi-source-branch
