@@ -8,9 +8,8 @@
             style="font-size: 1vw;"
           >
             <v-chip
-              outlined
+              class="v-chip-opacity"
               small
-              class="chip-with-background"
             >
               <v-icon class="v-icon-project-card" left>
                 mdi-history
@@ -18,9 +17,8 @@
               2022/5/28 14:39
             </v-chip>
             <v-chip
-              outlined
+              class="v-chip-opacity"
               small
-              class="chip-with-background"
             >
               <v-icon class="v-icon-project-card" left>
                 mdi-eye-outline
@@ -28,9 +26,8 @@
               345
             </v-chip>
             <v-chip
-              outlined
+              class="v-chip-opacity"
               small
-              class="chip-with-background"
             >
               <v-icon class="v-icon-project-card" left>
                 mdi-star-outline
@@ -38,9 +35,8 @@
               456
             </v-chip>
             <v-chip
-              outlined
+              class="v-chip-opacity"
               small
-              class="chip-with-background"
             >
               <v-icon class="v-icon-project-card" left>
                 mdi-source-branch
