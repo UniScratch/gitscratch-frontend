@@ -8,7 +8,7 @@
             style="font-size: 1vw;"
           >
             <v-chip
-              outlined
+              class="v-chip-opacity"
               small
             >
               <v-icon class="v-icon-proj-card" left>
@@ -17,7 +17,7 @@
               2022/5/28 14:39
             </v-chip>
             <v-chip
-              outlined
+              class="v-chip-opacity"
               small
             >
               <v-icon class="v-icon-proj-card" left>
@@ -26,7 +26,7 @@
               345
             </v-chip>
             <v-chip
-              outlined
+              class="v-chip-opacity"
               small
             >
               <v-icon class="v-icon-proj-card" left>
@@ -35,7 +35,7 @@
               456
             </v-chip>
             <v-chip
-              outlined
+              class="v-chip-opacity"
               small
             >
               <v-icon class="v-icon-proj-card" left>

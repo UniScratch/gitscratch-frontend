@@ -140,3 +140,6 @@ canvas {
     min-width: 30px !important;
     padding: 0 !important;
 }
+.v-chip-opacity {
+    opacity: .7;
+}
