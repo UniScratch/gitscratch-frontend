@@ -3,6 +3,7 @@
 
 :root {
     --primary-color: #2196F3;
+    --blur: none;
 }
 
 .theme--light a:not(.v-btn, .v-card, .v-chip, .v-list-item) {
@@ -70,23 +71,23 @@ code {
 .theme--light.v-app-bar ,
 .theme--light.v-chip {
     background-color: #FFFFFFEE !important;
-    backdrop-filter: brightness(120%) blur(14px) !important;
+    backdrop-filter: var(--blur) !important;
 }
 
 .theme--dark.v-app-bar,
 .theme--dark.v-chip  {
     background-color: #272727C8 !important;
-    backdrop-filter: brightness(80%) blur(14px) !important;
+    backdrop-filter: var(--blur) !important;
 }
 
 .theme--light.cardblur{
     background-color: #FFFFFFBB !important;
-    backdrop-filter: blur(14px) !important;
+    backdrop-filter: var(--blur) !important;
 }
 
 .theme--dark.cardblur{
     background-color: #27272795 !important;
-    backdrop-filter: blur(14px) !important;
+    backdrop-filter: var(--blur) !important;
 }
 
 /*.v-image {
