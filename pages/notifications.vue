@@ -184,7 +184,7 @@ export default {
           targetName: 'Example Project', // 作品名
           targetId: 1, // 作品id
           targetStar: 256, // 作品星标数
-          userName: '顾娟', // 用户名
+          userName: 'HydroGest', // 用户名
           userId: 1, // 用户id
           userAvatar: '/GitScratch-icon-background-blue.svg', // 用户头像
           time: '2022-07-02T15:13:21+08:00' // 时间
@@ -195,7 +195,7 @@ export default {
           targetName: 'Example Project', // 作品名
           targetId: 1, // 作品id
           targetFork: 512, // 作品改编数
-          userName: '顾娟', // 用户名
+          userName: 'HydroGest', // 用户名
           userId: 1, // 用户id
           userAvatar: '/GitScratch-icon-background-blue.svg', // 用户头像
           time: '2022-07-02T15:13:21+08:00' // 时间
@@ -206,7 +206,7 @@ export default {
           targetName: 'Example Project', // 作品名
           targetId: 1, // 作品id
           releaseVer: '1.0.0', // 作品版本
-          userName: '顾娟', // 用户名
+          userName: 'HydroGest', // 用户名
           userId: 1, // 用户id
           userAvatar: '/GitScratch-icon-background-blue.svg', // 用户头像
           time: '2022-07-02T15:13:21+08:00' // 时间
@@ -216,7 +216,7 @@ export default {
           status: 2,
           targetName: 'Example Project', // 作品名
           targetId: 1, // 作品id
-          userName: '顾娟', // 用户名
+          userName: 'HydroGest', // 用户名
           userId: 1, // 用户id
           userAvatar: '/GitScratch-icon-background-blue.svg', // 用户头像
           time: '2022-07-02T15:13:21+08:00' // 时间
@@ -226,10 +226,10 @@ export default {
           status: 2,
           targetName: 'Example Project', // 作品名
           targetId: 1, // 作品id
-          userName: '顾娟', // 用户名
+          userName: 'HydroGest', // 用户名
           userId: 1, // 用户id
           userAvatar: '/GitScratch-icon-background-blue.svg', // 用户头像
-          commentPreview: '这是评论内容, 听我说谢谢你, 因为有你, 温暖了四季。', // 评论内容
+          commentPreview: '这是评论内容，听我说谢谢你，因为有你，温暖了四季。', // 评论内容
           commentId: 1, // 评论id
           time: '2022-07-02T15:13:21+08:00' // 时间
         },
@@ -238,17 +238,17 @@ export default {
           status: 2,
           targetName: 'Example Project', // 作品名
           targetId: 1, // 作品id
-          userName: '顾娟', // 用户名
+          userName: 'HydroGest', // 用户名
           userId: 1, // 用户id
           userAvatar: '/GitScratch-icon-background-blue.svg', // 用户头像
-          commentPreview: '这是评论内容, 听我说谢谢你, 因为有你, 温暖了四季。', // 评论内容
+          commentPreview: '这是评论内容，听我说谢谢你，因为有你，温暖了四季。', // 评论内容
           commentId: 1, // 评论id
           time: '2022-07-02T15:13:21+08:00' // 时间
         },
         {
           type: 'user.follow', // 用户被关注
           status: 2,
-          userName: '顾娟', // 用户名
+          userName: 'HydroGest', // 用户名
           userId: 1, // 用户id
           userAvatar: '/GitScratch-icon-background-blue.svg', // 用户头像
           followers: 256, // 粉丝数
@@ -269,7 +269,7 @@ export default {
         {
           type: 'user.mute', // 用户被禁言 (admin)
           status: 2,
-          userName: '顾娟', // 用户名
+          userName: 'HydroGest', // 用户名
           userId: 1, // 用户id
           userAvatar: '/GitScratch-icon-background-blue.svg', // 用户头像
           muteTime: 100000, // 单位: min
@@ -279,7 +279,7 @@ export default {
         {
           type: 'user.ban', // 用户被封禁 (admin)
           status: 2,
-          userName: '顾娟', // 用户名
+          userName: 'HydroGest', // 用户名
           userId: 1, // 用户id
           userAvatar: '/GitScratch-icon-background-blue.svg', // 用户头像
           banTime: 100000, // 单位: min
@@ -291,7 +291,7 @@ export default {
           status: 2,
           targetName: 'Example Project', // 作品名
           targetId: 1, // 作品id
-          userName: '顾娟', // 用户名
+          userName: 'HydroGest', // 用户名
           userId: 1, // 用户id
           userAvatar: '/GitScratch-icon-background-blue.svg', // 用户头像
           time: '2022-07-02T15:13:21+08:00' // 时间
@@ -299,7 +299,7 @@ export default {
         {
           type: 'user.comment', // 用户被评论
           status: 2,
-          userName: '顾娟', // 用户名
+          userName: 'HydroGest', // 用户名
           userId: 1, // 用户id
           userAvatar: '/GitScratch-icon-background-blue.svg', // 用户头像
           commentPreview: '这是评论内容, 听我说谢谢你, 因为有你, 温暖了四季。', // 评论内容
@@ -311,7 +311,7 @@ export default {
           status: 2,
           targetName: '用户', // 用户名
           targetId: 1, // 用户id
-          userName: '顾娟', // 用户名
+          userName: 'HydroGest', // 用户名
           userId: 1, // 用户id
           userAvatar: '/GitScratch-icon-background-blue.svg', // 用户头像
           commentPreview: '这是评论内容, 听我说谢谢你, 因为有你, 温暖了四季。', // 评论内容
@@ -381,23 +381,23 @@ export default {
       } else if (item.type === 'project.fork') {
         return '共被改编 ' + item.targetFork + ' 次'
       } else if (item.type === 'project.release') {
-        return '当前版本: ' + item.releaseVer
+        return '当前版本：' + item.releaseVer
       } else if (item.type === 'project.ban') {
-        return '封禁原因: xxx , 解封时间: 2077'
+        return '封禁原因：xxx，解封时间：2077'
       } else if (item.type === 'project.comment') {
         return item.commentPreview
       } else if (item.type === 'project.comment.mention') {
         return item.commentPreview
       } else if (item.type === 'user.follow') {
-        return '共 ' + item.followers + ' 只粉丝'
+        return '共 ' + item.followers + ' 个粉丝'
       } else if (item.type === 'user.levelUpgrade') {
         return 'Exp ++'
       } else if (item.type === 'user.verify') {
         return ''
       } else if (item.type === 'user.mute') {
-        return '禁言原因: ' + item.muteReason + ' , 解禁时间: 2077'
+        return '禁言原因：' + item.muteReason + '，解禁时间：2077'
       } else if (item.type === 'user.ban') {
-        return '封禁原因: ' + item.banReason + ' , 解封时间: 2077'
+        return '封禁原因：' + item.banReason + '，解封时间：2077'
       } else if (item.type === 'user.newProject') {
         return '作品卡片'
       } else if (item.type === 'user.comment') {

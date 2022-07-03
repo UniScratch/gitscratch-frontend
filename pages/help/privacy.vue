@@ -123,17 +123,29 @@
     </p> -->
     <h2>
       How Does Scratch Share my Personal Information?
-      {{ name }} 如何共享我的个人信息？
+      {{ allDevelopers }}如何共享我的个人信息？
     </h2>
     <p>
       We disclose information that we collect through the Site to third parties in the following circumstances:
+      在以下情况下，我们将通过网站收集的信息披露给第三方：
     </p>
     <p>
       <ul>
-        <li>To third-party service providers who provide services such as website hosting, data analysis, information technology and related infrastructure provisions, customer service, email delivery, and other services.</li>
-        <li>We may also disclose your Personal Information with your permission. We may seek your permission in various ways. For example, we may present you with an “opt-in” prompt when you register to use the Site or access certain content.</li>
-        <li>To a potential or actual acquirer, successor, or assignee as part of any reorganization, merger, sale, joint venture, assignment, transfer, or other disposition of all or any portion of our organization or assets. You will have the opportunity to opt out of any such transfer if the new entity’s planned processing of your information differs materially from that set forth in this Privacy Policy.</li>
-        <li>If required to do so by law or in the good faith belief that such action is appropriate: (a) under applicable law, including laws outside your country of residence; (b) to comply with legal process; (c) to respond to requests from public and government authorities, such as school, school districts, and law enforcement, including public and government authorities outside your country of residence; (d) to enforce our terms and conditions; (e) to protect our operations or those of any of our affiliates; (f) to protect our rights, privacy, safety, or property, and/or that of our affiliates, you, or others; and (g) to allow us to pursue available remedies or limit the damages that we may sustain.</li>
+        <li>
+          To third-party service providers who provide services such as website hosting, data analysis, information technology and related infrastructure provisions, customer service, email delivery, and other services.
+          向第三方服务商提供服务，如网站托管、数据分析、信息技术和相关基础设施规定、客户服务、电子邮件交付和其他服务。
+        </li>
+        <li>
+          We may also disclose your Personal Information with your permission. We may seek your permission in various ways. For example, we may present you with an “opt-in” prompt when you register to use the Site or access certain content.
+          经过您允许后，我们也可能会披露您的个人信息。我们可以通过各种方式寻求您的许可。例如，当您注册使用该网站或访问某些内容时，我们可能会向您提供“选择加入”提示。
+        </li>
+        <li>
+          To a potential or actual acquirer, successor, or assignee as part of any reorganization, merger, sale, joint venture, assignment, transfer, or other disposition of all or any portion of our organization or assets. You will have the opportunity to opt out of any such transfer if the new entity’s planned processing of your information differs materially from that set forth in this Privacy Policy.
+          潜在或实际收购人、继承人或受让人，作为
+        </li>
+        <li>
+          If required to do so by law or in the good faith belief that such action is appropriate: (a) under applicable law, including laws outside your country of residence; (b) to comply with legal process; (c) to respond to requests from public and government authorities, such as school, school districts, and law enforcement, including public and government authorities outside your country of residence; (d) to enforce our terms and conditions; (e) to protect our operations or those of any of our affiliates; (f) to protect our rights, privacy, safety, or property, and/or that of our affiliates, you, or others; and (g) to allow us to pursue available remedies or limit the damages that we may sustain.
+        </li>
       </ul>
     </p>
     <h2>

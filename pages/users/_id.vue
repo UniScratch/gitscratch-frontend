@@ -14,7 +14,7 @@
           <v-img :src="avatar" />
         </v-avatar>
         <div style="display: flex;">
-          <span style="display: block; min-width: 20px; height: 20px; background-color: rgba(34, 149, 242); color: white; border-radius: 50%; font-size: 12px;">{{ level }}</span>&nbsp;
+          <span style="display: block; min-width: 20px; height: 20px; background-color: rgb(34, 149, 242); color: white; border-radius: 50%; font-size: 12px;">{{ level }}</span>&nbsp;
           <v-progress-linear :value="exp" class="rounded-pill" height="20" />
         </div>
       </div><br>
@@ -30,19 +30,19 @@
         </v-tooltip>
         <v-tooltip v-if="isMuted" bottom>
           <template #activator="{ on, attrs }">
-            <v-icon color="rgba(255, 87, 34)" v-bind="attrs" v-on="on">
+            <v-icon color="rgb(255, 87, 34)" v-bind="attrs" v-on="on">
               mdi-comment-remove-outline
             </v-icon>
           </template>
-          <span>账户被禁言, {{ muteRemainDate }} 天后解禁</span>
+          <span>账户被禁言，{{ muteRemainDate }} 天后解禁</span>
         </v-tooltip>
         <v-tooltip v-if="isBanned" bottom>
           <template #activator="{ on, attrs }">
-            <v-icon color="rgba(238, 54, 37)" v-bind="attrs" v-on="on">
+            <v-icon color="rgb(238, 54, 37)" v-bind="attrs" v-on="on">
               mdi-gavel
             </v-icon>
           </template>
-          <span>账户被封禁, {{ banRemainDate }} 天后解禁</span>
+          <span>账户被封禁，{{ banRemainDate }} 天后解禁</span>
         </v-tooltip>
         <v-fade-transition>
           <v-btn v-if="userNameIsHover && isLogin" class="rounded-circle rounded-btn" plain>
@@ -119,9 +119,12 @@
               最近收藏的作品
             </p>
             <v-spacer />
-            <router-link :to="'/users/' + $route.params.username + '/stars'">
+            <v-btn :to="'/users/' + username + '/stars'" text rounded>
               更多
-            </router-link>
+              <v-icon right>
+                mdi-chevron-right
+              </v-icon>
+            </v-btn>
           </div>
           <ProjectGroupSmall />
         </v-window-item>
@@ -152,7 +155,7 @@ export default {
     follower: 100,
     following: 200,
     website: 'https://git.sc.cn',
-    bio: '啊，好舒服',
+    bio: '这是简介，听我说谢谢你，因为有你，温暖了四季。',
     avatar: '/GitScratch-icon-background-blue.svg',
     toggleTab: 0,
     level: 1,
@@ -164,12 +167,6 @@ export default {
     isBanned: true,
     muteRemainDate: '-1',
     banRemainDate: '-1',
-    README: `
-# 啊，好舒服
-昨天晚上跟 [@作者](/users/作者) 床♂战太爽了
-\`\`\` js
-console.log('Hello, world!')
-\`\`\``,
     userNameIsHover: false,
     isLogin: true
   }),
