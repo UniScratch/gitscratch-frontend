@@ -63,17 +63,19 @@ export default {
   methods: {
     login () {
       this.validate()
-      this.loading = true
-      this.$http.$post('/auth/login').then((res) => { // 获取session
-        // console.log(res)
-        this.$http.$get('/auth/session').then((res) => { // 获取用户信息
+      if (this.valid) {
+        this.loading = true
+        this.$http.$post('/auth/login').then((res) => { // 获取session
           // console.log(res)
-          this.$store.commit('auth/updateInfo', res.data)
+          this.$http.$get('/auth/session').then((res) => { // 获取用户信息
+            // console.log(res)
+            this.$store.commit('auth/updateInfo', res.data)
+          })
+          this.$store.commit('auth/updateToken', res.session)
+          this.loading = false
+          this.$router.push('/')
         })
-        this.$store.commit('auth/updateToken', res.session)
-        this.loading = false
-        this.$router.push('/')
-      })
+      }
     },
     validate () {
       this.$refs.form.validate()
