@@ -4,7 +4,7 @@
       欢迎
     </v-card-title>
 
-    <v-card-text class="text--primary" align="center">
+    <v-card-text class="text--primary">
       <div class="text-h2">
         {{ new Date().getDate() }}
       </div>
@@ -30,7 +30,7 @@
         <v-dialog
           v-model="dialog"
           max-width="500"
-          overlay-opacity="0.2"
+          overlay-opacity="0.3"
         >
           <v-card class="cardblur">
             <v-card-title class="text-h5">

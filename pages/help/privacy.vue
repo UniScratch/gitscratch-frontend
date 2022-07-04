@@ -141,15 +141,17 @@
         </li>
         <li>
           To a potential or actual acquirer, successor, or assignee as part of any reorganization, merger, sale, joint venture, assignment, transfer, or other disposition of all or any portion of our organization or assets. You will have the opportunity to opt out of any such transfer if the new entity’s planned processing of your information differs materially from that set forth in this Privacy Policy.
-          潜在或实际收购人、继承人或受让人，作为
+          潜在或实际收购人、继承人或受让人，作为 {{ allDevelopers }} 全部或任何部分组织或资产重组、合并、出售、合资、转让、转让或其他处置的一部分。如果新实体对您信息的计划处理与本隐私政策中规定的有重大差异，您将有机会选择退出任何此类转让。
         </li>
         <li>
           If required to do so by law or in the good faith belief that such action is appropriate: (a) under applicable law, including laws outside your country of residence; (b) to comply with legal process; (c) to respond to requests from public and government authorities, such as school, school districts, and law enforcement, including public and government authorities outside your country of residence; (d) to enforce our terms and conditions; (e) to protect our operations or those of any of our affiliates; (f) to protect our rights, privacy, safety, or property, and/or that of our affiliates, you, or others; and (g) to allow us to pursue available remedies or limit the damages that we may sustain.
+          如果法律要求这样做，或真诚地认为这样的行动是适当的：(a) 根据适用法律，包括居住国以外的法律；(b) 遵守法律程序；(c) 回应公共和政府当局的请求，如学校、学区和执法部门，包括居住国以外的公共和政府当局；(d) 执行我们的条款和条件；(e) 保护我们或我们任何附属公司的运营；(f) 保护我们的权利、隐私、安全或财产，和/或我们的附属公司、您或其他人的权利、隐私、安全或财产；(g) 允许我们寻求可用的补救措施或限制我们可能承受的损害。
         </li>
       </ul>
     </p>
     <h2>
       Third Party Services
+      第三方服务
     </h2>
     <p>
       This Privacy Policy applies only to the processing of your Personal Information by Scratch. It does not address, and we are not responsible for, the privacy, information, or other practices of any third parties, including any third party operating any site or service to which the Site links. The inclusion of a link on the Site does not imply endorsement of the linked site or service by us or by our affiliates.

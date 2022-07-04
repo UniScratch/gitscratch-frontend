@@ -24,7 +24,6 @@
                 v-model="user_email"
                 label="电子邮箱"
                 :rules="emailRules"
-                @keyup.enter="next"
               />
             </v-form>
             <span class="text-caption grey--text text--darken-1">
@@ -40,7 +39,6 @@
                 v-model="user_name"
                 label="用户名"
                 :rules="nameRules"
-                @keyup.enter="next"
               />
             </v-form>
             <span class="text-caption grey--text text--darken-1">
@@ -59,7 +57,6 @@
                 :rules="passwordRules"
                 :append-icon="password_visible ? 'mdi-eye' : 'mdi-eye-off'"
                 @click:append="password_visible = !password_visible"
-                @keyup.enter="next"
               />
             </v-form>
             <span class="text-caption grey--text text--darken-1">
@@ -78,7 +75,6 @@
                 style="border-radius: 4px;"
                 :rules="captchaRules"
                 type="number"
-                @keyup.enter="next"
               />
             </v-form>
             <span class="text-caption grey--text text--darken-1">
