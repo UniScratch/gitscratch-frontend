@@ -18,8 +18,8 @@
           <v-progress-linear :value="exp" class="rounded-pill" height="20" />
         </div>
       </div><br>
-      <p class="text-h4">
-        {{ username }}
+      <div class="d-flex align-center">
+        <span class="text-h4" style="margin-right: 8px;">{{ username }}</span>
         <v-tooltip v-if="isVerified" bottom>
           <template #activator="{ on, attrs }">
             <v-icon :color="verifyColor" v-bind="attrs" v-on="on">
@@ -44,19 +44,45 @@
           </template>
           <span>账户被封禁，{{ banRemainDate }} 天后解禁</span>
         </v-tooltip>
-        <v-fade-transition>
-          <v-btn v-if="userNameIsHover && isLogin" class="rounded-circle rounded-btn" plain>
-            <v-tooltip bottom>
-              <template #activator="{ on, attrs }">
-                <v-icon size="18" v-bind="attrs" v-on="on">
-                  mdi-alert-outline
-                </v-icon>
-              </template>
-              <span>举报</span>
-            </v-tooltip>
-          </v-btn>
-        </v-fade-transition>
-      </p>
+        <v-dialog v-model="reportDialog">
+          <template #activator="{ reportDialogOn, reportDialogAttrs }">
+            <v-fade-transition>
+              <v-btn v-if="userNameIsHover && isLogin" class="rounded-circle rounded-btn" plain v-bind="reportDialogAttrs" v-on="reportDialogOn">
+                <v-tooltip bottom>
+                  <template #activator="{ on, attrs }">
+                    <v-icon size="18" v-bind="attrs" v-on="on">
+                      mdi-alert-outline
+                    </v-icon>
+                  </template>
+                  <span>举报</span>
+                </v-tooltip>
+              </v-btn>
+            </v-fade-transition>
+          </template>
+          <v-card>
+            <v-card-title class="text-h5 grey lighten-2">
+              Privacy Policy
+            </v-card-title>
+
+            <v-card-text>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </v-card-text>
+
+            <v-divider />
+
+            <v-card-actions>
+              <v-spacer />
+              <v-btn
+                color="primary"
+                text
+                @click="reportDialog = false"
+              >
+                I accept
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </div>
       <p class="text-body">
         {{ bio }}
       </p>
@@ -168,7 +194,8 @@ export default {
     muteRemainDate: '-1',
     banRemainDate: '-1',
     userNameIsHover: false,
-    isLogin: true
+    isLogin: true,
+    reportDialog: false
   }),
   head () {
     return {
