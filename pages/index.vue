@@ -1,12 +1,12 @@
 <template>
   <div>
     <v-row style="margin-bottom: 8px;">
-      <v-col cols="12" sm="9">
+      <v-col cols="12" sm="8">
         <Carousel />
         <!-- <v-sheet rounded="lg" min-height="268"></v-sheet> -->
       </v-col>
 
-      <v-col cols="12" sm="3">
+      <v-col cols="12" sm="4">
         <SideBanner />
         <!-- <v-sheet min-height="70vh" rounded="lg"></v-sheet> -->
       </v-col>

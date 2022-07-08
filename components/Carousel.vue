@@ -9,7 +9,7 @@
           </v-list-item-title>
           <v-list-item-subtitle class="banner-text-subtitle">
             Endless Possiblities with GitScratch. <br>
-            与 GitScratch 共赴诗和远方
+            与 GitScratch 共赴诗和远方。
           </v-list-item-subtitle>
         </div>
       </v-window-item>
