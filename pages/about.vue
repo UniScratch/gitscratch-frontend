@@ -63,7 +63,7 @@ export default {
       项目提出: ['Dispure', 'HydroGest'],
       金主: [],
       主要贡献者: ['Dispure', 'HydroGest', 'TimFang4162', 'wrj2009'],
-      云服务支持: ['Someone-Yang'],
+      云服务支持: ['Incloudify'],
       其他贡献者: ['frank-782']
     },
     meta: require('static/meta.json')
