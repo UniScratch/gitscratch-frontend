@@ -1,8 +1,18 @@
 <template>
-  <v-card min-height="350">
+  <v-card>
     <v-window v-model="onboarding">
       <v-window-item v-for="n in length" :key="`card-${n}`">
-        <v-img src="/GitScratch-thumbnail.png" height="294" />
+        <v-img src="/GitScratch-carousel-21-9.svg" eager contain class="hidden-sm-and-down" />
+        <v-img src="/GitScratch-carousel-16-9.svg" eager contain class="hidden-md-and-up" />
+        <div class="banner-text">
+          <v-list-item-title class="banner-text-title">
+            GitScratch
+          </v-list-item-title>
+          <v-list-item-subtitle class="banner-text-subtitle">
+            Endless Possiblities with GitScratch. <br>
+            与 GitScratch 共赴诗和远方。
+          </v-list-item-subtitle>
+        </div>
       </v-window-item>
     </v-window>
 
@@ -61,3 +71,18 @@ export default {
   }
 }
 </script>
+<style>
+.banner-text {
+  position: absolute;
+  bottom: 20px;
+  margin-left: 20px;
+}
+.banner-text-title {
+  font-size: 34px ;
+  font-weight: bolder;
+}
+.banner-text-subtitle {
+  font-size: 15px;
+  color: #000A
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
   <v-card v-ripple :to="'/projects/' + projectId">
     <v-hover v-slot="{ hover }">
-      <v-img lazy-src="/GitScratch-project-thumbnail-grey.svg" :src="projectThumbnail" style="width: 100%;" class="img-hoverable">
+      <v-img lazy-src="/GitScratch-project-thumbnail-grey.svg" :src="projectThumbnail" style="width: 100%;">
         <v-slide-y-reverse-transition>
           <v-container
             v-if="hover"

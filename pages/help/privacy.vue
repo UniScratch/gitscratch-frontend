@@ -123,39 +123,59 @@
     </p> -->
     <h2>
       How Does Scratch Share my Personal Information?
-      {{ name }} 如何共享我的个人信息？
+      {{ allDevelopers }}如何共享我的个人信息？
     </h2>
     <p>
       We disclose information that we collect through the Site to third parties in the following circumstances:
+      在以下情况下，我们将通过网站收集的信息披露给第三方：
     </p>
     <p>
       <ul>
-        <li>To third-party service providers who provide services such as website hosting, data analysis, information technology and related infrastructure provisions, customer service, email delivery, and other services.</li>
-        <li>We may also disclose your Personal Information with your permission. We may seek your permission in various ways. For example, we may present you with an “opt-in” prompt when you register to use the Site or access certain content.</li>
-        <li>To a potential or actual acquirer, successor, or assignee as part of any reorganization, merger, sale, joint venture, assignment, transfer, or other disposition of all or any portion of our organization or assets. You will have the opportunity to opt out of any such transfer if the new entity’s planned processing of your information differs materially from that set forth in this Privacy Policy.</li>
-        <li>If required to do so by law or in the good faith belief that such action is appropriate: (a) under applicable law, including laws outside your country of residence; (b) to comply with legal process; (c) to respond to requests from public and government authorities, such as school, school districts, and law enforcement, including public and government authorities outside your country of residence; (d) to enforce our terms and conditions; (e) to protect our operations or those of any of our affiliates; (f) to protect our rights, privacy, safety, or property, and/or that of our affiliates, you, or others; and (g) to allow us to pursue available remedies or limit the damages that we may sustain.</li>
+        <li>
+          To third-party service providers who provide services such as website hosting, data analysis, information technology and related infrastructure provisions, customer service, email delivery, and other services.
+          向第三方服务商提供服务，如网站托管、数据分析、信息技术和相关基础设施规定、客户服务、电子邮件交付和其他服务。
+        </li>
+        <li>
+          We may also disclose your Personal Information with your permission. We may seek your permission in various ways. For example, we may present you with an “opt-in” prompt when you register to use the Site or access certain content.
+          经过您允许后，我们也可能会披露您的个人信息。我们可以通过各种方式寻求您的许可。例如，当您注册使用该网站或访问某些内容时，我们可能会向您提供“选择加入”提示。
+        </li>
+        <li>
+          To a potential or actual acquirer, successor, or assignee as part of any reorganization, merger, sale, joint venture, assignment, transfer, or other disposition of all or any portion of our organization or assets. You will have the opportunity to opt out of any such transfer if the new entity’s planned processing of your information differs materially from that set forth in this Privacy Policy.
+          潜在或实际收购人、继承人或受让人，作为 {{ allDevelopers }} 全部或任何部分组织或资产重组、合并、出售、合资、转让、转让或其他处置的一部分。如果新实体对您信息的计划处理与本隐私政策中规定的有重大差异，您将有机会选择退出任何此类转让。
+        </li>
+        <li>
+          If required to do so by law or in the good faith belief that such action is appropriate: (a) under applicable law, including laws outside your country of residence; (b) to comply with legal process; (c) to respond to requests from public and government authorities, such as school, school districts, and law enforcement, including public and government authorities outside your country of residence; (d) to enforce our terms and conditions; (e) to protect our operations or those of any of our affiliates; (f) to protect our rights, privacy, safety, or property, and/or that of our affiliates, you, or others; and (g) to allow us to pursue available remedies or limit the damages that we may sustain.
+          如果法律要求这样做，或真诚地认为这样的行动是适当的：(a) 根据适用法律，包括居住国以外的法律；(b) 遵守法律程序；(c) 回应公共和政府当局的请求，如学校、学区和执法部门，包括居住国以外的公共和政府当局；(d) 执行我们的条款和条件；(e) 保护我们或我们任何附属公司的运营；(f) 保护我们的权利、隐私、安全或财产，和/或我们的附属公司、您或其他人的权利、隐私、安全或财产；(g) 允许我们寻求可用的补救措施或限制我们可能承受的损害。
+        </li>
       </ul>
     </p>
     <h2>
       Third Party Services
+      第三方服务
     </h2>
     <p>
       This Privacy Policy applies only to the processing of your Personal Information by Scratch. It does not address, and we are not responsible for, the privacy, information, or other practices of any third parties, including any third party operating any site or service to which the Site links. The inclusion of a link on the Site does not imply endorsement of the linked site or service by us or by our affiliates.
+      本隐私政策仅适用于从头开始处理您的个人信息。它不涉及任何第三方的隐私、信息或其他做法，我们也不对其负责，包括运营该网站链接的任何网站或服务的任何第三方。网站上包含链接并不意味着我们或我们的附属公司认可链接的网站或服务。
     </p>
     <h2>
       Your Rights and Choices
+      您的权利和选择
     </h2>
     <h3>
       Updating Your Information
+      更新您的信息
     </h3>
     <p>
       You can update your password, email address, and country through the Account Settings page. You can also reset your password through the Account Reset page. You cannot change your username, but you can make a new account and manually copy your projects to the new account.
+      您可以通过帐户设置页面更新密码、电子邮件地址。您也可以通过帐户重置页面重置密码。
     </p>
     <p>
       If you want to delete your account, login to Scratch, and then click your username in the top right-hand corner. Select "Account Settings," then click the "I want to delete my account" link at the bottom of the page. Deleting your account hides all information from public view, but does not remove all of your information from our servers. If you want to have all of your information removed from our servers, please contact help@scratch.mit.edu for assistance.
+      如果您想删除您的帐户，请登录 {{ siteName }}，然后单击右上角的用户名。选择“帐户设置”，然后单击页面底部的“我想删除我的帐户”链接。删除您的帐户会将所有信息隐藏在公众视线之外，但不会从我们的服务器上删除所有信息。如果您想从我们的服务器上删除所有信息，请联系 help@git.sc.cn 寻求帮助。
     </p>
     <h3>
       Marketing Communications
+      营销传播
     </h3>
     <p>
       If you decide at any time that you no longer wish to receive marketing communications from us, please follow the unsubscribe instructions provided in any of the communications. You may also opt out from receiving email from us by sending your request to us by email at help@scratch.mit.edu. Please be aware that, even after you opt out from receiving marketing communications from us, you may continue to receive administrative messages from us regarding the Site.

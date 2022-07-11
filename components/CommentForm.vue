@@ -9,7 +9,7 @@
     <v-switch
       v-if="development"
       v-model="localLogin"
-      label="[开发]账户登录"
+      label="[开发]帐户登录"
       @click="checkCommentPermission"
     />
     <v-switch
@@ -100,18 +100,18 @@ export default {
       // Send allow comment data to API
     },
     checkCommentPermission () {
-      if (this.allowComment && this.localLogin && !this.localMuted) {
-        this.textAreaDisabled = false
-        this.placeHolder = '评论'
-      } else if ((this.allowComment && !this.localLogin && !this.localMuted) || (!this.allowComment && !this.localLogin && !this.localMuted)) {
+      if (!this.localLogin) {
         this.textAreaDisabled = true
         this.placeHolder = '请登录后评论'
-      } else if ((!this.allowComment && this.localLogin && this.localMuted) || (this.allowComment && this.localLogin && this.localMuted)) {
+      } else if (this.localMuted) {
         this.textAreaDisabled = true
         this.placeHolder = '已被禁言'
-      } else if (!this.allowComment && this.localLogin && !this.localMuted) {
+      } else if (!this.allowComment) {
         this.textAreaDisabled = true
         this.placeHolder = '评论区已关闭'
+      } else if (!this.localMuted && this.localLogin && this.allowComment) {
+        this.textAreaDisabled = false
+        this.placeHolder = '评论'
       }
     }
   }

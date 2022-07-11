@@ -25,7 +25,7 @@ module.exports = {
     {
       hid: 'description',
       name: 'description',
-      content: ''
+      content: 'Endless Possiblities with GitScratch. 与 GitScratch 共赴诗和远方。'
     },
     {
       name: 'format-detection',

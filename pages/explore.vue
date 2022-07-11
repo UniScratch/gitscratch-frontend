@@ -37,6 +37,9 @@
         color="primary"
       >
         <v-btn style="border-radius: 24px;">
+          搜索
+        </v-btn>
+        <v-btn style="border-radius: 24px;">
           发现
         </v-btn>
         <v-btn style="border-radius: 24px;">
@@ -59,6 +62,20 @@
         v-model="toggleTab"
         style="display: block; padding: 16px;"
       >
+        <!-- 搜索 -->
+        <v-window-item>
+          <div class="d-flex">
+            <v-text-field
+              v-model="search"
+              label="搜索"
+              style="border-radius: 4px;"
+              prepend-icon="mdi-magnify"
+            />
+            <v-btn rounded color="primary">
+              搜索
+            </v-btn>
+          </div>
+        </v-window-item>
         <!-- 发现 -->
         <v-window-item>
           <p v-if="token" class="text-h6">
@@ -102,7 +119,8 @@ export default {
   data: () => ({
     starredTopics: 0,
     starredProjects: 0,
-    toggleTab: 0
+    toggleTab: 1,
+    search: ''
   }),
   head () {
     return {

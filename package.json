@@ -27,10 +27,10 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^8.0.0",
     "@nuxtjs/eslint-module": "^3.1.0",
-    "eslint": "^8.18.0",
+    "eslint": "^8.19.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-nuxt": "^3.2.0",
-    "eslint-plugin-vue": "^9.1.1",
+    "eslint-plugin-vue": "^9.2.0",
     "eslint-plugin-vuetify": "^1.1.0"
   }
 }
