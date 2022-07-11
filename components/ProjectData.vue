@@ -51,7 +51,7 @@
         <span>源码</span>
       </v-tooltip>
       <v-spacer />
-      <v-tooltip bottom>
+      <v-menu offset-y>
         <template #activator="{ on, attrs }">
           <v-btn icon v-bind="attrs" v-on="on">
             <v-icon>
@@ -59,8 +59,26 @@
             </v-icon>
           </v-btn>
         </template>
-        <span>更多</span>
-      </v-tooltip>
+        <v-card class="cardblur">
+          <v-list dense min-width="150">
+            <v-list-item link>
+              <v-list-item-icon style="margin-right: 16px;">
+                <v-icon>mdi-share</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>分享</v-list-item-title>
+            </v-list-item>
+            <v-list-item link>
+              <v-list-item-icon style="margin-right: 16px;">
+                <v-icon>mdi-alert</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>举报</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-card>
+      </v-menu>
+    </v-row>
+  </div>
+</template>
     </v-row>
   </div>
 </template>
