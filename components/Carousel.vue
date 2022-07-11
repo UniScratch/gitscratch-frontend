@@ -2,7 +2,8 @@
   <v-card>
     <v-window v-model="onboarding">
       <v-window-item v-for="n in length" :key="`card-${n}`">
-        <v-img src="/GitScratch-thumbnail.png" eager contain />
+        <v-img src="/GitScratch-carousel-21-9.svg" eager contain class="hidden-sm-and-down" />
+        <v-img src="/GitScratch-carousel-16-9.svg" eager contain class="hidden-md-and-up" />
         <div class="banner-text">
           <v-list-item-title class="banner-text-title">
             GitScratch

@@ -5,7 +5,7 @@
     </v-card-title>
 
     <v-card-text class="text--primary">
-      <div class="text-h3">
+      <div class="text-h2">
         {{ new Date().getDate() }}
       </div>
       <div class="text-body-1">
