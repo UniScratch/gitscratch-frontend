@@ -155,21 +155,27 @@
     </h2>
     <p>
       This Privacy Policy applies only to the processing of your Personal Information by Scratch. It does not address, and we are not responsible for, the privacy, information, or other practices of any third parties, including any third party operating any site or service to which the Site links. The inclusion of a link on the Site does not imply endorsement of the linked site or service by us or by our affiliates.
+      本隐私政策仅适用于从头开始处理您的个人信息。它不涉及任何第三方的隐私、信息或其他做法，我们也不对其负责，包括运营该网站链接的任何网站或服务的任何第三方。网站上包含链接并不意味着我们或我们的附属公司认可链接的网站或服务。
     </p>
     <h2>
       Your Rights and Choices
+      您的权利和选择
     </h2>
     <h3>
       Updating Your Information
+      更新您的信息
     </h3>
     <p>
       You can update your password, email address, and country through the Account Settings page. You can also reset your password through the Account Reset page. You cannot change your username, but you can make a new account and manually copy your projects to the new account.
+      您可以通过帐户设置页面更新密码、电子邮件地址。您也可以通过帐户重置页面重置密码。
     </p>
     <p>
       If you want to delete your account, login to Scratch, and then click your username in the top right-hand corner. Select "Account Settings," then click the "I want to delete my account" link at the bottom of the page. Deleting your account hides all information from public view, but does not remove all of your information from our servers. If you want to have all of your information removed from our servers, please contact help@scratch.mit.edu for assistance.
+      如果您想删除您的帐户，请登录 {{ siteName }}，然后单击右上角的用户名。选择“帐户设置”，然后单击页面底部的“我想删除我的帐户”链接。删除您的帐户会将所有信息隐藏在公众视线之外，但不会从我们的服务器上删除所有信息。如果您想从我们的服务器上删除所有信息，请联系 help@git.sc.cn 寻求帮助。
     </p>
     <h3>
       Marketing Communications
+      营销传播
     </h3>
     <p>
       If you decide at any time that you no longer wish to receive marketing communications from us, please follow the unsubscribe instructions provided in any of the communications. You may also opt out from receiving email from us by sending your request to us by email at help@scratch.mit.edu. Please be aware that, even after you opt out from receiving marketing communications from us, you may continue to receive administrative messages from us regarding the Site.
