@@ -44,40 +44,53 @@
           </template>
           <span>账户被封禁，{{ banRemainDate }} 天后解禁</span>
         </v-tooltip>
-        <v-dialog v-model="reportDialog">
-          <template #activator="{ reportDialogOn, reportDialogAttrs }">
+        <v-dialog v-model="reportDialog" overlay-opacity="0.3" max-width="500">
+          <template #activator="{ on, attrs }">
             <v-fade-transition>
-              <v-btn v-if="userNameIsHover && isLogin" class="rounded-circle rounded-btn" plain v-bind="reportDialogAttrs" v-on="reportDialogOn">
-                <v-tooltip bottom>
-                  <template #activator="{ on, attrs }">
-                    <v-icon size="18" v-bind="attrs" v-on="on">
-                      mdi-alert-outline
-                    </v-icon>
-                  </template>
-                  <span>举报</span>
-                </v-tooltip>
+              <v-btn v-if="userNameIsHover && isLogin" plain icon v-bind="attrs" v-on="on">
+                <v-icon size="18">
+                  mdi-alert-outline
+                </v-icon>
               </v-btn>
             </v-fade-transition>
           </template>
-          <v-card>
-            <v-card-title class="text-h5 grey lighten-2">
-              Privacy Policy
+          <v-card class="cardblur">
+            <v-card-title class="text-h5">
+              举报
             </v-card-title>
 
             <v-card-text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <v-form ref="reportForm" v-model="reportValid" lazy-validation>
+                <v-textarea
+                  v-model="reportReason"
+                  label="举报原因"
+                  counter="1024"
+                  :rules="reportReasonRules"
+                  outlined
+                  style="border-radius: 4px;"
+                  auto-grow
+                  rows="2"
+                />
+              </v-form>
             </v-card-text>
-
-            <v-divider />
-
             <v-card-actions>
               <v-spacer />
               <v-btn
-                color="primary"
                 text
+                rounded
                 @click="reportDialog = false"
               >
-                I accept
+                取消
+              </v-btn>
+              <v-btn
+                color="red"
+                text
+                rounded
+                :disabled="!reportValid"
+                :loading="reportLoading"
+                @click="report"
+              >
+                举报
               </v-btn>
             </v-card-actions>
           </v-card>
@@ -195,7 +208,14 @@ export default {
     banRemainDate: '-1',
     userNameIsHover: false,
     isLogin: true,
-    reportDialog: false
+    reportDialog: false,
+    reportValid: false,
+    reportLoading: false,
+    reportReason: '',
+    reportReasonRules: [
+      v => !!v || '请输入举报原因',
+      v => v.length <= 1024 || '举报原因不能超过 1024 个字符'
+    ]
   }),
   head () {
     return {
@@ -205,6 +225,20 @@ export default {
   methods: {
     renderMd () {
       return marked.parse(this.README)
+    },
+    validateReport () {
+      this.$refs.reportForm.validate()
+    },
+    report () {
+      this.validateReport()
+      if (this.reportValid) {
+        this.reportLoading = true
+        setTimeout(() => {
+          this.reportLoading = false
+          this.reportDialog = false
+          this.reportReason = ''
+        }, 1000)
+      }
     }
   }
 }

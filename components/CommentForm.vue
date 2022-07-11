@@ -9,7 +9,7 @@
     <v-switch
       v-if="development"
       v-model="localLogin"
-      label="[开发]账户登录"
+      label="[开发]帐户登录"
       @click="checkCommentPermission"
     />
     <v-switch
