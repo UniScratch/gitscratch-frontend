@@ -19,9 +19,9 @@
       <v-window v-model="step" touchless>
         <v-window-item :value="1">
           <v-card-text>
-            <v-form ref="email_form" v-model="email_valid" lazy-validation>
+            <v-form ref="email_form" v-model="emailValid" lazy-validation>
               <v-text-field
-                v-model="user_email"
+                v-model="userEmail"
                 label="电子邮箱"
                 :rules="emailRules"
               />
@@ -34,9 +34,9 @@
 
         <v-window-item :value="2">
           <v-card-text>
-            <v-form ref="name_form" v-model="name_valid" lazy-validation>
+            <v-form ref="name_form" v-model="usernameValid" lazy-validation>
               <v-text-field
-                v-model="user_name"
+                v-model="username"
                 label="用户名"
                 :rules="nameRules"
               />
@@ -49,9 +49,9 @@
 
         <v-window-item :value="3">
           <v-card-text>
-            <v-form ref="password_form" v-model="password_valid" lazy-validation>
+            <v-form ref="password_form" v-model="passwordValid" lazy-validation>
               <v-text-field
-                v-model="user_password"
+                v-model="userPassword"
                 label="密码"
                 :type="password_visible ? 'text' : 'password'"
                 :rules="passwordRules"
@@ -67,7 +67,7 @@
 
         <v-window-item :value="4">
           <v-card-text>
-            <v-form ref="captchaform" v-model="captcha_valid" lazy-validation>
+            <v-form ref="captchaform" v-model="captchaValid" lazy-validation>
               <v-img src="/captcha.png" />
               <v-text-field
                 v-model="captcha"
@@ -136,7 +136,7 @@
 
         <v-btn
           :loading="loading"
-          :disabled="!(email_valid && name_valid && password_valid && captcha_valid)"
+          :disabled="!(emailValid && usernameValid && passwordValid && captchaValid)"
           color="primary"
           depressed
           rounded
@@ -157,15 +157,14 @@ export default {
     steps: 6,
     loading: false,
     password_visible: false,
-    user_email: '',
-    user_name: '',
-    user_password: '',
-    user_password_confirm: '',
+    userEmail: '',
+    username: '',
+    userPassword: '',
     captcha: '',
-    email_valid: true,
-    name_valid: true,
-    password_valid: true,
-    captcha_valid: true,
+    emailValid: true,
+    usernameValid: true,
+    passwordValid: true,
+    captchaValid: true,
     emailRules: [
       v => !!v || '电子邮箱不能为空',
       v => (v && /.+@.+\..+/.test(v)) || '电子邮箱无效'
@@ -201,23 +200,23 @@ export default {
   methods: {
     next () {
       if (this.step === 1) {
-        this.email_valid = this.$refs.email_form.validate()
-        if (this.email_valid) {
+        this.emailValid = this.$refs.email_form.validate()
+        if (this.emailValid) {
           this.step++
         }
       } else if (this.step === 2) {
-        this.name_valid = this.$refs.name_form.validate()
-        if (this.name_valid) {
+        this.usernameValid = this.$refs.name_form.validate()
+        if (this.usernameValid) {
           this.step++
         }
       } else if (this.step === 3) {
-        this.password_valid = this.$refs.password_form.validate()
-        if (this.password_valid) {
+        this.passwordValid = this.$refs.password_form.validate()
+        if (this.passwordValid) {
           this.step++
         }
       } else if (this.step === 4) {
-        this.captcha_valid = this.$refs.captchaform.validate()
-        if (this.captcha_valid) {
+        this.captchaValid = this.$refs.captchaform.validate()
+        if (this.captchaValid) {
           this.step++
         }
       }
@@ -232,10 +231,6 @@ export default {
         this.loading = false
         this.step = this.steps
       })
-      // setTimeout(() => {
-      //   this.loading = false
-      //   this.step = this.steps
-      // }, 3000)
     }
   }
 }
