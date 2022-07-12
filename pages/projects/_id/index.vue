@@ -19,8 +19,8 @@
 
           <v-responsive v-if="!loadPlayer" :aspect-ratio="4/3" content-class="rounded">
             <v-img
-              lazy-src="/64025bdca5db4938f65597e3682fddcf.svg"
-              src="/64025bdca5db4938f65597e3682fddcf.svg"
+              lazy-src="/GitScratch-project-thumbnail-grey.svg"
+              src="/project/64025bdca5db4938f65597e3682fddcf.svg"
               style="width: 100%; height: 100%; border-radius: 15px;"
             >
               <template #placeholder>

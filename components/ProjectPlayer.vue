@@ -19,7 +19,7 @@
         </v-btn>
       </div>
       <v-responsive :aspect-ratio="4/3">
-        <canvas id="canvas_sb3" width="480" height="360" style="width:100%;height:100%" />
+        <canvas id="canvas_sb3" width="480" height="360" style="width: 100%; height: 100%;" />
       </v-responsive>
     </div>
   </client-only>
@@ -39,7 +39,7 @@ export default {
     const ScratchStorage = require('scratch-storage/dist/web/scratch-storage')
     const ScratchSVGRenderer = require('scratch-svg-renderer/dist/web/scratch-svg-renderer')
     const AudioEngine = require('scratch-audio/src/AudioEngine.js')
-    fetch('/test.sb3', {
+    fetch('/project/test.sb3', {
       method: 'GET'
     }).then(res =>
       res.blob().then((blob) => {

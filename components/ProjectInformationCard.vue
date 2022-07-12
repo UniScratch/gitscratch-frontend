@@ -32,7 +32,7 @@ export default {
   data: () => ({
     projectTitle: '标题',
     projectAuthor: '作者',
-    projectThumbnail: 'https://sdfsdf.dev/480x360.jpg,E3F2FD,2196F3',
+    projectThumbnail: '/480x360.jpg',
     projectId: 1,
     projectDesc: '作品描述',
     projectStars: 0,
