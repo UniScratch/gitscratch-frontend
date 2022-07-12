@@ -141,7 +141,7 @@
         </li>
         <li>
           To a potential or actual acquirer, successor, or assignee as part of any reorganization, merger, sale, joint venture, assignment, transfer, or other disposition of all or any portion of our organization or assets. You will have the opportunity to opt out of any such transfer if the new entity’s planned processing of your information differs materially from that set forth in this Privacy Policy.
-          潜在或实际收购人、继承人或受让人，作为 {{ allDevelopers }} 全部或任何部分组织或资产重组、合并、出售、合资、转让、转让或其他处置的一部分。如果新实体对您信息的计划处理与本隐私政策中规定的有重大差异，您将有机会选择退出任何此类转让。
+          潜在或实际收购人、继承人或受让人，作为 {{ allDevelopers }}全部或任何部分组织或资产重组、合并、出售、合资、转让、转让或其他处置的一部分。如果新实体对您信息的计划处理与本隐私政策中规定的有重大差异，您将有机会选择退出任何此类转让。
         </li>
         <li>
           If required to do so by law or in the good faith belief that such action is appropriate: (a) under applicable law, including laws outside your country of residence; (b) to comply with legal process; (c) to respond to requests from public and government authorities, such as school, school districts, and law enforcement, including public and government authorities outside your country of residence; (d) to enforce our terms and conditions; (e) to protect our operations or those of any of our affiliates; (f) to protect our rights, privacy, safety, or property, and/or that of our affiliates, you, or others; and (g) to allow us to pursue available remedies or limit the damages that we may sustain.
@@ -179,12 +179,15 @@
     </h3>
     <p>
       If you decide at any time that you no longer wish to receive marketing communications from us, please follow the unsubscribe instructions provided in any of the communications. You may also opt out from receiving email from us by sending your request to us by email at help@scratch.mit.edu. Please be aware that, even after you opt out from receiving marketing communications from us, you may continue to receive administrative messages from us regarding the Site.
+      如果您在任何时候决定不再接收我们的营销通信，请遵循任意通信中提供的取消订阅指示。您也可以通过以下电子邮件向我们发送请求，选择不接收我们的电子邮件：help@git.sc.cn。请注意，即使您选择不接收我们的营销通信，您也可能会继续收到我们关于该网站的管理信息。
     </p>
     <h3>
       Your Data Protection Rights (EEA)
+      您的数据保护权利（EEA）
     </h3>
     <p>
       In certain jurisdictions, you have the right to request access and receive information about the Personal Information we maintain about you, to update and correct inaccuracies in your Personal Information, to restrict or object to the processing of your Personal Information, to have the information blocked, anonymized, or deleted, as appropriate, or to exercise your right to data portability to easily transfer your Personal Information to another company. Those rights may be limited in some circumstances by local law requirements. In addition to the above-mentioned rights, you also have the right to lodge a complaint with a competent supervisory authority subject to applicable law.
+      在某些司法管辖区，您有权请求访问和接收有关我们维护的您的个人信息的信息，更新和纠正您个人信息中的不准确之处，限制或反对处理您的个人信息，根据需要阻止、匿名或删除信息，或者行使您的数据可移植性权利，以便将您的个人信息轻松传输到另一家公司。在某些情况下，这些权利可能会受到当地法律要求的限制。除上述权利外，您还有权根据适用法律向主管监管机构提出投诉。
     </p>
     <p>
       Where required by law, we obtain your consent for the processing of certain Personal Information collected by cookies or similar technologies, or used to send you direct marketing communications, or when we carry out other processing activities for which consent may be required. If we rely on consent for the processing of your Personal Information, you have the right to withdraw it at any time and free of charge. When you do so, this will not affect the lawfulness of the processing before your consent withdrawal.
