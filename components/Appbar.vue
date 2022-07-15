@@ -29,6 +29,7 @@
 
     <!-- <v-app-bar-title class="pl-1 hidden-sm-and-down">GitScratch</v-app-bar-title> -->
     <v-text-field
+      v-model="searchKeyword"
       prepend-inner-icon="mdi-magnify"
       label="搜索"
       autocomplete="off"
@@ -38,6 +39,7 @@
       outlined
       single-line
       style="max-width: 250px; border-radius: 20px !important;"
+      @keyup.enter="search"
     />
     <v-btn text class="hidden-xs-only" to="/explore" rounded>
       发现
@@ -235,7 +237,8 @@ export default {
     isPermanentlyBanned: true,
     isDeleting: true,
     deletingRemainHours: -72,
-    isAdmin: true
+    isAdmin: true,
+    searchKeyword: ''
   }),
 
   computed: {
@@ -253,6 +256,9 @@ export default {
     logout () {
       this.$store.commit('auth/logout')
       this.$router.push('/')
+    },
+    search () {
+      this.$router.push('/explore?q=' + this.searchKeyword)
     }
   }
 }

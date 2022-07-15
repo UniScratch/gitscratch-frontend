@@ -66,12 +66,13 @@
         <v-window-item>
           <div class="d-flex">
             <v-text-field
-              v-model="search"
+              v-model="searchKeyword"
               label="搜索"
               style="border-radius: 4px;"
               prepend-icon="mdi-magnify"
+              @keyup.enter="search"
             />
-            <v-btn rounded color="primary">
+            <v-btn rounded color="primary" @click="search">
               搜索
             </v-btn>
           </div>
@@ -120,7 +121,7 @@ export default {
     starredTopics: 0,
     starredProjects: 0,
     toggleTab: 1,
-    search: ''
+    searchKeyword: ''
   }),
   head () {
     return {
@@ -133,6 +134,11 @@ export default {
     },
     userInfo () {
       return this.$store.state.auth.userInfo
+    }
+  },
+  methods: {
+    search () {
+      this.$router.push('/explore?q=' + this.searchKeyword)
     }
   }
 }
