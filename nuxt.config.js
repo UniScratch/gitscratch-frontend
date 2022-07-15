@@ -138,7 +138,7 @@ module.exports = {
     host: '0.0.0.0'
   },
   loading: {
-    color: '#1E88E5'
+    color: '#2196F3'
   },
   pageTransition: {
     name: 'slide-top',

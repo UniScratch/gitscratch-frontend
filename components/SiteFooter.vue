@@ -41,7 +41,7 @@ export default {
       ['隐私政策', '/help/privacy'],
       ['DMCA', '/help/dmca'],
       ['社区守则', '/help/rules'],
-      ['联系我们', 'contactus'],
+      ['联系我们', '/help/contact-us'],
       ['服务状态', 'status'],
       ['API', 'api']
     ]

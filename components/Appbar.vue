@@ -45,6 +45,9 @@
     <v-btn text class="hidden-xs-only" to="/about" rounded>
       关于
     </v-btn>
+    <v-btn text class="hidden-xs-only" to="/help" rounded>
+      帮助
+    </v-btn>
 
     <v-spacer />
 
@@ -67,7 +70,7 @@
       </v-tooltip>
       <v-tooltip bottom>
         <template #activator="{ on, attrs }">
-          <v-btn icon v-bind="attrs" to="/create" v-on="on">
+          <v-btn icon v-bind="attrs" to="/project/editor" v-on="on">
             <v-icon>mdi-plus</v-icon>
           </v-btn>
         </template>
@@ -212,7 +215,7 @@
                 <v-icon>mdi-logout-variant</v-icon>
               </v-list-item-icon>
               <v-list-item-content>
-                <v-list-item-title>登出</v-list-item-title>
+                <v-list-item-title>注销</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list>

@@ -44,7 +44,7 @@
     <p>
       <template v-for="(item, key) in 贡献者">
         {{ key }}：
-        <a v-for="(childItem, childKey) in item" :key="childKey" target="_blank" :href="'https://github.com/'+childItem">
+        <a v-for="(childItem, childKey) in item" :key="childKey" target="_blank" :href="'https://github.com/' + childItem">
           @{{ childItem }}
         </a>
         <br :key="key">

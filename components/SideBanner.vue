@@ -59,7 +59,7 @@
           </v-card>
         </v-dialog>
 
-        <v-btn block color="primary" to="/create" class="mt-2" rounded>
+        <v-btn block color="primary" to="/project/editor" class="mt-2" rounded>
           <v-icon left>
             mdi-plus
           </v-icon>创建
