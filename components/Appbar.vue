@@ -258,7 +258,9 @@ export default {
       this.$router.push('/')
     },
     search () {
-      this.$router.push('/explore?q=' + this.searchKeyword)
+      if (this.searchKeyword.trim().length > 0) {
+        this.$router.push('/explore?q=' + this.searchKeyword)
+      }
     }
   }
 }

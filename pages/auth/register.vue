@@ -19,7 +19,7 @@
       <v-window v-model="step" touchless>
         <v-window-item :value="1">
           <v-card-text>
-            <v-form ref="email_form" v-model="emailValid" lazy-validation>
+            <v-form ref="emailForm" v-model="emailValid" lazy-validation>
               <v-text-field
                 v-model="userEmail"
                 label="电子邮箱"
@@ -34,7 +34,7 @@
 
         <v-window-item :value="2">
           <v-card-text>
-            <v-form ref="name_form" v-model="usernameValid" lazy-validation>
+            <v-form ref="nameForm" v-model="usernameValid" lazy-validation>
               <v-text-field
                 v-model="username"
                 label="用户名"
@@ -49,7 +49,7 @@
 
         <v-window-item :value="3">
           <v-card-text>
-            <v-form ref="password_form" v-model="passwordValid" lazy-validation>
+            <v-form ref="passwordForm" v-model="passwordValid" lazy-validation>
               <v-text-field
                 v-model="userPassword"
                 label="密码"
@@ -67,7 +67,7 @@
 
         <v-window-item :value="4">
           <v-card-text>
-            <v-form ref="captchaform" v-model="captchaValid" lazy-validation>
+            <v-form ref="captchaForm" v-model="captchaValid" lazy-validation>
               <v-img src="/captcha.png" />
               <v-text-field
                 v-model="captcha"
@@ -200,22 +200,22 @@ export default {
   methods: {
     next () {
       if (this.step === 1) {
-        this.emailValid = this.$refs.email_form.validate()
+        this.emailValid = this.$refs.emailForm.validate()
         if (this.emailValid) {
           this.step++
         }
       } else if (this.step === 2) {
-        this.usernameValid = this.$refs.name_form.validate()
+        this.usernameValid = this.$refs.nameForm.validate()
         if (this.usernameValid) {
           this.step++
         }
       } else if (this.step === 3) {
-        this.passwordValid = this.$refs.password_form.validate()
+        this.passwordValid = this.$refs.passwordForm.validate()
         if (this.passwordValid) {
           this.step++
         }
       } else if (this.step === 4) {
-        this.captchaValid = this.$refs.captchaform.validate()
+        this.captchaValid = this.$refs.captchaForm.validate()
         if (this.captchaValid) {
           this.step++
         }

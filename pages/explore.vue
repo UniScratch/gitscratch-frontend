@@ -72,7 +72,7 @@
               prepend-icon="mdi-magnify"
               @keyup.enter="search"
             />
-            <v-btn rounded color="primary" @click="search">
+            <v-btn rounded depressed color="primary" @click="search">
               搜索
             </v-btn>
           </div>
@@ -80,10 +80,10 @@
         <!-- 发现 -->
         <v-window-item>
           <p v-if="token" class="text-h6">
-            以下是我们根据你的兴趣找到的内容…
+            以下是我们根据你的兴趣找到的内容……
           </p>
           <p v-else>
-            以下是最近 GitScratch 较热门的内容…
+            以下是最近 GitScratch 较热门的内容……
           </p>
           <ProjectInformationCard />
         </v-window-item>
@@ -124,6 +124,10 @@ export default {
     searchKeyword: ''
   }),
   head () {
+    this.toggleTab = this.$route.query.q ? 0 : 1
+    if (this.$route.query.q) {
+      this.searchKeyword = this.$route.query.q
+    }
     return {
       title: '发现'
     }

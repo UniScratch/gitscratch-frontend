@@ -13,14 +13,12 @@
           <v-text-field
             v-model="userEmail"
             label="电子邮箱"
-            style="border-radius: 4px;"
             :rules="emailRules"
           />
           <v-text-field
             v-model="userPassword"
             label="密码"
             type="password"
-            style="border-radius: 4px;"
             :rules="passwordRules"
           />
           <v-btn
