@@ -30,7 +30,7 @@
       </router-link>
     </p>
     <h2>常见问题</h2>
-    <v-expansion-panels focusable multiple>
+    <v-expansion-panels focusable :value="expansionPanelsValue">
       <v-expansion-panel>
         <v-expansion-panel-header>
           怎么访问 GitScratch？
@@ -58,3 +58,18 @@
     </v-expansion-panels>
   </div>
 </template>
+<script>
+export default {
+  data: () => ({
+    expansionPanelsValue: undefined
+  }),
+  head () {
+    if (this.$route.query.faq) {
+      this.expansionPanelsValue = parseInt(this.$route.query.faq)
+    }
+    return {
+      title: '帮助'
+    }
+  }
+}
+</script>

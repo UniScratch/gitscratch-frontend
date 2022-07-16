@@ -56,14 +56,16 @@
     <v-overlay :value="overlay">
       <v-card class="cardblur">
         <v-card-title class="text-h5">
-          What the fuck is this?
+          输入密码以<router-link to="/help?faq=0">
+            访问 GitScratch
+          </router-link>。
         </v-card-title>
 
         <v-card-text style="max-width: 800px">
           <v-otp-input
             v-model="code"
             length="12"
-            readonly="true"
+            :readonly="true"
           />
           <div v-show="error" style="font-size: 10px;">
             错误
@@ -87,10 +89,10 @@
       v-model="snackbar"
     >
       这是一个彩蛋 :D
-
       <template #action="{ attrs }">
         <v-btn
           text
+          rounded
           v-bind="attrs"
           @click="snackbar = false"
         >

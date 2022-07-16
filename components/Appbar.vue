@@ -19,6 +19,9 @@
           <v-list-item v-ripple to="/about">
             <v-list-item-title>关于</v-list-item-title>
           </v-list-item>
+          <v-list-item v-ripple to="/help">
+            <v-list-item-title>帮助</v-list-item-title>
+          </v-list-item>
         </v-list>
       </v-card>
     </v-menu>
@@ -264,7 +267,6 @@ export default {
     }
   }
 }
-
 </script>
 <style>
   .v-icon-alert{
