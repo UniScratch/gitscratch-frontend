@@ -53,6 +53,51 @@
     <p>
       还有，你。<br><del class="hide-del">一个都跑不了</del>
     </p>
+    <v-overlay :value="overlay">
+      <v-card class="cardblur">
+        <v-card-title class="text-h5">
+          What the fuck is this?
+        </v-card-title>
+
+        <v-card-text style="max-width: 800px">
+          <v-otp-input
+            v-model="code"
+            length="12"
+            readonly="true"
+          />
+          <div v-show="error" style="font-size: 10px;">
+            错误
+          </div>
+        </v-card-text>
+
+        <v-card-actions>
+          <v-spacer />
+
+          <v-btn
+            text
+            rounded
+            @click="close()"
+          >
+            关闭
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-overlay>
+    <v-snackbar
+      v-model="snackbar"
+    >
+      这是一个彩蛋 :D
+
+      <template #action="{ attrs }">
+        <v-btn
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          关闭
+        </v-btn>
+      </template>
+    </v-snackbar>
   </div>
 </template>
 
@@ -66,12 +111,61 @@ export default {
       云服务支持: ['Someone-Yang'],
       其他贡献者: ['frank-782']
     },
-    meta: require('static/meta.json')
+    meta: require('static/meta.json'),
+    overlay: false,
+    error: false,
+    code: '',
+    snackbar: false
   }),
   head () {
     return {
       title: '关于'
     }
+  },
+  mounted () {
+    document.addEventListener('keydown', keydown)
+    const _this = this
+    // ↑↑↓↓←→←→ABAB
+    const keys = {
+      65: 'A',
+      66: 'B',
+      37: '←',
+      38: '↑',
+      39: '→',
+      40: '↓'
+    }
+    function keydown (event) {
+      _this.error = false
+      if (event.keyCode in keys) {
+        console.log(keys[event.keyCode])
+        if (_this.code.length < 12) {
+          _this.overlay = true
+          _this.code += keys[event.keyCode]
+          if (_this.code.length === 12) {
+            if (_this.code === '↑↑↓↓←→←→ABAB') {
+              _this.overlay = false
+              _this.code = ''
+              _this.snackbar = true
+            } else {
+              _this.error = true
+            }
+          }
+        } else {
+          _this.error = true
+        }
+      } else if (event.keyCode === 8) {
+        _this.code = _this.code.slice(0, -1)
+      }
+    }
+  },
+  methods: {
+    close () {
+      this.overlay = false
+      this.code = ''
+    }
   }
+  // unmounted () {
+  //   document.removeEventListener('keydown', keydown)
+  // }
 }
 </script>
