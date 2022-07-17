@@ -12,13 +12,13 @@ jobs:
       - name: Build
         run: |
           yarn build
-      - name: Upload Artifacts (.nuxt)
+      - name: Upload artifacts (.nuxt)
         uses: actions/upload-artifact@v3.1.0
         with:
           name: .nuxt
           path: ./.nuxt
           retention-days: 0
-      - name: Upload Artifacts (*)
+      - name: Upload artifacts (*)
         uses: actions/upload-artifact@v3.1.0
         with:
           name: workspace
