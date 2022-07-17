@@ -1,29 +1,54 @@
 <template>
-  <v-card class="d-flex">
-    <v-img lazy-src="/GitScratch-project-thumbnail-grey.svg" :src="projectThumbnail" style="max-width: 240px; border-radius: 20px;" />
-    <div>
-      <v-card-title style="padding-bottom: 0;">
-        <router-link :to="'/users/' + projectAuthor">
-          {{ projectAuthor }}
-        </router-link>
-        <span>&nbsp;/&nbsp;</span>
-        <router-link :to="'/projects/' + projectId">
-          {{ projectTitle }}
-        </router-link>
-      </v-card-title>
-      <p style="margin-left: 8px;">
-        <v-icon>mdi-history</v-icon>
-        <span>{{ projectUpdateTime }}</span>
-        <v-icon>mdi-eye-outline</v-icon>
-        <span>{{ projectViews }}</span>
-        <v-icon>mdi-star-outline</v-icon>
-        <span>{{ projectStars }}</span>
-        <v-icon>mdi-source-branch</v-icon>
-        <span>{{ projectForks }}</span>
-      </p>
-      <v-card-text>
-        {{ projectDesc }}
-      </v-card-text>
+  <v-card>
+    <div v-if="$vuetify.breakpoint.xs">
+      <v-img lazy-src="/GitScratch-project-thumbnail-grey.svg" :src="projectThumbnail" style="border-radius: 20px;" contain eager />
+      <div style="padding: 16px;">
+        <p class="text-h5">
+          <router-link :to="'/users/' + projectAuthor">
+            {{ projectAuthor }}
+          </router-link>
+          <span>&nbsp;/&nbsp;</span>
+          <router-link :to="'/projects/' + projectId">
+            {{ projectTitle }}
+          </router-link>
+        </p>
+        <p>
+          <v-icon>mdi-history</v-icon>
+          <span>{{ projectUpdateTime }}</span>
+          <v-icon>mdi-eye-outline</v-icon>
+          <span>{{ projectViews }}</span>
+          <v-icon>mdi-star-outline</v-icon>
+          <span>{{ projectStars }}</span>
+          <v-icon>mdi-source-branch</v-icon>
+          <span>{{ projectForks }}</span>
+        </p>
+        <p>{{ projectDesc }}</p>
+      </div>
+    </div>
+    <div v-if="!$vuetify.breakpoint.xs" class="d-flex">
+      <v-img lazy-src="/GitScratch-project-thumbnail-grey.svg" :src="projectThumbnail" style="max-width: 240px; border-radius: 20px;" contain eager />
+      <div style="padding: 16px;">
+        <p class="text-h5">
+          <router-link :to="'/users/' + projectAuthor">
+            {{ projectAuthor }}
+          </router-link>
+          <span>&nbsp;/&nbsp;</span>
+          <router-link :to="'/projects/' + projectId">
+            {{ projectTitle }}
+          </router-link>
+        </p>
+        <p>
+          <v-icon>mdi-history</v-icon>
+          <span>{{ projectUpdateTime }}</span>
+          <v-icon>mdi-eye-outline</v-icon>
+          <span>{{ projectViews }}</span>
+          <v-icon>mdi-star-outline</v-icon>
+          <span>{{ projectStars }}</span>
+          <v-icon>mdi-source-branch</v-icon>
+          <span>{{ projectForks }}</span>
+        </p>
+        <p>{{ projectDesc }}</p>
+      </div>
     </div>
   </v-card>
 </template>

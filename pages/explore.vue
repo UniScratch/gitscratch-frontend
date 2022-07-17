@@ -30,34 +30,20 @@
     </v-col>
     <v-divider vertical class="hidden-xs-only" />
     <v-col cols="12" xl="10" md="9" sm="8" style="padding-left: 20px;">
-      <v-btn-toggle
+      <v-tabs
         v-model="toggleTab"
         group
         mandatory
         color="primary"
       >
-        <v-btn style="border-radius: 24px;">
-          搜索
-        </v-btn>
-        <v-btn style="border-radius: 24px;">
-          发现
-        </v-btn>
-        <v-btn style="border-radius: 24px;">
-          话题
-        </v-btn>
-        <v-btn style="border-radius: 24px;">
-          趋势
-        </v-btn>
-        <v-btn style="border-radius: 24px;">
-          精选
-        </v-btn>
-        <v-btn style="border-radius: 24px;">
-          事件
-        </v-btn>
-        <v-btn style="border-radius: 24px;">
-          赞助
-        </v-btn>
-      </v-btn-toggle>
+        <v-tab>搜索</v-tab>
+        <v-tab>发现</v-tab>
+        <v-tab>话题</v-tab>
+        <v-tab>趋势</v-tab>
+        <v-tab>精选</v-tab>
+        <v-tab>事件</v-tab>
+        <v-tab>赞助</v-tab>
+      </v-tabs>
       <v-window
         v-model="toggleTab"
         style="display: block; padding: 16px;"
