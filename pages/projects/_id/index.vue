@@ -62,7 +62,7 @@
         <p class="text-h5">
           留言
         </p>
-        <Comment />
+        <Comments />
       </div>
     </v-col>
     <v-col cols="12" xl="5" md="4">

@@ -117,25 +117,25 @@
     </v-col>
     <v-divider vertical class="hidden-xs-only" />
     <v-col cols="12" xl="10" md="9" sm="8" style="padding-left: 20px;">
-      <v-btn-toggle
+      <v-tabs
         v-model="toggleTab"
         group
         mandatory
         color="primary"
       >
-        <v-btn style="border-radius: 24px;">
+        <v-tab>
           <v-icon>mdi-book-open-outline</v-icon><span>概览</span>
-        </v-btn>
-        <v-btn style="border-radius: 24px;">
+        </v-tab>
+        <v-tab>
           <v-icon>mdi-book-outline</v-icon><span>作品</span>
-        </v-btn>
-        <v-btn style="border-radius: 24px;">
+        </v-tab>
+        <v-tab>
           <v-icon>mdi-account-group-outline</v-icon><span>组织</span>
-        </v-btn>
-        <v-btn style="border-radius: 24px;">
+        </v-tab>
+        <v-tab>
           <v-icon>mdi-comment-text-multiple-outline</v-icon><span>留言</span>
-        </v-btn>
-      </v-btn-toggle>
+        </v-tab>
+      </v-tabs>
       <v-window
         v-model="toggleTab"
         style="display: block; padding: 16px;"
@@ -178,9 +178,7 @@
           <p class="text-h5">
             留言
           </p>
-          <Comment
-            content="Supports Markdown  "
-          />
+          <Comments />
         </v-window-item>
       </v-window>
     </v-col>
