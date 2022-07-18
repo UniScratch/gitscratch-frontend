@@ -145,3 +145,13 @@ canvas {
 .v-chip-opacity {
     opacity: .85;
 }
+/* 
+.nuxt-link-active {
+    color: red;
+}
+.nuxt-link-exact-active {
+    color: green;
+}
+.nuxt-link-prefetched {
+    color: orangeRed;
+} */
