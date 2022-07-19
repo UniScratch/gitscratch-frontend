@@ -75,7 +75,7 @@
       </v-tooltip>
       <v-tooltip bottom>
         <template #activator="{ on, attrs }">
-          <v-btn icon v-bind="attrs" to="/projects/1/editor" v-on="on">
+          <v-btn icon v-bind="attrs" to="/projects/editor" v-on="on">
             <v-icon>mdi-plus</v-icon>
           </v-btn>
         </template>
