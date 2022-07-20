@@ -107,9 +107,9 @@
 export default {
   data: () => ({
     贡献者: {
-      项目提出: ['Dispure', 'HydroGest'],
+      项目提出: ['HydroGest', 'Dispure'],
       金主: [],
-      主要贡献者: ['Dispure', 'HydroGest', 'TimFang4162', 'wrj2009'],
+      主要贡献者: ['HydroGest', 'TimFang4162', 'wrj2009'],
       云服务支持: ['Someone-Yang'],
       其他贡献者: ['frank-782']
     },
