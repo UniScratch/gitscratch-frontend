@@ -4,7 +4,6 @@
     <v-main>
       <Nuxt />
     </v-main>
-    <AlphaWatermark />
   </v-app>
 </template>
 <script>
