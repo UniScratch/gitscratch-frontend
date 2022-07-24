@@ -1,81 +1,40 @@
 <template>
   <client-only>
-    <div>
-      <div>
-        <v-btn icon :disabled="!loadFileTrue" @click="greenFlag">
-          <v-icon :color="projectRunning ? '#4CAF5088' : '#4CAF50'">
-            mdi-play
-          </v-icon>
-        </v-btn>
-        <v-btn icon :disabled="!loadFileTrue" @click="stopAll">
-          <v-icon color="red">
-            mdi-stop
-          </v-icon>
-        </v-btn>
-        <v-btn icon>
-          <v-icon>
-            mdi-fullscreen
-          </v-icon>
-        </v-btn>
-      </div>
-      <v-responsive :aspect-ratio="4/3">
-        <canvas id="canvas_sb3" width="480" height="360" style="width: 100%; height: 100%;" />
-      </v-responsive>
-    </div>
+    <iframe
+      id="iframe1"
+      src="/scratch/player.html"
+      class="scplayer"
+      seamless
+      height="100%"
+      width="100%"
+      frameborder="0"
+    />
   </client-only>
 </template>
 <script>
 export default {
   data () {
     return {
-      loadFileTrue: false,
-      vm: null,
-      projectRunning: false
     }
   },
   mounted () {
-    const ScratchRender = require('scratch-render/dist/web/scratch-render')
-    const VirtualMachine = require('scratch-vm/dist/web/scratch-vm')
-    const ScratchStorage = require('scratch-storage/dist/web/scratch-storage')
-    const ScratchSVGRenderer = require('scratch-svg-renderer/dist/web/scratch-svg-renderer')
-    const AudioEngine = require('scratch-audio/src/AudioEngine.js')
-    fetch('/project/test.sb3', {
-      method: 'GET'
-    }).then(res =>
-      res.blob().then((blob) => {
-        const canvas = document.getElementById('canvas_sb3')
-        const audioEngine = new AudioEngine()
-        const render = new ScratchRender(canvas)
-        this.vm = new VirtualMachine()
-        const storage = new ScratchStorage()
-        this.vm.attachAudioEngine(audioEngine)
-        this.vm.attachStorage(storage)
-        this.vm.attachRenderer(render)
-        this.vm.attachV2SVGAdapter(new ScratchSVGRenderer.SVGRenderer())
-        this.vm.attachV2BitmapAdapter(new ScratchSVGRenderer.BitmapAdapter())
-        // this.bindHandleKey()
-        const reader = new FileReader()
-        // byte为blob对象
-        reader.readAsArrayBuffer(blob)
-        reader.onload = () => {
-          this.vm.start()
-          this.vm.loadProject(reader.result)
-            .then(() => {
-              this.loadFileTrue = true
-            })
-        }
-      })
-    )
+    this.$nextTick(() => {
+      const iframe = document.getElementById('iframe1')
+      // const iframeHeight = iframe.contentWindow.document.body.scrollHeight
+      // console.log(document.getElementById('iframe1').contentDocument.body.scrollHeight)
+      iframe.height = (document.getElementById('iframe1').contentDocument.body.scrollWidth) / 4 * 3 + 44
+    })
   },
   methods: {
-    greenFlag () {
-      this.vm.greenFlag()
-      this.projectRunning = true
-    },
-    stopAll () {
-      this.vm.stopAll()
-      this.projectRunning = false
-    }
+    // getPlayerHeight () {
+    //   // console.log(this.$refs.iframe1.document.body.scrollHeight)
+    //   // return document.getElementById('iframe1').contentDocument.body.scrollHeight
+    // }
   }
 }
 </script>
+<style>
+.scplayer {
+  width: 100%;
+}
+</style>
