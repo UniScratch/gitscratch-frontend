@@ -12,21 +12,13 @@
   },
   "dependencies": {
     "@nuxt/http": "^0.6.4",
-    "@nuxtjs/vuetify": "https://github.com/UniScratch/vuetify-module.git#master",
+    "@nuxtjs/vuetify": "git+ssh://git@github.com:UniScratch/vuetify-module.git#master",
     "@nuxtjs/webpack-profile": "^0.1.0",
     "highlight.js": "^11.6.0",
     "marked": "^4.0.18",
     "nuxt": "^2.15.8",
     "nuxt-precompress": "^0.5.9",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "scratch-audio": "^0.1.0-prerelease.20200528195344",
-    "scratch-gui": "^0.1.0-prerelease.20220715212505",
-    "scratch-render": "^0.1.0-prerelease.20211028200436",
-    "scratch-storage": "^2.0.2",
-    "scratch-svg-renderer": "^0.2.0-prerelease.20210727023023",
-    "scratch-vm": "^0.2.0-prerelease.20220602121716",
-    "vuera": "^0.2.7"
+    "scratch-gui": "git+ssh://git@github.com:UniScratch/uniscratch-gui.git#develop"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^8.0.0",
