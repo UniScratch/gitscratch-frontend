@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "yarn run genmeta && nuxt",
-    "build": "yarn run genmeta && nuxt build",
+    "build": "yarn run build:scratch && yarn run build:connect && yarn run build:nuxt",
+    "build:scratch": "cd node_modules/scratch-gui && yarn build",
+    "build:connect": "rimraf static/scratch/ && mv node_modules/scratch-gui/build/ static/scratch/",
+    "build:nuxt": "yarn run genmeta && nuxt build",
     "start": "nuxt start",
-    "generate": "yarn run genmeta && nuxt generate",
     "genmeta": "node gen-meta.js",
     "lint": "eslint . --ext .js,.vue --fix"
   },

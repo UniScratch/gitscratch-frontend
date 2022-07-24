@@ -98,3 +98,4 @@ dist
 sw.*
 
 static/meta.json
+static/scratch/
