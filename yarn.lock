@@ -1642,9 +1642,9 @@
   dependencies:
     http-proxy-middleware "^1.0.6"
 
-"@nuxtjs/vuetify@git+ssh://git@github.com:UniScratch/vuetify-module.git#master":
+"@nuxtjs/vuetify@https://github.com/UniScratch/vuetify-module.git#master":
   version "1.12.5"
-  resolved "git+ssh://git@github.com:UniScratch/vuetify-module.git#3130d4beb3481a1511691da8ac6aec95273515e6"
+  resolved "https://github.com/UniScratch/vuetify-module.git#3130d4beb3481a1511691da8ac6aec95273515e6"
   dependencies:
     deepmerge "^4.2.2"
     sass "~1.32.13"
@@ -9553,9 +9553,9 @@ scratch-blocks@0.1.0-prerelease.20211110095305:
     imports-loader "0.6.5"
     scratch-l10n "3.14.20211110031601"
 
-"scratch-gui@git+ssh://git@github.com:UniScratch/uniscratch-gui.git#develop":
+"scratch-gui@https://github.com/UniScratch/uniscratch-gui.git#develop":
   version "0.1.0"
-  resolved "git+ssh://git@github.com:UniScratch/uniscratch-gui.git#d59f191de58a77b00342769e4f4bcbe09202b19b"
+  resolved "https://github.com/UniScratch/uniscratch-gui.git#673538bfc7268296a871c32060af37c5938fa656"
   dependencies:
     arraybuffer-loader "^1.0.6"
     autoprefixer "^9.0.1"
