@@ -155,3 +155,7 @@ canvas {
 .nuxt-link-prefetched {
     color: orangeRed;
 } */
+
+.v-skeleton-loader {
+    border-radius: none;
+}
