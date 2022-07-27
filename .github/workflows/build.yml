@@ -18,9 +18,9 @@ jobs:
           name: .nuxt
           path: ./.nuxt
           retention-days: 0
-      - name: Remove node_modules
+      - name: Remove scratch node_modules
         run: |
-          rm -rf node_modules
+          rm -rf node_modules/scratch-gui
       - name: Upload artifacts (*)
         uses: actions/upload-artifact@v3.1.0
         with:
