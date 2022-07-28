@@ -30,6 +30,10 @@
       <v-icon>mdi-qqchat</v-icon>
       QQ 群聊
     </v-btn>
+    <v-btn target="_blank" href="https://t.me/GitScratch" text rounded>
+      <v-icon>mdi-send</v-icon>
+      Telegram
+    </v-btn>
     <h2>版本信息</h2>
     <p>
       <a target="_blank" :href="'https://github.com/UniScratch/gitscratch-frontend/commit/'+meta.commitHash">在 GitHub 上查看</a>
