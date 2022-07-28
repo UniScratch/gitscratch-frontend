@@ -1,51 +1,43 @@
+<!-- eslint-disable vue/no-v-html -->
 /* eslint-disable vue/require-default-prop */
 <template>
-  <client-only placeholder="Loading...">
-    <div v-html="renderMd(content)" />
-  </client-only>
+  <div v-html="renderMd(content)" />
 </template>
 <script>
-const marked = require('marked')
+import { marked } from 'marked'
+import sanitizeHtml from 'sanitize-html'
+import hljs from 'highlight.js'
 export default {
   props: {
     content: {
-      type: String
+      type: String,
+      default: ''
     }
   },
   data: () => ({
     theme: null
   }),
-  head () {
-    return {
-      link: [{
-        vmid: 'hljs-style',
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: this.$vuetify.theme.dark ? '/highlight.js/styles/github-dark.css' : '/highlight.js/styles/github.css'
-      }]
-    }
-  },
   mounted () {
     marked.setOptions({
       renderer: new marked.Renderer(),
       highlight (code, lang) {
-        const hljs = require('highlight.js')
         const language = hljs.getLanguage(lang) ? lang : 'plaintext'
         return hljs.highlight(code, { language }).value
       },
-      pedantic: false,
       gfm: true,
-      tables: true,
       breaks: true,
-      sanitize: true,
       smartLists: true,
-      smartypants: true,
-      xhtml: true
+      smartypants: true
     })
   },
   methods: {
     renderMd (content) {
-      return marked.parse(content)
+      return sanitizeHtml(marked.parse(content), {
+        allowedClasses: {
+          code: ['language-*', 'lang-*'],
+          span: ['hljs-*', 'hljs']
+        }
+      })
     }
   }
 }

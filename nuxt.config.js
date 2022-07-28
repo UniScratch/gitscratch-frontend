@@ -38,10 +38,9 @@ module.exports = {
       href: '/GitScratch-icon-background-blue.svg'
     },
     {
-      vmid: 'hljs-style',
       rel: 'stylesheet',
       type: 'text/css',
-      href: '/highlight.js/styles/github.css'
+      href: '/highlight.js/styles/github-dark.css'
     }]
   },
 
