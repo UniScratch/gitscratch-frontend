@@ -205,7 +205,7 @@
         </v-window-item>
         <!-- 留言 -->
         <v-window-item>
-          <CommentForm />
+          <CommentTextArea />
           <v-divider style="margin: 8px 0;" />
           <p class="text-h5">
             留言

@@ -1,5 +1,4 @@
 <!-- eslint-disable vue/no-v-html -->
-/* eslint-disable vue/require-default-prop */
 <template>
   <div v-html="renderMd(content)" />
 </template>

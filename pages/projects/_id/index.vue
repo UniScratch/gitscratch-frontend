@@ -57,7 +57,7 @@
 
       <div class="hidden-sm-and-down">
         <v-divider style="margin: 16px 0;" />
-        <CommentForm :is-login="isLogin" :is-muted="isMuted" />
+        <CommentTextArea :is-login="isLogin" :is-muted="isMuted" />
         <v-divider style="margin: 8px 0;" />
         <p class="text-h5">
           留言
@@ -66,18 +66,18 @@
       </div>
     </v-col>
     <v-col cols="12" xl="5" md="4">
-      <ProjectUserInfo />
+      <!-- <ProjectUserInfo />
       <br>
       <ProjectDesc />
       <div class="hidden-md-and-up">
         <v-divider style="margin: 16px 0;" />
-        <CommentForm :is-login="isLogin" :is-muted="isMuted" />
+        <CommentTextArea :is-login="isLogin" :is-muted="isMuted" />
         <v-divider style="margin: 8px 0;" />
         <p class="text-h5">
           留言
         </p>
         <Comment />
-      </div>
+      </div> -->
     </v-col>
   </v-row>
 </template>

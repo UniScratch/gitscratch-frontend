@@ -55,6 +55,7 @@ module.exports = {
   ],
 
   plugins: [
+    '~/plugins/dateFormatter.js'
   ],
   buildModules: [
     // Simple usage
