@@ -210,7 +210,7 @@
           <p class="text-h5">
             留言
           </p>
-          <Comments />
+          <CommentGroup />
         </v-window-item>
       </v-window>
     </v-col>
