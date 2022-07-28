@@ -54,30 +54,22 @@
           <ProjectData />
         </v-card-text>
       </v-card>
-
-      <div class="hidden-sm-and-down">
+      <br>
+      <ProjectDesc />
+      <div>
         <v-divider style="margin: 16px 0;" />
         <CommentTextArea :is-login="isLogin" :is-muted="isMuted" />
         <v-divider style="margin: 8px 0;" />
         <p class="text-h5">
           留言
         </p>
-        <Comments />
+        <CommentGroup />
       </div>
     </v-col>
     <v-col cols="12" xl="5" md="4">
-      <!-- <ProjectUserInfo />
+      <ProjectUserInfo />
       <br>
-      <ProjectDesc />
-      <div class="hidden-md-and-up">
-        <v-divider style="margin: 16px 0;" />
-        <CommentTextArea :is-login="isLogin" :is-muted="isMuted" />
-        <v-divider style="margin: 8px 0;" />
-        <p class="text-h5">
-          留言
-        </p>
-        <Comment />
-      </div> -->
+      //推荐作品流
     </v-col>
   </v-row>
 </template>
