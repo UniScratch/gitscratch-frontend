@@ -32,10 +32,13 @@ export default {
   methods: {
     renderMd (content) {
       return sanitizeHtml(marked.parse(content), {
+        disallowedTagsMode: 'escape',
+        allowedTags: sanitizeHtml.defaults.allowedTags.concat(['del', 'input']),
         allowedClasses: {
           code: ['language-*', 'lang-*'],
           span: ['hljs-*', 'hljs']
-        }
+        },
+        allowedAttributes: false
       })
     }
   }

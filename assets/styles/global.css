@@ -41,7 +41,7 @@
 pre,
 code {
     font-family: 'Fira Code', 'Roboto Mono', Consolas, monospace, 'Courier New', Courier, ui-monospace, SFMono-Regular, SF Mono, Menlo, 'Liberation Mono';
-    border-radius: 3px;
+    border-radius: 6px;
 }
 
 .theme--light.v-application pre {
@@ -82,6 +82,7 @@ code {
     background-color: #121212 !important;
     backdrop-filter: var(--blur) !important;
 }
+
 .theme--dark.v-chip {
     background-color: #1E1E1E !important;
     backdrop-filter: var(--blur) !important;
@@ -145,6 +146,7 @@ canvas {
 .v-chip-opacity {
     opacity: .85;
 }
+
 /* 
 .nuxt-link-active {
     color: red;
@@ -158,4 +160,99 @@ canvas {
 
 .v-skeleton-loader {
     border-radius: none;
+}
+
+.theme--dark.v-list {
+    background: transparent !important;
+}
+
+blockquote {
+    padding: 0.5em 1em;
+    margin: 16px 0;
+}
+
+.theme--light blockquote {
+    border-left: 4px solid #D1D7DD;
+}
+
+.theme--dark blockquote {
+    border-left: 4px solid #353535;
+}
+
+p {
+    margin-block-end: 16px;
+    margin-block-start: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-block-end: 20px;
+    margin-block-start: 20px;
+}
+
+table {
+    position: relative;
+    width: 100%;
+    border-bottom: none;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 6px;
+}
+
+.theme--dark table {
+    border: 1px solid #353535;
+}
+
+.theme--light table {
+    border: 1px solid #D1D7DD;
+}
+
+th {
+    font-weight: bold;
+    line-height: 32px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+td,
+th {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 12px 28px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.theme--dark td,
+.theme--dark th {
+    border-bottom: 1px solid #353535;
+}
+
+.theme--light td,
+.theme--light th {
+    border-bottom: 1px solid #D1D7DD;
+}
+
+hr {
+    margin: 16px 0;
+}
+
+.theme--dark hr {
+    border: solid #353535;
+    height: 0px;
+    max-height: 0px;
+    border-width: thin 0 0 0;
+}
+
+.theme--light hr {
+    border: solid #D1D7DD;
+    height: 0px;
+    max-height: 0px;
+    border-width: thin 0 0 0;
 }
