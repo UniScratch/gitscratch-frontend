@@ -58,11 +58,7 @@
       <ProjectDesc />
       <div>
         <v-divider style="margin: 16px 0;" />
-        <CommentTextArea :is-login="isLogin" :is-muted="isMuted" />
-        <v-divider style="margin: 8px 0;" />
-        <p class="text-h5">
-          留言
-        </p>
+
         <CommentGroup />
       </div>
     </v-col>

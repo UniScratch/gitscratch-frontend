@@ -205,11 +205,6 @@
         </v-window-item>
         <!-- 留言 -->
         <v-window-item>
-          <CommentTextArea />
-          <v-divider style="margin: 8px 0;" />
-          <p class="text-h5">
-            留言
-          </p>
           <CommentGroup />
         </v-window-item>
       </v-window>
