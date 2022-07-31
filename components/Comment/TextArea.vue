@@ -4,8 +4,8 @@
       <v-card-title class="textarea_title">
         <div>
           <v-tabs v-model="tab">
-            <v-tab>Write</v-tab>
-            <v-tab>Preview</v-tab>
+            <v-tab>撰写</v-tab>
+            <v-tab>预览</v-tab>
           </v-tabs>
         </div>
         <v-spacer />
@@ -70,12 +70,13 @@
         <v-btn
           width="120px"
           rounded
+          depressed
           color="primary"
         >
-          发射
-          <v-icon right>
+          <v-icon left>
             mdi-send
           </v-icon>
+          发送
         </v-btn>
       </v-card-actions>
     </v-card>

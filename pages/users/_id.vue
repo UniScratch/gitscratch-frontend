@@ -41,7 +41,7 @@
               mdi-gavel
             </v-icon>
           </template>
-          <span>账户被封禁，{{ data.banned }} 天后解禁</span>
+          <span>帐户被封禁，{{ data.banned }} 天后解禁</span>
         </v-tooltip>
         <p class="text-body">
           {{ data.bio }}
@@ -62,9 +62,7 @@
         <v-icon>mdi-web</v-icon>
         <a :href="data.website" target="_blank">{{ data.website }}</a>
         <br>
-        <br>
         <v-divider />
-        <br>
         <v-dialog v-model="reportDialog" overlay-opacity="0.3" max-width="500">
           <template #activator="{ on, attrs }">
             <p
@@ -174,10 +172,10 @@
               <span>README</span><span class="grey-text">.md</span>
             </v-card-title>
             <v-divider />
-            <MarkdownRender v-if="!dataIsLoading" style="padding: 16px;" :content="data.readme" />
+            <MarkdownRender v-if="!dataIsLoading" style="padding: 0 16px 8px 16px;" :content="data.readme" />
             <v-skeleton-loader
               v-else
-              style="padding: 16px;"
+              style="padding: 0 16px;"
               type="article"
             />
           </v-card>
@@ -201,7 +199,7 @@
         </v-window-item>
         <!-- 组织 -->
         <v-window-item>
-          <p>?????</p>
+          <p>？？？？？</p>
         </v-window-item>
         <!-- 留言 -->
         <v-window-item>

@@ -18,27 +18,29 @@
       </v-btn>
     </div>
     <CommentTextArea />
-    <div v-if="!dataIsLoading">
-      <template v-if="data.length !== 0">
-        <v-list>
-          <template v-for="(comment, index) in data">
-            <CommentSingle :key="index" :comment-data="comment" />
-          </template>
-        </v-list>
-        <v-pagination
-          v-model="page"
-          :length="totalPage"
-          @input="load()"
-        />
-      </template>
-      <template v-else>
-        <p>没有留言 :D</p>
-      </template>
-    </div>
-    <div v-else class="text-center">
-      <v-progress-circular indeterminate color="primary" />
-      <br>
-      <p>正在加载留言. 坐和放宽.</p>
+    <div style="margin-top: 24px;">
+      <div v-if="!dataIsLoading">
+        <template v-if="data.length !== 0">
+          <v-list>
+            <template v-for="(comment, index) in data">
+              <CommentSingle :key="index" :comment-data="comment" />
+            </template>
+          </v-list>
+          <v-pagination
+            v-model="page"
+            :length="totalPage"
+            @input="load()"
+          />
+        </template>
+        <template v-else>
+          <p>暂时没有留言</p>
+        </template>
+      </div>
+      <div v-else class="text-center">
+        <v-progress-circular indeterminate color="primary" />
+        <br>
+        <p>正在加载留言。坐和放宽</p>
+      </div>
     </div>
   </div>
 </template>
@@ -61,7 +63,6 @@ export default {
   methods: {
     load () {
       this.dataIsLoading = true
-      this.$fetch()
     }
   }
 }

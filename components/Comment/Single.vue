@@ -24,7 +24,7 @@
         </template>
         <span>剩余 {{ comment_list[8] }} 天解禁</span>
       </v-tooltip> -->
-      <span style="margin-left: 8px;" class="grey-text">{{ new Date(commentData.time*1000).format("yyyy-MM-dd hh:mm:ss") }}</span>
+      <span style="margin-left: 8px;" class="grey-text">{{ new Date(commentData.time * 1000).format("yyyy-MM-dd hh:mm:ss") }}</span>
       <span style="margin-left: 8px;" class="grey-text">{{ commentData.position }}</span>
       <v-divider style="margin: 8px 0;" />
       <MarkdownRender :content="commentData.comment" />
