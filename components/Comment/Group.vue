@@ -63,6 +63,7 @@ export default {
   methods: {
     load () {
       this.dataIsLoading = true
+      this.$fetch()
     }
   }
 }
