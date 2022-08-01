@@ -21,7 +21,7 @@
           <v-card-text>
             <v-form ref="emailForm" v-model="emailValid" lazy-validation>
               <v-text-field
-                v-model="userEmail"
+                v-model="form.email"
                 label="电子邮箱"
                 :rules="emailRules"
               />
@@ -36,7 +36,7 @@
           <v-card-text>
             <v-form ref="nameForm" v-model="usernameValid" lazy-validation>
               <v-text-field
-                v-model="username"
+                v-model="form.username"
                 label="用户名"
                 :rules="nameRules"
               />
@@ -51,7 +51,7 @@
           <v-card-text>
             <v-form ref="passwordForm" v-model="passwordValid" lazy-validation>
               <v-text-field
-                v-model="userPassword"
+                v-model="form.password"
                 label="密码"
                 :type="password_visible ? 'text' : 'password'"
                 :rules="passwordRules"
@@ -68,17 +68,20 @@
         <v-window-item :value="4">
           <v-card-text>
             <v-form ref="captchaForm" v-model="captchaValid" lazy-validation>
-              <v-img src="/captcha.png" />
+              <img :src="captcha_base64" style="width: 100%;">
+              <!-- <v-img contain :src="captcha_base64" /> -->
               <v-text-field
-                v-model="captcha"
-                label="验证码"
+                v-model="form.captcha_value"
+                append-icon="mdi-refresh"
+                label="图中事件发生的年份，公元前加“-”"
                 style="border-radius: 4px;"
                 :rules="captchaRules"
                 type="number"
+                @click:append="reloadCaptcha()"
               />
             </v-form>
             <span class="text-caption grey--text text--darken-1">
-              输入验证码（图中事件发生的年份，公元前加“-”）
+              有效期15分钟
             </span>
           </v-card-text>
         </v-window-item>
@@ -153,14 +156,19 @@
 <script>
 export default {
   data: () => ({
+    form: {
+      name: '',
+      password: '',
+      email: '',
+      captcha_uuid: '',
+      captcha_value: ''
+    },
     step: 1,
     steps: 6,
     loading: false,
     password_visible: false,
-    userEmail: '',
-    username: '',
-    userPassword: '',
-    captcha: '',
+    captcha_base64: '',
+    captcha_isLoading: true,
     emailValid: true,
     usernameValid: true,
     passwordValid: true,
@@ -180,6 +188,13 @@ export default {
       v => !!v || '验证码不能为空'
     ]
   }),
+  async fetch () {
+    await this.$http.$get('/auth/captcha').then((res) => {
+      this.form.captcha_uuid = res.captcha_uuid
+      this.captcha_base64 = res.captcha_base64
+      this.captcha_isLoading = false
+    })
+  },
   head () {
     return {
       title: '注册'
@@ -198,6 +213,10 @@ export default {
     }
   },
   methods: {
+    reloadCaptcha () {
+      this.captcha_isLoading = true
+      this.$fetch()
+    },
     next () {
       if (this.step === 1) {
         this.emailValid = this.$refs.emailForm.validate()
@@ -226,10 +245,20 @@ export default {
     },
     register () {
       this.loading = true
-      this.$http.$post('/auth/register').then((res) => {
+      this.$http.$post('/auth/register', {
+        username: this.form.username,
+        password: this.form.password,
+        email: this.form.email,
+        captcha_uuid: this.form.captcha_uuid,
+        captcha_value: this.form.captcha_value
+      }).then((res) => {
         console.log(res)
         this.loading = false
         this.step = this.steps
+      }, (err) => {
+        alert(err.statusCode + '\n' + err.response.data.message)
+        this.loading = false
+        this.step--
       })
     }
   }

@@ -55,7 +55,9 @@ module.exports = {
   ],
 
   plugins: [
-    '~/plugins/dateFormatter.js'
+    '~/plugins/dateFormatter.js',
+    '~/plugins/http'
+
   ],
   buildModules: [
     // Simple usage
@@ -94,8 +96,12 @@ module.exports = {
   },
   // https://http.nuxtjs.org/
   http: {
-    baseURL: 'https://mock.apifox.cn/m1/927078-0-default'
+    // baseURL: 'https://mock.apifox.cn/m1/927078-0-default'
+    baseURL: 'http://0.0.0.0:3000'
   },
+  // proxy: {
+  //   '/api/': 'http://0.0.0.0:3000'
+  // },
 
   // https://github.com/nuxt-community/eslint-module
   eslint: {

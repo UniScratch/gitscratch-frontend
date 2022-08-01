@@ -11,12 +11,12 @@
       <v-card-text>
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-text-field
-            v-model="userEmail"
+            v-model="form.email"
             label="电子邮箱"
             :rules="emailRules"
           />
           <v-text-field
-            v-model="userPassword"
+            v-model="form.password"
             label="密码"
             type="password"
             :rules="passwordRules"
@@ -43,8 +43,10 @@ export default {
   data: () => ({
     valid: true,
     loading: false,
-    userEmail: '',
-    userPassword: '',
+    form: {
+      email: '',
+      password: ''
+    },
     emailRules: [
       v => !!v || '电子邮箱不能为空',
       v => (v && /.+@.+\..+/.test(v)) || '电子邮箱无效'
@@ -63,7 +65,10 @@ export default {
       this.validate()
       if (this.valid) {
         this.loading = true
-        this.$http.$post('/auth/login').then((res) => { // 获取session
+        this.$http.$post('/auth/login', {
+          email: this.form.email,
+          password: this.form.password
+        }).then((res) => { // 获取session
           this.$http.$get('/auth/session').then((res) => { // 获取用户信息
             this.$store.commit('auth/updateInfo', res.data)
           })
