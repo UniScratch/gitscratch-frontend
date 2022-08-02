@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@nuxt/http": "^0.6.4",
-    "@nuxtjs/proxy": "^2.1.0",
     "@nuxtjs/vuetify": "https://github.com/UniScratch/vuetify-module.git#master",
     "@nuxtjs/webpack-profile": "^0.1.0",
     "highlight.js": "^11.6.0",

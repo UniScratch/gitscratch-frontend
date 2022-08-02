@@ -5,44 +5,55 @@
         <v-slide-y-reverse-transition>
           <v-container
             v-if="hover"
+            class="card-layer"
             style="font-size: 1vw;"
           >
-            <v-chip
-              class="v-chip-opacity"
-              small
-            >
-              <v-icon class="v-icon-project-card" left>
-                mdi-history
-              </v-icon>
-              2022/5/28 14:39
-            </v-chip>
-            <v-chip
-              class="v-chip-opacity"
-              small
-            >
-              <v-icon class="v-icon-project-card" left>
-                mdi-eye-outline
-              </v-icon>
-              345
-            </v-chip>
-            <v-chip
-              class="v-chip-opacity"
-              small
-            >
-              <v-icon class="v-icon-project-card" left>
-                mdi-star-outline
-              </v-icon>
-              456
-            </v-chip>
-            <v-chip
-              class="v-chip-opacity"
-              small
-            >
-              <v-icon class="v-icon-project-card" left>
-                mdi-source-branch
-              </v-icon>
-              567
-            </v-chip>
+            <div style="bottom: 12px;position: absolute;">
+              <v-chip
+                class="v-chip-opacity"
+                small
+                outlined
+                dark
+              >
+                <v-icon class="v-icon-project-card" left>
+                  mdi-history
+                </v-icon>
+                2022/5/28 14:39
+              </v-chip>
+              <v-chip
+                class="v-chip-opacity"
+                small
+                outlined
+                dark
+              >
+                <v-icon class="v-icon-project-card" left>
+                  mdi-eye-outline
+                </v-icon>
+                345
+              </v-chip>
+              <v-chip
+                class="v-chip-opacity"
+                small
+                outlined
+                dark
+              >
+                <v-icon class="v-icon-project-card" left>
+                  mdi-star-outline
+                </v-icon>
+                456
+              </v-chip>
+              <v-chip
+                class="v-chip-opacity"
+                small
+                outlined
+                dark
+              >
+                <v-icon class="v-icon-project-card" left>
+                  mdi-source-branch
+                </v-icon>
+                567
+              </v-chip>
+            </div>
             <!-- <span class="rounded-pill" style="left: 3%; position: absolute; background-color: #000000; opacity: .4; bottom: 5%; color: white; font-size: 10px; padding: 0 5px;">
               <v-icon style="font-size: 10px;color: white;margin-bottom: 1px;">mdi-history</v-icon>
               2022/5/28 14:39
@@ -112,4 +123,13 @@ export default {
   .v-icon-project-card {
     font-size: 19px !important;
   }
+  .card-layer {
+        background: linear-gradient(0deg, #000000bb 0%,#0006 60%, #0000 100%);
+        height:100%
+  }
+  .v-chip-opacity {
+    opacity: .85;
+    color: #fff;
+}
+
 </style>
