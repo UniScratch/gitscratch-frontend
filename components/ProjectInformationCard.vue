@@ -29,7 +29,7 @@
       <v-img lazy-src="/GitScratch-project-thumbnail-grey.svg" :src="projectThumbnail" style="max-width: 240px; border-radius: 20px;" contain eager />
       <div style="padding: 16px;">
         <p class="text-h5">
-          <router-link :to="'/users/' + projectAuthor">
+          <router-link :to="'/users/' + projectAuthorId">
             {{ projectAuthor }}
           </router-link>
           <span>&nbsp;/&nbsp;</span>
@@ -57,6 +57,7 @@ export default {
   data: () => ({
     projectTitle: '标题',
     projectAuthor: '作者',
+    projectAuthorId: 1,
     projectThumbnail: '/480x360.jpg',
     projectId: 1,
     projectDesc: '作品描述',

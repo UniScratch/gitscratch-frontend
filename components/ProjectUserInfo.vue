@@ -1,5 +1,5 @@
 <template>
-  <v-card :to="'/users/' + projectAuthor">
+  <v-card :to="'/users/' + projectAuthorId">
     <v-list-item three-line>
       <v-list-item-avatar
         size="80"
@@ -47,6 +47,7 @@ export default {
 
   data: () => ({
     projectAuthor: '作者',
+    projectAuthorId: 1,
     projectAuthorAvatar: '/GitScratch-icon-background-blue.svg',
     projectAuthorLevel: 1,
     projectAuthorIsVerified: true,

@@ -125,7 +125,7 @@
       <v-card-actions>
         <transition name="slide-y-reverse-transition">
           <v-btn
-            v-if="!(step === 1 || step >= 4)"
+            v-if="step <= 4"
             outlined
             rounded
             color="primary"
@@ -190,8 +190,12 @@ export default {
   }),
   async fetch () {
     await this.$http.$get('/auth/captcha').then((res) => {
-      this.form.captcha_uuid = res.captcha_uuid
-      this.captcha_base64 = res.captcha_base64
+      if (res.status === 'success') {
+        this.form.captcha_uuid = res.data.captcha_uuid
+        this.captcha_base64 = res.data.captcha_base64
+      } else {
+        alert(res.message)
+      }
       this.captcha_isLoading = false
     })
   },
@@ -252,13 +256,13 @@ export default {
         captcha_uuid: this.form.captcha_uuid,
         captcha_value: this.form.captcha_value
       }).then((res) => {
-        console.log(res)
+        if (res.status === 'success') {
+          this.step = this.steps
+        } else {
+          alert(res.message)
+          this.step--
+        }
         this.loading = false
-        this.step = this.steps
-      }, (err) => {
-        alert(err.statusCode + '\n' + err.response.data.message)
-        this.loading = false
-        this.step--
       })
     }
   }

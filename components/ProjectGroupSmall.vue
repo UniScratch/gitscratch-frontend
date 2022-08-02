@@ -14,7 +14,7 @@
             <v-card-actions>
               <v-chip
                 link
-                :to="'/users/' + projectAuthor"
+                :to="'/users/' + projectAuthorId"
                 color="transparent"
               >
                 <v-avatar left>
@@ -40,6 +40,7 @@ export default {
   data: () => ({
     projectTitle: '标题',
     projectAuthor: '作者',
+    projectAuthorId: 1,
     projectAuthor_avatar: '/GitScratch-icon-background-blue.svg',
     projectThumbnail: 'https://sdfsdf.dev/480x360.jpg,E3F2FD,2196F3',
     projectId: 1

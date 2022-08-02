@@ -1,14 +1,6 @@
 export const state = () => ({
   token: '',
   userInfo: {
-    avatar: '',
-    bio: '',
-    email: '',
-    follower: 0,
-    following: 0,
-    name: '',
-    readme: '',
-    website: ''
   }
 
 })
@@ -21,16 +13,9 @@ export const mutations = {
     state.userInfo = userInfo
   },
   logout (state) {
+    this.$http.$post('/auth/logout').then((res) => {
+    })
     state.token = ''
-    state.userInfo = {
-      avatar: '',
-      bio: '',
-      email: '',
-      follower: 0,
-      following: 0,
-      name: '',
-      readme: '',
-      website: ''
-    }
+    state.userInfo = { }
   }
 }
