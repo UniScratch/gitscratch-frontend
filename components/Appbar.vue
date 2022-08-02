@@ -6,13 +6,8 @@
           <v-icon>mdi-menu</v-icon>
         </v-btn>
       </template>
-      <v-card
-        class="cardblur"
-      >
-        <v-list
-          min-width="200"
-          color="transparent"
-        >
+      <v-card class="cardblur">
+        <v-list min-width="200" color="transparent">
           <v-list-item v-ripple to="/explore">
             <v-list-item-title>发现</v-list-item-title>
           </v-list-item>
@@ -26,8 +21,16 @@
       </v-card>
     </v-menu>
     <v-btn icon class="ml-2" to="/" color="transparent">
-      <img v-if="!$vuetify.theme.dark" src="/GitScratch-icon-black.svg" width="36">
-      <img v-if="$vuetify.theme.dark" src="/GitScratch-icon-white.svg" width="36">
+      <img
+        v-if="!$vuetify.theme.dark"
+        src="/GitScratch-icon-black.svg"
+        width="36"
+      >
+      <img
+        v-if="$vuetify.theme.dark"
+        src="/GitScratch-icon-white.svg"
+        width="36"
+      >
     </v-btn>
 
     <!-- <v-app-bar-title class="pl-1 hidden-sm-and-down">GitScratch</v-app-bar-title> -->
@@ -41,7 +44,7 @@
       hide-details
       outlined
       single-line
-      style="max-width: 250px; border-radius: 20px !important;"
+      style="max-width: 250px; border-radius: 20px !important"
       @keyup.enter="search"
     />
     <v-btn text class="hidden-xs-only" to="/explore" rounded>
@@ -56,7 +59,7 @@
 
     <v-spacer />
 
-    <template v-if="!token">
+    <template v-if="!session">
       <v-btn text to="/auth/login" rounded>
         登录
       </v-btn>
@@ -81,37 +84,19 @@
         </template>
         <span>创建</span>
       </v-tooltip>
-      <v-menu
-        bottom
-        offset-y
-        transition="slide-y-transition"
-      >
+      <v-menu bottom offset-y transition="slide-y-transition">
         <template #activator="{ on, attrs }">
           <v-btn icon>
-            <v-avatar
-              size="40px"
-              v-bind="attrs"
-              ripple
-              v-on="on"
-            >
-              <v-img
-                alt="Avatar"
-                :src="userInfo.avatar"
-              />
+            <v-avatar size="40px" v-bind="attrs" ripple v-on="on">
+              <v-img alt="Avatar" :src="userInfo.avatar" />
             </v-avatar>
           </v-btn>
         </template>
         <v-card class="cardblur">
           <v-list color="transparent">
             <v-list-item>
-              <v-avatar
-                size="48px"
-                ripple
-              >
-                <v-img
-                  alt="Avatar"
-                  :src="userInfo.avatar"
-                />
+              <v-avatar size="48px" ripple>
+                <v-img alt="Avatar" :src="userInfo.avatar" />
               </v-avatar>
             </v-list-item>
 
@@ -120,27 +105,40 @@
                 <v-list-item-title class="text-h6">
                   {{ userInfo.name }}
                 </v-list-item-title>
-                <v-list-item-subtitle>{{ userInfo.email }}</v-list-item-subtitle>
+                <v-list-item-subtitle>
+                  {{
+                    userInfo.email
+                  }}
+                </v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
-            <v-container v-if="userInfo.muted !== 0" class="appbar-alert" style="background-color: rgba(251,140,0);">
+            <v-container
+              v-if="userInfo.muted !== 0"
+              class="appbar-alert"
+              style="background-color: rgba(251, 140, 0)"
+            >
               <v-icon color="white" size="20">
                 mdi-alert-minus-outline
-              </v-icon>&nbsp;&nbsp;
-              你的帐户已被禁言，将在 {{ userInfo.muted }} 天后解除。
+              </v-icon>&nbsp;&nbsp; 你的帐户已被禁言，将在
+              {{ userInfo.muted }} 天后解除。
             </v-container>
-            <v-container v-if="userInfo.banned !== 0" class="appbar-alert" style="background-color: rgba(255, 109, 109);">
+            <v-container
+              v-if="userInfo.banned !== 0"
+              class="appbar-alert"
+              style="background-color: rgba(255, 109, 109)"
+            >
               <v-icon color="white" size="20">
                 mdi-alert-octagon-outline
-              </v-icon>&nbsp;&nbsp;
-              你的帐户已被封禁，将在 {{ userInfo.banned }} 天后解除。<a style="caret-color: white !important;" class="text-color" href="/help/rules">了解更多</a>
+              </v-icon>&nbsp;&nbsp; 你的帐户已被封禁，将在
+              {{ userInfo.banned }} 天后解除。<a
+                style="caret-color: white !important"
+                class="text-color"
+                href="/help/rules"
+              >了解更多</a>
             </v-container>
           </v-list>
           <v-divider style="margin-top: -8px" />
-          <v-list
-            dense
-            color="transparent"
-          >
+          <v-list dense color="transparent">
             <v-list-item link :to="'/users/' + userInfo.id">
               <v-list-item-icon>
                 <v-icon>mdi-account-outline</v-icon>
@@ -184,10 +182,7 @@
           </v-list>
           <template v-if="isAdmin">
             <v-divider />
-            <v-list
-              dense
-              color="transparent"
-            >
+            <v-list dense color="transparent">
               <v-list-item link to="/admin">
                 <v-list-item-icon>
                   <v-icon>mdi-view-dashboard-outline</v-icon>
@@ -199,10 +194,7 @@
             </v-list>
           </template>
           <v-divider />
-          <v-list
-            dense
-            color="transparent"
-          >
+          <v-list dense color="transparent">
             <v-list-item link @click="logout()">
               <v-list-item-icon>
                 <v-icon>mdi-logout-variant</v-icon>
@@ -233,12 +225,16 @@ export default {
   }),
 
   computed: {
-    token () {
-      return this.$store.state.auth.token
+    session () {
+      return this.$store.state.auth.session
     },
     userInfo () {
       return this.$store.state.auth.userInfo
     }
+  },
+  mounted () {
+    // this.$store.commit('auth/getState')
+    this.$store.dispatch('auth/updateSession', localStorage.getItem('session'))
   },
   methods: {
     toggle_theme () {
@@ -257,12 +253,12 @@ export default {
 }
 </script>
 <style>
-  .v-icon-alert{
-    font-size: 19px !important;
-  }
-  .appbar-alert{
-    width: 100%;
-    color: white;
-    font-size: 12px !important
-  }
+.v-icon-alert {
+  font-size: 19px !important;
+}
+.appbar-alert {
+  width: 100%;
+  color: white;
+  font-size: 12px !important;
+}
 </style>

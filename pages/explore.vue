@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col cols="12" xl="2" md="3" sm="4" style="padding-right: 20px;">
-      <div v-if="token">
+      <div v-if="session">
         <div style="text-align: center;">
           <v-avatar style="width: 100%; height: auto; max-width: 100px;">
             <v-img :src="userInfo.avatar" />
@@ -65,7 +65,7 @@
         </v-window-item>
         <!-- 发现 -->
         <v-window-item>
-          <p v-if="token" class="text-h6">
+          <p v-if="session" class="text-h6">
             以下是我们根据你的兴趣找到的内容……
           </p>
           <p v-else>
@@ -119,8 +119,8 @@ export default {
     }
   },
   computed: {
-    token () {
-      return this.$store.state.auth.token
+    session () {
+      return this.$store.state.auth.session
     },
     userInfo () {
       return this.$store.state.auth.userInfo

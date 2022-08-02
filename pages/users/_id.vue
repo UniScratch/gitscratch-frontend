@@ -17,8 +17,9 @@
             <v-progress-linear :value="data.exp" class="rounded-pill" height="20" />
           </div>
         </div><br>
-        <span class="text-h4" style="margin-right: 8px;">{{ data.name }}</span>
-        <br>
+        <span class="text-h4" style="margin-right: 8px;overflow-wrap: break-word;">
+          {{ data.name }}
+        </span>
         <v-tooltip v-if="data.verified !== 0" bottom>
           <template #activator="{ on, attrs }">
             <v-icon color="rgba(33,150,243)" v-bind="attrs" v-on="on">
@@ -46,7 +47,10 @@
         <p class="text-body">
           {{ data.bio }}
         </p>
-        <v-btn block color="primary" depressed rounded>
+        <v-btn v-if="data.id === userInfo.id" block depressed rounded>
+          Edit Profile
+        </v-btn>
+        <v-btn v-else block color="primary" depressed rounded>
           <v-icon>mdi-plus</v-icon>
           关注
         </v-btn><br>
@@ -214,19 +218,6 @@ export default {
   data: () => ({
     dataIsLoading: true,
     data: {
-      name: null,
-      email: null,
-      follower: null,
-      following: null,
-      website: null,
-      bio: null,
-      avatar: null,
-      level: null,
-      exp: null,
-      verified: null,
-      muted: null,
-      banned: null,
-      readme: null
     },
     toggleTab: 0,
     userNameIsHover: false,
@@ -241,16 +232,23 @@ export default {
     ]
   }),
   async fetch () {
-    // console.log(await this.$http.$get('/users/' + this.$route.params.id + '/info').then(res => res.data))
-    // this.data = await this.$http.$get('/users/' + this.$route.params.id + '/info').data
     await this.$http.$get('/users/' + this.$route.params.id + '/info').then((res) => {
-      this.data = res.data
+      if (res.status === 'success') {
+        this.data = res.data
+      } else {
+        alert(res.message)
+      }
       this.dataIsLoading = false
     })
   },
   head () {
     return {
       title: this.data.name
+    }
+  },
+  computed: {
+    userInfo () {
+      return this.$store.state.auth.userInfo
     }
   },
   methods: {
@@ -271,3 +269,8 @@ export default {
   }
 }
 </script>
+<style>
+/* .v-icon {
+  bottom: 6px;
+} */
+</style>
