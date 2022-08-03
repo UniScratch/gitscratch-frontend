@@ -71,17 +71,15 @@ export default {
         }).then((res) => { // 获取session
           if (res.status === 'success') {
             const session = res.data.session
-            // this.$http.setHeader('x-gitscratch-session', session)
-            // this.$http.$get('/auth/session').then((res) => { // 获取用户信息
-            //   this.$store.commit('auth/updateInfo', res.data.data)
-            // })
-            this.$store.dispatch('auth/updateSession', session)
-
+            this.$auth_updateSession(session)
             this.loading = false
             this.$router.push('/')
           } else {
             this.loading = false
-            alert(res.message)
+            this.$dialog.error({
+              text: res.message,
+              title: '登录失败'
+            })
           }
         })
       }

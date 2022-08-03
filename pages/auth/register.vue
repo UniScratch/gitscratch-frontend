@@ -194,7 +194,10 @@ export default {
         this.form.captcha_uuid = res.data.captcha_uuid
         this.captcha_base64 = res.data.captcha_base64
       } else {
-        alert(res.message)
+        this.$dialog.error({
+          text: res.message,
+          title: '无法获取验证码'
+        })
       }
       this.captcha_isLoading = false
     })
@@ -259,7 +262,10 @@ export default {
         if (res.status === 'success') {
           this.step = this.steps
         } else {
-          alert(res.message)
+          this.$dialog.error({
+            text: res.message,
+            title: '注册失败'
+          })
           this.step--
         }
         this.loading = false

@@ -234,7 +234,9 @@ export default {
   },
   mounted () {
     // this.$store.commit('auth/getState')
-    this.$store.dispatch('auth/updateSession', localStorage.getItem('session'))
+    // this.$store.dispatch('auth/updateSession', localStorage.getItem('session'))
+    const session = localStorage.getItem('session')
+    this.$auth_updateSession(session)
   },
   methods: {
     toggle_theme () {
