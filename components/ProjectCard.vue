@@ -124,7 +124,7 @@ export default {
     font-size: 19px !important;
   }
   .card-layer {
-        background: linear-gradient(0deg, #000000bb 0%,#0006 60%, #0000 100%);
+        background: linear-gradient(0deg, #000000bb 0%,#0007 60%, #0000 100%);
         height:100%
   }
   .v-chip-opacity {
