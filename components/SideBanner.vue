@@ -31,34 +31,6 @@
             mdi-check
           </v-icon>签到
         </v-btn>
-        <v-dialog
-          v-model="dialog"
-          max-width="500"
-          overlay-opacity="0.3"
-        >
-          <v-card class="cardblur">
-            <v-card-title class="text-h5">
-              签到成功
-            </v-card-title>
-
-            <v-card-text>
-              {{ hitokoto }}
-            </v-card-text>
-
-            <v-card-actions>
-              <v-spacer />
-
-              <v-btn
-                text
-                rounded
-                @click="dialog = false"
-              >
-                关闭
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-dialog>
-
         <v-btn
           block
           color="primary"
@@ -78,9 +50,7 @@
 <script>
 export default {
   data: () => ({
-    dialogLoading: false,
-    dialog: false,
-    hitokoto: ''
+    dialogLoading: false
   }),
 
   methods: {
@@ -88,8 +58,10 @@ export default {
       this.dialogLoading = true
       this.$http.$get('https://v1.hitokoto.cn/').then((res) => {
         this.dialogLoading = false
-        this.hitokoto = res.hitokoto
-        this.dialog = true
+        this.$dialog.info({
+          text: res.hitokoto,
+          title: '签到成功'
+        })
       })
     }
   }

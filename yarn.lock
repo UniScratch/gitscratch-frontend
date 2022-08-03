@@ -1642,9 +1642,9 @@
   dependencies:
     http-proxy-middleware "^1.0.6"
 
-"@nuxtjs/vuetify@https://github.com/UniScratch/vuetify-module.git#master":
+"@nuxtjs/vuetify@git+ssh://git@github.com:UniScratch/vuetify-module.git#master":
   version "1.12.5"
-  resolved "https://github.com/UniScratch/vuetify-module.git#3130d4beb3481a1511691da8ac6aec95273515e6"
+  resolved "git+ssh://git@github.com:UniScratch/vuetify-module.git#3130d4beb3481a1511691da8ac6aec95273515e6"
   dependencies:
     deepmerge "^4.2.2"
     sass "~1.32.13"
@@ -9584,9 +9584,9 @@ scratch-blocks@0.1.0-prerelease.20211110095305:
     imports-loader "0.6.5"
     scratch-l10n "3.14.20211110031601"
 
-"scratch-gui@https://github.com/UniScratch/uniscratch-gui.git#develop":
+"scratch-gui@git+ssh://git@github.com:UniScratch/uniscratch-gui.git#develop":
   version "0.1.0"
-  resolved "https://github.com/UniScratch/uniscratch-gui.git#673538bfc7268296a871c32060af37c5938fa656"
+  resolved "git+ssh://git@github.com:UniScratch/uniscratch-gui.git#673538bfc7268296a871c32060af37c5938fa656"
   dependencies:
     arraybuffer-loader "^1.0.6"
     autoprefixer "^9.0.1"
@@ -11194,6 +11194,10 @@ vue@^2.6.12:
   version "2.6.14"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
   integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
+
+"vuetify-dialog@git+ssh://git@github.com:UniScratch/vuetify-dialog.git#master":
+  version "2.0.20"
+  resolved "git+ssh://git@github.com:UniScratch/vuetify-dialog.git#1d3b42f9f8890db9c20974c6af6961269efe0aef"
 
 vuetify-loader@^1.7.3:
   version "1.7.3"

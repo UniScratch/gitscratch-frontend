@@ -15,33 +15,36 @@ module.exports = {
     htmlAttrs: {
       lang: 'zh-CN'
     },
-    meta: [{
-      charset: 'utf-8'
-    },
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1'
-    },
-    {
-      hid: 'description',
-      name: 'description',
-      content: 'Endless Possiblities with GitScratch. 与 GitScratch 共赴诗和远方。'
-    },
-    {
-      name: 'format-detection',
-      content: 'telephone=no'
-    }
+    meta: [
+      {
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Endless Possiblities with GitScratch. 与 GitScratch 共赴诗和远方。'
+      },
+      {
+        name: 'format-detection',
+        content: 'telephone=no'
+      }
     ],
-    link: [{
-      rel: 'icon',
-      type: 'image/svg+xml',
-      href: '/GitScratch-icon-background-blue.svg'
-    },
-    {
-      rel: 'stylesheet',
-      type: 'text/css',
-      href: '/highlight.js/styles/github-dark.css'
-    }]
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/svg+xml',
+        href: '/GitScratch-icon-background-blue.svg'
+      },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: '/highlight.js/styles/github-dark.css'
+      }
+    ]
   },
 
   // https://nuxtjs.org/api/configuration-modules
@@ -50,13 +53,14 @@ module.exports = {
     '@nuxt/http',
 
     // https://github.com/frenchrabbit/nuxt-precompress
-    'nuxt-precompress'
-
+    'nuxt-precompress',
+    'vuetify-dialog/nuxt'
   ],
 
   plugins: [
-    '~/plugins/dateFormatter.js',
-    '~/plugins/http'
+    '~/plugins/dateFormatter',
+    '~/plugins/http',
+    '~/plugins/auth'
 
   ],
   buildModules: [
@@ -94,10 +98,14 @@ module.exports = {
       }
     }
   },
+  vuetifyDialog: {
+    property: '$dialog',
+    confirm: {}
+  },
   // https://http.nuxtjs.org/
   http: {
     // baseURL: 'https://mock.apifox.cn/m1/927078-0-default'
-    baseURL: 'http://0.0.0.0:3000'
+    baseURL: 'http://127.0.0.1:3000'
   },
   // proxy: {
   //   '/api/': 'http://0.0.0.0:3000'

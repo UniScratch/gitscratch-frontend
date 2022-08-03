@@ -256,3 +256,6 @@ hr {
 .v-list {
     padding: 2px 0;
 }
+.vuedl-notification {
+    border-radius: 20px;
+}
