@@ -166,6 +166,8 @@ canvas {
 blockquote {
     padding: 0.5em 1em;
     margin: 16px 0;
+    font-weight: unset;
+    font-size: unset;
 }
 
 .theme--light blockquote {
