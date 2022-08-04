@@ -1,5 +1,6 @@
 import colors from 'vuetify/lib/util/colors'
 const isDev = process.env.NODE_ENV !== 'production'
+console.log(process.env.API_URL)
 module.exports = {
   components: true,
   // https://nuxtjs.org/api/configuration-modern
@@ -106,6 +107,17 @@ module.exports = {
   http: {
     // baseURL: 'https://mock.apifox.cn/m1/927078-0-default'
     baseURL: 'http://127.0.0.1:3000'
+  },
+  publicRuntimeConfig: {
+    http: {
+      baseURL: process.env.API_URL
+    }
+  },
+
+  privateRuntimeConfig: {
+    http: {
+      baseURL: process.env.API_URL
+    }
   },
   // proxy: {
   //   '/api/': 'http://0.0.0.0:3000'
