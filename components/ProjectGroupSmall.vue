@@ -42,7 +42,7 @@ export default {
     projectAuthor: '作者',
     projectAuthorId: 1,
     projectAuthor_avatar: '/GitScratch-icon-background-blue.svg',
-    projectThumbnail: 'https://sdfsdf.dev/480x360.jpg,E3F2FD,2196F3',
+    projectThumbnail: '/480x360.jpg',
     projectId: 1
   })
 }
