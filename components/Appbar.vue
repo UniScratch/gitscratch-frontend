@@ -233,6 +233,7 @@ export default {
     }
   },
   mounted () {
+    console.log(this.$http.getBaseURL())
     // this.$store.commit('auth/getState')
     // this.$store.dispatch('auth/updateSession', localStorage.getItem('session'))
     const session = localStorage.getItem('session')

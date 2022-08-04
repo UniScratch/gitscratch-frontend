@@ -1,6 +1,7 @@
 import colors from 'vuetify/lib/util/colors'
 const isDev = process.env.NODE_ENV !== 'production'
-console.log(process.env.API_URL)
+const apiUrl = process.env.API_URL ? process.env.API_URL : '127.0.0.0:3000'
+console.log(apiUrl)
 module.exports = {
   components: true,
   // https://nuxtjs.org/api/configuration-modern
@@ -16,35 +17,33 @@ module.exports = {
     htmlAttrs: {
       lang: 'zh-CN'
     },
-    meta: [
-      {
-        charset: 'utf-8'
-      },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
-      },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Endless Possiblities with GitScratch. 与 GitScratch 共赴诗和远方。'
-      },
-      {
-        name: 'format-detection',
-        content: 'telephone=no'
-      }
+    meta: [{
+      charset: 'utf-8'
+    },
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1'
+    },
+    {
+      hid: 'description',
+      name: 'description',
+      content: 'Endless Possiblities with GitScratch. 与 GitScratch 共赴诗和远方。'
+    },
+    {
+      name: 'format-detection',
+      content: 'telephone=no'
+    }
     ],
-    link: [
-      {
-        rel: 'icon',
-        type: 'image/svg+xml',
-        href: '/GitScratch-icon-background-blue.svg'
-      },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: '/highlight.js/styles/github-dark.css'
-      }
+    link: [{
+      rel: 'icon',
+      type: 'image/svg+xml',
+      href: '/GitScratch-icon-background-blue.svg'
+    },
+    {
+      rel: 'stylesheet',
+      type: 'text/css',
+      href: '/highlight.js/styles/github-dark.css'
+    }
     ]
   },
 
@@ -106,22 +105,8 @@ module.exports = {
   // https://http.nuxtjs.org/
   http: {
     // baseURL: 'https://mock.apifox.cn/m1/927078-0-default'
-    baseURL: 'http://127.0.0.1:3000'
+    baseURL: apiUrl
   },
-  publicRuntimeConfig: {
-    http: {
-      baseURL: process.env.API_URL
-    }
-  },
-
-  privateRuntimeConfig: {
-    http: {
-      baseURL: process.env.API_URL
-    }
-  },
-  // proxy: {
-  //   '/api/': 'http://0.0.0.0:3000'
-  // },
 
   // https://github.com/nuxt-community/eslint-module
   eslint: {
