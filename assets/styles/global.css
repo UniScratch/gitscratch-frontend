@@ -261,3 +261,9 @@ hr {
 .vuedl-notification {
     border-radius: 20px;
 }
+.v-label {
+    font-weight: bold !important;
+}
+.v-text-field {
+    margin-top: 12px !important;
+}
