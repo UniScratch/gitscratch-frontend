@@ -8,7 +8,7 @@ export const state = () => ({
 export const mutations = {
   updateSession (state, session) {
     state.session = session
-    localStorage.setItem('session', session)
+    this.$cookies.set('session', session)
   },
   updateInfo (state, userInfo) {
     state.userInfo = userInfo
@@ -16,7 +16,7 @@ export const mutations = {
   logout (state) {
     this.$http.$post('/auth/logout').then((res) => {
     })
-    localStorage.clear()
+    this.$cookies.remove('session')
     state.session = ''
     state.userInfo = { }
   }

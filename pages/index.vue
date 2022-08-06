@@ -49,6 +49,8 @@ export default {
     return {
       titleTemplate: 'GitScratch'
     }
-  }
+  },
+  auth: false
+
 }
 </script>

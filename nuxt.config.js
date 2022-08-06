@@ -1,6 +1,6 @@
 import colors from 'vuetify/lib/util/colors'
 const isDev = process.env.NODE_ENV !== 'production'
-const apiUrl = process.env.API_URL ? process.env.API_URL : '127.0.0.0:3000'
+const apiUrl = process.env.API_URL ? process.env.API_URL : 'http://127.0.0.1:3000'
 console.log(apiUrl)
 module.exports = {
   components: true,
@@ -54,7 +54,12 @@ module.exports = {
 
     // https://github.com/frenchrabbit/nuxt-precompress
     'nuxt-precompress',
-    'vuetify-dialog/nuxt'
+    'vuetify-dialog/nuxt',
+    'cookie-universal-nuxt',
+    '@nuxtjs/axios',
+    // https://dev.auth.nuxtjs.org
+    '@nuxtjs/auth-next'
+
   ],
 
   plugins: [
@@ -71,6 +76,44 @@ module.exports = {
     '@nuxtjs/eslint-module'
 
   ],
+  axios: {
+  },
+  auth: {
+    rewriteRedirects: false,
+    redirect: {
+      logout: '/',
+      home: '/'
+
+    },
+    strategies: {
+      local: {
+        token: {
+          property: 'data.session',
+          name: 'X-GitScratch-Session',
+          type: ''
+        },
+        user: {
+          property: 'data.data',
+          autoFetch: true
+        },
+        endpoints: {
+          login: {
+            url: apiUrl + '/auth/login',
+            method: 'post'
+          },
+          logout: {
+            url: apiUrl + '/auth/logout',
+            method: 'post'
+          },
+          user: {
+            url: apiUrl + '/auth/session',
+            method: 'get'
+          }
+        }
+      }
+    }
+    // Options
+  },
 
   vuetify: {
     customVariables: ['~/assets/styles/variables.scss'],
@@ -156,7 +199,9 @@ module.exports = {
     mode: 'out-in'
   },
   router: {
-    prefetchLinks: false
+    prefetchLinks: false,
+    middleware: ['auth']
+
   }
 
 }
