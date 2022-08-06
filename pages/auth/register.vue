@@ -96,7 +96,7 @@
 
         <v-window-item :value="6">
           <div class="pa-4 text-center">
-            <v-img
+            <!-- <v-img
               v-if="!$vuetify.theme.dark"
               class="mb-4"
               contain
@@ -109,7 +109,7 @@
               contain
               height="128"
               src="/GitScratch-icon-white.svg"
-            />
+            /> -->
             <h3 class="text-h6">
               欢迎加入 GitScratch！
             </h3>
@@ -251,6 +251,21 @@ export default {
         captcha_value: this.form.captcha_value
       }).then((res) => {
         if (res.status === 'success') {
+          this.$http.$post('/auth/login', {
+            email: this.form.email,
+            password: this.form.password
+          }).then((res) => { // 获取session
+            if (res.status === 'success') {
+              const session = res.data.session
+              this.$auth_updateSession(session)
+            } else {
+              this.$dialog.error({
+                text: res.message,
+                title: '注册成功，登录失败'
+              })
+              this.$router.push('/')
+            }
+          })
           this.step = 6
         } else {
           this.$dialog.error({
