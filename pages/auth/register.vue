@@ -19,7 +19,7 @@
       <v-window v-model="step" touchless>
         <v-window-item :value="1">
           <v-card-text>
-            <v-form ref="emailForm" v-model="emailValid" lazy-validation>
+            <v-form ref="emailForm" v-model="emailValid" @submit.native.prevent @keydown.enter.native="next()">
               <v-text-field
                 v-model="form.email"
                 label="电子邮箱"
@@ -34,7 +34,7 @@
 
         <v-window-item :value="2">
           <v-card-text>
-            <v-form ref="nameForm" v-model="usernameValid" lazy-validation>
+            <v-form ref="nameForm" v-model="usernameValid" @submit.native.prevent @keydown.enter.native="next()">
               <v-text-field
                 v-model="form.username"
                 label="用户名"
@@ -49,7 +49,7 @@
 
         <v-window-item :value="3">
           <v-card-text>
-            <v-form ref="passwordForm" v-model="passwordValid" lazy-validation>
+            <v-form ref="passwordForm" v-model="passwordValid" @submit.native.prevent @keydown.enter.native="next()">
               <v-text-field
                 v-model="form.password"
                 label="密码"
@@ -67,7 +67,7 @@
 
         <v-window-item :value="4">
           <v-card-text>
-            <v-form ref="captchaForm" v-model="captchaValid" lazy-validation>
+            <v-form ref="captchaForm" v-model="captchaValid" @submit.native.prevent @keydown.enter.native="next()">
               <img :src="captcha_base64" style="width: 100%;">
               <!-- <v-img contain :src="captcha_base64" /> -->
               <v-text-field
@@ -120,12 +120,10 @@
         </v-window-item>
       </v-window>
 
-      <v-divider />
-
       <v-card-actions>
         <transition name="slide-y-reverse-transition">
           <v-btn
-            v-if="step <= 4"
+            v-if="!(step>4 || step==1)"
             outlined
             rounded
             color="primary"
@@ -136,18 +134,20 @@
         </transition>
 
         <v-spacer />
-
-        <v-btn
-          :loading="loading"
-          :disabled="!(emailValid && usernameValid && passwordValid && captchaValid)"
-          color="primary"
-          depressed
-          rounded
-          :to="step === steps ? '/' : ''"
-          @click="next()"
-        >
-          {{ step === steps ? "完成" : "下一步" }}
-        </v-btn>
+        <transition name="slide-y-reverse-transition">
+          <v-btn
+            v-if="!(step==5)"
+            :loading="loading"
+            :disabled="!currentValid"
+            color="primary"
+            depressed
+            rounded
+            :to="step === 6 ? '/' : ''"
+            @click="next()"
+          >
+            {{ step === 6 ? "完成" : "下一步" }}
+          </v-btn>
+        </transition>
       </v-card-actions>
     </v-card>
   </div>
@@ -164,7 +164,6 @@ export default {
       captcha_value: ''
     },
     step: 1,
-    steps: 6,
     loading: false,
     password_visible: false,
     captcha_base64: '',
@@ -174,18 +173,19 @@ export default {
     passwordValid: true,
     captchaValid: true,
     emailRules: [
-      v => !!v || '电子邮箱不能为空',
-      v => (v && /.+@.+\..+/.test(v)) || '电子邮箱无效'
+      v => !!v || '电子邮箱地址不能为空',
+      v => /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(v) || '无效的电子邮箱地址'
     ],
     passwordRules: [
       v => !!v || '密码不能为空',
-      v => (v && v.length >= 6) || '密码不少于 6 个字符'
+      v => /^\S*(?=\S{6,})(?=\S*\d)(?=\S*[A-Za-z])\S*$/.test(v) || '密码需要不少于六个字符, 必须包含字母和数字'
     ],
     nameRules: [
       v => !!v || '用户名不能为空'
     ],
     captchaRules: [
-      v => !!v || '验证码不能为空'
+      v => !!v || '验证码不能为空',
+      v => /^-?\d{0,4}$/.test(v) || '无效的验证码'
     ]
   }),
   async fetch () {
@@ -217,6 +217,15 @@ export default {
         case 5: return '正在注册'
         default: return '已注册'
       }
+    },
+    currentValid () {
+      switch (this.step) {
+        case 1: return this.emailValid
+        case 2: return this.usernameValid
+        case 3: return this.passwordValid
+        case 4: return this.captchaValid
+        default: return true
+      }
     }
   },
   methods: {
@@ -225,28 +234,10 @@ export default {
       this.$fetch()
     },
     next () {
-      if (this.step === 1) {
-        this.emailValid = this.$refs.emailForm.validate()
-        if (this.emailValid) {
-          this.step++
-        }
-      } else if (this.step === 2) {
-        this.usernameValid = this.$refs.nameForm.validate()
-        if (this.usernameValid) {
-          this.step++
-        }
-      } else if (this.step === 3) {
-        this.passwordValid = this.$refs.passwordForm.validate()
-        if (this.passwordValid) {
-          this.step++
-        }
-      } else if (this.step === 4) {
-        this.captchaValid = this.$refs.captchaForm.validate()
-        if (this.captchaValid) {
-          this.step++
-        }
+      if (this.step >= 1 && this.step <= 4) {
+        this.step++
       }
-      if (this.step === this.steps - 1) {
+      if (this.step === 5) {
         this.register()
       }
     },
@@ -260,7 +251,7 @@ export default {
         captcha_value: this.form.captcha_value
       }).then((res) => {
         if (res.status === 'success') {
-          this.step = this.steps
+          this.step = 6
         } else {
           this.$dialog.error({
             text: res.message,
