@@ -59,7 +59,7 @@
 
     <v-spacer />
 
-    <template v-if="!session">
+    <template v-if="!$auth.$state.loggedIn">
       <v-btn text to="/auth/login" rounded>
         登录
       </v-btn>
@@ -88,7 +88,7 @@
         <template #activator="{ on, attrs }">
           <v-btn icon>
             <v-avatar size="40px" v-bind="attrs" ripple v-on="on">
-              <v-img alt="Avatar" :src="userInfo.avatar" />
+              <v-img alt="Avatar" :src="$auth.user.avatar" />
             </v-avatar>
           </v-btn>
         </template>
@@ -96,41 +96,41 @@
           <v-list color="transparent">
             <v-list-item>
               <v-avatar size="48px" ripple>
-                <v-img alt="Avatar" :src="userInfo.avatar" />
+                <v-img alt="Avatar" :src="$auth.user.avatar" />
               </v-avatar>
             </v-list-item>
 
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title class="text-h6">
-                  {{ userInfo.name }}
+                  {{ $auth.user.name }}
                 </v-list-item-title>
                 <v-list-item-subtitle>
                   {{
-                    userInfo.email
+                    $auth.user.email
                   }}
                 </v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
             <v-container
-              v-if="userInfo.muted !== 0"
+              v-if="$auth.user.muted !== 0"
               class="appbar-alert"
               style="background-color: rgba(251, 140, 0)"
             >
               <v-icon color="white" size="20">
                 mdi-alert-minus-outline
               </v-icon>&nbsp;&nbsp; 你的帐户已被禁言，将在
-              {{ userInfo.muted }} 天后解除。
+              {{ $auth.user.muted }} 天后解除。
             </v-container>
             <v-container
-              v-if="userInfo.banned !== 0"
+              v-if="$auth.user.banned !== 0"
               class="appbar-alert"
               style="background-color: rgba(255, 109, 109)"
             >
               <v-icon color="white" size="20">
                 mdi-alert-octagon-outline
               </v-icon>&nbsp;&nbsp; 你的帐户已被封禁，将在
-              {{ userInfo.banned }} 天后解除。<a
+              {{ $auth.user.banned }} 天后解除。<a
                 style="caret-color: white !important"
                 class="text-color"
                 href="/help/rules"
@@ -139,7 +139,7 @@
           </v-list>
           <v-divider style="margin-top: -8px" />
           <v-list dense color="transparent">
-            <v-list-item link :to="'/users/' + userInfo.id">
+            <v-list-item link :to="'/users/' + $auth.user.id">
               <v-list-item-icon>
                 <v-icon>mdi-account-outline</v-icon>
               </v-list-item-icon>
@@ -147,7 +147,7 @@
                 <v-list-item-title>主页</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item link :to="'/users/' + userInfo.id + '/projects'">
+            <v-list-item link :to="'/users/' + $auth.user.id + '/projects'">
               <v-list-item-icon>
                 <v-icon>mdi-book-outline</v-icon>
               </v-list-item-icon>
@@ -155,7 +155,7 @@
                 <v-list-item-title>作品</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item link :to="'/users/' + userInfo.id + '/organizations'">
+            <v-list-item link :to="'/users/' + $auth.user.id + '/organizations'">
               <v-list-item-icon>
                 <v-icon>mdi-account-group-outline</v-icon>
               </v-list-item-icon>
@@ -163,7 +163,7 @@
                 <v-list-item-title>组织</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item link :to="'/users/' + userInfo.id + '/stars'">
+            <v-list-item link :to="'/users/' + $auth.user.id + '/stars'">
               <v-list-item-icon>
                 <v-icon>mdi-star-outline</v-icon>
               </v-list-item-icon>

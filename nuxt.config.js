@@ -79,10 +79,21 @@ module.exports = {
   axios: {
   },
   auth: {
+    redirect: {
+      logout: '/',
+      home: '/'
+
+    },
     strategies: {
       local: {
         token: {
-          property: 'token.accessToken'
+          property: 'data.session',
+          name: 'X-GitScratch-Session',
+          type: ''
+        },
+        user: {
+          property: 'data.data',
+          autoFetch: true
         },
         endpoints: {
           login: {
