@@ -1,6 +1,6 @@
 import colors from 'vuetify/lib/util/colors'
 const isDev = process.env.NODE_ENV !== 'production'
-const apiUrl = process.env.API_URL ? process.env.API_URL : '127.0.0.0:3000'
+const apiUrl = process.env.API_URL ? process.env.API_URL : '127.0.0.1:3000'
 console.log(apiUrl)
 module.exports = {
   components: true,
