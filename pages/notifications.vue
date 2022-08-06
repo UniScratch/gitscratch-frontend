@@ -1,6 +1,9 @@
 <template>
   <v-row>
     <v-col cols="12" xl="2" md="3" sm="4" style="padding-right: 20px;">
+      <p class="text-h4">
+        通知
+      </p>
       <v-list
         dense
         nav

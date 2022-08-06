@@ -54,7 +54,12 @@ module.exports = {
 
     // https://github.com/frenchrabbit/nuxt-precompress
     'nuxt-precompress',
-    'vuetify-dialog/nuxt'
+    'vuetify-dialog/nuxt',
+    'cookie-universal-nuxt',
+    '@nuxtjs/axios',
+    // https://dev.auth.nuxtjs.org
+    '@nuxtjs/auth-next'
+
   ],
 
   plugins: [
@@ -71,6 +76,32 @@ module.exports = {
     '@nuxtjs/eslint-module'
 
   ],
+  axios: {
+  },
+  auth: {
+    strategies: {
+      local: {
+        token: {
+          property: 'token.accessToken'
+        },
+        endpoints: {
+          login: {
+            url: apiUrl + '/auth/login',
+            method: 'post'
+          },
+          logout: {
+            url: apiUrl + '/auth/logout',
+            method: 'post'
+          },
+          user: {
+            url: apiUrl + '/auth/session',
+            method: 'get'
+          }
+        }
+      }
+    }
+    // Options
+  },
 
   vuetify: {
     customVariables: ['~/assets/styles/variables.scss'],
@@ -156,7 +187,9 @@ module.exports = {
     mode: 'out-in'
   },
   router: {
-    prefetchLinks: false
+    prefetchLinks: false,
+    middleware: ['auth']
+
   }
 
 }

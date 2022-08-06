@@ -12,7 +12,18 @@
 </template>
 <script>
 export default {
-  transition: 'slide-top'
+  transition: 'slide-top',
+  fetch () {
+    // console.log('fetch')
+    // console.log(this.$store.state.auth.userInfo.id)
+  },
+  mounted () {
+    // console.log('mount')
+    // console.log(this.$store.state.auth.userInfo.id)
+    console.log(this.$http.getBaseURL())
+    // const session = this.$cookies.get('session')
+    // this.$auth_updateSession(session)
+  }
 }
 </script>
 

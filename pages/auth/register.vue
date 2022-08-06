@@ -277,6 +277,8 @@ export default {
         this.loading = false
       })
     }
-  }
+  },
+  auth: false
+
 }
 </script>

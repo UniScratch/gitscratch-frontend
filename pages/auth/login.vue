@@ -66,26 +66,41 @@ export default {
   methods: {
     login () {
       if (this.valid) {
-        this.loading = true
-        this.$http.$post('/auth/login', {
-          email: this.form.email,
-          password: this.form.password
-        }).then((res) => { // 获取session
-          if (res.status === 'success') {
-            const session = res.data.session
-            this.$auth_updateSession(session)
-            this.loading = false
-            this.$router.push('/')
-          } else {
-            this.loading = false
-            this.$dialog.error({
-              text: res.message,
-              title: '登录失败'
-            })
-          }
-        })
+        this.$auth
+          .loginWith('local', {
+            data: {
+              email: this.form.email,
+              password: this.form.password
+            }
+          })
+          .catch((err) => {
+          // eslint-disable-next-line no-console
+            console.log(err)
+            const responseData = err.response?.data
+            console.log(responseData?.error ?? responseData)
+          })
+        // this.loading = true
+        // this.$http.$post('/auth/login', {
+        //   email: this.form.email,
+        //   password: this.form.password
+        // }).then((res) => { // 获取session
+        //   if (res.status === 'success') {
+        //     const session = res.data.session
+        //     this.$auth_updateSession(session)
+        //     this.loading = false
+        //     this.$router.push('/')
+        //   } else {
+        //     this.loading = false
+        //     this.$dialog.error({
+        //       text: res.message,
+        //       title: '登录失败'
+        //     })
+        //   }
+        // })
       }
     }
-  }
+  },
+  auth: false
+
 }
 </script>
