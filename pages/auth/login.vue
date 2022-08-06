@@ -66,6 +66,7 @@ export default {
   methods: {
     login () {
       if (this.valid) {
+        this.loading = true
         this.$auth
           .loginWith('local', {
             data: {
@@ -74,11 +75,11 @@ export default {
             }
           })
           .catch((err) => {
-          // eslint-disable-next-line no-console
             console.log(err)
             const responseData = err.response?.data
             console.log(responseData?.error ?? responseData)
           })
+        this.loading = false
         // this.loading = true
         // this.$http.$post('/auth/login', {
         //   email: this.form.email,

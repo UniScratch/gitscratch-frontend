@@ -59,7 +59,7 @@
 
     <v-spacer />
 
-    <template v-if="!$auth.$state.loggedIn">
+    <template v-if="!$auth.loggedIn">
       <v-btn text to="/auth/login" rounded>
         登录
       </v-btn>

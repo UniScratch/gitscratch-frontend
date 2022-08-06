@@ -79,6 +79,7 @@ module.exports = {
   axios: {
   },
   auth: {
+    rewriteRedirects: false,
     redirect: {
       logout: '/',
       home: '/'
