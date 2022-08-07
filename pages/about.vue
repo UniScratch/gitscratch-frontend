@@ -48,7 +48,7 @@
     <p>
       <template v-for="(item, key) in 贡献者">
         {{ key }}：
-        <a v-for="(childItem, childKey) in item" :key="childKey" target="_blank" :href="'https://github.com/' + childItem">
+        <a v-for="(childItem, childKey) in item" :key="childKey" target="_blank" :href="贡献者信息[childItem]">
           @{{ childItem }}
         </a>
         <br :key="key">
@@ -114,8 +114,19 @@ export default {
       项目提出: ['Dispure', 'HydroGest'],
       金主: [],
       主要贡献者: ['Dispure', 'HydroGest', 'TimFang4162', 'wrj2009'],
+      吉祥物设计: ['小孟', '小怡'],
       云服务支持: ['Someone-Yang'],
       其他贡献者: ['frank-782']
+    },
+    贡献者信息: {
+      Dispure: 'https://github.com/Dispure',
+      HydroGest: 'https://github.com/HydroGest',
+      TimFang4162: 'https://github.com/TimFang4162',
+      小孟: null,
+      小怡: null,
+      wrj2009: 'https://github.com/wrj2009',
+      'Someone-Yang': 'https://github.com/Someone-Yang',
+      'frank-782': 'https://github.com/frank-782'
     },
     meta: require('static/meta.json'),
     overlay: false,
@@ -169,7 +180,8 @@ export default {
       this.overlay = false
       this.code = ''
     }
-  }
+  },
+  auth: false
   // unmounted () {
   //   document.removeEventListener('keydown', keydown)
   // }

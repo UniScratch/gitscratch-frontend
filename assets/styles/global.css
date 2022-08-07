@@ -106,13 +106,12 @@ code {
     color: transparent;
     transition: color 0.3s ease;
     transition-delay: 0s;
-    text-decoration: none;
     cursor: pointer;
 }
 
 .hide-del:hover {
     color: var(--text);
-    transition-delay: 0.5s;
+    transition-delay: 0.3s;
 }
 
 .diff-addition {
