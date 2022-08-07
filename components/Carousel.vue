@@ -2,16 +2,17 @@
   <v-card>
     <v-window v-model="onboarding">
       <v-window-item v-for="n in length" :key="`card-${n}`">
-        <v-img src="/GitScratch-carousel-21-9.svg" eager contain class="hidden-sm-and-down" />
-        <v-img src="/GitScratch-carousel-16-9.svg" eager contain class="hidden-md-and-up" />
+        <!-- <v-img src="/GitScratch-carousel-21-9.svg" eager contain class="hidden-sm-and-down" />
+        <v-img src="/GitScratch-carousel-16-9.svg" eager contain class="hidden-md-and-up" /> -->
+        <v-img src="/Banner.jpg" lazy-src="/Banner_lazy.jpg" eager contain />
         <div class="banner-text">
-          <v-list-item-title class="banner-text-title">
+          <!-- <v-list-item-title class="banner-text-title">
             GitScratch
           </v-list-item-title>
           <v-list-item-subtitle class="banner-text-subtitle">
             Endless Possiblities with GitScratch. <br>
             与 GitScratch 共赴诗和远方。
-          </v-list-item-subtitle>
+          </v-list-item-subtitle> -->
         </div>
       </v-window-item>
     </v-window>
