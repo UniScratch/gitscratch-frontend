@@ -16,6 +16,7 @@ Material Design 风格的 Scratch 社区前端项目，由 GitScratch 社区开�
 金主：:trollface:  
 主要贡献者：[@Dispure](https://github.com/Dispure) [@HydroGest](https://github.com/HydroGest) [@TimFang4162](https://github.com/TimFang4162) [@wrj2009](https://github.com/wrj2009)  
 云服务支持：[@Someone-Yang](https://github.com/Someone-Yang)  
+吉祥物设计：小怡 小孟  
 其他贡献者：[@frank-782](https://github.com/frank-782)  
 还有，你。  
 
