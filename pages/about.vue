@@ -180,8 +180,7 @@ export default {
       this.overlay = false
       this.code = ''
     }
-  },
-  auth: false
+  }
   // unmounted () {
   //   document.removeEventListener('keydown', keydown)
   // }

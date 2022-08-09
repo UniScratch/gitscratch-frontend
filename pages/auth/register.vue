@@ -189,7 +189,7 @@ export default {
     ]
   }),
   async fetch () {
-    await this.$http.$get('/auth/captcha').then((res) => {
+    await this.$axios.$get('/auth/captcha').then((res) => {
       if (res.status === 'success') {
         this.form.captcha_uuid = res.data.captcha_uuid
         this.captcha_base64 = res.data.captcha_base64
@@ -241,44 +241,29 @@ export default {
         this.register()
       }
     },
-    register () {
+    async register () {
       this.loading = true
-      this.$http.$post('/auth/register', {
+      const regRes = await this.$axios.$post('/auth/register', {
         username: this.form.username,
         password: this.form.password,
         email: this.form.email,
         captcha_uuid: this.form.captcha_uuid,
         captcha_value: this.form.captcha_value
-      }).then((res) => {
-        if (res.status === 'success') {
-          this.$http.$post('/auth/login', {
-            email: this.form.email,
-            password: this.form.password
-          }).then((res) => { // 获取session
-            if (res.status === 'success') {
-              const session = res.data.session
-              this.$auth_updateSession(session)
-            } else {
-              this.$dialog.error({
-                text: res.message,
-                title: '注册成功，登录失败'
-              })
-              this.$router.push('/')
+      })
+      if (regRes) {
+        this.$auth
+          .loginWith('local', {
+            data: {
+              email: this.form.email,
+              password: this.form.password
             }
           })
-          this.step = 6
-        } else {
-          this.$dialog.error({
-            text: res.message,
-            title: '注册失败'
-          })
-          this.step--
-        }
-        this.loading = false
-      })
+      } else {
+        this.step--
+      }
+      this.loading = false
     }
-  },
-  auth: false
+  }
 
 }
 </script>

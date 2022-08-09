@@ -12,17 +12,10 @@
 </template>
 <script>
 export default {
+  name: 'Default',
   transition: 'slide-top',
-  fetch () {
-    // console.log('fetch')
-    // console.log(this.$store.state.auth.userInfo.id)
-  },
   mounted () {
-    // console.log('mount')
-    // console.log(this.$store.state.auth.userInfo.id)
-    console.log(this.$http.getBaseURL())
-    // const session = this.$cookies.get('session')
-    // this.$auth_updateSession(session)
+    console.log('Api url:', this.$axios.defaults.baseURL)
   }
 }
 </script>

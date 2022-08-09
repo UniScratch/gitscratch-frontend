@@ -47,7 +47,7 @@
         <p class="text-body">
           {{ data.bio }}
         </p>
-        <v-btn v-if="data.id === userInfo.id" block depressed rounded>
+        <v-btn v-if="data.id === $auth.user.id" block depressed rounded>
           Edit Profile
         </v-btn>
         <v-btn v-else block color="primary" depressed rounded>
@@ -232,7 +232,7 @@ export default {
     ]
   }),
   async fetch () {
-    await this.$http.$get('/users/' + this.$route.params.id + '/info').then((res) => {
+    await this.$axios.$get('/users/' + this.$route.params.id + '/info').then((res) => {
       if (res.status === 'success') {
         this.data = res.data
       } else {
@@ -244,11 +244,6 @@ export default {
   head () {
     return {
       title: this.data.name
-    }
-  },
-  computed: {
-    userInfo () {
-      return this.$store.state.auth.userInfo
     }
   },
   methods: {

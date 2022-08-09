@@ -175,6 +175,7 @@
 <script>
 const marked = require('marked')
 export default {
+  middleware: 'auth',
   data: () => ({
     model: 0,
     data: {
@@ -334,7 +335,7 @@ export default {
 
   }),
   async fetch () {
-    // this.data = await this.$http.$get('/notifications')
+    // this.data = await this.$axios.$get('/notifications')
   },
   head () {
     return {
@@ -487,6 +488,7 @@ export default {
       return ('几秒前')
     }
   }
+
 }
 </script>
 <style>

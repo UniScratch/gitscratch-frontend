@@ -88,6 +88,7 @@
 
 <script>
 export default {
+  middleware: 'auth',
   data: () => ({
     settingsTheme: 'light',
     tab: 0
@@ -126,5 +127,6 @@ export default {
       }
     }
   }
+
 }
 </script>

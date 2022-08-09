@@ -223,15 +223,6 @@ export default {
     isAdmin: true,
     searchKeyword: ''
   }),
-
-  computed: {
-    session () {
-      return this.$store.state.auth.session
-    },
-    userInfo () {
-      return this.$store.state.auth.userInfo
-    }
-  },
   mounted () {
 
   },
@@ -239,9 +230,8 @@ export default {
     toggle_theme () {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark
     },
-    logout () {
-      this.$store.commit('auth/logout')
-      this.$router.push('/')
+    async logout () {
+      await this.$auth.logout(/* .... */)
     },
     search () {
       if (this.searchKeyword.trim().length > 0) {

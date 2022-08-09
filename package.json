@@ -13,12 +13,10 @@
     "lint": "eslint . --ignore-path .gitignore --ext .js,.vue --fix"
   },
   "dependencies": {
-    "@nuxt/http": "^0.6.4",
     "@nuxtjs/auth-next": "^5.0.0-1648802546.c9880dc",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/vuetify": "git+https://github.com/UniScratch/vuetify-module.git#master",
     "@nuxtjs/webpack-profile": "^0.1.0",
-    "cookie-universal-nuxt": "^2.2.2",
     "highlight.js": "^11.6.0",
     "marked": "^4.0.18",
     "nuxt": "^2.15.8",

@@ -74,14 +74,9 @@ export default {
               password: this.form.password
             }
           })
-          .catch((err) => {
-            console.log(err)
-            const responseData = err.response?.data
-            console.log(responseData?.error ?? responseData)
-          })
         this.loading = false
         // this.loading = true
-        // this.$http.$post('/auth/login', {
+        // this.$axios.$post('/auth/login', {
         //   email: this.form.email,
         //   password: this.form.password
         // }).then((res) => { // 获取session
@@ -100,8 +95,7 @@ export default {
         // })
       }
     }
-  },
-  auth: false
+  }
 
 }
 </script>

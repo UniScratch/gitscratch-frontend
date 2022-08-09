@@ -4,15 +4,33 @@
       <v-window-item v-for="n in length" :key="`card-${n}`">
         <!-- <v-img src="/GitScratch-carousel-21-9.svg" eager contain class="hidden-sm-and-down" />
         <v-img src="/GitScratch-carousel-16-9.svg" eager contain class="hidden-md-and-up" /> -->
-        <v-img src="/Banner.jpg" lazy-src="/Banner_lazy.jpg" eager contain />
+        <v-img
+          :src="$vuetify.breakpoint.mdAndUp ? '/Banner_21_9.png' : '/Banner_16_9.png'"
+          :lazy-src="$vuetify.breakpoint.mdAndUp ? '/Banner_21_9_lazy.jpg' : '/Banner_16_9_lazy.jpg'"
+          contain
+          :aspect-ratio="$vuetify.breakpoint.mdAndUp ? 21/9 : 16/9"
+        >
+          <template #placeholder>
+            <v-row
+              class="fill-height ma-0"
+              align="center"
+              justify="center"
+            >
+              <v-progress-circular
+                indeterminate
+                color="grey lighten-5"
+              />
+            </v-row>
+          </template>
+        </v-img>
         <div class="banner-text">
-          <!-- <v-list-item-title class="banner-text-title">
-            GitScratch
+          <v-list-item-title class="text-h5">
+            「胡梨：喵喵喵？」
           </v-list-item-title>
-          <v-list-item-subtitle class="banner-text-subtitle">
+          <v-list-item-subtitle>
             Endless Possiblities with GitScratch. <br>
             与 GitScratch 共赴诗和远方。
-          </v-list-item-subtitle> -->
+          </v-list-item-subtitle>
         </div>
       </v-window-item>
     </v-window>

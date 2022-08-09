@@ -36,7 +36,7 @@ export default {
     data: {}
   }),
   mounted () {
-    this.$http.$get('/users/' + this.$store.state.auth.userInfo.id + '/info').then((res) => { // 获取用户信息
+    this.$axios.$get('users/' + this.$auth.user.id + '/info').then((res) => { // 获取用户信息
       if (res.status === 'success') {
         // console.log(res.data)
         this.data = res.data

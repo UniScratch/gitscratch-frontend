@@ -49,13 +49,9 @@ module.exports = {
 
   // https://nuxtjs.org/api/configuration-modules
   modules: [
-    // https://http.nuxtjs.org/getting-started/setup
-    '@nuxt/http',
-
     // https://github.com/frenchrabbit/nuxt-precompress
     'nuxt-precompress',
     'vuetify-dialog/nuxt',
-    'cookie-universal-nuxt',
     '@nuxtjs/axios',
     // https://dev.auth.nuxtjs.org
     '@nuxtjs/auth-next'
@@ -64,8 +60,7 @@ module.exports = {
 
   plugins: [
     '~/plugins/dateFormatter',
-    '~/plugins/http',
-    '~/plugins/auth'
+    '~/plugins/http'
 
   ],
   buildModules: [
@@ -77,10 +72,12 @@ module.exports = {
 
   ],
   axios: {
+    baseURL: apiUrl
   },
   auth: {
     rewriteRedirects: false,
     redirect: {
+      login: '/auth/login',
       logout: '/',
       home: '/'
 
@@ -98,15 +95,15 @@ module.exports = {
         },
         endpoints: {
           login: {
-            url: apiUrl + '/auth/login',
+            url: '/auth/login',
             method: 'post'
           },
           logout: {
-            url: apiUrl + '/auth/logout',
+            url: '/auth/logout',
             method: 'post'
           },
           user: {
-            url: apiUrl + '/auth/session',
+            url: '/auth/session',
             method: 'get'
           }
         }
@@ -143,14 +140,19 @@ module.exports = {
   },
   vuetifyDialog: {
     property: '$dialog',
-    confirm: {}
+    confirm: {
+      icon: false
+    },
+    warning: {
+      icon: false
+    },
+    error: {
+      icon: false
+    },
+    prompt: {
+      icon: false
+    }
   },
-  // https://http.nuxtjs.org/
-  http: {
-    // baseURL: 'https://mock.apifox.cn/m1/927078-0-default'
-    baseURL: apiUrl
-  },
-
   // https://github.com/nuxt-community/eslint-module
   eslint: {
     fix: true,
@@ -199,9 +201,7 @@ module.exports = {
     mode: 'out-in'
   },
   router: {
-    prefetchLinks: false,
-    middleware: ['auth']
-
+    prefetchLinks: false
   }
 
 }

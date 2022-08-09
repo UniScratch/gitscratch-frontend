@@ -8,6 +8,7 @@
 </template>
 <script>
 export default {
+  name: 'Editor',
   transition: 'slide-top'
 }
 </script>

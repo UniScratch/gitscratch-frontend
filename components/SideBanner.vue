@@ -54,15 +54,26 @@ export default {
   }),
 
   methods: {
-    sign () {
+    async sign () {
       this.dialogLoading = true
-      this.$http.$get('https://v1.hitokoto.cn/').then((res) => {
-        this.dialogLoading = false
-        this.$dialog.info({
-          text: res.hitokoto,
-          title: '签到成功'
+      const hitokoto = await this.$axios.$get('https://v1.hitokoto.cn/')
+      // console.log(hitokoto)
+      if (hitokoto) {
+        const result = await this.$dialog.info({
+          text: hitokoto.hitokoto,
+          title: '签到成功',
+          actions: [{
+            text: '查看', key: true
+          },
+          {
+            text: '关闭', color: 'blue', key: false
+          }]
         })
-      })
+        if (result === true) {
+          window.open('https://hitokoto.cn/?uuid=' + hitokoto.uuid, '_blank')
+        }
+      }
+      this.dialogLoading = false
     }
   }
 }

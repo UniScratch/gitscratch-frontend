@@ -75,6 +75,7 @@
 </template>
 <script>
 export default {
+  middleware: 'auth',
 
   data: () => ({
     model: 0
@@ -86,5 +87,6 @@ export default {
   },
   methods: {
   }
+
 }
 </script>

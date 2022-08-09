@@ -1,25 +1,25 @@
 <template>
   <v-row>
     <v-col cols="12" xl="2" md="3" sm="4" style="padding-right: 20px;">
-      <div v-if="session">
+      <div v-if="$auth.loggedIn">
         <div style="text-align: center;">
           <v-avatar style="width: 100%; height: auto; max-width: 100px;">
-            <v-img :src="userInfo.avatar" />
+            <v-img :src="$auth.user.avatar" />
           </v-avatar>
           <br><br>
           <p class="text-h5">
-            {{ userInfo.name }}
+            {{ $auth.user.name }}
           </p>
         </div>
 
         <v-list>
           <v-list-item-group>
-            <v-list-item link :to="'/users/' + userInfo.name + '/stars/topics'">
+            <v-list-item link :to="'/users/' + $auth.user.name + '/stars/topics'">
               <v-list-item-content>
                 <v-list-item-title>{{ starredTopics }} 个星标话题</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item link :to="'/users/' + userInfo.name + '/stars'">
+            <v-list-item link :to="'/users/' + $auth.user.name + '/stars'">
               <v-list-item-content>
                 <v-list-item-title>{{ starredProjects }} 个星标作品</v-list-item-title>
               </v-list-item-content>
@@ -65,7 +65,7 @@
         </v-window-item>
         <!-- 发现 -->
         <v-window-item>
-          <p v-if="session" class="text-h6">
+          <p v-if="$auth.loggedIn" class="text-h6">
             以下是我们根据你的兴趣找到的内容……
           </p>
           <p v-else>
@@ -116,14 +116,6 @@ export default {
     }
     return {
       title: '发现'
-    }
-  },
-  computed: {
-    session () {
-      return this.$store.state.auth.session
-    },
-    userInfo () {
-      return this.$store.state.auth.userInfo
     }
   },
   methods: {

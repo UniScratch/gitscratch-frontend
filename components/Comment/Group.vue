@@ -53,7 +53,7 @@ export default {
     totalPage: null
   }),
   async fetch () {
-    await this.$http.$get(this.$route.path + '/comment?pageId=' + this.page).then((res) => {
+    await this.$axios.$get(this.$route.path + '/comment?pageId=' + this.page).then((res) => {
       // console.log(res.data)
       this.data = res.data
       this.totalPage = res.totalPage
