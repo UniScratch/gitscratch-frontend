@@ -47,8 +47,8 @@
         <p class="text-body">
           {{ data.bio }}
         </p>
-        <v-btn v-if="data.id === $auth.user.id" block depressed rounded>
-          Edit Profile
+        <v-btn v-if="data.id === $auth.user.id" to="/settings#profile" block depressed rounded>
+          编辑个人资料
         </v-btn>
         <v-btn v-else block color="primary" depressed rounded>
           <v-icon>mdi-plus</v-icon>
@@ -174,9 +174,27 @@
           <v-card>
             <v-card-title class="text-h5">
               <span>README</span><span class="grey-text">.md</span>
+              <v-spacer />
+              <v-btn v-if="data.id === $auth.user.id" icon @click="readmeIsEditing = !readmeIsEditing">
+                <v-icon>mdi-pencil-outline</v-icon>
+              </v-btn>
             </v-card-title>
             <v-divider />
-            <MarkdownRender v-if="!dataIsLoading" style="padding: 0 16px 8px 16px;" :content="data.readme" />
+            <template v-if="!dataIsLoading">
+              <MarkdownRender
+                v-if="!readmeIsEditing"
+                :content="data.readme"
+                style="padding: 0 16px 8px 16px;"
+              />
+              <MarkdownEditor
+                v-else
+                :content="data.readme"
+                textarea-label="README"
+                textarea-placeholder="介绍你自己"
+                action-icon=""
+                action-text="保存"
+              />
+            </template>
             <v-skeleton-loader
               v-else
               style="padding: 0 16px;"
@@ -219,6 +237,7 @@ export default {
     dataIsLoading: true,
     data: {
     },
+    readmeIsEditing: false,
     toggleTab: 0,
     userNameIsHover: false,
     isLogin: true,
