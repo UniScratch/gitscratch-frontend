@@ -51,7 +51,9 @@ module.exports = {
   modules: [
     // https://github.com/frenchrabbit/nuxt-precompress
     'nuxt-precompress',
+    // https://github.com/UniScratch/vuetify-dialog
     'vuetify-dialog/nuxt',
+    // https://axios.nuxtjs.org/
     '@nuxtjs/axios',
     // https://dev.auth.nuxtjs.org
     '@nuxtjs/auth-next'

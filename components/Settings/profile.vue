@@ -4,29 +4,32 @@
       账户
     </p>
     <v-text-field
+      v-model="data.name"
       label="用户名"
-      :value="data.name"
       hint="在 GitScratch 中显示的用户名。"
       persistent-hint
     />
     <v-text-field
+      v-model="data.email"
       label="电子邮箱"
-      :value="data.email"
       hint="这个电子邮箱将用于登录 GitScratch。"
       persistent-hint
     />
     <v-text-field
+      v-model="data.bio"
       label="介绍"
-      :value="data.bio"
       hint="使用一句话介绍你自己。"
       persistent-hint
     />
     <v-text-field
+      v-model="data.website"
       label="URL"
-      :value="data.website"
       hint="你的个人网站或者博客。"
       persistent-hint
     />
+    <v-btn text @click="save()">
+      保存
+    </v-btn>
   </div>
 </template>
 
@@ -35,18 +38,27 @@ export default {
   data: () => ({
     data: {}
   }),
-  mounted () {
-    this.$axios.$get('users/' + this.$auth.user.id + '/info').then((res) => { // 获取用户信息
-      if (res.status === 'success') {
-        // console.log(res.data)
-        this.data = res.data
-      } else {
-        this.$dialog.error({
-          text: res.message,
-          title: '登录失效'
+  async mounted () {
+    const userInfo = await this.$axios.$get('users/' + this.$auth.user.id + '/info')
+    if (userInfo !== false) {
+      this.data = userInfo.data
+    }
+  },
+  methods: {
+    async save () {
+      console.log(this.data)
+      const userInfo = await this.$axios.$post('users/' + this.$auth.user.id + '/info', {
+        name: this.data.name,
+        email: this.data.email,
+        bio: this.data.bio,
+        website: this.data.website
+      })
+      if (userInfo !== false) {
+        this.$dialog.message.info('保存成功', {
+          position: 'bottom'
         })
       }
-    })
+    }
   }
 }
 </script>

@@ -10,8 +10,9 @@ export default function ({ $axios, $dialog, error: nuxtError }) {
         errorMsg += `<br>信息: ${error.response.data.message}`
       }
     }
-    console.log(error.response)
-    console.log(error)
+    // console.log(error.response)
+    // console.log(error.request)
+    // console.log(error)
     $dialog.notify.error(errorMsg, {
       position: 'bottom-left',
       timeout: 0
