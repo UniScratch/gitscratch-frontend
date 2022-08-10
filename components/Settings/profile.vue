@@ -3,6 +3,9 @@
     <p class="text-h5">
       账户
     </p>
+    <p class="text-h6">
+      个人资料
+    </p>
     <v-text-field
       v-model="data.name"
       label="用户名"
@@ -29,6 +32,21 @@
     />
     <v-btn text @click="save()">
       保存
+    </v-btn>
+    <p class="text-h6">
+      安全
+    </p>
+    <v-btn text>
+      修改密码
+    </v-btn>
+    <v-btn plain>
+      忘记密码
+    </v-btn>
+    <p class="text-h6">
+      危险区域
+    </p>
+    <v-btn text color="red">
+      删除账号
     </v-btn>
   </div>
 </template>
