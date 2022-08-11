@@ -74,6 +74,7 @@
         rounded
         depressed
         color="primary"
+        @click="$emit('submit', markdown)"
       >
         <v-icon v-if="actionIcon" left>
           {{ actionIcon }}
@@ -108,11 +109,18 @@ export default {
       default: ''
     }
   },
+
   data: () => ({
     tab: 0,
     markdown: '',
     randomId: 0
   }),
+  watch: {
+    markdown () {
+      // console.log(this.markdown)
+      this.$emit('change', this.markdown)
+    }
+  },
   beforeMount () {
     this.markdown = this.content
     this.randomId = 'markdownInput' + Date.now() // 防止id重复

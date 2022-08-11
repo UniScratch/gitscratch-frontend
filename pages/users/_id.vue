@@ -175,7 +175,7 @@
             <v-card-title class="text-h5">
               <span>README</span><span class="grey-text">.md</span>
               <v-spacer />
-              <v-btn v-if="data.id === $auth.user.id" icon @click="readmeIsEditing = !readmeIsEditing">
+              <v-btn v-if="data.id === $auth.user.id" icon @click="readmeOpenEdit">
                 <v-icon>mdi-pencil-outline</v-icon>
               </v-btn>
             </v-card-title>
@@ -193,6 +193,8 @@
                 textarea-placeholder="介绍你自己"
                 action-icon=""
                 action-text="保存"
+                @submit="readmeSubmit"
+                @change="readmeChange"
               />
             </template>
             <v-skeleton-loader
@@ -238,6 +240,7 @@ export default {
     data: {
     },
     readmeIsEditing: false,
+    readmeEdit: '',
     toggleTab: 0,
     userNameIsHover: false,
     isLogin: true,
@@ -279,6 +282,51 @@ export default {
           this.reportReason = ''
         }, 1000)
       }
+    },
+    async readmeOpenEdit () {
+      if (this.readmeIsEditing) {
+        if (this.readmeEdit === this.data.readme) {
+          this.readmeIsEditing = false
+        } else {
+          const confirm = await this.$dialog.confirm({
+            text: '编辑内容已更改，是否保存？',
+            title: '提示',
+            actions: [{
+              text: '返回编辑', key: 3
+            }, {
+              text: '不保存', key: 2
+            }, {
+              text: '保存', color: 'blue', key: 1
+            }]
+          })
+          if (confirm === 1) {
+            this.readmeSubmit(this.readmeEdit)
+          } else if (confirm === 2) {
+            this.readmeIsEditing = false
+          } else {
+            this.readmeIsEditing = true
+          }
+        }
+      } else {
+        this.readmeEdit = this.data.readme
+        this.readmeIsEditing = true
+      }
+    },
+    async readmeSubmit (n) {
+      console.log(n)
+      const userInfo = await this.$axios.$post('users/' + this.$auth.user.id + '/info', {
+        readme: n
+      })
+      if (userInfo !== false) {
+        this.$dialog.message.info('保存成功', {
+          position: 'bottom'
+        })
+        this.data.readme = n
+        this.readmeIsEditing = false
+      }
+    },
+    readmeChange (n) {
+      this.readmeEdit = n
     }
   }
 }
