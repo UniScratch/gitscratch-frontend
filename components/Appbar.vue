@@ -84,7 +84,7 @@
         </template>
         <span>创建</span>
       </v-tooltip>
-      <v-menu bottom offset-y transition="slide-y-transition">
+      <v-menu bottom offset-y transition="slide-y-transition" style="max-height: 90%;">
         <template #activator="{ on, attrs }">
           <v-btn icon>
             <v-avatar size="40px" v-bind="attrs" ripple v-on="on">
