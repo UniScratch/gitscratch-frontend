@@ -10,37 +10,37 @@
       </div>
       <v-spacer />
       <div v-show="tab === 0">
-        <v-btn icon plain small>
+        <v-btn icon plain small @click="header()">
           <v-icon>mdi-format-header-pound</v-icon>
         </v-btn>
-        <v-btn icon plain small>
+        <v-btn icon plain small @click="bold()">
           <v-icon>mdi-format-bold</v-icon>
         </v-btn>
-        <v-btn icon plain small>
+        <v-btn icon plain small @click="italic()">
           <v-icon>mdi-format-italic</v-icon>
         </v-btn>
-        <v-btn icon plain small>
+        <v-btn icon plain small @click="image()">
           <v-icon>mdi-image-outline</v-icon>
         </v-btn>
-        <v-btn icon plain small>
+        <v-btn icon plain small @click="quote()">
           <v-icon>mdi-format-quote-open</v-icon>
         </v-btn>
-        <v-btn icon plain small>
+        <v-btn icon plain small @click="code()">
           <v-icon>mdi-code-tags</v-icon>
         </v-btn>
-        <v-btn icon plain small>
+        <v-btn icon plain small @click="link()">
           <v-icon>mdi-link-variant</v-icon>
         </v-btn>
-        <v-btn icon plain small>
+        <v-btn icon plain small @click="unorderedList()">
           <v-icon>mdi-format-list-bulleted</v-icon>
         </v-btn>
-        <v-btn icon plain small>
+        <v-btn icon plain small @click="orderedList()">
           <v-icon>mdi-format-list-numbered</v-icon>
         </v-btn>
-        <v-btn icon plain small>
+        <v-btn icon plain small @click="checkbox()">
           <v-icon>mdi-checkbox-marked-outline</v-icon>
         </v-btn>
-        <v-btn icon plain small>
+        <v-btn icon plain small @click="at()">
           <v-icon>mdi-at</v-icon>
         </v-btn>
       </div>
@@ -48,15 +48,17 @@
 
     <v-card-text v-show="tab === 0" style="padding-bottom: 0px;">
       <v-textarea
+        :id="randomId"
         v-model="markdown"
         outlined
         :label="textareaLabel"
         auto-grow
         :placeholder="textareaPlaceholder"
+
         rows="3"
       />
     </v-card-text>
-    <div v-show="tab === 1" style="padding:0 16px;">
+    <div v-if="tab === 1" style="padding:0 16px;">
       <MarkdownRender :content="markdown" />
     </div>
     <v-card-actions style="padding-top: 0px;">
@@ -108,12 +110,171 @@ export default {
   },
   data: () => ({
     tab: 0,
-    markdown: ''
+    markdown: '',
+    randomId: 0
   }),
-  mounted () {
+  beforeMount () {
     this.markdown = this.content
+    this.randomId = 'markdownInput' + Date.now() // 防止id重复
+  },
+  mounted () {
   },
   methods: {
+    getFocusPosition () {
+      const textarea = document.getElementById(this.randomId)
+      return ([textarea.selectionStart, textarea.selectionEnd])
+    },
+    focus (position) {
+      // console.log(position[0], position[1])
+      const textarea = document.getElementById(this.randomId)
+      this.$nextTick(() => {
+        textarea.focus()
+        textarea.setSelectionRange(position[0], position[1])
+      })
+    },
+    header () {
+      const pos = this.getFocusPosition()
+      const lineStart = this.markdown.lastIndexOf('\n', pos[1] - 1) + 1
+      const line = this.markdown.substring(lineStart, pos[1])
+      if (line.match(/^#+ /)) {
+        this.markdown = this.markdown.substring(0, lineStart) + line.replace(/^#+ /, '') + this.markdown.substring(pos[1])
+      } else {
+        this.markdown = this.markdown.substring(0, lineStart) + '### ' + this.markdown.substring(lineStart)
+      }
+    },
+    bold () {
+      const pos = this.getFocusPosition()
+      if (pos[0] === pos[1]) {
+        this.markdown = this.markdown.slice(0, pos[0]) + '****' + this.markdown.slice(pos[0], this.markdown.length)
+        this.focus([pos[0] + 2, pos[1] + 2])
+      } else if ((this.markdown.slice(pos[0] - 2, pos[0]) === '**' && this.markdown.slice(pos[1], pos[1] + 2) === '**') || (this.markdown.slice(pos[0] - 2, pos[0]) === '__' && this.markdown.slice(pos[1], pos[1] + 2) === '__')) {
+        this.markdown = this.markdown.slice(0, pos[0] - 2) + this.markdown.slice(pos[0], pos[1]) + this.markdown.slice(pos[1] + 2)
+        this.focus([pos[0] - 2, pos[1] - 2])
+      } else {
+        this.markdown = this.markdown.slice(0, pos[0]) + '**' + this.markdown.slice(pos[0], pos[1]) + '**' + this.markdown.slice(pos[1])
+        this.focus([pos[0] + 2, pos[1] + 2])
+      }
+    },
+    italic () {
+      const pos = this.getFocusPosition()
+      if (pos[0] === pos[1]) {
+        this.markdown = this.markdown.slice(0, pos[0]) + '**' + this.markdown.slice(pos[0], this.markdown.length)
+        this.focus([pos[0] + 1, pos[1] + 1])
+      } else if ((this.markdown.slice(pos[0] - 1, pos[0]) === '*' && this.markdown.slice(pos[1], pos[1] + 1) === '*') || (this.markdown.slice(pos[0] - 1, pos[0]) === '_' && this.markdown.slice(pos[1], pos[1] + 1) === '_')) {
+        this.markdown = this.markdown.slice(0, pos[0] - 1) + this.markdown.slice(pos[0], pos[1]) + this.markdown.slice(pos[1] + 1)
+        this.focus([pos[0] - 1, pos[1] - 1])
+      } else {
+        this.markdown = this.markdown.slice(0, pos[0]) + '*' + this.markdown.slice(pos[0], pos[1]) + '*' + this.markdown.slice(pos[1])
+        this.focus([pos[0] + 1, pos[1] + 1])
+      }
+    },
+    image () {
+      const pos = this.getFocusPosition()
+      if (pos[0] === pos[1]) {
+        this.markdown = this.markdown.slice(0, pos[0]) + '![](url)' + this.markdown.slice(pos[0], this.markdown.length)
+        this.focus([pos[0] + 8, pos[1] + 8])
+      } else if (this.markdown.slice(pos[0], pos[0]).match(/^(((ht|f)tps?):\/\/)?([^!@#$%^&*?.\s-]([^!@#$%^&*?.\s]{0,63}[^!@#$%^&*?.\s])?\.)+[a-z]{2,6}\/?/)) {
+        this.markdown = this.markdown.slice(0, pos[0]) + '![](' + this.markdown.slice(pos[0], pos[1]) + ')' + this.markdown.slice(pos[1])
+        this.focus([pos[0] + 4, pos[1] + 4])
+      } else {
+        this.markdown = this.markdown.slice(0, pos[0]) + '![' + this.markdown.slice(pos[0], pos[1]) + '](url)' + this.markdown.slice(pos[1])
+        this.focus([pos[0] + 2, pos[1] + 2])
+      }
+    },
+    quote () {
+      const pos = this.getFocusPosition()
+      const lineStart = this.markdown.lastIndexOf('\n', pos[0] - 1) + 1
+      const line = this.markdown.substring(lineStart, pos[1] + 1)
+      if (line.match(/^(> .*\s*)+$/)) {
+        this.markdown = this.markdown.substring(0, lineStart) + line.replace(/> /g, '') + this.markdown.substring(pos[1] + 1)
+        this.focus([pos[0] - 2, pos[0] - 2])
+        // this.focus([pos[0] - line.length + line.replace(/> /g, '').length, pos[1] - line.length + line.replace(/> /g, '').length])
+      } else {
+        this.markdown = this.markdown.substring(0, lineStart) + '> ' + line.replace(/\n/g, '\n> ') + this.markdown.substring(pos[1] + 1)
+        this.focus([pos[0] + 2, pos[0] + 2])
+        // this.focus([pos[0] + line.length + line.replace(/\n/g, '\n> ').length, pos[1] + line.length + line.replace(/\n/g, '\n> ').length])
+      }
+    },
+    code () {
+      const pos = this.getFocusPosition()
+      if (pos[0] === pos[1]) {
+        this.markdown = this.markdown.slice(0, pos[0]) + '\n```\n\n```\n' + this.markdown.slice(pos[0], this.markdown.length)
+        this.focus([pos[0] + 5, pos[1] + 5])
+      } else {
+        this.markdown = this.markdown.slice(0, pos[0]) + '\n```\n' + this.markdown.slice(pos[0], pos[1]) + '\n```\n' + this.markdown.slice(pos[1])
+        this.focus([pos[0] + 5, pos[1] + 5])
+      }
+    },
+    link () {
+      const pos = this.getFocusPosition()
+      if (pos[0] === pos[1]) {
+        this.markdown = this.markdown.slice(0, pos[0]) + '[text](url)' + this.markdown.slice(pos[0], this.markdown.length)
+        this.focus([pos[0], pos[1] + 11])
+      } else if (this.markdown.slice(pos[0], pos[1]).match(/^(((ht|f)tps?):\/\/)?([^!@#$%^&*?.\s-]([^!@#$%^&*?.\s]{0,63}[^!@#$%^&*?.\s])?\.)+[a-z]{2,6}\/?/)) {
+        this.markdown = this.markdown.slice(0, pos[0]) + '[text](' + this.markdown.slice(pos[0], pos[1]) + ')' + this.markdown.slice(pos[1])
+        this.focus([pos[0] + 7, pos[1] + 7])
+      } else {
+        this.markdown = this.markdown.slice(0, pos[0]) + '[' + this.markdown.slice(pos[0], pos[1]) + '](url)' + this.markdown.slice(pos[1])
+        this.focus([pos[0] + 1, pos[1] + 1])
+      }
+    },
+    unorderedList () {
+      const pos = this.getFocusPosition()
+      const lineStart = this.markdown.lastIndexOf('\n', pos[0] - 1) + 1
+      const line = this.markdown.substring(lineStart, pos[1] + 1)
+      // console.log(line)
+      if (line.match(/^(- .*\s*)+$/)) {
+        this.markdown = this.markdown.substring(0, lineStart) + line.replace(/- /g, '') + this.markdown.substring(pos[1] + 1)
+        this.focus([pos[0] - 2, pos[0] - 2])
+      } else {
+        this.markdown = this.markdown.substring(0, lineStart) + '- ' + line.replace(/\n/g, '\n- ') + this.markdown.substring(pos[1] + 1)
+        this.focus([pos[0] + 2, pos[0] + 2])
+      }
+    },
+    orderedList () {
+      const pos = this.getFocusPosition()
+      const lineStart = this.markdown.lastIndexOf('\n', pos[0] - 1) + 1
+      const line = this.markdown.substring(lineStart, pos[1] + 1)
+      // console.log(line)
+      if (line.match(/^(\d\. .*\s*)+$/)) {
+        this.markdown = this.markdown.substring(0, lineStart) + line.replace(/\d\. /g, '') + this.markdown.substring(pos[1] + 1)
+        this.focus([pos[0] - 2, pos[0] - 2])
+      } else {
+        const lines = line.split('\n')
+        const newLines = []
+        for (let i = 0; i < lines.length; i++) {
+          newLines.push((i + 1) + '. ' + lines[i])
+        }
+        this.markdown = this.markdown.substring(0, lineStart) + newLines.join('\n') + this.markdown.substring(pos[1] + 1)
+        this.focus([pos[0] + 2, pos[0] + 2])
+      }
+    },
+    checkbox () {
+      const pos = this.getFocusPosition()
+      const lineStart = this.markdown.lastIndexOf('\n', pos[0] - 1) + 1
+      const line = this.markdown.substring(lineStart, pos[1] + 1)
+      // console.log(line)
+      if (line.match(/^(- \[ \] .*\s*)+$/)) {
+        this.markdown = this.markdown.substring(0, lineStart) + line.replace(/- \[ \] /g, '') + this.markdown.substring(pos[1] + 1)
+        this.focus([pos[0] - 5, pos[0] - 5])
+      } else {
+        this.markdown = this.markdown.substring(0, lineStart) + '- [ ] ' + line.replace(/\n/g, '\n- [ ] ') + this.markdown.substring(pos[1] + 1)
+        this.focus([pos[0] + 5, pos[0] + 5])
+      }
+    },
+    at () {
+      const pos = this.getFocusPosition()
+      if (pos[0] === pos[1]) {
+        this.markdown = this.markdown.slice(0, pos[0]) + '@email ' + this.markdown.slice(pos[0], this.markdown.length)
+        this.focus([pos[0] + 1, pos[1] + 7])
+      } else if (this.markdown.slice(pos[0] - 1, pos[0]) === '@') {
+        this.markdown = this.markdown.slice(0, pos[0] - 1) + this.markdown.slice(pos[0], pos[1]) + this.markdown.slice(pos[1])
+        this.focus([pos[0] - 1, pos[1] - 1])
+      } else {
+        this.markdown = this.markdown.slice(0, pos[0]) + '@' + this.markdown.slice(pos[0], pos[1]) + ' ' + this.markdown.slice(pos[1])
+        this.focus([pos[0] + 1, pos[1] + 2])
+      }
+    }
   }
 }
 </script>
