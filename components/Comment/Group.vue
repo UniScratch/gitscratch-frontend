@@ -10,18 +10,19 @@
         重新加载
       </v-btn>
     </div>
-    <!-- <CommentTextArea /> -->
-    <MarkdownEditor
-      content=""
-      textarea-label="留言"
-      textarea-placeholder="Leave a comment"
-      action-icon="mdi-send"
-      action-text="发送"
-      @submit="commentSubmit"
-    />
+    <v-card>
+      <MarkdownEditor
+        content=""
+        textarea-label="留言"
+        textarea-placeholder="Leave a comment"
+        action-icon="mdi-send"
+        action-text="发送"
+        @submit="commentSubmit"
+      />
+    </v-card>
     <div style="margin-top: 24px">
       <div v-if="!dataIsLoading">
-        <template v-if="comments.length !== 0">
+        <template v-if="totalComments !== 0">
           <v-list>
             <template v-for="currentPageId in [...Object.keys(comments)].reverse()">
               <template v-for="comment in comments[currentPageId]">
@@ -43,7 +44,9 @@
           </div>
         </template>
         <template v-else>
-          <p>暂时没有留言</p>
+          <p class="text-center">
+            暂时没有留言
+          </p>
         </template>
       </div>
       <div v-else class="text-center">
