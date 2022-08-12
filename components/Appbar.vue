@@ -44,7 +44,7 @@
       hide-details
       outlined
       single-line
-      style="max-width: 250px; border-radius: 20px !important"
+      style="margin-top: unset !important;max-width: 250px; border-radius: 20px !important"
       @keyup.enter="search"
     />
     <v-btn text class="hidden-xs-only" to="/explore" rounded>
