@@ -145,12 +145,13 @@
       </template>
     </v-col>
     <v-divider vertical class="hidden-xs-only" />
-    <v-col cols="12" xl="10" md="9" sm="8" style="padding-left: 20px;">
+    <v-col cols="12" xl="10" md="9" sm="8" style="padding: 12px 0;">
       <v-tabs
         v-model="toggleTab"
         group
         mandatory
         color="primary"
+        style="padding: 0 12px;"
       >
         <v-tab>
           <v-icon>mdi-book-open-outline</v-icon><span>概览</span>

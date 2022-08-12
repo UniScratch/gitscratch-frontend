@@ -41,23 +41,31 @@
 pre,
 code {
     font-family: 'Fira Code', 'Roboto Mono', Consolas, monospace, 'Courier New', Courier, ui-monospace, SFMono-Regular, SF Mono, Menlo, 'Liberation Mono';
+}
+
+pre {
+    padding: 0 16px !important;
     border-radius: 6px;
+    overflow: auto;
+    margin-bottom: 16px;
+    margin-top: 8px;
+}
+code {
+    padding: 16px 0 !important;
 }
 
 .theme--light.v-application pre {
     background-color: rgba(0, 0, 0, 0.05);
-    padding: 0.2em 0.4em;
 }
 
 .theme--light.v-application pre code,
 .theme--dark.v-application pre code {
     background-color: transparent;
-    padding: 0;
+    /* padding: 0; */
 }
 
 .theme--dark.v-application pre {
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 0.2em 0.4em;
 }
 
 .theme--light .grey-text {

@@ -33,7 +33,7 @@ export default {
     renderMd (content) {
       return sanitizeHtml(marked.parse(content), {
         disallowedTagsMode: 'escape',
-        allowedTags: sanitizeHtml.defaults.allowedTags.concat(['del', 'input', 'img']),
+        allowedTags: sanitizeHtml.defaults.allowedTags.concat(['del', 'input', 'img', 'details', 'summary']),
         allowedClasses: {
           // code: ['language-*', 'lang-*'],
           // span: ['hljs-*', 'hljs']

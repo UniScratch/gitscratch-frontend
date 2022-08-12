@@ -84,7 +84,7 @@
         </template>
         <span>创建</span>
       </v-tooltip>
-      <v-menu bottom offset-y transition="slide-y-transition" style="max-height: 90%;">
+      <v-menu bottom offset-y transition="slide-y-transition">
         <template #activator="{ on, attrs }">
           <v-btn icon>
             <v-avatar size="40px" v-bind="attrs" ripple v-on="on">
@@ -249,5 +249,10 @@ export default {
   width: 100%;
   color: white;
   font-size: 12px !important;
+}
+.v-menu__content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 90%;
 }
 </style>
