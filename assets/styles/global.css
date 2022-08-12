@@ -50,9 +50,6 @@ pre {
     margin-bottom: 16px;
     margin-top: 8px;
 }
-code {
-    padding: 16px 0 !important;
-}
 
 .theme--light.v-application pre {
     background-color: rgba(0, 0, 0, 0.05);
@@ -61,6 +58,7 @@ code {
 .theme--light.v-application pre code,
 .theme--dark.v-application pre code {
     background-color: transparent;
+    padding: 16px 0 !important;
     /* padding: 0; */
 }
 
