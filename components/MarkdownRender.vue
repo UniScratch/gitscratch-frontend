@@ -1,6 +1,8 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <div v-html="renderMd(content)" />
+  <client-only>
+    <div v-html="renderMd(content)" />
+  </client-only>
 </template>
 <script>
 import { marked } from 'marked'
