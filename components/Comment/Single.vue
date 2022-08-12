@@ -5,7 +5,7 @@
     </v-avatar>
     <v-divider vertical style="margin: 0 8px;" />
     <div class="flex-grow-1 overflow-auto" style="border-radius: 0px;">
-      <router-link :to="'/users/' + commentData.user.name">
+      <router-link :to="'/users/' + commentData.user.id">
         {{ commentData.user.name }}
       </router-link>
       <!-- <v-tooltip v-if="comment_list[4]" bottom>
