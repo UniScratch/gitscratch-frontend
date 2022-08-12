@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!disabled">
     <!-- <v-card> -->
     <v-card-title class="textarea_title">
       <div>
@@ -84,6 +84,16 @@
     </v-card-actions>
     <!-- </v-card> -->
   </div>
+  <div v-else>
+    <v-alert
+      color="primary"
+      border="left"
+      colored-border
+      type="info"
+    >
+      {{ disableText }}
+    </v-alert>
+  </div>
 </template>
 <script>
 export default {
@@ -107,6 +117,14 @@ export default {
     actionText: {
       type: String,
       default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    disableText: {
+      type: String,
+      default: '请先登录'
     }
   },
 

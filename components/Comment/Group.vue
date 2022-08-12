@@ -17,6 +17,8 @@
         textarea-placeholder="Leave a comment"
         action-icon="mdi-send"
         action-text="发送"
+        :disabled="!$auth.loggedIn"
+        disable-text="请先登录后再留言"
         @submit="commentSubmit"
       />
     </v-card>
