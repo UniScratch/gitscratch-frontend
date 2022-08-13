@@ -24,7 +24,18 @@
         </template>
         <span>剩余 {{ comment_list[8] }} 天解禁</span>
       </v-tooltip> -->
-      <span style="margin-left: 8px;" class="grey-text">{{ new Date(commentData.time * 1000).format("yyyy-MM-dd hh:mm:ss") }}</span>
+      <v-tooltip bottom>
+        <template #activator="{ on, attrs }">
+          <span
+            style="margin-left: 8px;"
+            class="grey-text"
+            v-bind="attrs"
+            v-on="on"
+          >{{ new Date(commentData.time * 1000).fromNow() }}</span>
+        </template>
+        <span>{{ new Date(commentData.time * 1000).format("yyyy-MM-dd hh:mm:ss") }}</span>
+      </v-tooltip>
+
       <span style="margin-left: 8px;" class="grey-text">{{ commentData.region }}</span>
       <!-- <v-spacer /> -->
       <v-menu bottom offset-y transition="slide-y-transition">

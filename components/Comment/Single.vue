@@ -35,7 +35,7 @@ export default {
 </script>
 <style>
 .v-expansion-panel-content__wrap {
-  padding: unset;
-  padding-top: 16px;
+  padding: unset !important;
+  padding-top: 16px !important;
 }
 </style>
