@@ -77,7 +77,7 @@ module.exports = {
     baseURL: apiUrl
   },
   auth: {
-    cookie: false,
+    // cookie: false,
     rewriteRedirects: false,
     redirect: {
       login: '/auth/login',
