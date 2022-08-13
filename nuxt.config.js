@@ -77,6 +77,7 @@ module.exports = {
     baseURL: apiUrl
   },
   auth: {
+    cookie: false,
     rewriteRedirects: false,
     redirect: {
       login: '/auth/login',
@@ -89,7 +90,8 @@ module.exports = {
         token: {
           property: 'data.session',
           name: 'X-GitScratch-Session',
-          type: ''
+          type: '',
+          maxAge: false
         },
         user: {
           property: 'data.data',
@@ -196,7 +198,8 @@ module.exports = {
     host: '0.0.0.0'
   },
   loading: {
-    color: '#2196F3'
+    color: '#2196F3',
+    continuous: true
   },
   pageTransition: {
     name: 'slide-top',

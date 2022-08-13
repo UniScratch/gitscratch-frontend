@@ -1,4 +1,15 @@
-export default function ({ $axios, $dialog, error: nuxtError }) {
+export default function ({ $axios, $dialog, $auth, error: nuxtError }) {
+  // $axios.onResponse((response) => {
+  //   // console.log(response.headers['x-gitscratch-user'] && response.headers['x-gitscratch-user'] === 'None')
+  //   // if (response.status === 401) {
+  //   //   $auth.logout()
+  //   // }
+  //   if (response.headers['x-gitscratch-user'] && response.headers['x-gitscratch-user'] === 'None') {
+  //     console.log('unauth')
+  //     $auth.logout()
+  //   }
+  //   return response
+  // })
   $axios.onResponseError((error) => {
     let errorMsg = ''
     errorMsg += `请求失败: ${error.message}\n`
@@ -10,13 +21,15 @@ export default function ({ $axios, $dialog, error: nuxtError }) {
         errorMsg += `<br>信息: ${error.response.data.message}`
       }
     }
-    // console.log(error.response)
-    // console.log(error.request)
-    // console.log(error)
-    $dialog.notify.error(errorMsg, {
-      position: 'bottom-left',
-      timeout: 0
-    })
+    try {
+      $dialog.notify.error(errorMsg, {
+        position: 'bottom-left',
+        timeout: 0
+      })
+    } catch (error) {
+      console.log(error)
+    }
+
     return Promise.resolve(false)
   })
 }
