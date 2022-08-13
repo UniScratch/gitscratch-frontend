@@ -196,6 +196,7 @@ h5,
 h6 {
     margin-block-end: 20px;
     margin-block-start: 20px;
+    line-break: anywhere;
 }
 
 table {
