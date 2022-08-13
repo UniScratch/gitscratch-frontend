@@ -32,8 +32,6 @@
         width="36"
       >
     </v-btn>
-
-    <!-- <v-app-bar-title class="pl-1 hidden-sm-and-down">GitScratch</v-app-bar-title> -->
     <v-text-field
       v-model="searchKeyword"
       prepend-inner-icon="mdi-magnify"
@@ -47,15 +45,17 @@
       style="margin-top: unset !important;max-width: 250px; border-radius: 20px !important"
       @keyup.enter="search"
     />
-    <v-btn text class="hidden-xs-only" to="/explore" rounded>
-      发现
-    </v-btn>
-    <v-btn text class="hidden-xs-only" to="/about" rounded>
-      关于
-    </v-btn>
-    <v-btn text class="hidden-xs-only" to="/help" rounded>
-      帮助
-    </v-btn>
+    <div class="hidden-xs-only">
+      <v-btn text to="/explore" rounded>
+        发现
+      </v-btn>
+      <v-btn text to="/about" rounded>
+        关于
+      </v-btn>
+      <v-btn text to="/help" rounded>
+        帮助
+      </v-btn>
+    </div>
 
     <v-spacer />
 
@@ -67,7 +67,7 @@
         注册
       </v-btn>
     </template>
-    <template v-else>
+    <template v-if="$auth.loggedIn">
       <v-tooltip bottom>
         <template #activator="{ on, attrs }">
           <v-btn icon v-bind="attrs" to="/notifications" v-on="on">
