@@ -272,3 +272,10 @@ hr {
 .v-text-field {
     margin-top: 12px !important;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition-delay: 99999s;
+    transition: color 99999s ease-out, background-color 99999s ease-out;
+}
