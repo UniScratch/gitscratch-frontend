@@ -21,13 +21,13 @@
     <v-text-field
       v-model="data.bio"
       label="介绍"
-      hint="使用一句话介绍你自己。"
+      hint="使用一句话介绍你自己。留空不显示。"
       persistent-hint
     />
     <v-text-field
       v-model="data.website"
       label="URL"
-      hint="你的个人网站或者博客。"
+      hint="你的个人网站或者博客。留空不显示。"
       persistent-hint
     />
     <v-btn text @click="save()">
