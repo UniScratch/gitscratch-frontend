@@ -47,6 +47,27 @@
     </v-card-title>
 
     <v-card-text v-show="tab === 0" style="padding-bottom: 0px;">
+      <v-banner :value="isReply" single-line rounded outlined>
+        <div v-if="isReply">
+          <span class="grey-text">
+            回复
+          </span>
+          <span>
+            {{ reply.user.name }}
+          </span>
+          <span class="grey-text">
+            :
+          </span>
+        </div>
+        <template #actions>
+          <v-btn text>
+            查看原文
+          </v-btn>
+          <v-btn icon @click="clearReply()">
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+        </template>
+      </v-banner>
       <v-textarea
         :id="randomId"
         v-model="markdown"
@@ -110,6 +131,14 @@ export default {
       type: String,
       default: ''
     },
+    isReply: {
+      type: Boolean,
+      default: false
+    },
+    reply: {
+      type: Object,
+      default: () => ({})
+    },
     actionIcon: {
       type: String,
       default: ''
@@ -146,6 +175,9 @@ export default {
   mounted () {
   },
   methods: {
+    clearReply () {
+      this.$emit('clearReply')
+    },
     getFocusPosition () {
       const textarea = document.getElementById(this.randomId)
       return ([textarea.selectionStart, textarea.selectionEnd])

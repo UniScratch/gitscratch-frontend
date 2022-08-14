@@ -5,25 +5,41 @@
     </v-avatar>
     <v-divider vertical style="margin: 0 8px;" />
     <div class="flex-grow-1 overflow-auto" style="border-radius: 0px;">
+      <v-chip
+        color="primary"
+        outlined
+        ripple
+        small
+      >
+        吉祥物
+      </v-chip>
       <router-link :to="'/users/' + commentData.user.id">
         {{ commentData.user.name }}
       </router-link>
-      <!-- <v-tooltip v-if="comment_list[4]" bottom>
+      <v-tooltip v-if="commentData.user.verified !== 0" bottom>
         <template #activator="{ on, attrs }">
-          <v-icon style="margin-top: -2px;" :color="comment_list[6]" v-bind="attrs" size="20" v-on="on">
+          <v-icon color="rgba(33,150,243)" v-bind="attrs" v-on="on">
             mdi-check-decagram-outline
           </v-icon>
         </template>
-        <span>{{ comment_list[5] }}</span>
+        <span>社区官方认证</span>
       </v-tooltip>
-      <v-tooltip v-if="comment_list[7]" bottom>
+      <v-tooltip v-if="commentData.user.muted !== 0" bottom>
         <template #activator="{ on, attrs }">
-          <v-icon style="margin-top: -2px;" color="rgba(255, 87, 34)" v-bind="attrs" size="20" v-on="on">
+          <v-icon color="rgb(255, 87, 34)" v-bind="attrs" v-on="on">
             mdi-comment-remove-outline
           </v-icon>
         </template>
-        <span>剩余 {{ comment_list[8] }} 天解禁</span>
-      </v-tooltip> -->
+        <span>账户被禁言，{{ commentData.user.muted }} 天后解禁</span>
+      </v-tooltip>
+      <v-tooltip v-if="commentData.user.banned !== 0" bottom>
+        <template #activator="{ on, attrs }">
+          <v-icon color="rgb(238, 54, 37)" v-bind="attrs" v-on="on">
+            mdi-gavel
+          </v-icon>
+        </template>
+        <span>帐户被封禁，{{ commentData.user.banned }} 天后解禁</span>
+      </v-tooltip>
       <v-tooltip bottom>
         <template #activator="{ on, attrs }">
           <span
@@ -53,7 +69,7 @@
         </template>
         <v-card class="cardblur">
           <v-list dense color="transparent">
-            <v-list-item link>
+            <v-list-item link @click="reply()">
               <v-list-item-icon>
                 <v-icon>mdi-reply-outline</v-icon>
               </v-list-item-icon>
@@ -105,6 +121,24 @@
         </v-card>
       </v-menu>
       <v-divider style="margin: 8px 0;" />
+      <v-banner v-if="commentData.reply != null" single-line rounded outlined>
+        <span class="grey-text">
+          回复
+        </span>
+        <span>
+          {{ commentData.reply.user.name }}
+        </span>
+        <span class="grey-text">
+          :
+        </span>
+        <br>
+        <!-- <CommentSingle :comment-data="commentData.reply" /> -->
+        <template #actions>
+          <v-btn text @click="replyJump()">
+            查看原文
+          </v-btn>
+        </template>
+      </v-banner>
       <MarkdownRender :content="commentData.comment" />
     </div>
   </div>
@@ -120,6 +154,13 @@ export default {
   data: () => ({
   }),
   methods: {
+    reply () {
+      // console.log(this.commentData.id)
+      this.$emit('reply', this.commentData)
+    },
+    replyJump () {
+      this.$emit('replyJump', this.commentData)
+    }
   }
 }
 </script>

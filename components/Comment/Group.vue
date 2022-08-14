@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="comments">
     <div class="d-flex">
       <p class="text-h5" style="margin: 0">
         留言
@@ -13,12 +13,15 @@
     <v-card>
       <MarkdownEditor
         content=""
+        :reply="commentReply"
+        :is-reply="isReply"
         textarea-label="留言"
         textarea-placeholder="Leave a comment"
         action-icon="mdi-send"
         action-text="发送"
         :disabled="!$auth.loggedIn"
         disable-text="请先登录后再留言"
+        @clearReply="clearReply"
         @submit="commentSubmit"
       />
     </v-card>
@@ -26,24 +29,30 @@
       <div v-if="!dataIsLoading">
         <template v-if="totalComments !== 0">
           <v-list>
-            <template v-for="currentPageId in [...Object.keys(comments)].reverse()">
-              <template v-for="comment in comments[currentPageId]">
-                <CommentSingle :key="comment.id" :comment-data="comment" />
+            <!-- <template v-for="currentPageId in [...Object.keys(comments)].reverse()"> -->
+            <template v-for="currentPageId in totalPages">
+              <template v-for="comment in comments[totalPages-currentPageId+1]">
+                <CommentSingle
+                  :id="replyJumpTargetId === comment.id ? 'replyJumpTarget' : null"
+                  :key="'commentid'+comment.id"
+                  :style="replyJumpTargetId === comment.id ? 'background: #eee' : null"
+                  :comment-data="comment"
+                  @reply="reply"
+                  @replyJump="replyJump"
+                />
               </template>
+              <div v-if="comments[totalPages-currentPageId+1] === undefined " :key="'commentpage'+currentPageId" class="d-flex justify-center">
+                <v-btn text @click="loadPage(totalPages-currentPageId+1)">
+                  加载第 {{ totalPages-currentPageId+1 }} 页
+                </v-btn>
+              </div>
             </template>
           </v-list>
-          <!-- <div class="d-flex justify-space-between">
-            第 {{ pageId }}/{{ totalPages }} 页
+          <!-- <div class="d-flex justify-center">
             <v-btn text :disabled="pageId === 1 " @click="nextPage()">
               {{ pageId !== 1 ? "加载更多" : "没有更多了" }}
             </v-btn>
-            共 {{ totalComments }} 条留言
           </div> -->
-          <div class="d-flex justify-center">
-            <v-btn text :disabled="pageId === 1 " @click="nextPage()">
-              {{ pageId !== 1 ? "加载更多" : "没有更多了" }}
-            </v-btn>
-          </div>
         </template>
         <template v-else>
           <p class="text-center">
@@ -63,6 +72,9 @@
 export default {
   data: () => ({
     dataIsLoading: true,
+    isReply: false,
+    replyJumpTargetId: null,
+    commentReply: {},
     comments: {},
     pageId: null,
     totalPages: null,
@@ -76,13 +88,9 @@ export default {
           (this.pageId !== null ? '?pageId=' + this.pageId : '')
       )
       .then((res) => {
-        // console.log(res.data)
         this.totalPages = res.data.totalPages
-        this.totalComments = res.data.totalComments
         this.pageId = res.data.pageId
         this.$set(this.comments, this.pageId, res.data.comments.reverse())
-        // this.comments.
-        // this.comments[this.pageId] = res.data.comments
         this.dataIsLoading = false
       })
   },
@@ -95,16 +103,16 @@ export default {
       this.totalComments = null
       this.$fetch()
     },
-    nextPage () {
-      if (this.pageId !== 1) {
-        this.pageId--
-        this.$fetch()
-      }
+    async loadPage (id) {
+      // console.log(id)
+      this.pageId = id
+      await this.$fetch()
     },
     async commentSubmit (n) {
       // console.log(n)
       const res = await this.$axios.$post(this.$route.path + '/comments/new', {
-        comment: n
+        comment: n,
+        reply: this.isReply ? this.commentReply.id : null
       })
       if (res !== false) {
         this.$dialog.message.info('发送成功', {
@@ -112,6 +120,24 @@ export default {
         })
         this.reload()
       }
+    },
+    reply (n) {
+      this.$vuetify.goTo('#comments')
+      this.commentReply = n
+      this.isReply = true
+    },
+    clearReply () {
+      this.commentReply = {}
+      this.isReply = false
+    },
+    async replyJump (n) {
+      await this.loadPage(n.reply.page_id)
+      this.replyJumpTargetId = n.reply.id
+      // nextTick
+      console.log('ok')
+      this.$nextTick(() => {
+        this.$vuetify.goTo('#replyJumpTarget')
+      })
     }
   }
 }
