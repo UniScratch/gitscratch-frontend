@@ -68,8 +68,7 @@
         <v-window-item :value="4">
           <v-card-text>
             <v-form ref="captchaForm" v-model="captchaValid" @submit.native.prevent @keydown.enter.native="next()">
-              <img :src="captcha_base64" style="width: 100%;">
-              <!-- <v-img contain :src="captcha_base64" /> -->
+              <img id="captcha" :src="captcha_base64" style="width: 100%;">
               <v-text-field
                 v-model="form.captcha_value"
                 append-icon="mdi-refresh"
@@ -267,3 +266,12 @@ export default {
 
 }
 </script>
+<style>
+.theme--dark img#captcha {
+    filter: invert(0.93);
+}
+
+.theme--light img#captcha {
+    filter: unset;
+}
+</style>
