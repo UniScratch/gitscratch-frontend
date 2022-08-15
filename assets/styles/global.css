@@ -280,3 +280,9 @@ input:-webkit-autofill:active {
     transition-delay: 99999s;
     transition: color 99999s ease-out, background-color 99999s ease-out;
 }
+.theme--dark.v-tabs-items {
+    background-color: transparent !important;
+}
+.theme--dark.v-toolbar.v-sheet {
+    background-color: transparent;
+}
