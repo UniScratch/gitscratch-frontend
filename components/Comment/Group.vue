@@ -35,10 +35,11 @@
                 <CommentSingle
                   :id="replyJumpTargetId === comment.id ? 'replyJumpTarget' : null"
                   :key="'commentid'+comment.id"
-                  :style="replyJumpTargetId === comment.id ? 'background: #eee' : null"
                   :comment-data="comment"
+                  :is-reply-jump-target="replyJumpTargetId === comment.id"
                   @reply="reply"
                   @replyJump="replyJump"
+                  @clearReplyJumpTargetHighlight="clearReplyJumpTargetHighlight"
                 />
               </template>
               <div v-if="comments[totalPages-currentPageId+1] === undefined " :key="'commentpage'+currentPageId" class="d-flex justify-center">
@@ -106,7 +107,9 @@ export default {
     async loadPage (id) {
       // console.log(id)
       this.pageId = id
-      await this.$fetch()
+      if (!(id in this.comments)) {
+        await this.$fetch()
+      }
     },
     async commentSubmit (n) {
       // console.log(n)
@@ -130,11 +133,12 @@ export default {
       this.commentReply = {}
       this.isReply = false
     },
+    clearReplyJumpTargetHighlight () {
+      this.replyJumpTargetId = null
+    },
     async replyJump (n) {
       await this.loadPage(n.reply.page_id)
-      this.replyJumpTargetId = n.reply.id
-      // nextTick
-      console.log('ok')
+      this.replyJumpTargetId = n.reply.i
       this.$nextTick(() => {
         this.$vuetify.goTo('#replyJumpTarget')
       })
