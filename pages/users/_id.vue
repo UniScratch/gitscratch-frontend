@@ -235,6 +235,11 @@ export default {
       title: this.data.name
     }
   },
+  mounted () {
+    if (this.$route.query.comment !== undefined && this.$route.query.page !== undefined) {
+      this.toggleTab = 3
+    }
+  },
   methods: {
     validateReport () {
       this.$refs.reportForm.validate()

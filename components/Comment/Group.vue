@@ -78,42 +78,58 @@ export default {
     replyJumpTargetId: null,
     commentReply: {},
     comments: {},
-    pageId: null,
     totalPages: null,
     totalComments: null
   }),
   async fetch () {
-    await this.$axios
-      .$get(
-        this.$route.path +
-          '/comments' +
-          (this.pageId !== null ? '?pageId=' + this.pageId : '')
-      )
-      .then((res) => {
-        this.totalPages = res.data.totalPages
-        this.pageId = res.data.pageId
-        this.$set(this.comments, this.pageId, res.data.comments.reverse())
-        this.dataIsLoading = false
-      })
+    await this.fetch()
+  },
+  mounted () {
   },
   methods: {
+    async fetch (pageId = undefined) {
+      await this.$axios
+        .$get(
+          this.$route.path +
+          '/comments' +
+          (pageId !== undefined ? ('?pageId=' + pageId) : '')
+        )
+        .then((res) => {
+          this.totalPages = res.data.totalPages
+          this.$set(this.comments, res.data.pageId, res.data.comments.reverse())
+          this.dataIsLoading = false
+        })
+      if (this.$route.query.comment !== undefined && this.$route.query.page !== undefined) {
+        this.$nextTick(() => {
+          this.$nextTick(() => {
+            this.replyJump(
+              {
+                reply: {
+                  page_id: Number(this.$route.query.page),
+                  id: Number(this.$route.query.comment)
+                }
+              })
+            this.$route.query.comment = undefined
+            this.$route.query.page = undefined
+            window.history.replaceState(null, null, this.$route.path) // remove search params. fetch is client-side only so this is fine
+          })
+        })
+      }
+    },
     reload () {
       this.dataIsLoading = true
       this.comments = {}
-      this.pageId = null
       this.totalPages = null
       this.totalComments = null
-      this.$fetch()
+      this.fetch()
     },
     async loadPage (id, force = false) {
-      // console.log(id)
-      this.pageId = id
+      console.log(id)
       if (!(id in this.comments) || force) {
-        await this.$fetch()
+        await this.fetch(id)
       }
     },
     async commentSubmit (n) {
-      // console.log(n)
       const res = await this.$axios.$post(this.$route.path + '/comments/new', {
         comment: n,
         reply: this.isReply ? this.commentReply.id : null
@@ -138,12 +154,21 @@ export default {
       this.replyJumpTargetId = null
     },
     async replyJump (n) {
-      await this.loadPage(n.reply.page_id)
+      // n={reply:{page_id:xx,id:xx}}
+      await this.loadPage(n.reply.page_id, true)
       this.replyJumpTargetId = n.reply.id
-      // nextTick
-      // console.log('ok')
       this.$nextTick(() => {
-        this.$vuetify.goTo('#replyJumpTarget')
+        this.$vuetify.goTo('#replyJumpTarget') // if this line won't work, use code below.
+        // const t = setInterval(function () {
+        //   try {
+        //     console.log('try')
+        //     this.$nuxt.$vuetify.goTo('#replyJumpTarget')
+        //     console.log('ok')
+        //     clearInterval(t)
+        //   } catch (error) {
+        //     console.log('failed')
+        //   }
+        // }, 100)
       })
     },
     async changeState (n, canUndo = true) {

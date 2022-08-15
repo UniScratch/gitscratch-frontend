@@ -51,9 +51,7 @@
         </template>
         <span>{{ new Date(commentData.time * 1000).format("yyyy-MM-dd hh:mm:ss") }}</span>
       </v-tooltip>
-
       <span style="margin-left: 8px;" class="grey-text">{{ commentData.region }}</span>
-      <!-- <v-spacer /> -->
       <v-menu bottom offset-y transition="slide-y-transition">
         <template #activator="{ on, attrs }">
           <v-btn
@@ -176,9 +174,12 @@ export default {
     replyJump () {
       this.$emit('replyJump', this.commentData)
     },
-    copylink () {
-      this.$copyText(this.commentData.url)
-      this.$toast.open('链接已复制')
+    async copylink () {
+      const url = location.origin + this.$route.path + '?comment=' + this.commentData.id + '&page=' + this.commentData.page_id
+      await navigator.clipboard.writeText(url)
+      this.$dialog.message.info('已复制', {
+        position: 'bottom'
+      })
     },
     changeState (status, comment) {
       const commentDataNew = JSON.parse(JSON.stringify(this.commentData)) // deep copy
