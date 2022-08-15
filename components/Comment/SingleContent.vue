@@ -77,7 +77,7 @@
                 <v-list-item-title>回复</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item link>
+            <v-list-item link @click="copylink()">
               <v-list-item-icon>
                 <v-icon>mdi-link-variant</v-icon>
               </v-list-item-icon>
@@ -85,15 +85,15 @@
                 <v-list-item-title>复制链接</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item link>
+            <!-- <v-list-item v-if="displayBtn" link @click="edit()"> // 太难了不想做
               <v-list-item-icon>
                 <v-icon>mdi-pencil-outline</v-icon>
               </v-list-item-icon>
               <v-list-item-content>
                 <v-list-item-title>编辑</v-list-item-title>
               </v-list-item-content>
-            </v-list-item>
-            <v-list-item link>
+            </v-list-item> -->
+            <v-list-item v-if="displayBtn && commentData.status !== 2" link @click="changeState(2,null)">
               <v-list-item-icon>
                 <v-icon>mdi-eye-off-outline</v-icon>
               </v-list-item-icon>
@@ -101,7 +101,15 @@
                 <v-list-item-title>隐藏</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item link>
+            <v-list-item v-if="displayBtn && commentData.status === 2" link @click="changeState(0,null)">
+              <v-list-item-icon>
+                <v-icon>mdi-eye-off-outline</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title>取消隐藏</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item v-if="displayBtn" link @click="changeState(1,null)">
               <v-list-item-icon>
                 <v-icon>mdi-delete-outline</v-icon>
               </v-list-item-icon>
@@ -109,7 +117,7 @@
                 <v-list-item-title>删除</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item link>
+            <v-list-item link @click="report()">
               <v-list-item-icon>
                 <v-icon>mdi-alert-octagon-outline</v-icon>
               </v-list-item-icon>
@@ -132,7 +140,6 @@
           :
         </span>
         <br>
-        <!-- <CommentSingle :comment-data="commentData.reply" /> -->
         <template #actions>
           <v-btn text @click="replyJump()">
             查看原文
@@ -153,13 +160,36 @@ export default {
   },
   data: () => ({
   }),
+  computed: {
+    displayBtn () {
+      if (this.$auth.user.permission === 'admin' || this.$auth.user.id === this.commentData.user.id || this.$auth.user.id === Number(this.$route.params.id)) {
+        return true
+      } else {
+        return false
+      }
+    }
+  },
   methods: {
     reply () {
-      // console.log(this.commentData.id)
       this.$emit('reply', this.commentData)
     },
     replyJump () {
       this.$emit('replyJump', this.commentData)
+    },
+    copylink () {
+      this.$copyText(this.commentData.url)
+      this.$toast.open('链接已复制')
+    },
+    changeState (status, comment) {
+      const commentDataNew = JSON.parse(JSON.stringify(this.commentData)) // deep copy
+      commentDataNew.status = status !== null ? status : this.commentData.status
+      commentDataNew.comment = comment !== null ? comment : this.commentData.comment
+      // console.log(commentDataNew)
+      this.$emit('changeState', { origin: this.commentData, current: commentDataNew })
+    },
+    report () {
+      alert('这是一个按钮，但你不能点')
+      // this.$emit('report', this.commentData)
     }
   }
 }

@@ -38,6 +38,7 @@
                   :comment-data="comment"
                   :is-reply-jump-target="replyJumpTargetId === comment.id"
                   @reply="reply"
+                  @changeState="changeState"
                   @replyJump="replyJump"
                   @clearReplyJumpTargetHighlight="clearReplyJumpTargetHighlight"
                 />
@@ -104,10 +105,10 @@ export default {
       this.totalComments = null
       this.$fetch()
     },
-    async loadPage (id) {
+    async loadPage (id, force = false) {
       // console.log(id)
       this.pageId = id
-      if (!(id in this.comments)) {
+      if (!(id in this.comments) || force) {
         await this.$fetch()
       }
     },
@@ -138,10 +139,38 @@ export default {
     },
     async replyJump (n) {
       await this.loadPage(n.reply.page_id)
-      this.replyJumpTargetId = n.reply.i
+      this.replyJumpTargetId = n.reply.id
+      // nextTick
+      // console.log('ok')
       this.$nextTick(() => {
         this.$vuetify.goTo('#replyJumpTarget')
       })
+    },
+    async changeState (n, canUndo = true) {
+      await this.$axios
+        .$post(
+          this.$route.path +
+          '/comments', {
+            id: n.origin.id,
+            status: n.current.status,
+            comment: n.current.comment
+          })
+      this.loadPage(n.origin.page_id, true)
+      const r = await this.$dialog.message.info('修改成功', {
+        position: 'bottom',
+        actions: canUndo
+          ? [{
+              text: '撤销', color: 'primary', key: true
+            }]
+          : null,
+        timeout: 5000
+      })
+      if (r === true) {
+        this.changeState({
+          origin: n.origin,
+          current: n.origin
+        }, false)
+      }
     }
   }
 }

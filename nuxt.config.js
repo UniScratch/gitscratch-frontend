@@ -17,33 +17,36 @@ module.exports = {
     htmlAttrs: {
       lang: 'zh-CN'
     },
-    meta: [{
-      charset: 'utf-8'
-    },
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1'
-    },
-    {
-      hid: 'description',
-      name: 'description',
-      content: 'Endless Possiblities with GitScratch. 与 GitScratch 共赴诗和远方。'
-    },
-    {
-      name: 'format-detection',
-      content: 'telephone=no'
-    }
+    meta: [
+      {
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Endless Possiblities with GitScratch. 与 GitScratch 共赴诗和远方。'
+      },
+      {
+        name: 'format-detection',
+        content: 'telephone=no'
+      }
     ],
-    link: [{
-      rel: 'icon',
-      type: 'image/svg+xml',
-      href: '/GitScratch-icon-background-blue.svg'
-    },
-    {
-      rel: 'stylesheet',
-      type: 'text/css',
-      href: '/highlight.js/styles/github-dark.css'
-    }
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/svg+xml',
+        href: '/GitScratch-icon-background-blue.svg'
+      },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: '/highlight.js/styles/github-dark.css'
+      }
     ]
   },
 
@@ -57,21 +60,15 @@ module.exports = {
     '@nuxtjs/axios',
     // https://dev.auth.nuxtjs.org
     '@nuxtjs/auth-next'
-
   ],
 
-  plugins: [
-    '~/plugins/dateFormatter',
-    '~/plugins/http'
-
-  ],
+  plugins: ['~/plugins/dateFormatter', '~/plugins/http'],
   buildModules: [
     // Simple usage
     '@nuxtjs/vuetify',
 
     // https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module'
-
   ],
   axios: {
     baseURL: apiUrl
@@ -83,7 +80,6 @@ module.exports = {
       login: '/auth/login',
       logout: '/',
       home: '/'
-
     },
     strategies: {
       local: {
@@ -186,10 +182,7 @@ module.exports = {
     //   }
     // },
     extractCSS: !isDev,
-    extend (config, {
-      isDev,
-      isClient
-    }) {
+    extend (config, { isDev, isClient }) {
       config.output.globalObject = 'this'
     }
   },
@@ -208,5 +201,4 @@ module.exports = {
   router: {
     prefetchLinks: false
   }
-
 }
