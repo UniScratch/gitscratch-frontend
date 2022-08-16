@@ -71,7 +71,7 @@
           <p v-else>
             以下是最近 GitScratch 较热门的内容……
           </p>
-          <ProjectInformationCard />
+          <ProjectGroupVertical />
         </v-window-item>
         <!-- 话题 -->
         <v-window-item>
@@ -98,11 +98,7 @@
   </v-row>
 </template>
 <script>
-import ProjectInformationCard from '../components/ProjectInformationCard.vue'
 export default {
-  components: {
-    ProjectInformationCard
-  },
   data: () => ({
     starredTopics: 0,
     starredProjects: 0,

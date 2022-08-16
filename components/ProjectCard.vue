@@ -1,5 +1,5 @@
 <template>
-  <v-card v-ripple :to="'/projects/' + projectId">
+  <v-card>
     <v-hover v-slot="{ hover }">
       <v-img lazy-src="/GitScratch-project-thumbnail-grey.svg" :src="projectThumbnail" style="width: 100%;">
         <v-slide-y-reverse-transition>
@@ -86,7 +86,9 @@
       </v-img>
     </v-hover>
     <v-card-title style="padding-bottom: 0;">
-      {{ projectTitle }}
+      <nuxt-link :to="'/projects/' + projectId" class="project-title">
+        {{ projectTitle }}
+      </nuxt-link>
     </v-card-title>
     <client-only>
       <v-card-actions>

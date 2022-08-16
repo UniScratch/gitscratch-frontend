@@ -286,3 +286,6 @@ input:-webkit-autofill:active {
 .theme--dark.v-toolbar.v-sheet {
     background-color: transparent;
 }
+.project-title {
+    color: unset !important;
+}

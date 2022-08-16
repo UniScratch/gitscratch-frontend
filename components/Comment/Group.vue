@@ -1,74 +1,76 @@
 <template>
-  <div id="comments">
-    <div class="d-flex">
-      <p class="text-h5" style="margin: 0">
-        留言
-      </p>
-      <v-spacer />
-      <v-btn text rounded :disabled="dataIsLoading" @click="reload()">
-        <v-icon> mdi-cached </v-icon>
-        重新加载
-      </v-btn>
-    </div>
-    <v-card>
-      <MarkdownEditor
-        content=""
-        :reply="commentReply"
-        :is-reply="isReply"
-        textarea-label="留言"
-        textarea-placeholder="Leave a comment"
-        action-icon="mdi-send"
-        action-text="发送"
-        :disabled="!$auth.loggedIn"
-        disable-text="请先登录后再留言"
-        @clearReply="clearReply"
-        @submit="commentSubmit"
-      />
-    </v-card>
-    <div style="margin-top: 24px">
-      <div v-if="!dataIsLoading">
-        <template v-if="totalComments !== 0">
-          <v-list>
-            <!-- <template v-for="currentPageId in [...Object.keys(comments)].reverse()"> -->
-            <template v-for="currentPageId in totalPages">
-              <template v-for="comment in comments[totalPages-currentPageId+1]">
-                <CommentSingle
-                  :id="replyJumpTargetId === comment.id ? 'replyJumpTarget' : null"
-                  :key="'commentid'+comment.id"
-                  :comment-data="comment"
-                  :is-reply-jump-target="replyJumpTargetId === comment.id"
-                  @reply="reply"
-                  @changeState="changeState"
-                  @replyJump="replyJump"
-                  @clearReplyJumpTargetHighlight="clearReplyJumpTargetHighlight"
-                />
+  <client-only>
+    <div id="comments">
+      <div class="d-flex">
+        <p class="text-h5" style="margin: 0">
+          留言
+        </p>
+        <v-spacer />
+        <v-btn text rounded :disabled="dataIsLoading" @click="reload()">
+          <v-icon> mdi-cached </v-icon>
+          重新加载
+        </v-btn>
+      </div>
+      <v-card>
+        <MarkdownEditor
+          content=""
+          :reply="commentReply"
+          :is-reply="isReply"
+          textarea-label="留言"
+          textarea-placeholder="Leave a comment"
+          action-icon="mdi-send"
+          action-text="发送"
+          :disabled="!$auth.loggedIn"
+          disable-text="请先登录后再留言"
+          @clearReply="clearReply"
+          @submit="commentSubmit"
+        />
+      </v-card>
+      <div style="margin-top: 24px">
+        <div v-if="!dataIsLoading">
+          <template v-if="totalComments !== 0">
+            <v-list>
+              <!-- <template v-for="currentPageId in [...Object.keys(comments)].reverse()"> -->
+              <template v-for="currentPageId in totalPages">
+                <template v-for="comment in comments[totalPages-currentPageId+1]">
+                  <CommentSingle
+                    :id="replyJumpTargetId === comment.id ? 'replyJumpTarget' : null"
+                    :key="'commentid'+comment.id"
+                    :comment-data="comment"
+                    :is-reply-jump-target="replyJumpTargetId === comment.id"
+                    @reply="reply"
+                    @changeState="changeState"
+                    @replyJump="replyJump"
+                    @clearReplyJumpTargetHighlight="clearReplyJumpTargetHighlight"
+                  />
+                </template>
+                <div v-if="comments[totalPages-currentPageId+1] === undefined " :key="'commentpage'+currentPageId" class="d-flex justify-center">
+                  <v-btn text @click="loadPage(totalPages-currentPageId+1)">
+                    加载第 {{ totalPages-currentPageId+1 }} 页
+                  </v-btn>
+                </div>
               </template>
-              <div v-if="comments[totalPages-currentPageId+1] === undefined " :key="'commentpage'+currentPageId" class="d-flex justify-center">
-                <v-btn text @click="loadPage(totalPages-currentPageId+1)">
-                  加载第 {{ totalPages-currentPageId+1 }} 页
-                </v-btn>
-              </div>
-            </template>
-          </v-list>
+            </v-list>
           <!-- <div class="d-flex justify-center">
             <v-btn text :disabled="pageId === 1 " @click="nextPage()">
               {{ pageId !== 1 ? "加载更多" : "没有更多了" }}
             </v-btn>
           </div> -->
-        </template>
-        <template v-else>
-          <p class="text-center">
-            暂时没有留言
-          </p>
-        </template>
-      </div>
-      <div v-else class="text-center">
-        <v-progress-circular indeterminate color="primary" />
-        <br>
-        <p>正在加载留言。坐和放宽</p>
+          </template>
+          <template v-else>
+            <p class="text-center">
+              暂时没有留言
+            </p>
+          </template>
+        </div>
+        <div v-else class="text-center">
+          <v-progress-circular indeterminate color="primary" />
+          <br>
+          <p>正在加载留言。坐和放宽</p>
+        </div>
       </div>
     </div>
-  </div>
+  </client-only>
 </template>
 <script>
 export default {
@@ -96,6 +98,7 @@ export default {
         )
         .then((res) => {
           this.totalPages = res.data.totalPages
+          this.totalComments = res.data.totalComments
           this.$set(this.comments, res.data.pageId, res.data.comments.reverse())
           this.dataIsLoading = false
         })
@@ -158,7 +161,14 @@ export default {
       await this.loadPage(n.reply.page_id, true)
       this.replyJumpTargetId = n.reply.id
       this.$nextTick(() => {
-        this.$vuetify.goTo('#replyJumpTarget') // if this line won't work, use code below.
+        try {
+          this.$vuetify.goTo('#replyJumpTarget') // if this line won't work, use code below.
+        } catch (e) {
+          this.$dialog.notify.error('无法跳转评论<br>目标评论位于第' + n.reply.page_id + '页,请手动翻页', {
+            position: 'bottom-left',
+            timeout: 0
+          })
+        }
         // const t = setInterval(function () {
         //   try {
         //     console.log('try')
