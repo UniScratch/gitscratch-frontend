@@ -49,7 +49,7 @@
       <template v-for="(item, key) in 贡献者">
         {{ key }}：
         <a v-for="(childItem, childKey) in item" :key="childKey" target="_blank" :href="贡献者信息[childItem]">
-          @{{ childItem }}
+          {{ childItem }}
         </a>
         <br :key="key">
       </template>
@@ -115,7 +115,7 @@ export default {
       金主: [],
       主要贡献者: ['Dispure', 'HydroGest', 'TimFang4162', 'wrj2009'],
       吉祥物设计: ['小孟', '小怡'],
-      云服务支持: ['Someone-Yang'],
+      云服务支持: ['Someone-Yang', '玲行云端'],
       其他贡献者: ['frank-782']
     },
     贡献者信息: {
@@ -126,6 +126,7 @@ export default {
       小怡: null,
       wrj2009: 'https://github.com/wrj2009',
       'Someone-Yang': 'https://github.com/Someone-Yang',
+      玲行云端: 'https://www.incloudify.com/',
       'frank-782': 'https://github.com/frank-782'
     },
     meta: require('static/meta.json'),
