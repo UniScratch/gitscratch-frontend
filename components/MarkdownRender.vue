@@ -7,7 +7,7 @@
 <script>
 import { marked } from 'marked'
 import sanitizeHtml from 'sanitize-html'
-import hljs from 'highlight.js'
+import hljs from 'highlight.js/lib/core'
 export default {
   props: {
     content: {
@@ -23,6 +23,7 @@ export default {
       renderer: new marked.Renderer(),
       highlight (code, lang) {
         const language = hljs.getLanguage(lang) ? lang : 'plaintext'
+        hljs.registerLanguage(language, require('highlight.js/lib/languages/' + language))
         return hljs.highlight(code, { language }).value
       },
       gfm: true,
