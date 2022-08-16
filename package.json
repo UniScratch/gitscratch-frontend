@@ -8,6 +8,7 @@
     "build:scratch": "cd node_modules/scratch-gui && yarn install && yarn build",
     "build:connect": "rimraf static/scratch/ && mv node_modules/scratch-gui/build/ static/scratch/",
     "build:nuxt": "yarn run genmeta && nuxt build",
+    "analyze": "yarn run genmeta && nuxt build -a",
     "start": "nuxt start",
     "genmeta": "node gen-meta.js",
     "lint": "eslint . --ignore-path .gitignore --ext .js,.vue --fix"
@@ -32,6 +33,8 @@
     "eslint-loader": "^4.0.2",
     "eslint-plugin-nuxt": "^3.2.0",
     "eslint-plugin-vue": "^9.3.0",
-    "eslint-plugin-vuetify": "^1.1.0"
+    "eslint-plugin-vuetify": "^1.1.0",
+    "hard-source-webpack-plugin": "^0.13.1",
+    "webpack-bundle-analyzer": "^4.5.0"
   }
 }

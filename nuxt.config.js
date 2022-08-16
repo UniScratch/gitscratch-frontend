@@ -164,23 +164,25 @@ module.exports = {
 
   // https://nuxtjs.org/api/configuration-build
   build: {
-    // ssr: !isElectron,
+    // analyze: true,
+    hardSource: true,
+    cache: true,
     ssr: true,
-    parallel: isDev,
-    // terser: {
-    //   parallel: true,
-    //   terserOptions: { // https://github.com/terser/terser
-    //     compress: {
-    //       drop_console: true,
-    //       arguments: true,
-    //       passes: 1
-    //     },
-    //     format: {
-    //       comments: false,
-    //       max_line_len: 1024
-    //     }
-    //   }
-    // },
+    parallel: true,
+    terser: {
+      parallel: true,
+      terserOptions: { // https://github.com/terser/terser
+        compress: {
+          drop_console: true,
+          arguments: true,
+          passes: 1
+        },
+        format: {
+          comments: false,
+          max_line_len: 1024
+        }
+      }
+    },
     extractCSS: !isDev,
     extend (config, { isDev, isClient }) {
       config.output.globalObject = 'this'
