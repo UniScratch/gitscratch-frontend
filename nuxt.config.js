@@ -62,7 +62,7 @@ module.exports = {
     '@nuxtjs/auth-next'
   ],
 
-  plugins: ['~/plugins/dateFormatter', '~/plugins/http'],
+  plugins: ['~/plugins/dateFormatter', '~/plugins/http', '~/plugins/permission'],
   buildModules: [
     // Simple usage
     '@nuxtjs/vuetify',

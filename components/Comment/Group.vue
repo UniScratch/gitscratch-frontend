@@ -20,8 +20,8 @@
           textarea-placeholder="Leave a comment"
           action-icon="mdi-send"
           action-text="发送"
-          :disabled="!$auth.loggedIn"
-          disable-text="请先登录后再留言"
+          :disabled="!$permission.canComment().status"
+          :disable-text="$permission.canComment().message"
           @clearReply="clearReply"
           @submit="commentSubmit"
         />
@@ -58,9 +58,7 @@
           </div> -->
           </template>
           <template v-else>
-            <p class="text-center">
-              暂时没有留言
-            </p>
+            <v-empty />
           </template>
         </div>
         <div v-else class="text-center">

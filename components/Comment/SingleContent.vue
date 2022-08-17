@@ -83,7 +83,7 @@
                 <v-list-item-title>复制链接</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <!-- <v-list-item v-if="displayBtn" link @click="edit()"> // 太难了不想做
+            <!-- <v-list-item v-if="$permission.canEditComment(commentData).status" link @click="edit()"> // 太难了不想做
               <v-list-item-icon>
                 <v-icon>mdi-pencil-outline</v-icon>
               </v-list-item-icon>
@@ -91,7 +91,7 @@
                 <v-list-item-title>编辑</v-list-item-title>
               </v-list-item-content>
             </v-list-item> -->
-            <v-list-item v-if="displayBtn && commentData.status !== 2" link @click="changeState(2,null)">
+            <v-list-item v-if="$permission.canHideComment(commentData).status && commentData.status !== 2" link @click="changeState(2,null)">
               <v-list-item-icon>
                 <v-icon>mdi-eye-off-outline</v-icon>
               </v-list-item-icon>
@@ -99,7 +99,7 @@
                 <v-list-item-title>隐藏</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item v-if="displayBtn && commentData.status === 2" link @click="changeState(0,null)">
+            <v-list-item v-if="$permission.canHideComment(commentData).status && commentData.status === 2" link @click="changeState(0,null)">
               <v-list-item-icon>
                 <v-icon>mdi-eye-off-outline</v-icon>
               </v-list-item-icon>
@@ -107,7 +107,7 @@
                 <v-list-item-title>取消隐藏</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item v-if="displayBtn" link @click="changeState(1,null)">
+            <v-list-item v-if="$permission.canDeleteComment(commentData).status" link @click="changeState(1,null)">
               <v-list-item-icon>
                 <v-icon>mdi-delete-outline</v-icon>
               </v-list-item-icon>
@@ -159,13 +159,6 @@ export default {
   data: () => ({
   }),
   computed: {
-    displayBtn () {
-      if (this.$auth.user.permission === 'admin' || this.$auth.user.id === this.commentData.user.id || this.$auth.user.id === Number(this.$route.params.id)) {
-        return true
-      } else {
-        return false
-      }
-    }
   },
   methods: {
     reply () {

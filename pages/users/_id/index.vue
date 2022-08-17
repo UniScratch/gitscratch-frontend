@@ -48,7 +48,7 @@
           {{ data.bio }}
         </p>
       </template>
-      <v-btn v-if="$auth.loggedIn && data.id === $auth.user.id" to="/settings#profile" block depressed rounded>
+      <v-btn v-if="$permission.canEditProfile(data).status" to="/settings#profile" block depressed rounded>
         编辑个人资料
       </v-btn>
       <v-btn v-else block color="primary" depressed rounded>
@@ -161,7 +161,7 @@
             <v-card-title class="text-h5">
               <span>README</span><span class="grey-text">.md</span>
               <v-spacer />
-              <v-btn v-if="$auth.loggedIn && data.id === $auth.user.id" icon @click="readmeOpenEdit">
+              <v-btn v-if="$permission.canEditProfile(data).status" icon @click="readmeOpenEdit">
                 <v-icon>mdi-pencil-outline</v-icon>
               </v-btn>
             </v-card-title>

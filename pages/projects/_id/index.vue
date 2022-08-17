@@ -59,7 +59,7 @@
           <v-row>
             <v-tooltip bottom>
               <template #activator="{ on, attrs }">
-                <v-btn text v-bind="attrs" rounded v-on="on">
+                <v-btn text v-bind="attrs" rounded v-on="on" @click="star()">
                   <v-icon>
                     mdi-star-outline
                   </v-icon>
@@ -70,7 +70,7 @@
             </v-tooltip>
             <v-tooltip v-if="data.source" bottom>
               <template #activator="{ on, attrs }">
-                <v-btn text v-bind="attrs" rounded v-on="on">
+                <v-btn text v-bind="attrs" rounded v-on="on" @click="fork()">
                   <v-icon>
                     mdi-source-branch
                   </v-icon>
@@ -81,9 +81,9 @@
             </v-tooltip>
             <v-tooltip bottom>
               <template #activator="{ on, attrs }">
-                <v-btn text v-bind="attrs" rounded v-on="on">
-                  <v-icon>
-                    mdi-heart-outline
+                <v-btn text v-bind="attrs" rounded v-on="on" @click="like()">
+                  <v-icon :color="data.is_liked ? 'red' : null">
+                    {{ data.is_liked ? 'mdi-heart' : 'mdi-heart-outline' }}
                   </v-icon>
                   {{ data.like }}
                 </v-btn>
@@ -180,11 +180,8 @@
 export default {
   props: {
   },
-  async asyncData ({ params, $axios }) {
-    const data = await $axios.$get(`/projects/${params.id}/info`)
-    return { data: data.data }
-  },
   data: () => ({
+    data: {},
     loadPlayer: false,
     readmeIsEditing: false,
     readmeEdit: '',
@@ -197,6 +194,10 @@ export default {
     isLogin: true,
     isMuted: true
   }),
+  async fetch () {
+    const data = await this.$axios.$get(`/projects/${this.$route.params.id}/info`)
+    this.data = data.data
+  },
   head () {
     return {
       title: this.projectTitle
@@ -247,6 +248,34 @@ export default {
     },
     readmeChange (n) {
       this.readmeEdit = n
+    },
+    async operation (type) {
+      const res = await this.$axios.$post('projects/' + this.$route.params.id + '/operation', {
+        type
+      })
+      this.$fetch()
+      console.log(res)
+    },
+    async like () {
+      await this.operation('project.like')
+      this.$dialog.message.info('点赞成功', {
+        position: 'bottom'
+      })
+    },
+    star () {
+      this.$dialog.message.info('收藏成功', {
+        position: 'bottom'
+      })
+    },
+    fork () {
+      this.$dialog.message.info('分享成功', {
+        position: 'bottom'
+      })
+    },
+    view () {
+      this.$dialog.message.info('查看成功', {
+        position: 'bottom'
+      })
     }
   }
 }
