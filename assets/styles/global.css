@@ -298,28 +298,3 @@ input:-webkit-autofill:active {
     color: unset !important;
 }
 
-img {
-    text-align: center;
-    display: block;
-}
-
-
-img:after {
-    content: "\F0338"" 无法加载此图像" attr(alt);
-    font-family: "Material Design Icons";
-    background-color: #272727;
-    border: 2px dotted #c8c8c8;
-    border-radius: 15px;
-    width: 100%;
-    display: block;
-    text-align: center;
-    padding: 6px;
-}
-
-.theme--dark img:after {
-    background-color: #272727;
-}
-
-.theme--light img:after {
-    background-color: #f5f5f5;
-}

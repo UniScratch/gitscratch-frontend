@@ -4,7 +4,7 @@
       <div v-if="$auth.loggedIn">
         <div style="text-align: center;">
           <v-avatar style="width: 100%; height: auto; max-width: 100px;">
-            <v-img :src="$auth.user.avatar" />
+            <v-img :src="$utils.getAvatarUrl($auth.user.avatar)" />
           </v-avatar>
           <br><br>
           <p class="text-h5">

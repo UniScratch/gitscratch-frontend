@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex">
     <v-avatar>
-      <v-img :src="commentData.user.avatar" />
+      <v-img :src="$utils.getAvatarUrl(commentData.user.avatar)" />
     </v-avatar>
     <v-divider vertical style="margin: 0 8px;" />
     <div class="flex-grow-1 overflow-auto" style="border-radius: 0px;">

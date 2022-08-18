@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
   <client-only>
-    <div v-html="renderMd(content)" />
+    <div class="markdown" v-html="renderMd(content)" />
   </client-only>
 </template>
 <script>
@@ -48,3 +48,29 @@ export default {
   }
 }
 </script>
+<style>
+.markdown img {
+    text-align: center;
+    display: block;
+}
+
+.markdown img:after {
+    content: "\F0338"" 无法加载此图像" attr(alt);
+    font-family: "Material Design Icons";
+    background-color: #272727;
+    border: 2px dotted #c8c8c8;
+    border-radius: 15px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 6px;
+}
+
+.theme--dark .markdown img:after {
+    background-color: #272727;
+}
+
+.theme--light .markdown  img:after {
+    background-color: #f5f5f5;
+}
+</style>

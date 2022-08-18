@@ -65,7 +65,8 @@ module.exports = {
   plugins: [
     '~/plugins/dateFormatter',
     { src: '~/plugins/http', mode: 'client' },
-    '~/plugins/permission'
+    '~/plugins/permission',
+    '~/plugins/utils'
   ],
   buildModules: [
     // Simple usage

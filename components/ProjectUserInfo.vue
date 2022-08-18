@@ -5,7 +5,7 @@
         size="60"
       >
         <v-avatar style="width: auto; height: auto; max-width: 200px;">
-          <v-img :src="userData.avatar" size="60" />
+          <v-img :src="$utils.getAvatarUrl(userData.avatar)" size="60" />
         </v-avatar>
       </v-list-item-avatar>
       <v-list-item-content>

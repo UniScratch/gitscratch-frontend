@@ -6,6 +6,61 @@
     <p class="text-h6">
       个人资料
     </p>
+    <v-avatar size="60">
+      <v-img :src="$utils.getAvatarUrl(data.avatar)" />
+    </v-avatar>
+    <v-dialog v-model="changeAvatarModal" overlay-opacity="0.3" max-width="500">
+      <template #activator="{ on, attrs }">
+        <v-btn
+          text
+          v-bind="attrs"
+          v-on="on"
+        >
+          编辑头像
+        </v-btn>
+      </template>
+      <v-card class="cardblur">
+        <v-card-title class="text-h5">
+          上传头像
+        </v-card-title>
+
+        <v-card-text>
+          <v-file-input
+            v-model="avatarUpload"
+            show-size
+            truncate-length="36"
+            accept="image/png, image/jpeg, image/gif"
+            placeholder="上传头像"
+            @change="fileUpdate()"
+          />
+          <v-avatar v-if="fileBase64" size="100%">
+            <v-img
+              :src="fileBase64"
+              aspect-ratio="1"
+            />
+          </v-avatar>
+          <p>头像将被裁剪为正方形</p>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer />
+          <v-btn
+            text
+            rounded
+            @click="changeAvatarModal = false"
+          >
+            取消
+          </v-btn>
+          <v-btn
+            color="primary"
+            text
+            rounded
+            @click="upload()"
+          >
+            上传
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
     <v-text-field
       v-model="data.name"
       label="用户名"
@@ -54,7 +109,10 @@
 <script>
 export default {
   data: () => ({
-    data: {}
+    data: {},
+    changeAvatarModal: false,
+    avatarUpload: null,
+    fileBase64: ''
   }),
   async mounted () {
     const userInfo = await this.$axios.$get('users/' + this.$auth.user.id + '/info')
@@ -63,13 +121,43 @@ export default {
     }
   },
   methods: {
+    fileUpdate () {
+      if (this.avatarUpload) {
+        console.log(this.avatarUpload)
+        const reader = new FileReader()
+        reader.onload = (e) => {
+          this.fileBase64 = e.target.result
+        }
+        reader.readAsDataURL(this.avatarUpload)
+      } else {
+        this.fileBase64 = ''
+      }
+    },
+    upload () {
+      // 在这里进行一系列的校验
+      const formData = new FormData()
+      formData.append('file', this.avatarUpload)
+      this.$axios.$post('/assets/upload', formData)
+        .then((res) => {
+          this.changeAvatarModal = false
+          console.log(res.data.filename)
+          this.data.avatar = res.data.filename
+          this.save()
+          // console.log(this.$utils.getAvatarUrl(this.data.avatar))
+          // this.$toast.open({
+          //   message: '上传成功',
+          //   type: 'success'
+          // });
+        })
+    },
     async save () {
-      console.log(this.data)
+      // console.log(this.data)
       const userInfo = await this.$axios.$post('users/' + this.$auth.user.id + '/info', {
         name: this.data.name,
         email: this.data.email,
         bio: this.data.bio,
-        website: this.data.website
+        website: this.data.website,
+        avatar: this.data.avatar
       })
       if (userInfo !== false) {
         this.$dialog.message.info('保存成功', {
