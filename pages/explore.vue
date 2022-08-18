@@ -3,9 +3,7 @@
     <v-col cols="12" xl="2" md="3" sm="4" style="padding-right: 20px;">
       <div v-if="$auth.loggedIn">
         <div style="text-align: center;">
-          <v-avatar style="width: 100%; height: auto; max-width: 100px;">
-            <v-img :src="$utils.getAvatarUrl($auth.user.avatar)" />
-          </v-avatar>
+          <Avatar :data="$auth.user" size="60" />
           <br><br>
           <p class="text-h5">
             {{ $auth.user.name }}

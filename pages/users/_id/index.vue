@@ -8,9 +8,7 @@
       style="padding-right: 20px;"
     >
       <div style="text-align: center;">
-        <v-avatar style="width: 100%; height: auto; max-width: 200px; margin-bottom: 20px;">
-          <v-img :src="$utils.getAvatarUrl(data.avatar)" />
-        </v-avatar>
+        <Avatar :data="data" size="200" style="margin-bottom: 20px;" />
         <div style="display: flex;">
           <span style="display: block; min-width: 20px; height: 20px; background-color: rgb(34, 149, 242); color: white; border-radius: 50%; font-size: 12px;">{{ data.level }}</span>&nbsp;
           <v-progress-linear :value="data.exp" class="rounded-pill" height="20" />

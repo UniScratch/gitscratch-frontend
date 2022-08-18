@@ -86,18 +86,14 @@
       </v-tooltip>
       <v-menu bottom offset-y transition="slide-y-transition">
         <template #activator="{ on, attrs }">
-          <v-btn icon>
-            <v-avatar size="40px" v-bind="attrs" ripple v-on="on">
-              <v-img alt="Avatar" :src="$utils.getAvatarUrl($auth.user.avatar)" />
-            </v-avatar>
+          <v-btn icon v-bind="attrs" v-on="on">
+            <Avatar :data="$auth.user" size="40" />
           </v-btn>
         </template>
         <v-card class="cardblur">
           <v-list color="transparent">
             <v-list-item>
-              <v-avatar size="48px" ripple>
-                <v-img alt="Avatar" :src="$utils.getAvatarUrl($auth.user.avatar)" />
-              </v-avatar>
+              <Avatar :data="$auth.user" size="48" />
             </v-list-item>
 
             <v-list-item>

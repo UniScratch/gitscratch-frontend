@@ -6,9 +6,7 @@
     <p class="text-h6">
       个人资料
     </p>
-    <v-avatar size="60">
-      <v-img :src="$utils.getAvatarUrl(data.avatar)" />
-    </v-avatar>
+    <Avatar :data="data" size="60" />
     <v-dialog v-model="changeAvatarModal" overlay-opacity="0.3" max-width="500">
       <template #activator="{ on, attrs }">
         <v-btn
@@ -134,7 +132,6 @@ export default {
       }
     },
     upload () {
-      // 在这里进行一系列的校验
       const formData = new FormData()
       formData.append('file', this.avatarUpload)
       this.$axios.$post('/assets/upload', formData)
@@ -159,6 +156,7 @@ export default {
         website: this.data.website,
         avatar: this.data.avatar
       })
+      await this.$auth.fetchUser()
       if (userInfo !== false) {
         this.$dialog.message.info('保存成功', {
           position: 'bottom'

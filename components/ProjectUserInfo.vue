@@ -4,9 +4,10 @@
       <v-list-item-avatar
         size="60"
       >
-        <v-avatar style="width: auto; height: auto; max-width: 200px;">
+        <Avatar :data="userData" size="60" v-bind="attrs" v-on="on" />
+        <!-- <v-avatar style="width: auto; height: auto; max-width: 200px;">
           <v-img :src="$utils.getAvatarUrl(userData.avatar)" size="60" />
-        </v-avatar>
+        </v-avatar> -->
       </v-list-item-avatar>
       <v-list-item-content>
         <v-list-item-title class="text-h5">
