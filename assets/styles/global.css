@@ -261,18 +261,23 @@ hr {
     max-height: 0px;
     border-width: thin 0 0 0;
 }
+
 .v-list {
     padding: 2px 0;
 }
+
 .vuedl-notification {
     border-radius: 20px;
 }
+
 .v-label {
     font-weight: bold !important;
 }
+
 .v-text-field {
     margin-top: 12px !important;
 }
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -280,12 +285,41 @@ input:-webkit-autofill:active {
     transition-delay: 99999s;
     transition: color 99999s ease-out, background-color 99999s ease-out;
 }
+
 .theme--dark.v-tabs-items {
     background-color: transparent !important;
 }
+
 .theme--dark.v-toolbar.v-sheet {
     background-color: transparent;
 }
+
 .project-title {
     color: unset !important;
+}
+
+img {
+    text-align: center;
+    display: block;
+}
+
+
+img:after {
+    content: "\F0338"" 无法加载此图像" attr(alt);
+    font-family: "Material Design Icons";
+    background-color: #272727;
+    border: 2px dotted #c8c8c8;
+    border-radius: 15px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 6px;
+}
+
+.theme--dark img:after {
+    background-color: #272727;
+}
+
+.theme--light img:after {
+    background-color: #f5f5f5;
 }

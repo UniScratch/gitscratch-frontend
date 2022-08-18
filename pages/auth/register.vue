@@ -1,6 +1,6 @@
 <template>
-  <div class="d-flex justify-center">
-    <v-card style="width: 400px; padding: 16px;" elevation="0" color="transparent">
+  <div class="d-flex justify-center pt-16">
+    <v-card style="width: 400px;" elevation="0">
       <v-lazy style="text-align: center;" transition="fade-transition" min-height="71">
         <img src="/GitScratch-icon-background-blue.svg" width="64">
       </v-lazy>
