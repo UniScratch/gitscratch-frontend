@@ -11336,7 +11336,8 @@ vue@^2.6.12:
 
 "vuetify-dialog@git+https://github.com/UniScratch/vuetify-dialog.git#master":
   version "2.0.20"
-  resolved "git+https://github.com/UniScratch/vuetify-dialog.git#1d3b42f9f8890db9c20974c6af6961269efe0aef"
+  uid "14a0fc2b506bda5451b0400c96b824ab8f7a495a"
+  resolved "git+https://github.com/UniScratch/vuetify-dialog.git#14a0fc2b506bda5451b0400c96b824ab8f7a495a"
 
 vuetify-loader@^1.7.3:
   version "1.7.3"
