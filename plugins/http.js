@@ -16,16 +16,23 @@ export default function ({ $axios, $dialog, $auth, error: nuxtError }) {
     if (error.response) {
       if (error.response.status) {
         errorMsg += `<br>响应码: ${error.response.status} ${error.response.statusText}`
+        if (error.response.status === 401) {
+          console.log('session expired, logout.')
+          $auth.logout()
+          return Promise.resolve(false)
+        }
       }
       if (error.response.data.message) {
         errorMsg += `<br>信息: ${error.response.data.message}`
       }
     }
     try {
-      $dialog.notify.error(errorMsg, {
-        position: 'bottom-left',
-        timeout: 0
-      })
+      setTimeout(() => {
+        $dialog.notify.error(errorMsg, {
+          position: 'bottom-left',
+          timeout: 5000
+        })
+      }, 500)
     } catch (error) {
       console.log(error)
     }
