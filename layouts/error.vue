@@ -1,17 +1,14 @@
 <template>
   <div style="margin: 10px auto; text-align: center;">
-    <div v-if="error.statusCode === 404" class="text-h5">
-      {{ pageNotFound }}
-    </div>
-    <div v-else-if="error.statusCode === 500" class="text-h5">
-      {{ internalServerError }}
-    </div>
-    <div v-else-if="error.statusCode === 403" class="text-h5">
-      {{ forbidden }}
-    </div>
-    <div v-else class="text-h5">
-      {{ otherError }}
-    </div>
+    <p class="text-h2">
+      {{ errTypes[errType].emoji }}
+    </p>
+    <p class="text-h5">
+      {{ errTypes[errType].text }}
+    </p>
+    <p>
+      {{ errTypes[errType].subtitle }}
+    </p>
     <br>
     <v-btn
       text
@@ -47,18 +44,18 @@ export default {
   },
   data () {
     return {
-      pageNotFound: '找不到页面',
-      internalServerError: '服务器错误',
-      forbidden: '没有权限访问目标页面',
-      otherError: '未知错误'
+      errType: 0,
+      errTypes: {
+        404: { text: '404 资源不存在', emoji: '🤔', subtitle: '生活总归带点荒谬' },
+        500: { text: '500 服务器错误', emoji: '🙏', subtitle: '服务器出错可能说明该雇更多程序员了' },
+        403: { text: '没有权限访问目标页面', emoji: '🤚', subtitle: '总有些门是对你关闭的' },
+        0: { text: '??? 未知错误', emoji: '🙏', subtitle: '服务器出错可能说明该雇更多程序员了' }
+      }
     }
   },
-  head () {
-    const title =
-      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
-    return {
-      title
-    }
+  mounted () {
+    this.errType =
+      this.error.statusCode === 404 ? 404 : 0
   },
   methods: {
     back () {
