@@ -113,7 +113,8 @@ export default {
     贡献者: {
       项目提出: ['Dispure', 'HydroGest'],
       金主: [],
-      主要贡献者: ['Dispure', 'HydroGest', 'TimFang4162', 'wrj2009'],
+      主要编码者: ['Dispure', 'HydroGest', 'TimFang4162', 'wrj2009'],
+      多语言支持: ['蓝莓莓'],
       吉祥物设计: ['小孟', '小怡'],
       云服务支持: ['Someone-Yang', '玲行云端'],
       其他贡献者: ['frank-782']
@@ -127,7 +128,8 @@ export default {
       wrj2009: 'https://github.com/wrj2009',
       'Someone-Yang': 'https://github.com/Someone-Yang',
       玲行云端: 'https://www.incloudify.com/',
-      'frank-782': 'https://github.com/frank-782'
+      'frank-782': 'https://github.com/frank-782',
+      蓝莓莓: 'https://github.com/LanmeiCN'
     },
     meta: require('static/meta.json'),
     overlay: false,
