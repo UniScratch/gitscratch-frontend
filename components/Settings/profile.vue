@@ -140,7 +140,7 @@ export default {
           console.log(res.data.filename)
           this.data.avatar = res.data.filename
           this.save()
-          // console.log(this.$utils.getAvatarUrl(this.data.avatar))
+          // console.log(this.$utils.getAssetUrl(this.data.avatar))
           // this.$toast.open({
           //   message: '上传成功',
           //   type: 'success'

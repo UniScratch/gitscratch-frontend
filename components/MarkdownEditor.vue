@@ -1,119 +1,162 @@
 <template>
-  <div v-if="!disabled">
-    <!-- <v-card> -->
-    <v-card-title class="textarea_title">
-      <div>
-        <v-tabs v-model="tab">
-          <v-tab>撰写</v-tab>
-          <v-tab>预览</v-tab>
-        </v-tabs>
-      </div>
-      <v-spacer />
-      <div v-show="tab === 0">
-        <v-btn icon plain small @click="header()">
-          <v-icon>mdi-format-header-pound</v-icon>
-        </v-btn>
-        <v-btn icon plain small @click="bold()">
-          <v-icon>mdi-format-bold</v-icon>
-        </v-btn>
-        <v-btn icon plain small @click="italic()">
-          <v-icon>mdi-format-italic</v-icon>
-        </v-btn>
-        <v-btn icon plain small @click="image()">
-          <v-icon>mdi-image-outline</v-icon>
-        </v-btn>
-        <v-btn icon plain small @click="quote()">
-          <v-icon>mdi-format-quote-open</v-icon>
-        </v-btn>
-        <v-btn icon plain small @click="code()">
-          <v-icon>mdi-code-tags</v-icon>
-        </v-btn>
-        <v-btn icon plain small @click="link()">
-          <v-icon>mdi-link-variant</v-icon>
-        </v-btn>
-        <v-btn icon plain small @click="unorderedList()">
-          <v-icon>mdi-format-list-bulleted</v-icon>
-        </v-btn>
-        <v-btn icon plain small @click="orderedList()">
-          <v-icon>mdi-format-list-numbered</v-icon>
-        </v-btn>
-        <v-btn icon plain small @click="checkbox()">
-          <v-icon>mdi-checkbox-marked-outline</v-icon>
-        </v-btn>
-        <v-btn icon plain small @click="at()">
-          <v-icon>mdi-at</v-icon>
-        </v-btn>
-      </div>
-    </v-card-title>
-
-    <v-card-text v-show="tab === 0" style="padding-bottom: 0px;">
-      <v-banner :value="isReply" single-line rounded outlined>
-        <div v-if="isReply">
-          <span class="grey-text">
-            回复
-          </span>
-          <span>
-            {{ reply.user.name }}
-          </span>
-          <span class="grey-text">
-            :
-          </span>
+  <div>
+    <div v-if="!disabled">
+      <!-- <v-card> -->
+      <v-card-title class="textarea_title">
+        <div>
+          <v-tabs v-model="tab">
+            <v-tab>撰写</v-tab>
+            <v-tab>预览</v-tab>
+          </v-tabs>
         </div>
-        <template #actions>
-          <v-btn text>
-            查看原文
+        <v-spacer />
+        <div v-show="tab === 0">
+          <v-btn icon plain small @click="header()">
+            <v-icon>mdi-format-header-pound</v-icon>
           </v-btn>
-          <v-btn icon @click="clearReply()">
-            <v-icon>mdi-close</v-icon>
+          <v-btn icon plain small @click="bold()">
+            <v-icon>mdi-format-bold</v-icon>
           </v-btn>
-        </template>
-      </v-banner>
-      <v-textarea
-        :id="randomId"
-        v-model="markdown"
-        outlined
-        :label="textareaLabel"
-        auto-grow
-        :placeholder="textareaPlaceholder"
+          <v-btn icon plain small @click="italic()">
+            <v-icon>mdi-format-italic</v-icon>
+          </v-btn>
+          <v-btn icon plain small @click="image()">
+            <v-icon>mdi-image-outline</v-icon>
+          </v-btn>
+          <v-btn icon plain small @click="quote()">
+            <v-icon>mdi-format-quote-open</v-icon>
+          </v-btn>
+          <v-btn icon plain small @click="code()">
+            <v-icon>mdi-code-tags</v-icon>
+          </v-btn>
+          <v-btn icon plain small @click="link()">
+            <v-icon>mdi-link-variant</v-icon>
+          </v-btn>
+          <v-btn icon plain small @click="unorderedList()">
+            <v-icon>mdi-format-list-bulleted</v-icon>
+          </v-btn>
+          <v-btn icon plain small @click="orderedList()">
+            <v-icon>mdi-format-list-numbered</v-icon>
+          </v-btn>
+          <v-btn icon plain small @click="checkbox()">
+            <v-icon>mdi-checkbox-marked-outline</v-icon>
+          </v-btn>
+          <v-btn icon plain small @click="at()">
+            <v-icon>mdi-at</v-icon>
+          </v-btn>
+        </div>
+      </v-card-title>
 
-        rows="3"
-      />
-    </v-card-text>
-    <div v-if="tab === 1" style="padding:0 16px;">
-      <MarkdownRender :content="markdown" />
-    </div>
-    <v-card-actions style="padding-top: 0px;">
-      <v-btn
-        text
-        icon
-      >
-        <v-icon>mdi-language-markdown-outline</v-icon>
-      </v-btn>
-      <v-spacer />
-      <v-btn
-        :width="actionIcon ? '120px' : 'auto'"
-        rounded
-        depressed
-        color="primary"
-        @click="$emit('submit', markdown)"
-      >
-        <v-icon v-if="actionIcon" left>
-          {{ actionIcon }}
-        </v-icon>
-        {{ actionText }}
-      </v-btn>
-    </v-card-actions>
+      <v-card-text v-show="tab === 0" style="padding-bottom: 0px;">
+        <v-banner :value="isReply" single-line rounded outlined>
+          <div v-if="isReply">
+            <span class="grey-text">
+              回复
+            </span>
+            <span>
+              {{ reply.user.name }}
+            </span>
+            <span class="grey-text">
+              :
+            </span>
+          </div>
+          <template #actions>
+            <v-btn text>
+              查看原文
+            </v-btn>
+            <v-btn icon @click="clearReply()">
+              <v-icon>mdi-close</v-icon>
+            </v-btn>
+          </template>
+        </v-banner>
+        <v-textarea
+          :id="randomId"
+          v-model="markdown"
+          outlined
+          :label="textareaLabel"
+          auto-grow
+          :placeholder="textareaPlaceholder"
+
+          rows="3"
+        />
+      </v-card-text>
+      <div v-if="tab === 1" style="padding:0 16px;">
+        <MarkdownRender :content="markdown" />
+      </div>
+      <v-card-actions style="padding-top: 0px;">
+        <v-btn
+          text
+          icon
+        >
+          <v-icon>mdi-language-markdown-outline</v-icon>
+        </v-btn>
+        <v-spacer />
+        <v-btn
+          :width="actionIcon ? '120px' : 'auto'"
+          rounded
+          depressed
+          color="primary"
+          @click="$emit('submit', markdown)"
+        >
+          <v-icon v-if="actionIcon" left>
+            {{ actionIcon }}
+          </v-icon>
+          {{ actionText }}
+        </v-btn>
+      </v-card-actions>
     <!-- </v-card> -->
-  </div>
-  <div v-else>
-    <v-alert
-      color="primary"
-      border="left"
-      colored-border
-      type="info"
-    >
-      {{ disableText }}
-    </v-alert>
+    </div>
+    <div v-else>
+      <v-alert
+        color="primary"
+        border="left"
+        colored-border
+        type="info"
+      >
+        {{ disableText }}
+      </v-alert>
+    </div>
+    <v-dialog v-model="fileUploadModal" overlay-opacity="0.3" max-width="500">
+      <v-card class="cardblur">
+        <v-card-title class="text-h5">
+          上传
+        </v-card-title>
+
+        <v-card-text>
+          <v-file-input
+            v-model="fileUpload"
+            show-size
+            truncate-length="36"
+            accept="image/*"
+            placeholder="上传"
+            @change="fileUpdate()"
+          />
+          <v-img
+            v-if="fileBase64"
+            :src="fileBase64"
+          />
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer />
+          <v-btn
+            text
+            rounded
+            @click="fileUploadModal = false"
+          >
+            取消
+          </v-btn>
+          <v-btn
+            color="primary"
+            text
+            rounded
+            :loading="fileUploading"
+            @click="upload()"
+          >
+            上传
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 <script>
@@ -160,7 +203,12 @@ export default {
   data: () => ({
     tab: 0,
     markdown: '',
-    randomId: 0
+    randomId: 0,
+    fileUploadModal: false,
+    fileUpload: null,
+    fileUploading: false,
+    fileBase64: '',
+    fileUrl: ''
   }),
   watch: {
     markdown () {
@@ -175,6 +223,33 @@ export default {
   mounted () {
   },
   methods: {
+    fileUpdate () {
+      if (this.fileUpload) {
+        console.log(this.fileUpload)
+        const reader = new FileReader()
+        reader.onload = (e) => {
+          this.fileBase64 = e.target.result
+        }
+        reader.readAsDataURL(this.fileUpload)
+      } else {
+        this.fileBase64 = ''
+      }
+    },
+    upload () {
+      this.fileUploading = true
+      this.fileUrl = ''
+      const formData = new FormData()
+      formData.append('file', this.fileUpload)
+      this.$axios.$post('/assets/upload', formData)
+        .then((res) => {
+          this.fileUploading = false
+          this.fileUploadModal = false
+          this.fileUrl = res.data.filename
+          this.imageInsert(res.data.filename)
+          // this.data.avatar = res.data.filename
+          // this.save()
+        })
+    },
     clearReply () {
       this.$emit('clearReply')
     },
@@ -227,17 +302,24 @@ export default {
       }
     },
     image () {
+      this.fileUploadModal = true
+      // const pos = this.getFocusPosition()
+      // console.log(pos)
+      // if (pos[0] === pos[1]) {
+      //   this.markdown = this.markdown.slice(0, pos[0]) + '![](url)' + this.markdown.slice(pos[0], this.markdown.length)
+      //   this.focus([pos[0] + 8, pos[1] + 8])
+      // } else if (this.markdown.slice(pos[0], pos[0]).match(/^(((ht|f)tps?):\/\/)?([^!@#$%^&*?.\s-]([^!@#$%^&*?.\s]{0,63}[^!@#$%^&*?.\s])?\.)+[a-z]{2,6}\/?/)) {
+      //   this.markdown = this.markdown.slice(0, pos[0]) + '![](' + this.markdown.slice(pos[0], pos[1]) + ')' + this.markdown.slice(pos[1])
+      //   this.focus([pos[0] + 4, pos[1] + 4])
+      // } else {
+      //   this.markdown = this.markdown.slice(0, pos[0]) + '![' + this.markdown.slice(pos[0], pos[1]) + '](url)' + this.markdown.slice(pos[1])
+      //   this.focus([pos[0] + 2, pos[1] + 2])
+      // }
+    },
+    imageInsert (url) {
       const pos = this.getFocusPosition()
-      if (pos[0] === pos[1]) {
-        this.markdown = this.markdown.slice(0, pos[0]) + '![](url)' + this.markdown.slice(pos[0], this.markdown.length)
-        this.focus([pos[0] + 8, pos[1] + 8])
-      } else if (this.markdown.slice(pos[0], pos[0]).match(/^(((ht|f)tps?):\/\/)?([^!@#$%^&*?.\s-]([^!@#$%^&*?.\s]{0,63}[^!@#$%^&*?.\s])?\.)+[a-z]{2,6}\/?/)) {
-        this.markdown = this.markdown.slice(0, pos[0]) + '![](' + this.markdown.slice(pos[0], pos[1]) + ')' + this.markdown.slice(pos[1])
-        this.focus([pos[0] + 4, pos[1] + 4])
-      } else {
-        this.markdown = this.markdown.slice(0, pos[0]) + '![' + this.markdown.slice(pos[0], pos[1]) + '](url)' + this.markdown.slice(pos[1])
-        this.focus([pos[0] + 2, pos[1] + 2])
-      }
+      this.markdown = this.markdown.slice(0, pos[0]) + '![](' + url + ')' + this.markdown.slice(pos[1])
+      this.focus([pos[0] + 4, pos[1] + 4])
     },
     quote () {
       const pos = this.getFocusPosition()

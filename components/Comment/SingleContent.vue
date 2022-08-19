@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex">
-    <Avatar :data="commentData.user" size="40" />
+    <Avatar :data="commentData.user" size="45" />
     <v-divider vertical style="margin: 0 8px;" />
     <div class="flex-grow-1 overflow-auto" style="border-radius: 0px;">
       <v-chip

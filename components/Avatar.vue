@@ -1,6 +1,6 @@
 <template>
   <v-avatar v-if="!$utils.isObjectEmpty(data)" :size="size" color="primary">
-    <v-img v-if="data.avatar" :src="$utils.getAvatarUrl(data.avatar)" :aspect-ratio="1" />
+    <v-img v-if="data.avatar" :src="$utils.getAssetUrl(data.avatar)" :aspect-ratio="1" />
     <span v-else class="white--text text-h5" :style="'font-size: '+Number(size)*0.4+'px !important;'">{{ data.name[0] }}</span>
   </v-avatar>
 </template>

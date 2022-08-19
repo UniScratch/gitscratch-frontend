@@ -19,8 +19,23 @@ export default {
     theme: null
   }),
   mounted () {
+    const renderer = new marked.Renderer()
+    renderer.image = (href, title, text) => {
+      // href = marked.cleanUrl(this.options.sanitize, this.options.baseUrl, href)
+      if (href === null) {
+        return text
+      }
+      // console.log(href)
+      href = this.$utils.getAssetUrl(href)
+      let out = `<img src="${href}" alt="${text}"`
+      if (title) {
+        out += ` title="${title}"`
+      }
+      out += '/>'
+      return out
+    }
     marked.setOptions({
-      renderer: new marked.Renderer(),
+      renderer,
       highlight (code, lang) {
         const language = hljs.getLanguage(lang) ? lang : 'plaintext'
         hljs.registerLanguage(language, require('highlight.js/lib/languages/' + language))
@@ -52,6 +67,7 @@ export default {
 .markdown img {
     text-align: center;
     display: block;
+    max-width: 100%;
 }
 
 .markdown img:after {
