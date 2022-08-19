@@ -16,6 +16,14 @@ export default {
   transition: 'slide-top',
   mounted () {
     console.log('Api url:', this.$axios.defaults.baseURL)
+    this.timer = window.setInterval(() => {
+      setTimeout(() => {
+        this.$auth.fetchUser()
+      }, 0)
+    }, 60000) // 60s
+  },
+  beforeDestroy () {
+    window.clearInterval(this.timer)
   }
 }
 </script>
