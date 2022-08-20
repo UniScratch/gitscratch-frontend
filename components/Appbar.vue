@@ -32,30 +32,58 @@
         width="36"
       >
     </v-btn>
-    <v-text-field
-      v-model="searchKeyword"
-      prepend-inner-icon="mdi-magnify"
-      label="搜索"
-      autocomplete="off"
-      class="mx-2 mx-md-4 hidden-xs-only"
-      dense
-      hide-details
-      outlined
-      single-line
-      style="margin-top: unset !important;max-width: 250px; border-radius: 20px !important"
-      @keyup.enter="search"
-    />
-    <div class="hidden-xs-only">
-      <v-btn text to="/explore" rounded>
-        发现
+    <template v-if="!isEditor">
+      <v-text-field
+        v-model="searchKeyword"
+        prepend-inner-icon="mdi-magnify"
+        label="搜索"
+        autocomplete="off"
+        class="mx-2 mx-md-4 hidden-xs-only"
+        dense
+        hide-details
+        outlined
+        single-line
+        style="margin-top: unset !important;max-width: 250px; border-radius: 20px !important"
+        @keyup.enter="search"
+      />
+      <div class="hidden-xs-only">
+        <v-btn text to="/explore" rounded>
+          发现
+        </v-btn>
+        <v-btn text to="/about" rounded>
+          关于
+        </v-btn>
+        <v-btn text to="/help" rounded>
+          帮助
+        </v-btn>
+      </div>
+    </template>
+    <template v-if="isEditor">
+      <v-btn text>
+        文件
       </v-btn>
-      <v-btn text to="/about" rounded>
-        关于
+      <v-btn text>
+        编辑
       </v-btn>
-      <v-btn text to="/help" rounded>
-        帮助
+      <v-btn text>
+        其他
       </v-btn>
-    </div>
+      <v-text-field
+        label="作品名称"
+        autocomplete="off"
+        dense
+        hide-details
+        outlined
+        single-line
+        style="margin-top: unset !important;max-width: 250px; "
+      />
+      <v-btn text>
+        提交
+      </v-btn>
+      <v-btn text>
+        查看作品页面
+      </v-btn>
+    </template>
 
     <v-spacer />
 
@@ -208,6 +236,12 @@
 </template>
 <script>
 export default {
+  props: {
+    isEditor: {
+      type: Boolean,
+      default: false
+    }
+  },
   data: () => ({
     isMute: true,
     muteRemainDate: -1,

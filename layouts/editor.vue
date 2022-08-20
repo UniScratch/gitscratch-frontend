@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Appbar />
+    <Appbar is-editor />
     <v-main>
       <Nuxt />
     </v-main>

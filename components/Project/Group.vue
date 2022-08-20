@@ -8,11 +8,7 @@
   </div>
 </template>
 <script>
-import ProjectCard from './ProjectCard.vue'
 
 export default {
-  components: {
-    ProjectCard
-  }
 }
 </script>

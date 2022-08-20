@@ -110,6 +110,30 @@ export default ({ app }, inject) => {
         return { status: true }
       }
       return { status: false, message: '不允许' } // not allowed
+    },
+    canEditProjectSettings: (project) => {
+      if (!app.$auth.loggedIn) { // not logged in
+        return { status: false, message: '请先登录' }
+      }
+      if (app.$auth.user.permission === 'admin') { // admin
+        return { status: true }
+      }
+      if (project.author.id === app.$auth.user.id) { // user self
+        return { status: true }
+      }
+      return { status: false, message: '不允许' } // not allowed
+    },
+    canEditProjectReadme: (project) => {
+      if (!app.$auth.loggedIn) { // not logged in
+        return { status: false, message: '请先登录' }
+      }
+      if (app.$auth.user.permission === 'admin') { // admin
+        return { status: true }
+      }
+      if (project.author.id === app.$auth.user.id) { // user self
+        return { status: true }
+      }
+      return { status: false, message: '不允许' } // not allowed
     }
   })
 }

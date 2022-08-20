@@ -4,7 +4,7 @@
       <v-list-item-avatar
         size="60"
       >
-        <Avatar :data="userData" size="60" v-bind="attrs" v-on="on" />
+        <Avatar :data="userData" size="60" />
         <!-- <v-avatar style="width: auto; height: auto; max-width: 200px;">
           <v-img :src="$utils.getAssetUrl(userData.avatar)" size="60" />
         </v-avatar> -->
@@ -62,15 +62,6 @@ export default {
     }
   },
   data: () => ({
-    projectAuthor: '作者',
-    projectAuthorId: 1,
-    projectAuthorAvatar: '/GitScratch-icon-background-blue.svg',
-    projectAuthorLevel: 1,
-    projectAuthorIsVerified: true,
-    projectAuthorVerifyCategories: '社区官方认证',
-    projectAuthorVerifyColor: 'rgba(33, 150, 243)',
-    projectAuthorIsMuted: true,
-    projectAuthorMuteRemain: '-1'
   })
 }
 </script>

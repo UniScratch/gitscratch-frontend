@@ -15,10 +15,10 @@
             <v-icon>mdi-eye-outline</v-icon>
             &nbsp;{{ data.view }}&nbsp;&nbsp;
             <v-icon>mdi-calendar-outline</v-icon>
-            &nbsp;{{ new Date(data.updated_at * 1000).format("yyyy-MM-dd hh:mm:ss") }}&nbsp;&nbsp;
+            &nbsp;{{ $utils.getTimeString(data.head.time) }}&nbsp;&nbsp;
             <v-icon>mdi-update</v-icon>&nbsp;
-            <nuxt-link to="/projects/1/commit/170ed1c/" class="text-color">
-              {{ projectCommit }}
+            <nuxt-link :to="'/projects/1/commit/'+data.head.hash" class="text-color">
+              {{ data.head.message }} ({{ data.totalCommits }} commits)
             </nuxt-link>&nbsp;&nbsp;
           </div>
 
@@ -68,17 +68,6 @@
               </template>
               <span>星标</span>
             </v-tooltip>
-            <v-tooltip v-if="data.source" bottom>
-              <template #activator="{ on, attrs }">
-                <v-btn text v-bind="attrs" rounded v-on="on" @click="fork()">
-                  <v-icon>
-                    mdi-source-branch
-                  </v-icon>
-                  234
-                </v-btn>
-              </template>
-              <span>改编</span>
-            </v-tooltip>
             <v-tooltip bottom>
               <template #activator="{ on, attrs }">
                 <v-btn text v-bind="attrs" rounded v-on="on" @click="like()">
@@ -89,6 +78,17 @@
                 </v-btn>
               </template>
               <span>喜欢</span>
+            </v-tooltip>
+            <v-tooltip v-if="data.source" bottom>
+              <template #activator="{ on, attrs }">
+                <v-btn text v-bind="attrs" rounded v-on="on" @click="fork()">
+                  <v-icon>
+                    mdi-source-branch
+                  </v-icon>
+                  234
+                </v-btn>
+              </template>
+              <span>改编</span>
             </v-tooltip>
             <v-tooltip v-if="data.source" bottom>
               <template #activator="{ on, attrs }">
@@ -141,7 +141,7 @@
         <v-card-title class="text-h5">
           <span>介绍</span>
           <v-spacer />
-          <v-btn v-if="$auth.loggedIn && data.id === $auth.user.id" icon @click="readmeOpenEdit">
+          <v-btn v-if="$permission.canEditProjectReadme(data)" icon @click="readmeOpenEdit">
             <v-icon>mdi-pencil-outline</v-icon>
           </v-btn>
         </v-card-title>
@@ -178,21 +178,11 @@
 </template>
 <script>
 export default {
-  props: {
-  },
   data: () => ({
-    data: {},
+    data: { head: {} },
     loadPlayer: false,
     readmeIsEditing: false,
-    readmeEdit: '',
-    bio: '啊，好舒服',
-    avatar: '/GitScratch-icon-background-blue.svg',
-    projectTitle: 'Default Project',
-    projectViews: 114514,
-    projectCommit: '170ed1c',
-    projectUpdate: '2022/5/28 14:39:58',
-    isLogin: true,
-    isMuted: true
+    readmeEdit: ''
   }),
   async fetch () {
     const data = await this.$axios.$get(`/projects/${this.$route.params.id}/info`)
@@ -250,11 +240,11 @@ export default {
       this.readmeEdit = n
     },
     async operation (type) {
-      const res = await this.$axios.$post('projects/' + this.$route.params.id + '/operation', {
+      await this.$axios.$post('projects/' + this.$route.params.id + '/operation', {
         type
       })
       this.$fetch()
-      console.log(res)
+      // console.log(res)
     },
     async like () {
       await this.operation('project.like')

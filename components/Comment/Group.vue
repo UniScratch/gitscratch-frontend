@@ -125,7 +125,7 @@ export default {
       this.fetch()
     },
     async loadPage (id, force = false) {
-      console.log(id)
+      // console.log(id)
       if (!(id in this.comments) || force) {
         await this.fetch(id)
       }

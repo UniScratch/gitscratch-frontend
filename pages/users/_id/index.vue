@@ -181,16 +181,21 @@
               @change="readmeChange"
             />
           </v-card>
-          <ProjectGroupVertical title="置顶作品" style="margin-top: 8px;" />
         </v-window-item>
         <!-- 作品 -->
         <v-window-item>
           <div class="d-flex">
-            <p class="text-h5" style="margin: 0;">
-              最近收藏的作品
+            <p class="text-h5" style="margin: 0">
+              作品
             </p>
+            <v-spacer />
+            <v-btn rounded color="primary" @click="newProject()">
+              <v-icon> mdi-plus </v-icon>
+              新作品
+            </v-btn>
           </div>
-          <ProjectGroupVertical />
+          <br>
+          <ProjectGroupVertical :data="projects.projects" />
         </v-window-item>
         <!-- 组织 -->
         <v-window-item>
@@ -212,7 +217,8 @@
 export default {
   async asyncData ({ params, $axios }) {
     const data = await $axios.$get(`/users/${params.id}/info`)
-    return { data: data.data }
+    const projects = await $axios.$get(`/users/${params.id}/projects`)
+    return { data: data.data, projects: projects.data }
   },
   data: () => ({
     readmeIsEditing: false,
@@ -240,6 +246,12 @@ export default {
     }
   },
   methods: {
+    async newProject () {
+      const res = await this.$axios.$post(`/users/${this.data.id}/projects/new`, {
+      })
+      // console.log(res)
+      this.$router.push(`/projects/${res.data.id}`)
+    },
     validateReport () {
       this.$refs.reportForm.validate()
     },
