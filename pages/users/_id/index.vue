@@ -140,6 +140,9 @@
           <v-icon>mdi-book-outline</v-icon><span>作品</span>
         </v-tab>
         <v-tab>
+          <v-icon>mdi-note-text-outline</v-icon><span>帖子</span>
+        </v-tab>
+        <v-tab>
           <v-icon>mdi-account-group-outline</v-icon><span>组织</span>
         </v-tab>
         <v-tab>
@@ -197,6 +200,21 @@
           <br>
           <ProjectGroupVertical :data="projects.projects" />
         </v-window-item>
+        <!-- 帖子 -->
+        <v-window-item>
+          <div class="d-flex">
+            <p class="text-h5" style="margin: 0">
+              帖子
+            </p>
+            <v-spacer />
+            <v-btn rounded color="primary" @click="newPost()">
+              <v-icon> mdi-plus </v-icon>
+              新帖子
+            </v-btn>
+          </div>
+          <br>
+          <PostGroup :data="projects.projects" />
+        </v-window-item>
         <!-- 组织 -->
         <v-window-item>
           <p>？？？？？</p>
@@ -251,6 +269,12 @@ export default {
       })
       // console.log(res)
       this.$router.push(`/projects/${res.data.id}`)
+    },
+    async newPost () {
+      const res = await this.$axios.$post(`/users/${this.data.id}/posts/new`, {
+      })
+      // console.log(res)
+      this.$router.push(`/forum/${res.data.id}`)
     },
     validateReport () {
       this.$refs.reportForm.validate()
