@@ -50,6 +50,9 @@
         <v-btn text to="/explore" rounded>
           发现
         </v-btn>
+        <v-btn text to="/forum" rounded>
+          论坛
+        </v-btn>
         <v-btn text to="/about" rounded>
           关于
         </v-btn>

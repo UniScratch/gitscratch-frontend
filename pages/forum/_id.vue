@@ -21,7 +21,7 @@
         </v-chip>
         <v-spacer />
         <v-btn text @click="contentSubmit({status:1-data.status})">
-          <v-icon>mdi-upload-outline</v-icon>
+          <v-icon>{{ data.status === 0 ? 'mdi-upload-outline':'mdi-download-outline' }}</v-icon>
           {{ data.status === 0 ? '' : "取消" }}发布
         </v-btn>
         <v-btn text @click="contentOpenEdit()">
@@ -43,7 +43,7 @@
       <MarkdownEditor
         v-if="contentIsEditing"
         :content="data.content"
-        textarea-label="content"
+        textarea-label="正文"
         textarea-placeholder="畅所欲言"
         action-icon=""
         action-text="保存"
