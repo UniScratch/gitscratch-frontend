@@ -8,7 +8,7 @@ export default ({ app }, inject) => {
         return { status: true }
       }
       if (app.$auth.user.banned !== 0 || app.$auth.user.muted !== 0) { // banned or muted
-        return { status: false, message: '账号被封禁或禁言' }
+        return { status: false, message: '帐户被封禁或禁言' }
       }
       return { status: true } // default
     },
@@ -20,7 +20,7 @@ export default ({ app }, inject) => {
         return { status: true }
       }
       if (app.$auth.user.banned !== 0 || app.$auth.user.muted !== 0) { // banned or muted
-        return { status: false, message: '账号被封禁或禁言' }
+        return { status: false, message: '帐户被封禁或禁言' }
       }
       if (comment.target_type === 'project') {
         if (comment.target.author.id === app.$auth.user.id) { // author of project
@@ -45,7 +45,7 @@ export default ({ app }, inject) => {
         return { status: true }
       }
       if (app.$auth.user.banned !== 0 || app.$auth.user.muted !== 0) { // banned or muted
-        return { status: false, message: '账号被封禁或禁言' }
+        return { status: false, message: '帐户被封禁或禁言' }
       }
       if (comment.target_type === 'project') {
         if (comment.target.author.id === app.$auth.user.id) { // author of project
@@ -70,7 +70,7 @@ export default ({ app }, inject) => {
         return { status: true }
       }
       if (app.$auth.user.banned !== 0 || app.$auth.user.muted !== 0) { // banned or muted
-        return { status: false, message: '账号被封禁或禁言' }
+        return { status: false, message: '帐户被封禁或禁言' }
       }
       if (comment.target_type === 'project') {
         if (comment.target.author.id === app.$auth.user.id) { // author of project

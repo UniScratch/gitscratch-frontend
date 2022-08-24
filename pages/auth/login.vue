@@ -5,7 +5,7 @@
         <img src="/GitScratch-icon-background-blue.svg" width="64">
       </v-lazy>
       <v-card-title style="display: block; text-align: center;" class="text-h5">
-        登录 GitScratch 帐号
+        登录 GitScratch 帐户
       </v-card-title>
 
       <v-card-text>

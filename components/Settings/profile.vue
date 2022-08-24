@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="text-h5">
-      账户
+      帐户
     </p>
     <p class="text-h6">
       个人资料
@@ -99,7 +99,7 @@
       危险区域
     </p>
     <v-btn text color="red" @click="delUser()">
-      删除账号
+      删除帐户
     </v-btn>
   </div>
 </template>
@@ -166,7 +166,7 @@ export default {
     async delUser () {
       // TODO： use vuetify dialogs instead of this.$dialog
       const confirm1 = await this.$dialog.confirm({
-        text: '你正在删除你的账号<code>' + this.$auth.user.name + '</code><br>一旦删除，此账号将永久失去，此操作不可逆<br>如果你确定删除你的账号，请点击下一步',
+        text: '你正在删除你的帐户<code>' + this.$auth.user.name + '</code><br>一旦删除，此帐户将永久失去，此操作不可逆<br>如果你确定删除你的帐户，请点击下一步',
         title: '警告',
         actions: [{
           text: '取消', color: 'blue', key: false

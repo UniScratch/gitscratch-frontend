@@ -16,7 +16,7 @@
                 <v-icon>mdi-account-outline</v-icon>
               </v-list-item-icon>
               <v-list-item-content>
-                <v-list-item-title>账户</v-list-item-title>
+                <v-list-item-title>帐户</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
             <v-list-item link value="#appearance">

@@ -162,7 +162,7 @@ export default {
         try {
           this.$vuetify.goTo('#replyJumpTarget') // if this line won't work, use code below.
         } catch (e) {
-          this.$dialog.notify.error('无法跳转评论<br>目标评论位于第' + n.reply.page_id + '页,请手动翻页', {
+          this.$dialog.notify.error('无法跳转评论<br>目标评论位于第' + n.reply.page_id + '页，请手动翻页', {
             position: 'bottom-left',
             timeout: 0
           })

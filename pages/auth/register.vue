@@ -60,7 +60,7 @@
               />
             </v-form>
             <span class="text-caption grey--text text--darken-1">
-              为你的帐号设置一个密码。
+              为你的帐户设置一个密码。
             </span>
           </v-card-text>
         </v-window-item>

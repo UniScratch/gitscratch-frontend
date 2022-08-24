@@ -31,7 +31,7 @@
             mdi-comment-remove-outline
           </v-icon>
         </template>
-        <span>账户被禁言，{{ data.muted }} 天后解禁</span>
+        <span>帐户被禁言，{{ data.muted }} 天后解禁</span>
       </v-tooltip>
       <v-tooltip v-if="data.banned !== 0" bottom>
         <template #activator="{ on, attrs }">
