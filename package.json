@@ -19,7 +19,7 @@
     "@nuxtjs/vuetify": "git+https://github.com/UniScratch/vuetify-module.git#master",
     "@nuxtjs/webpack-profile": "^0.1.0",
     "highlight.js": "^11.6.0",
-    "marked": "^4.0.18",
+    "marked": "^4.1.0",
     "nuxt": "^2.15.8",
     "nuxt-precompress": "^0.5.9",
     "sanitize-html": "^2.7.1",
