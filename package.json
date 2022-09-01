@@ -27,7 +27,7 @@
     "vuetify-dialog": "git+https://github.com/UniScratch/vuetify-dialog.git#master"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^8.0.0",
+    "@nuxtjs/eslint-config": "^11.0.0",
     "@nuxtjs/eslint-module": "^3.1.0",
     "eslint": "^8.22.0",
     "eslint-loader": "^4.0.2",
