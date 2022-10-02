@@ -191,6 +191,7 @@
     </p>
     <p>
       Where required by law, we obtain your consent for the processing of certain Personal Information collected by cookies or similar technologies, or used to send you direct marketing communications, or when we carry out other processing activities for which consent may be required. If we rely on consent for the processing of your Personal Information, you have the right to withdraw it at any time and free of charge. When you do so, this will not affect the lawfulness of the processing before your consent withdrawal.
+      在法律要求的情况下，我们在处理通过 cookie 或类似技术收集的某些个人信息，或用于向您发送直接营销通信，或在我们进行可能需要同意的其他处理活动时，获得您的同意。如果我们依赖同意处理您的个人信息，您有权随时免费撤回。当您这样做时，这不会影响您撤回同意之前处理的合法性。
     </p>
     <p>
       To update your preferences, ask us to remove your information from our mailing lists, or submit a request to exercise your rights under applicable law, please contact us as specified in the “How to Contact Us” section below.
