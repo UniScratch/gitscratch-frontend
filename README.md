@@ -1,5 +1,5 @@
 # GitScratch
-Material Design 风格的 Scratch 社区前端项目，由 GitScratch 社区开发组用 ❤️ 制作。  
+Material Design 风格的 Scratch 社区前端项目，由 GitScratch 团队用 ❤️ 制作。  
 
 - [GitScratch](#gitscratch)
   - [开发](#开发)
