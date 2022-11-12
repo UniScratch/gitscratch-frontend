@@ -46,7 +46,7 @@
                 </template>
                 <div v-if="comments[totalPages-currentPageId+1] === undefined " :key="'commentpage'+currentPageId" class="d-flex justify-center">
                   <v-btn text @click="loadPage(totalPages-currentPageId+1)">
-                    加载第 {{ totalPages-currentPageId+1 }} 页
+                    加载第 {{ totalPages - currentPageId + 1 }} 页
                   </v-btn>
                 </div>
               </template>

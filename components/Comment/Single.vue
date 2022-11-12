@@ -70,10 +70,10 @@ export default {
 }
 </script>
 <style>
-.v-expansion-panel-content__wrap {
+/*.v-expansion-panel-content__wrap {
   padding: unset !important;
-  /* padding-top: 16px !important; */
-}
+  padding-top: 16px !important;
+}*/
 .card-highlight {
   border: 2px solid var(--primary-color);
   margin: -2px;
