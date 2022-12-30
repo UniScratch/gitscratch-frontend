@@ -48,7 +48,7 @@
       >
         <!-- 搜索 -->
         <v-window-item>
-          <div class="d-flex">
+          <div class="d-flex align-center">
             <v-text-field
               v-model="searchKeyword"
               label="搜索"

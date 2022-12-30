@@ -9,7 +9,7 @@
     </p>
     <blockquote>
       <p class="blockquote">
-        如果您想在不向我们提交任何个人信息的情况下使用 {{ editor }} 制作作品，可以下载 {{ editor }} 离线编辑器。{{ allDevelopers }} 无法访问在 {{ editor }} 离线编辑器中创建的作品，使用离线编辑器不会向 {{ allDevelopers }} 透露任何个人识别信息，除非您将这些作品发布到 {{ siteName }} 社区。
+        如果您想在不向我们提交任何个人信息的情况下使用 {{ editor }} 制作作品，可以下载 {{ editor }} 离线编辑器。{{ allDevelopers }} 无法访问在 {{ editor }} 离线编辑器中创建的作品，使用离线编辑器不会向 {{ allDevelopers }}透露任何个人识别信息，除非您将这些作品发布到 {{ siteName }} 社区。
       </p>
     </blockquote>
     <h2>
@@ -195,39 +195,51 @@
     </p>
     <p>
       To update your preferences, ask us to remove your information from our mailing lists, or submit a request to exercise your rights under applicable law, please contact us as specified in the “How to Contact Us” section below.
+      要更新您的偏好，请要求我们从我们的邮件列表中删除您的信息，或提交请求以行使您在适用法律下的权利，请按照以下“如何联系我们”部分的规定与我们联系。
     </p>
     <h2>
       Data Retention
+      数据保留
     </h2>
     <p>
       We take measures to delete your Personal Information or keep it in a form that does not allow you to be identified when this information is no longer necessary for the purposes for which we process it, unless we are required by law to keep this information for a longer period. When determining the retention period, we take into account various criteria, such as the type of services requested by or provided to you, the nature and length of our relationship with you, possible re-enrolment with our services, the impact on the services we provide to you if we delete some information from or about you, mandatory retention periods provided by law and the statute of limitations.
+      我们会采取措施删除您的个人信息，或将其保存在不允许您在我们处理这些信息时被识别的形式，除非法律要求我们将这些信息保存更长时间。在确定保留期时，我们会考虑各种标准，例如您要求或向您提供的服务类型、我们与您的关系的性质和期限、可能重新注册我们的服务、我们删除您的某些信息或关于您的信息对我们向您提供服务的影响、法律和诉讼时效规定的强制保留期。
     </p>
     <h2>
       How does the Scratch Team protect my personal information?
+      {{ allDevelopers }}如何保护我的个人信息？
     </h2>
     <p>
       The Scratch Team has in place administrative, physical, and technical procedures that are intended to protect the information we collect on the Scratch website against accidental or unlawful destruction, accidental loss, unauthorized alteration, unauthorized disclosure or access, misuse, and any other unlawful form of processing of the Personal Information in our possession. For example, we use SSL/TLS for all data transfer and strictly limit access to the Scratch servers and the data we store on them. However, as effective as these measures are, no security system is impenetrable. We cannot completely guarantee the security of our databases, nor can we guarantee that the information you supply will not be intercepted while being transmitted to us over the Internet.
+      {{ allDevelopers }}制定了行政、物理和技术程序，旨在保护我们在 {{ siteName }} 上收集的信息，使其免受意外或非法破坏、意外丢失、未经授权的更改、未经批准的披露或访问、误用以及任何其他非法形式的个人信息处理。例如，我们对所有数据传输使用 SSL/TLS，并严格限制对 {{ siteName }} 服务器及其上存储的数据的访问。然而，尽管这些措施很有效，但没有一个安全系统是无法穿透的。我们不能完全保证我们数据库的安全，也不能保证您提供的信息在通过互联网传输给我们时不会被拦截。
     </p>
     <h2>
       Notifications of changes to the Privacy Policy
+      隐私政策变更通知
     </h2>
     <p>
       We review our security measures and Privacy Policy on a periodic basis, and we may modify our policies as appropriate. If we make material changes, we will notify you through the Site or by sending you an email or other communication. We encourage you to review our Privacy Policy on a regular basis. The “Last Updated” date at the top of this page indicates when this Privacy Policy was last revised. Your continued use of the Site following these changes means that you accept the revised Privacy Policy.
+      我们定期审查我们的安全措施和隐私政策，我们可以根据需要修改我们的政策。如果我们做出重大更改，我们将通过网站或向您发送电子邮件或其他通信通知您。我们鼓励您定期审查我们的隐私政策。本页顶部的“上次更新”日期表示本隐私政策上次修订的时间。您在这些更改后继续使用本网站意味着您接受修订后的隐私政策。
     </p>
     <h2>
       International Cross-Border Data Transfer
+      国际跨境数据传输
     </h2>
     <p>
       Scratch is based in the United States. Personal Information that we collect may be transferred to, and stored at, any of our affiliates, partners, or service providers which may be inside or outside the European Economic Area, including the United States. By submitting your personal data, you agree to such transfers.
+      {{ allDevelopers }} 总部位于中国。我们收集的个人信息可能会转移到我们的任何附属公司、合作伙伴或服务供应商，并存储在他们那里，这些附属公司、合作伙伴或服务供应商可能位于欧洲经济区内部或外部。提交您的个人数据即表示您同意此类传输。
     </p>
     <h2>
       What can I do to help protect privacy on Scratch?
+      我可以做什么来帮助保护 {{ siteName }} 上的隐私？
     </h2>
     <p>
       Please do not share personal contact information (such as your name, physical address, email address, or phone number) in projects, comments, profiles, studios, or forum posts. Please let us know if you see this kind of information by using the “Report” link which appears on the page. It is also important that you maintain the security and control of your account credentials, and not share your password with anyone.
+      请不要在作品、评论、个人自述文档、组织或论坛帖子中共享个人联系信息（如您的姓名、实际地址、电子邮件地址或电话号码）。如果您看到此类信息，请使用页面上的“举报”按钮告知我们。同样重要的是，您要维护账户凭据的安全和控制，不要与任何人共享密码。
     </p>
     <h2>
       Contact Us
+      联系我们
     </h2>
     <p>
       The Code-to-Learn Foundation d/b/a The Scratch Foundation is the entity responsible for the processing of your Personal Information. If you have any questions about this Privacy Policy, or if you would like to exercise your rights to your Personal Information, you may contact us at help@scratch.mit.edu or via mail at:
