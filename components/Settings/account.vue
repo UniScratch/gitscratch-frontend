@@ -1,16 +1,19 @@
 <template>
   <div>
-    <p class="text-h5">
+    <p class="text-h4">
       帐户
     </p>
-    <p class="text-h6">
+    <p class="text-h5">
       个人资料
     </p>
     <Avatar :data="data" size="60" />
+    <span class="text-h6">{{ data.name }}</span>
     <v-dialog v-model="changeAvatarModal" overlay-opacity="0.3" max-width="500">
       <template #activator="{ on, attrs }">
         <v-btn
-          text
+          outlined
+          color="primary"
+          small
           v-bind="attrs"
           v-on="on"
         >
@@ -83,22 +86,23 @@
       hint="你的个人网站或者博客。留空不显示。"
       persistent-hint
     />
-    <v-btn text @click="save()">
+    <br>
+    <v-btn color="primary" @click="save()">
       保存
     </v-btn>
-    <p class="text-h6">
+    <p class="text-h5">
       安全
     </p>
-    <v-btn text>
+    <v-btn outlined color="primary">
       修改密码
     </v-btn>
     <v-btn plain>
       忘记密码
     </v-btn>
-    <p class="text-h6">
+    <p class="text-h5">
       危险区域
     </p>
-    <v-btn text color="red" @click="delUser()">
+    <v-btn outlined color="red" @click="delUser()">
       删除帐户
     </v-btn>
   </div>

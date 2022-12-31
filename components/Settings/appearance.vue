@@ -1,9 +1,9 @@
 <template>
   <div>
-    <p class="text-h5">
+    <p class="text-h4">
       个性化
     </p>
-    <p class="text-h6">
+    <p class="text-h5">
       主题
     </p>
     <v-radio-group
@@ -23,14 +23,14 @@
         value="system"
       />
     </v-radio-group>
-    <p class="text-h6">
+    <p class="text-h5">
       Markdown 编辑器
     </p>
     <v-switch
       v-model="data.mdFont"
       label="编辑时使用等宽字体"
     />
-    <v-btn text @click="save()">
+    <v-btn color="primary" @click="save()">
       保存
     </v-btn>
   </div>

@@ -2,7 +2,7 @@
   <v-row>
     <v-col cols="12" xl="2" md="3" sm="4" style="padding-right: 20px;">
       <div>
-        <p class="text-h4">
+        <p class="text-h5">
           设置
         </p>
         <v-list
@@ -11,7 +11,7 @@
           color="transparent"
         >
           <v-list-item-group v-model="tab" color="primary" mandatory>
-            <v-list-item link value="#profile">
+            <v-list-item link value="#account">
               <v-list-item-icon>
                 <v-icon>mdi-account-outline</v-icon>
               </v-list-item-icon>
@@ -62,8 +62,8 @@
     />
     <v-col cols="12" xl="10" md="9" sm="8">
       <v-tabs-items v-model="tab" vertical style="padding-left: 13px;">
-        <v-tab-item value="#profile">
-          <SettingsProfile />
+        <v-tab-item value="#account">
+          <SettingsAccount />
         </v-tab-item>
         <v-tab-item value="#appearance">
           <SettingsAppearance />

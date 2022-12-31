@@ -1,9 +1,9 @@
 <template>
   <div>
-    <p class="text-h5">
+    <p class="text-h4">
       通知
     </p>
-    <p class="text-h6">
+    <p class="text-h5">
       通知类型
     </p>
     <v-simple-table>
@@ -61,13 +61,14 @@
         </tbody>
       </template>
     </v-simple-table>
-    <v-btn text @click="save()">
+    <br>
+    <v-btn color="primary" @click="save()">
       保存
     </v-btn>
-    <p class="text-h6">
+    <p class="text-h5">
       Web 通知设置
     </p>
-    <v-btn text>
+    <v-btn color="primary">
       申请通知权限
     </v-btn>
   </div>
