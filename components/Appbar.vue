@@ -107,14 +107,26 @@
         </template>
         <span>通知</span>
       </v-tooltip>
-      <v-tooltip bottom>
-        <template #activator="{ on, attrs }">
-          <v-btn icon v-bind="attrs" to="/projects/editor" v-on="on">
-            <v-icon>mdi-plus</v-icon>
-          </v-btn>
+      <v-menu>
+        <template #activator="{ on: menu, attrs }">
+          <v-tooltip bottom>
+            <template #activator="{ on: tooltip }">
+              <v-btn icon v-bind="attrs" v-on="{ ...tooltip, ...menu }">
+                <v-icon>mdi-plus</v-icon>
+              </v-btn>
+            </template>
+            <span>创建</span>
+          </v-tooltip>
         </template>
-        <span>创建</span>
-      </v-tooltip>
+        <v-list width="200">
+          <v-list-item link to="/projects/editor" disabled>
+            <v-list-item-title>创建</v-list-item-title>
+          </v-list-item>
+          <v-list-item link to="/projects/upload">
+            <v-list-item-title>上传</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
       <v-menu bottom offset-y transition="slide-y-transition">
         <template #activator="{ on, attrs }">
           <v-btn icon v-bind="attrs" v-on="on">
