@@ -107,7 +107,7 @@
         </template>
         <span>通知</span>
       </v-tooltip>
-      <v-menu>
+      <v-menu :offset-y="true">
         <template #activator="{ on: menu, attrs }">
           <v-tooltip bottom>
             <template #activator="{ on: tooltip }">

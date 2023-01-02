@@ -40,17 +40,17 @@ Date.prototype.fromNow = function () {
   const minuteDiff = Math.floor(diff / minute)
   const secondDiff = Math.floor(diff / second)
   if (yearDiff > 0) {
-    return yearDiff + '年前'
+    return yearDiff + ' 年前'
   } else if (monthDiff > 0) {
-    return monthDiff + '个月前'
+    return monthDiff + ' 个月前'
   } else if (dayDiff > 0) {
-    return dayDiff + '天前'
+    return dayDiff + ' 天前'
   } else if (hourDiff > 0) {
-    return hourDiff + '小时前'
+    return hourDiff + ' 小时前'
   } else if (minuteDiff > 0) {
-    return minuteDiff + '分钟前'
+    return minuteDiff + ' 分钟前'
   } else if (secondDiff > 0) {
-    return secondDiff + '秒前'
+    return secondDiff + ' 秒前'
   } else {
     return '刚刚'
   }

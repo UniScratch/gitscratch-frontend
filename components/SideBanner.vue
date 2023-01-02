@@ -31,7 +31,7 @@
             mdi-check
           </v-icon>签到
         </v-btn>
-        <v-btn
+        <!-- <v-btn
           block
           color="primary"
           to="/project/editor"
@@ -42,6 +42,18 @@
           <v-icon left>
             mdi-plus
           </v-icon>创建
+        </v-btn> -->
+        <v-btn
+          block
+          color="primary"
+          to="/projects/upload"
+          class="mt-2"
+          rounded
+          depressed
+        >
+          <v-icon left>
+            mdi-upload
+          </v-icon>上传
         </v-btn>
       </div>
     </v-card-actions>

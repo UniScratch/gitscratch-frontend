@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>帮助</h1>
+    <p class="text-h4">
+      帮助
+    </p>
     <p>
       您可以在<router-link to="/about">
         “关于”页面
@@ -29,7 +31,9 @@
         API
       </router-link>
     </p>
-    <h2>常见问题</h2>
+    <p class="text-h5">
+      常见问题
+    </p>
     <v-expansion-panels focusable :value="expansionPanelsValue">
       <v-expansion-panel>
         <v-expansion-panel-header>
