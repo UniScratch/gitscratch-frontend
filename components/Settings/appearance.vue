@@ -30,7 +30,7 @@
       v-model="data.mdFont"
       label="编辑时使用等宽字体"
     />
-    <v-btn color="primary" @click="save()">
+    <v-btn color="primary" depressed @click="save()">
       保存
     </v-btn>
   </div>

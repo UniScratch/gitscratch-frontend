@@ -136,6 +136,14 @@
           </v-row>
         </v-card-text>
       </v-card>
+      <div>
+        <v-divider style="margin: 16px 0;" />
+
+        <CommentGroup />
+      </div>
+    </v-col>
+    <v-col cols="12" xl="5" md="4">
+      <ProjectUserInfo :user-data="data.author" />
       <br>
       <v-card>
         <v-card-title class="text-h5">
@@ -163,14 +171,6 @@
           @change="readmeChange"
         />
       </v-card>
-      <div>
-        <v-divider style="margin: 16px 0;" />
-
-        <CommentGroup />
-      </div>
-    </v-col>
-    <v-col cols="12" xl="5" md="4">
-      <ProjectUserInfo :user-data="data.author" />
       <br>
       //推荐作品流
     </v-col>

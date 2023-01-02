@@ -63,21 +63,24 @@
           <v-divider />
           <v-menu offset-y>
             <template #activator="{ on, attrs }">
-              <v-subheader
+              <v-btn
                 v-bind="attrs"
+                text
+                block
+                rounded
                 v-on="on"
               >
                 管理通知
-              </v-subheader>
+              </v-btn>
             </template>
             <v-list
               dense
             >
-              <v-list-item link to="/settings">
+              <v-list-item link to="/settings#notifications">
                 <v-list-item-title>通知设置</v-list-item-title>
               </v-list-item>
               <v-list-item link to="/settings">
-                <v-list-item-title>监视的作品</v-list-item-title>
+                <v-list-item-title>关注的作品</v-list-item-title>
               </v-list-item>
               <v-list-item link to="/settings">
                 <v-list-item-title>订阅</v-list-item-title>

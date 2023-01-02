@@ -11,39 +11,171 @@
         </div>
         <v-spacer />
         <div v-show="tab === 0">
-          <v-btn icon plain small @click="header()">
-            <v-icon>mdi-format-header-pound</v-icon>
-          </v-btn>
-          <v-btn icon plain small @click="bold()">
-            <v-icon>mdi-format-bold</v-icon>
-          </v-btn>
-          <v-btn icon plain small @click="italic()">
-            <v-icon>mdi-format-italic</v-icon>
-          </v-btn>
-          <v-btn icon plain small @click="image()">
-            <v-icon>mdi-image-outline</v-icon>
-          </v-btn>
-          <v-btn icon plain small @click="quote()">
-            <v-icon>mdi-format-quote-open</v-icon>
-          </v-btn>
-          <v-btn icon plain small @click="code()">
-            <v-icon>mdi-code-tags</v-icon>
-          </v-btn>
-          <v-btn icon plain small @click="link()">
-            <v-icon>mdi-link-variant</v-icon>
-          </v-btn>
-          <v-btn icon plain small @click="unorderedList()">
-            <v-icon>mdi-format-list-bulleted</v-icon>
-          </v-btn>
-          <v-btn icon plain small @click="orderedList()">
-            <v-icon>mdi-format-list-numbered</v-icon>
-          </v-btn>
-          <v-btn icon plain small @click="checkbox()">
-            <v-icon>mdi-checkbox-marked-outline</v-icon>
-          </v-btn>
-          <v-btn icon plain small @click="at()">
-            <v-icon>mdi-at</v-icon>
-          </v-btn>
+          <v-tooltip bottom>
+            <template #activator="{ on, attrs }">
+              <v-btn
+                icon
+                plain
+                small
+                v-bind="attrs"
+                @click="header()"
+                v-on="on"
+              >
+                <v-icon>mdi-format-header-pound</v-icon>
+              </v-btn>
+            </template>
+            <span>标题</span>
+          </v-tooltip>
+          <v-tooltip bottom>
+            <template #activator="{ on, attrs }">
+              <v-btn
+                icon
+                plain
+                small
+                v-bind="attrs"
+                @click="bold()"
+                v-on="on"
+              >
+                <v-icon>mdi-format-bold</v-icon>
+              </v-btn>
+            </template>
+            <span>粗体</span>
+          </v-tooltip>
+          <v-tooltip bottom>
+            <template #activator="{ on, attrs }">
+              <v-btn
+                icon
+                plain
+                small
+                v-bind="attrs"
+                @click="italic()"
+                v-on="on"
+              >
+                <v-icon>mdi-format-italic</v-icon>
+              </v-btn>
+            </template>
+            <span>斜体</span>
+          </v-tooltip>
+          <v-tooltip bottom>
+            <template #activator="{ on, attrs }">
+              <v-btn
+                icon
+                plain
+                small
+                v-bind="attrs"
+                @click="image()"
+                v-on="on"
+              >
+                <v-icon>mdi-image-outline</v-icon>
+              </v-btn>
+            </template>
+            <span>图片</span>
+          </v-tooltip>
+          <v-tooltip bottom>
+            <template #activator="{ on, attrs }">
+              <v-btn
+                icon
+                plain
+                small
+                v-bind="attrs"
+                @click="quote()"
+                v-on="on"
+              >
+                <v-icon>mdi-format-quote-open</v-icon>
+              </v-btn>
+            </template>
+            <span>引用</span>
+          </v-tooltip>
+          <v-tooltip bottom>
+            <template #activator="{ on, attrs }">
+              <v-btn
+                icon
+                plain
+                small
+                v-bind="attrs"
+                @click="code()"
+                v-on="on"
+              >
+                <v-icon>mdi-xml</v-icon>
+              </v-btn>
+            </template>
+            <span>代码</span>
+          </v-tooltip>
+          <v-tooltip bottom>
+            <template #activator="{ on, attrs }">
+              <v-btn
+                icon
+                plain
+                small
+                v-bind="attrs"
+                @click="link()"
+                v-on="on"
+              >
+                <v-icon>mdi-link-variant</v-icon>
+              </v-btn>
+            </template>
+            <span>链接</span>
+          </v-tooltip>
+          <v-tooltip bottom>
+            <template #activator="{ on, attrs }">
+              <v-btn
+                icon
+                plain
+                small
+                v-bind="attrs"
+                @click="unorderedList()"
+                v-on="on"
+              >
+                <v-icon>mdi-format-list-bulleted</v-icon>
+              </v-btn>
+            </template>
+            <span>无序列表</span>
+          </v-tooltip>
+          <v-tooltip bottom>
+            <template #activator="{ on, attrs }">
+              <v-btn
+                icon
+                plain
+                small
+                v-bind="attrs"
+                @click="orderedList()"
+                v-on="on"
+              >
+                <v-icon>mdi-format-list-numbered</v-icon>
+              </v-btn>
+            </template>
+            <span>有序列表</span>
+          </v-tooltip>
+          <v-tooltip bottom>
+            <template #activator="{ on, attrs }">
+              <v-btn
+                icon
+                plain
+                small
+                v-bind="attrs"
+                @click="checkbox()"
+                v-on="on"
+              >
+                <v-icon>mdi-checkbox-marked-outline</v-icon>
+              </v-btn>
+            </template>
+            <span>复选框（无序列表）</span>
+          </v-tooltip>
+          <v-tooltip bottom>
+            <template #activator="{ on, attrs }">
+              <v-btn
+                icon
+                plain
+                small
+                v-bind="attrs"
+                @click="at()"
+                v-on="on"
+              >
+                <v-icon>mdi-at</v-icon>
+              </v-btn>
+            </template>
+            <span>@（提醒）</span>
+          </v-tooltip>
         </div>
       </v-card-title>
 
@@ -84,12 +216,19 @@
         <MarkdownRender :content="markdown" />
       </div>
       <v-card-actions style="padding-top: 0px;">
-        <v-btn
-          text
-          icon
-        >
-          <v-icon>mdi-language-markdown-outline</v-icon>
-        </v-btn>
+        <v-tooltip bottom>
+          <template #activator="{ on, attrs }">
+            <v-btn
+              text
+              icon
+              v-bind="attrs"
+              v-on="on"
+            >
+              <v-icon>mdi-language-markdown-outline</v-icon>
+            </v-btn>
+          </template>
+          <span>支持 Markdown 语法</span>
+        </v-tooltip>
         <v-spacer />
         <v-btn
           :width="actionIcon ? '120px' : 'auto'"

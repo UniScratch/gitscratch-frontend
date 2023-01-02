@@ -79,7 +79,7 @@
             v-bind="attrs"
             v-on="on"
           >
-            Block or Report
+            举报
           </p>
         </template>
         <v-card class="cardblur">
@@ -97,7 +97,7 @@
                 outlined
                 style="border-radius: 4px;"
                 auto-grow
-                rows="2"
+                rows="3"
               />
             </v-form>
           </v-card-text>
@@ -249,13 +249,13 @@ export default {
     reportLoading: false,
     reportReason: '',
     reportReasonRules: [
-      v => !!v || '请选择举报原因',
+      v => !!v || '请填写举报原因',
       v => v.length <= 1024 || '举报原因不能超过 1024 个字符'
     ]
   }),
   head () {
     return {
-      title: this.data.name + '的主页'
+      title: this.data.name
     }
   },
   mounted () {

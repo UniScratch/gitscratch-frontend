@@ -18,7 +18,7 @@
         :rules="fileRules"
         required
       />
-      <v-btn color="primary" rounded depressed :disabled="!valid" @click="upload">
+      <v-btn color="primary" depressed :disabled="!valid" @click="upload">
         上传
       </v-btn>
     </v-form>

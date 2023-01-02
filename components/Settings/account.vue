@@ -87,7 +87,7 @@
       persistent-hint
     />
     <br>
-    <v-btn color="primary" @click="save()">
+    <v-btn color="primary" depressed @click="save()">
       保存
     </v-btn>
     <p class="text-h5">

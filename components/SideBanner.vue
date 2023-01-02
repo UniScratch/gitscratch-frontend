@@ -18,7 +18,7 @@
     </v-card-text>
 
     <v-card-actions :style="$vuetify.breakpoint.smAndUp ? 'position: absolute; bottom: 0; left: 0; right: 0; ' : 'unset'">
-      <div class="d-flex flex-column" style="width: 100%;">
+      <div style="width: 100%;">
         <v-btn
           block
           depressed
@@ -31,30 +31,36 @@
             mdi-check
           </v-icon>签到
         </v-btn>
-        <!-- <v-btn
-          block
-          color="primary"
-          to="/project/editor"
-          class="mt-2"
-          rounded
-          depressed
-        >
-          <v-icon left>
-            mdi-plus
-          </v-icon>创建
-        </v-btn> -->
-        <v-btn
-          block
-          color="primary"
-          to="/projects/upload"
-          class="mt-2"
-          rounded
-          depressed
-        >
-          <v-icon left>
-            mdi-upload
-          </v-icon>上传
-        </v-btn>
+        <v-row>
+          <v-col>
+            <v-btn
+              color="primary"
+              class="mt-2"
+              rounded
+              depressed
+              block
+              @click="newProject"
+            >
+              <v-icon left>
+                mdi-plus
+              </v-icon>创建
+            </v-btn>
+          </v-col>
+          <v-col>
+            <v-btn
+              color="primary"
+              to="/projects/upload"
+              class="mt-2"
+              rounded
+              depressed
+              block
+            >
+              <v-icon left>
+                mdi-upload
+              </v-icon>上传
+            </v-btn>
+          </v-col>
+        </v-row>
       </div>
     </v-card-actions>
   </v-card>
@@ -86,6 +92,12 @@ export default {
         }
       }
       this.dialogLoading = false
+    },
+    async newProject () {
+      // const res = await this.$axios.$post(`/users/${this.data.id}/projects/new`, {
+      // })
+      // // console.log(res)
+      // this.$router.push(`/projects/${res.data.id}`)
     }
   }
 }

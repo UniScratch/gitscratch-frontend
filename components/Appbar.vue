@@ -119,7 +119,7 @@
           </v-tooltip>
         </template>
         <v-list width="200">
-          <v-list-item link to="/projects/editor" disabled>
+          <v-list-item link @click="newProject">
             <v-list-item-title>创建</v-list-item-title>
           </v-list-item>
           <v-list-item link to="/projects/upload">
@@ -282,6 +282,12 @@ export default {
       if (this.searchKeyword.trim().length > 0) {
         this.$router.push('/explore?q=' + this.searchKeyword)
       }
+    },
+    async newProject () {
+      // const res = await this.$axios.$post(`/users/${this.data.id}/projects/new`, {
+      // })
+      // // console.log(res)
+      // this.$router.push(`/projects/${res.data.id}`)
     }
   }
 }
