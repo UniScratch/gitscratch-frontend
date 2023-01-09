@@ -13,7 +13,7 @@ jobs:
         run: |
           yarn build
       - name: Upload artifacts (.nuxt)
-        uses: actions/upload-artifact@v3.1.0
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: .nuxt
           path: ./.nuxt
@@ -22,7 +22,7 @@ jobs:
         run: |
           rm -rf node_modules
       - name: Upload artifacts (*)
-        uses: actions/upload-artifact@v3.1.0
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: workspace
           path: ./
