@@ -109,15 +109,17 @@ pre {
 }*/
 
 .hide-del {
+    background-color: #88888833;
     color: transparent;
-    transition: color 0.3s ease;
-    transition-delay: 0s;
-    cursor: pointer;
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
+    transition-delay: 0.5s;
 }
 
 .hide-del:hover {
-    color: var(--text);
-    transition-delay: 0.3s;
+    color: unset;
+    background-color: transparent;
+    transition-delay: 0s;
 }
 
 .diff-addition {
@@ -297,4 +299,3 @@ input:-webkit-autofill:active {
 .project-title {
     color: unset !important;
 }
-
