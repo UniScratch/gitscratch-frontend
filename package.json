@@ -20,7 +20,7 @@
     "@nuxtjs/webpack-profile": "^0.1.0",
     "highlight.js": "^11.6.0",
     "marked": "^4.0.18",
-    "nuxt": "^2.15.8",
+    "nuxt": "^3.2.0",
     "nuxt-precompress": "^0.5.9",
     "sanitize-html": "^2.7.1",
     "scratch-gui": "git+https://github.com/UniScratch/uniscratch-gui.git#develop",
