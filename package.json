@@ -22,7 +22,7 @@
     "marked": "^4.0.18",
     "nuxt": "^2.15.8",
     "nuxt-precompress": "^0.5.9",
-    "sanitize-html": "^2.7.1",
+    "sanitize-html": "^2.10.0",
     "scratch-gui": "git+https://github.com/UniScratch/uniscratch-gui.git#develop",
     "vuetify-dialog": "git+https://github.com/UniScratch/vuetify-dialog.git#master"
   },
